@@ -5,7 +5,6 @@ import static java.util.stream.Collectors.toList;
 import java.io.FileOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.function.Function;
 
@@ -41,9 +40,9 @@ public class FileUtils {
     }
 
 
-    public static <T> List<T> parseCsv(String path, Function<String[], T> parser){
+    public static <T> List<T> parseCsv(Path path, Function<String[], T> parser){
         try {
-            return Files.readAllLines(Paths.get(path)).stream()
+            return Files.readAllLines(path).stream()
                     .map(e -> e.split(","))
                     .map(parser)
                     .collect(toList());

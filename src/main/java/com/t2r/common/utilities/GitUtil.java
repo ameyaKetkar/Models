@@ -11,12 +11,13 @@ import org.eclipse.jgit.revwalk.RevWalk;
 import org.eclipse.jgit.revwalk.filter.CommitTimeRevFilter;
 import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import io.vavr.control.Try;
 
@@ -25,17 +26,16 @@ public class GitUtil {
 
     /**
      *
-     * @param projectName Name of the project
      * @param cloneLink Git clone Url
      * @param path Where to clone or find
      * @return Git repository
      */
-    public static Try<Git> tryToClone(String projectName, String cloneLink, String path) {
-        return Try.of(() -> Git.open(new File(path + projectName)))
-                .onFailure(e -> System.out.println("Did not find " + projectName + " at" + path))
+    public static Try<Git> tryToClone(String cloneLink, Path path) {
+        return Try.of(() -> Git.open(path.toFile()))
+                .onFailure(e -> System.out.println("Did not find " + cloneLink + " at" + path.toString()))
                 .orElse(Try.of(() ->
-                        Git.cloneRepository().setURI(cloneLink).setDirectory(new File(path + projectName)).call()))
-                .onFailure(e -> System.out.println("Could not clone " + projectName));
+                        Git.cloneRepository().setURI(cloneLink).setDirectory(path.toFile()).call()))
+                .onFailure(e -> System.out.println("Could not clone " + cloneLink));
 
     }
 
@@ -47,7 +47,7 @@ public class GitUtil {
      * @param fromDate first commit date
      * @return list of @RevCommit
      */
-    public static List<RevCommit> getCommits(Git git, RevSort order, Date fromDate) {
+    public static List<RevCommit> getCommits(Git git, RevSort order, Date fromDate, List<String> except, List<String> only) {
         return Try.of(() -> {
             RevWalk walk = new RevWalk(git.getRepository());
             walk.markStart(walk.parseCommit(git.getRepository().resolve("HEAD")));
@@ -63,10 +63,15 @@ public class GitUtil {
                     walk.dispose();
                     return l;
                 })
-                .onSuccess(l -> System.out.println("Total number of commits found : " + l.size()))
+                .onSuccess(l -> System.out.println(l.size() + " number of commits found for " + git.getRepository().getDirectory().getParent()))
                 .onFailure(Throwable::printStackTrace)
 
-                .getOrElse(new ArrayList<>());
+                .getOrElse(new ArrayList<>())
+
+                .stream()
+                .filter(x -> !except.contains(x.getId().getName()))
+                .filter(x -> only.isEmpty() || only.contains(x.getId().getName()))
+                .collect(Collectors.toList());
     }
 
     /**
