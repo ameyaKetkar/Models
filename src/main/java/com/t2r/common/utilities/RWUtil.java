@@ -60,7 +60,7 @@ public class RWUtil {
          *
          * @param outputD Output directory where protos should be generated
          */
-        ReadWriteAt(String outputD){
+        public ReadWriteAt(String outputD){
             this.outputDir = Paths.get(outputD);
         }
 
