@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package Models;
+option java_package = "com.t2r.common.models.refactorings";
+
+message RMined{
+   
+   required string project = 3;
+   required CommitInfo commit = 2;
+   map<string, int64> refactorings = 1;
+   optional bool timeOut = 7;
+   optional string exception = 6;
+
+   message CommitInfo{
+      required string commit = 1;
+      required int64 filesModified = 2;
+      required int64 filesAdded = 3;
+      required int64 filesRemoved = 4;
+      required int64 filesRenamed = 5;
+   }
+}

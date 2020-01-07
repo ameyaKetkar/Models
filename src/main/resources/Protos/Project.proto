@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package Models;
+
+import "TypeGraph.proto";
+import "TypeChngAnalysis.proto";
+
+option java_package = "com.t2r.common.models.refactorings";
+
+message RefactoringsMined{
+   required string name = 1;
+   required string totalCommits = 2;
+}
