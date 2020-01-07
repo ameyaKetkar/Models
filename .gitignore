@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 #intelliJ
-*.idea/
+.idea/
 
 # Package Files #
 *.jar
@@ -20,4 +20,4 @@
 hs_err_pid*
 
 #maven
-*/target/
+target/
