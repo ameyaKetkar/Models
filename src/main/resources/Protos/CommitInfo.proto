@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package Models;
+import "JarInfo.proto";
+
+
+option java_package = "com.t2r.common.models.refactorings";
+
+message CommitInfo{
+   required string commit = 1;
+   required int64 filesModified = 2;
+   required int64 filesAdded = 3;
+   required int64 filesRemoved = 4;
+   required int64 filesRenamed = 5;
+   required bool isTypeChangeDetected = 6;
+   repeated JarInfo dependencies = 7;
+}

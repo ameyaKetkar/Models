@@ -8,7 +8,7 @@ import static java.nio.file.Files.readAllBytes;
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
 
-import com.t2r.models.refactorings.RMinedOuterClass.RMined;
+import com.t2r.common.models.refactorings.RMinedOuterClass.RMined;
 
 import java.io.FileInputStream;
 import java.nio.charset.Charset;

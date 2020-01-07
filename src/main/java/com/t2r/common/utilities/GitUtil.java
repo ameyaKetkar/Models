@@ -1,5 +1,9 @@
 package com.t2r.common.utilities;
 
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
+
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.lib.ObjectReader;
@@ -17,8 +21,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
+import io.vavr.Tuple3;
 import io.vavr.control.Try;
 
 public class GitUtil {
@@ -63,7 +71,7 @@ public class GitUtil {
                     walk.dispose();
                     return l;
                 })
-                .onSuccess(l -> System.out.println(l.size() + " number of commits found for " + git.getRepository().getDirectory().getParent()))
+                .onSuccess(l -> System.out.println(l.size() + " number of commits found for " + git.getRepository().getDirectory().getParentFile().getName()))
                 .onFailure(Throwable::printStackTrace)
 
                 .getOrElse(new ArrayList<>())
@@ -92,6 +100,15 @@ public class GitUtil {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+
+    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, RevCommit c){
+        return getDiffEntries(git, c).stream()
+                .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
+                .collect(groupingBy(Tuple3::_1
+                        , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList()))));
+
     }
 
 
