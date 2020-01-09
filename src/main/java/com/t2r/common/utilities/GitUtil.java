@@ -24,6 +24,7 @@ import java.io.StringWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -31,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
@@ -65,7 +65,7 @@ public class GitUtil {
      * @return list of @RevCommit
      */
     public static List<RevCommit> getCommits(Git git, RevSort order, Date fromDate, List<String> except, List<String> only) {
-        return Try.of(() -> {
+        List<RevCommit> commits = Try.of(() -> {
             RevWalk walk = new RevWalk(git.getRepository());
             walk.markStart(walk.parseCommit(git.getRepository().resolve("HEAD")));
             walk.sort(order);
@@ -75,8 +75,9 @@ public class GitUtil {
                 .map(walk -> {
                     Iterator<RevCommit> iter = walk.iterator();
                     List<RevCommit> l = new ArrayList<>();
-                    while(iter.hasNext()){
-                        l.add(iter.next()); }
+                    while (iter.hasNext()) {
+                        l.add(iter.next());
+                    }
                     walk.dispose();
                     return l;
                 })
@@ -88,7 +89,9 @@ public class GitUtil {
                 .stream()
                 .filter(x -> !except.contains(x.getId().getName()))
                 .filter(x -> only.isEmpty() || only.contains(x.getId().getName()))
-                .collect(Collectors.toList());
+                .collect(toList());
+        Collections.reverse(commits);
+        return commits;
     }
 
     /**
@@ -186,6 +189,13 @@ public class GitUtil {
             }
         }
         return fileContents;
+    }
+
+
+    public static boolean isFileAffected(Git git, String c, Predicate<String> fileMatcher){
+        return filePathDiffAtCommit(git, c).values().stream()
+                .flatMap(x -> x.stream())
+                .anyMatch(x -> (x._1()!= null && fileMatcher.test(x._1())) || (x._2()!= null && fileMatcher.test(x._2())));
     }
 
 

@@ -14,7 +14,7 @@ message CommitInfo{
    repeated JarInfo dependencies = 1;
    bool dependenciesUpdated = 8;
    string exception = 6;
-    bool isTypeChangeReported = 7;
+   bool isTypeChangeReported = 7;
 
    message FileDiff{
        int64 filesModified = 1;
