@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 import io.vavr.CheckedFunction1;
 import io.vavr.control.Try;
 
-public class RWUtil {
+public class ProtoUtil {
 
 
     /**
@@ -52,7 +52,7 @@ public class RWUtil {
     }
 
 
-    public class ReadWriteAt {
+    public static class ReadWriteAt {
 
         private final Path outputDir;
 
@@ -60,8 +60,8 @@ public class RWUtil {
          *
          * @param outputD Output directory where protos should be generated
          */
-        public ReadWriteAt(String outputD){
-            this.outputDir = Paths.get(outputD);
+        public ReadWriteAt(Path outputD){
+            this.outputDir = outputD;
         }
 
         /**
@@ -112,7 +112,7 @@ public class RWUtil {
                             byte[] b = new byte[c];
                             return Try.of(() -> content.read(b))
                                     .filter(i -> i > 0)
-                                    .flatMap(i -> Try.of(() -> RWUtil.<T>parser(kind).apply(CodedInputStream.newInstance(b)))
+                                    .flatMap(i -> Try.of(() -> ProtoUtil.<T>parser(kind).apply(CodedInputStream.newInstance(b)))
                                             .onSuccess(msgs::add)
                                             .onFailure(e -> System.out.println("Could not read message for " + fileName + "   " + e.toString()))
                                             // if success nothing
