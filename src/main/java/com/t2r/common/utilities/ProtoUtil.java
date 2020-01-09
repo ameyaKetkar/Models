@@ -8,12 +8,9 @@ import static java.nio.file.Files.readAllBytes;
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
 
-import com.t2r.common.models.refactorings.RMinedOuterClass.RMined;
-
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +43,7 @@ public class ProtoUtil {
      */
     public static <T> CheckedFunction1<CodedInputStream,T> parser(String kind){
         switch (kind){
-            case "RMined" : return c -> (T) RMined.parseFrom(c);
+//            case "RMined" : return c -> (T) RMined.parseFrom(c);
             default: return c -> null;
         }
     }

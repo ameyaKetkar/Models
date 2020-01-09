@@ -1,11 +1,10 @@
-syntax = "proto2";
-
-package Models;
+syntax = "proto3";
 
 option java_package = "com.t2r.common.models.refactorings";
 
+
 message Project{
-   required string name = 1;
-   required string url = 3;
-   optional int64 totalCommits = 2;
+   string name = 1;
+   string url = 3;
+   int64 totalCommits = 2;
 }
