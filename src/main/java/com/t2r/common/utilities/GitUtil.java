@@ -4,8 +4,11 @@ import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
+import org.apache.commons.io.IOUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
+import org.eclipse.jgit.lib.ObjectId;
+import org.eclipse.jgit.lib.ObjectLoader;
 import org.eclipse.jgit.lib.ObjectReader;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
@@ -14,14 +17,20 @@ import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.revwalk.RevWalk;
 import org.eclipse.jgit.revwalk.filter.CommitTimeRevFilter;
 import org.eclipse.jgit.treewalk.CanonicalTreeParser;
+import org.eclipse.jgit.treewalk.TreeWalk;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import io.vavr.Tuple;
@@ -103,12 +112,14 @@ public class GitUtil {
     }
 
 
-    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, RevCommit c){
-        return getDiffEntries(git, c).stream()
-                .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
-                .collect(groupingBy(Tuple3::_1
-                        , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList()))));
+    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c){
 
+        return findCommit(c, git.getRepository())
+                .map(cmt -> getDiffEntries(git, cmt).stream()
+                        .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
+                        .collect(groupingBy(Tuple3::_1
+                                , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList())))))
+                .orElse(new HashMap<>());
     }
 
 
@@ -134,6 +145,47 @@ public class GitUtil {
         treeParser.reset(reader, tree.getId());
         walk.dispose();
         return treeParser;
+    }
+
+
+    public static Optional<RevCommit> findCommit(String SHAId, Repository repo) {
+        return Try.of(() -> new RevWalk(repo))
+                .flatMap(x->Try.of(() -> x.parseCommit(ObjectId.fromString(SHAId))))
+                .onFailure(e -> e.printStackTrace())
+                .toJavaOptional();
+    }
+
+    /**
+     *
+     * @param repository Git repo
+     * @param cmt the particular commit
+     * @param pred matcher for files to populate the content for
+     * @return filePath * content
+     */
+    public static Map<Path, String> populateFileContents(Repository repository, String cmt,
+                                                          Predicate<String> pred) {
+        Map<Path, String> fileContents = new HashMap<>();
+        Optional<RevCommit> commit = findCommit(cmt, repository);
+        if(commit.isPresent()) {
+            RevTree parentTree = commit.get().getTree();
+            try (TreeWalk treeWalk = new TreeWalk(repository)) {
+                treeWalk.addTree(parentTree);
+                treeWalk.setRecursive(true);
+                while (treeWalk.next()) {
+                    String pathString = treeWalk.getPathString();
+                    if (pred.test(pathString)) {
+                        ObjectId objectId = treeWalk.getObjectId(0);
+                        ObjectLoader loader = repository.open(objectId);
+                        StringWriter writer = new StringWriter();
+                        IOUtils.copy(loader.openStream(), writer);
+                        fileContents.put(Paths.get(pathString), writer.toString());
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return fileContents;
     }
 
 
