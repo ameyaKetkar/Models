@@ -68,7 +68,7 @@ public final class ProjectOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        com.google.protobuf.GeneratedMessageV3.UnusedPrivateParameter unused) {
       return new Project();
     }
 
