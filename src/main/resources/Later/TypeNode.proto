@@ -39,4 +39,4 @@ message TypeNode {
 // protoc --proto_path=D:\MyProjects\RefactoringMiner\src\Protos --java_out=D:\MyProjects\RefactoringMiner\src\  D:\MyProjects\RefactoringMiner\src\Protos\*
 //protoc -I=/Users/ameya/RefactoringMiner/src/Protos --java_out=/Users/ameya/RefactoringMiner/src/ /Users/ameya/RefactoringMiner/src/Protos/*
 //protoc -I=/Users/ameya/TypeChangeStudy/Models/src/main/resources/Protos --java_out=/Users/ameya/TypeChangeStudy/Models/src/main/java/ /Users/ameya/TypeChangeStudy/Models/src/main/resources/Protos/*
-// protoc -I=/Users/ketkaram/SimpleTypeChangeMiner/Models/src/main/resources/Protos --java_out=/Users/ketkaram/SimpleTypeChangeMiner/Models/src/main/java/ /Users/ketkaram/SimpleTypeChangeMiner/Models/src/main/resources/Protos/*
+// protoc -I=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos --java_out=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/java/ /Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos/*

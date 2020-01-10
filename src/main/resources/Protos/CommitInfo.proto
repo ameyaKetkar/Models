@@ -7,15 +7,14 @@ option java_package = "com.t2r.common.models.refactorings";
 
 message CommitInfo{
 
-   int64 counter = 4;
+   int64 counter = 8;
    string sha = 5;
    FileDiff fileDiff = 3;
-   map<string, int64> refactorings = 2;
+   repeated Refactoring refactorings = 2;
    repeated JarInfo dependencies = 1;
-   bool dependenciesUpdated = 8;
    string exception = 6;
    bool isTypeChangeReported = 7;
-   DependencyUpdate update = 9;
+   DependencyUpdate dependencyUpdate = 4;
 
    message FileDiff{
        int64 filesModified = 1;
@@ -38,9 +37,19 @@ message CommitInfo{
 
    message DependencyUpdate{
         repeated DependencyPair update = 3;
-        DependencyPair replace = 4;
         repeated JarInfo added = 1;
         repeated JarInfo removed = 2;
+   }
+
+   message Refactoring{
+       string name = 3;
+       int64 occurences = 2;
+       map<string, RefactoringUrl> descriptionAndurl = 1;
+   }
+
+   message RefactoringUrl{
+       string lhs = 1;
+       string rhs = 2;
    }
 
 
