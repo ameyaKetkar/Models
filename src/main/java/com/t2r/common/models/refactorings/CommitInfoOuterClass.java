@@ -132,6 +132,21 @@ public final class CommitInfoOuterClass {
      * @return The isTypeChangeReported.
      */
     boolean getIsTypeChangeReported();
+
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     * @return Whether the update field is set.
+     */
+    boolean hasUpdate();
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     * @return The update.
+     */
+    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getUpdate();
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     */
+    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getUpdateOrBuilder();
   }
   /**
    * Protobuf type {@code Models.CommitInfo}
@@ -242,6 +257,19 @@ public final class CommitInfoOuterClass {
             case 64: {
 
               dependenciesUpdated_ = input.readBool();
+              break;
+            }
+            case 74: {
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder subBuilder = null;
+              if (update_ != null) {
+                subBuilder = update_.toBuilder();
+              }
+              update_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(update_);
+                update_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1847,6 +1875,2546 @@ public final class CommitInfoOuterClass {
 
     }
 
+    public interface DependencyPairOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.DependencyPair)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * @return Whether the before field is set.
+       */
+      boolean hasBefore();
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * @return The before.
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore();
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder();
+
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * @return Whether the after field is set.
+       */
+      boolean hasAfter();
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * @return The after.
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter();
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder();
+    }
+    /**
+     * Protobuf type {@code Models.CommitInfo.DependencyPair}
+     */
+    public  static final class DependencyPair extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:Models.CommitInfo.DependencyPair)
+        DependencyPairOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DependencyPair.newBuilder() to construct.
+      private DependencyPair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DependencyPair() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new DependencyPair();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DependencyPair(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder subBuilder = null;
+                if (before_ != null) {
+                  subBuilder = before_.toBuilder();
+                }
+                before_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(before_);
+                  before_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 18: {
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder subBuilder = null;
+                if (after_ != null) {
+                  subBuilder = after_.toBuilder();
+                }
+                after_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(after_);
+                  after_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
+      }
+
+      public static final int BEFORE_FIELD_NUMBER = 1;
+      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo before_;
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * @return Whether the before field is set.
+       */
+      public boolean hasBefore() {
+        return before_ != null;
+      }
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * @return The before.
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
+        return before_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
+      }
+      /**
+       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
+        return getBefore();
+      }
+
+      public static final int AFTER_FIELD_NUMBER = 2;
+      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo after_;
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * @return Whether the after field is set.
+       */
+      public boolean hasAfter() {
+        return after_ != null;
+      }
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * @return The after.
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
+        return after_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
+      }
+      /**
+       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
+        return getAfter();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (before_ != null) {
+          output.writeMessage(1, getBefore());
+        }
+        if (after_ != null) {
+          output.writeMessage(2, getAfter());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (before_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getBefore());
+        }
+        if (after_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, getAfter());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair)) {
+          return super.equals(obj);
+        }
+        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) obj;
+
+        if (hasBefore() != other.hasBefore()) return false;
+        if (hasBefore()) {
+          if (!getBefore()
+              .equals(other.getBefore())) return false;
+        }
+        if (hasAfter() != other.hasAfter()) return false;
+        if (hasAfter()) {
+          if (!getAfter()
+              .equals(other.getAfter())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasBefore()) {
+          hash = (37 * hash) + BEFORE_FIELD_NUMBER;
+          hash = (53 * hash) + getBefore().hashCode();
+        }
+        if (hasAfter()) {
+          hash = (37 * hash) + AFTER_FIELD_NUMBER;
+          hash = (53 * hash) + getAfter().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code Models.CommitInfo.DependencyPair}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.DependencyPair)
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
+        }
+
+        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (beforeBuilder_ == null) {
+            before_ = null;
+          } else {
+            before_ = null;
+            beforeBuilder_ = null;
+          }
+          if (afterBuilder_ == null) {
+            after_ = null;
+          } else {
+            after_ = null;
+            afterBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair build() {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair buildPartial() {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair(this);
+          if (beforeBuilder_ == null) {
+            result.before_ = before_;
+          } else {
+            result.before_ = beforeBuilder_.build();
+          }
+          if (afterBuilder_ == null) {
+            result.after_ = after_;
+          } else {
+            result.after_ = afterBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) {
+            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair other) {
+          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance()) return this;
+          if (other.hasBefore()) {
+            mergeBefore(other.getBefore());
+          }
+          if (other.hasAfter()) {
+            mergeAfter(other.getAfter());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo before_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> beforeBuilder_;
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * @return Whether the before field is set.
+         */
+        public boolean hasBefore() {
+          return beforeBuilder_ != null || before_ != null;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * @return The before.
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
+          if (beforeBuilder_ == null) {
+            return before_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
+          } else {
+            return beforeBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public Builder setBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (beforeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            before_ = value;
+            onChanged();
+          } else {
+            beforeBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public Builder setBefore(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (beforeBuilder_ == null) {
+            before_ = builderForValue.build();
+            onChanged();
+          } else {
+            beforeBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public Builder mergeBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (beforeBuilder_ == null) {
+            if (before_ != null) {
+              before_ =
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.newBuilder(before_).mergeFrom(value).buildPartial();
+            } else {
+              before_ = value;
+            }
+            onChanged();
+          } else {
+            beforeBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public Builder clearBefore() {
+          if (beforeBuilder_ == null) {
+            before_ = null;
+            onChanged();
+          } else {
+            before_ = null;
+            beforeBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getBeforeBuilder() {
+          
+          onChanged();
+          return getBeforeFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
+          if (beforeBuilder_ != null) {
+            return beforeBuilder_.getMessageOrBuilder();
+          } else {
+            return before_ == null ?
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+            getBeforeFieldBuilder() {
+          if (beforeBuilder_ == null) {
+            beforeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
+                    getBefore(),
+                    getParentForChildren(),
+                    isClean());
+            before_ = null;
+          }
+          return beforeBuilder_;
+        }
+
+        private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo after_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> afterBuilder_;
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * @return Whether the after field is set.
+         */
+        public boolean hasAfter() {
+          return afterBuilder_ != null || after_ != null;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * @return The after.
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
+          if (afterBuilder_ == null) {
+            return after_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
+          } else {
+            return afterBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public Builder setAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (afterBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            after_ = value;
+            onChanged();
+          } else {
+            afterBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public Builder setAfter(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (afterBuilder_ == null) {
+            after_ = builderForValue.build();
+            onChanged();
+          } else {
+            afterBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public Builder mergeAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (afterBuilder_ == null) {
+            if (after_ != null) {
+              after_ =
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.newBuilder(after_).mergeFrom(value).buildPartial();
+            } else {
+              after_ = value;
+            }
+            onChanged();
+          } else {
+            afterBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public Builder clearAfter() {
+          if (afterBuilder_ == null) {
+            after_ = null;
+            onChanged();
+          } else {
+            after_ = null;
+            afterBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAfterBuilder() {
+          
+          onChanged();
+          return getAfterFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
+          if (afterBuilder_ != null) {
+            return afterBuilder_.getMessageOrBuilder();
+          } else {
+            return after_ == null ?
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+            getAfterFieldBuilder() {
+          if (afterBuilder_ == null) {
+            afterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
+                    getAfter(),
+                    getParentForChildren(),
+                    isClean());
+            after_ = null;
+          }
+          return afterBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.DependencyPair)
+      }
+
+      // @@protoc_insertion_point(class_scope:Models.CommitInfo.DependencyPair)
+      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair();
+      }
+
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DependencyPair>
+          PARSER = new com.google.protobuf.AbstractParser<DependencyPair>() {
+        @java.lang.Override
+        public DependencyPair parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DependencyPair(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DependencyPair> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DependencyPair> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface DependencyUpdateOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.DependencyUpdate)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> 
+          getUpdateList();
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index);
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      int getUpdateCount();
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
+          getUpdateOrBuilderList();
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
+          int index);
+
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       * @return Whether the replace field is set.
+       */
+      boolean hasReplace();
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       * @return The replace.
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getReplace();
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getReplaceOrBuilder();
+
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
+          getAddedList();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index);
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      int getAddedCount();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+          getAddedOrBuilderList();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
+          int index);
+
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
+          getRemovedList();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index);
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      int getRemovedCount();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+          getRemovedOrBuilderList();
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
+          int index);
+    }
+    /**
+     * Protobuf type {@code Models.CommitInfo.DependencyUpdate}
+     */
+    public  static final class DependencyUpdate extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:Models.CommitInfo.DependencyUpdate)
+        DependencyUpdateOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DependencyUpdate.newBuilder() to construct.
+      private DependencyUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DependencyUpdate() {
+        update_ = java.util.Collections.emptyList();
+        added_ = java.util.Collections.emptyList();
+        removed_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new DependencyUpdate();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DependencyUpdate(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  added_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                added_.add(
+                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry));
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  removed_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                removed_.add(
+                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry));
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  update_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                update_.add(
+                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.parser(), extensionRegistry));
+                break;
+              }
+              case 34: {
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder subBuilder = null;
+                if (replace_ != null) {
+                  subBuilder = replace_.toBuilder();
+                }
+                replace_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(replace_);
+                  replace_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            added_ = java.util.Collections.unmodifiableList(added_);
+          }
+          if (((mutable_bitField0_ & 0x00000004) != 0)) {
+            removed_ = java.util.Collections.unmodifiableList(removed_);
+          }
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            update_ = java.util.Collections.unmodifiableList(update_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
+      }
+
+      public static final int UPDATE_FIELD_NUMBER = 3;
+      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> update_;
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
+        return update_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
+          getUpdateOrBuilderList() {
+        return update_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      public int getUpdateCount() {
+        return update_.size();
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
+        return update_.get(index);
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
+          int index) {
+        return update_.get(index);
+      }
+
+      public static final int REPLACE_FIELD_NUMBER = 4;
+      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair replace_;
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       * @return Whether the replace field is set.
+       */
+      public boolean hasReplace() {
+        return replace_ != null;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       * @return The replace.
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getReplace() {
+        return replace_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance() : replace_;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getReplaceOrBuilder() {
+        return getReplace();
+      }
+
+      public static final int ADDED_FIELD_NUMBER = 1;
+      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> added_;
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
+        return added_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+          getAddedOrBuilderList() {
+        return added_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      public int getAddedCount() {
+        return added_.size();
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
+        return added_.get(index);
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
+          int index) {
+        return added_.get(index);
+      }
+
+      public static final int REMOVED_FIELD_NUMBER = 2;
+      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> removed_;
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
+        return removed_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+          getRemovedOrBuilderList() {
+        return removed_;
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      public int getRemovedCount() {
+        return removed_.size();
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
+        return removed_.get(index);
+      }
+      /**
+       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
+          int index) {
+        return removed_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < added_.size(); i++) {
+          output.writeMessage(1, added_.get(i));
+        }
+        for (int i = 0; i < removed_.size(); i++) {
+          output.writeMessage(2, removed_.get(i));
+        }
+        for (int i = 0; i < update_.size(); i++) {
+          output.writeMessage(3, update_.get(i));
+        }
+        if (replace_ != null) {
+          output.writeMessage(4, getReplace());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < added_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, added_.get(i));
+        }
+        for (int i = 0; i < removed_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, removed_.get(i));
+        }
+        for (int i = 0; i < update_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, update_.get(i));
+        }
+        if (replace_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, getReplace());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate)) {
+          return super.equals(obj);
+        }
+        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) obj;
+
+        if (!getUpdateList()
+            .equals(other.getUpdateList())) return false;
+        if (hasReplace() != other.hasReplace()) return false;
+        if (hasReplace()) {
+          if (!getReplace()
+              .equals(other.getReplace())) return false;
+        }
+        if (!getAddedList()
+            .equals(other.getAddedList())) return false;
+        if (!getRemovedList()
+            .equals(other.getRemovedList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getUpdateCount() > 0) {
+          hash = (37 * hash) + UPDATE_FIELD_NUMBER;
+          hash = (53 * hash) + getUpdateList().hashCode();
+        }
+        if (hasReplace()) {
+          hash = (37 * hash) + REPLACE_FIELD_NUMBER;
+          hash = (53 * hash) + getReplace().hashCode();
+        }
+        if (getAddedCount() > 0) {
+          hash = (37 * hash) + ADDED_FIELD_NUMBER;
+          hash = (53 * hash) + getAddedList().hashCode();
+        }
+        if (getRemovedCount() > 0) {
+          hash = (37 * hash) + REMOVED_FIELD_NUMBER;
+          hash = (53 * hash) + getRemovedList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code Models.CommitInfo.DependencyUpdate}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.DependencyUpdate)
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
+        }
+
+        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getUpdateFieldBuilder();
+            getAddedFieldBuilder();
+            getRemovedFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (updateBuilder_ == null) {
+            update_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            updateBuilder_.clear();
+          }
+          if (replaceBuilder_ == null) {
+            replace_ = null;
+          } else {
+            replace_ = null;
+            replaceBuilder_ = null;
+          }
+          if (addedBuilder_ == null) {
+            added_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            addedBuilder_.clear();
+          }
+          if (removedBuilder_ == null) {
+            removed_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            removedBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate build() {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate buildPartial() {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate(this);
+          int from_bitField0_ = bitField0_;
+          if (updateBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              update_ = java.util.Collections.unmodifiableList(update_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.update_ = update_;
+          } else {
+            result.update_ = updateBuilder_.build();
+          }
+          if (replaceBuilder_ == null) {
+            result.replace_ = replace_;
+          } else {
+            result.replace_ = replaceBuilder_.build();
+          }
+          if (addedBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              added_ = java.util.Collections.unmodifiableList(added_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.added_ = added_;
+          } else {
+            result.added_ = addedBuilder_.build();
+          }
+          if (removedBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)) {
+              removed_ = java.util.Collections.unmodifiableList(removed_);
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.removed_ = removed_;
+          } else {
+            result.removed_ = removedBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) {
+            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate other) {
+          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance()) return this;
+          if (updateBuilder_ == null) {
+            if (!other.update_.isEmpty()) {
+              if (update_.isEmpty()) {
+                update_ = other.update_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureUpdateIsMutable();
+                update_.addAll(other.update_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.update_.isEmpty()) {
+              if (updateBuilder_.isEmpty()) {
+                updateBuilder_.dispose();
+                updateBuilder_ = null;
+                update_ = other.update_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                updateBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getUpdateFieldBuilder() : null;
+              } else {
+                updateBuilder_.addAllMessages(other.update_);
+              }
+            }
+          }
+          if (other.hasReplace()) {
+            mergeReplace(other.getReplace());
+          }
+          if (addedBuilder_ == null) {
+            if (!other.added_.isEmpty()) {
+              if (added_.isEmpty()) {
+                added_ = other.added_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureAddedIsMutable();
+                added_.addAll(other.added_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.added_.isEmpty()) {
+              if (addedBuilder_.isEmpty()) {
+                addedBuilder_.dispose();
+                addedBuilder_ = null;
+                added_ = other.added_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                addedBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getAddedFieldBuilder() : null;
+              } else {
+                addedBuilder_.addAllMessages(other.added_);
+              }
+            }
+          }
+          if (removedBuilder_ == null) {
+            if (!other.removed_.isEmpty()) {
+              if (removed_.isEmpty()) {
+                removed_ = other.removed_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+              } else {
+                ensureRemovedIsMutable();
+                removed_.addAll(other.removed_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.removed_.isEmpty()) {
+              if (removedBuilder_.isEmpty()) {
+                removedBuilder_.dispose();
+                removedBuilder_ = null;
+                removed_ = other.removed_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+                removedBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getRemovedFieldBuilder() : null;
+              } else {
+                removedBuilder_.addAllMessages(other.removed_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> update_ =
+          java.util.Collections.emptyList();
+        private void ensureUpdateIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            update_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair>(update_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> updateBuilder_;
+
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
+          if (updateBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(update_);
+          } else {
+            return updateBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public int getUpdateCount() {
+          if (updateBuilder_ == null) {
+            return update_.size();
+          } else {
+            return updateBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
+          if (updateBuilder_ == null) {
+            return update_.get(index);
+          } else {
+            return updateBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder setUpdate(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
+          if (updateBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureUpdateIsMutable();
+            update_.set(index, value);
+            onChanged();
+          } else {
+            updateBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder setUpdate(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
+          if (updateBuilder_ == null) {
+            ensureUpdateIsMutable();
+            update_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            updateBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder addUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
+          if (updateBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureUpdateIsMutable();
+            update_.add(value);
+            onChanged();
+          } else {
+            updateBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder addUpdate(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
+          if (updateBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureUpdateIsMutable();
+            update_.add(index, value);
+            onChanged();
+          } else {
+            updateBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder addUpdate(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
+          if (updateBuilder_ == null) {
+            ensureUpdateIsMutable();
+            update_.add(builderForValue.build());
+            onChanged();
+          } else {
+            updateBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder addUpdate(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
+          if (updateBuilder_ == null) {
+            ensureUpdateIsMutable();
+            update_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            updateBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder addAllUpdate(
+            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> values) {
+          if (updateBuilder_ == null) {
+            ensureUpdateIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, update_);
+            onChanged();
+          } else {
+            updateBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder clearUpdate() {
+          if (updateBuilder_ == null) {
+            update_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            updateBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public Builder removeUpdate(int index) {
+          if (updateBuilder_ == null) {
+            ensureUpdateIsMutable();
+            update_.remove(index);
+            onChanged();
+          } else {
+            updateBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder getUpdateBuilder(
+            int index) {
+          return getUpdateFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
+            int index) {
+          if (updateBuilder_ == null) {
+            return update_.get(index);  } else {
+            return updateBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
+             getUpdateOrBuilderList() {
+          if (updateBuilder_ != null) {
+            return updateBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(update_);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder() {
+          return getUpdateFieldBuilder().addBuilder(
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder(
+            int index) {
+          return getUpdateFieldBuilder().addBuilder(
+              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder> 
+             getUpdateBuilderList() {
+          return getUpdateFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
+            getUpdateFieldBuilder() {
+          if (updateBuilder_ == null) {
+            updateBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder>(
+                    update_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            update_ = null;
+          }
+          return updateBuilder_;
+        }
+
+        private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair replace_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> replaceBuilder_;
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         * @return Whether the replace field is set.
+         */
+        public boolean hasReplace() {
+          return replaceBuilder_ != null || replace_ != null;
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         * @return The replace.
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getReplace() {
+          if (replaceBuilder_ == null) {
+            return replace_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance() : replace_;
+          } else {
+            return replaceBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public Builder setReplace(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
+          if (replaceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            replace_ = value;
+            onChanged();
+          } else {
+            replaceBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public Builder setReplace(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
+          if (replaceBuilder_ == null) {
+            replace_ = builderForValue.build();
+            onChanged();
+          } else {
+            replaceBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public Builder mergeReplace(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
+          if (replaceBuilder_ == null) {
+            if (replace_ != null) {
+              replace_ =
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.newBuilder(replace_).mergeFrom(value).buildPartial();
+            } else {
+              replace_ = value;
+            }
+            onChanged();
+          } else {
+            replaceBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public Builder clearReplace() {
+          if (replaceBuilder_ == null) {
+            replace_ = null;
+            onChanged();
+          } else {
+            replace_ = null;
+            replaceBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder getReplaceBuilder() {
+          
+          onChanged();
+          return getReplaceFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getReplaceOrBuilder() {
+          if (replaceBuilder_ != null) {
+            return replaceBuilder_.getMessageOrBuilder();
+          } else {
+            return replace_ == null ?
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance() : replace_;
+          }
+        }
+        /**
+         * <code>.Models.CommitInfo.DependencyPair replace = 4;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
+            getReplaceFieldBuilder() {
+          if (replaceBuilder_ == null) {
+            replaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder>(
+                    getReplace(),
+                    getParentForChildren(),
+                    isClean());
+            replace_ = null;
+          }
+          return replaceBuilder_;
+        }
+
+        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> added_ =
+          java.util.Collections.emptyList();
+        private void ensureAddedIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            added_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>(added_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> addedBuilder_;
+
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
+          if (addedBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(added_);
+          } else {
+            return addedBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public int getAddedCount() {
+          if (addedBuilder_ == null) {
+            return added_.size();
+          } else {
+            return addedBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
+          if (addedBuilder_ == null) {
+            return added_.get(index);
+          } else {
+            return addedBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder setAdded(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (addedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAddedIsMutable();
+            added_.set(index, value);
+            onChanged();
+          } else {
+            addedBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder setAdded(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (addedBuilder_ == null) {
+            ensureAddedIsMutable();
+            added_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            addedBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder addAdded(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (addedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAddedIsMutable();
+            added_.add(value);
+            onChanged();
+          } else {
+            addedBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder addAdded(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (addedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAddedIsMutable();
+            added_.add(index, value);
+            onChanged();
+          } else {
+            addedBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder addAdded(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (addedBuilder_ == null) {
+            ensureAddedIsMutable();
+            added_.add(builderForValue.build());
+            onChanged();
+          } else {
+            addedBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder addAdded(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (addedBuilder_ == null) {
+            ensureAddedIsMutable();
+            added_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            addedBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder addAllAdded(
+            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
+          if (addedBuilder_ == null) {
+            ensureAddedIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, added_);
+            onChanged();
+          } else {
+            addedBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder clearAdded() {
+          if (addedBuilder_ == null) {
+            added_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            addedBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public Builder removeAdded(int index) {
+          if (addedBuilder_ == null) {
+            ensureAddedIsMutable();
+            added_.remove(index);
+            onChanged();
+          } else {
+            addedBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAddedBuilder(
+            int index) {
+          return getAddedFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
+            int index) {
+          if (addedBuilder_ == null) {
+            return added_.get(index);  } else {
+            return addedBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+             getAddedOrBuilderList() {
+          if (addedBuilder_ != null) {
+            return addedBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(added_);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder() {
+          return getAddedFieldBuilder().addBuilder(
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder(
+            int index) {
+          return getAddedFieldBuilder().addBuilder(
+              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
+             getAddedBuilderList() {
+          return getAddedFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+            getAddedFieldBuilder() {
+          if (addedBuilder_ == null) {
+            addedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
+                    added_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            added_ = null;
+          }
+          return addedBuilder_;
+        }
+
+        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> removed_ =
+          java.util.Collections.emptyList();
+        private void ensureRemovedIsMutable() {
+          if (!((bitField0_ & 0x00000004) != 0)) {
+            removed_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>(removed_);
+            bitField0_ |= 0x00000004;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> removedBuilder_;
+
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
+          if (removedBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(removed_);
+          } else {
+            return removedBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public int getRemovedCount() {
+          if (removedBuilder_ == null) {
+            return removed_.size();
+          } else {
+            return removedBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
+          if (removedBuilder_ == null) {
+            return removed_.get(index);
+          } else {
+            return removedBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder setRemoved(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (removedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRemovedIsMutable();
+            removed_.set(index, value);
+            onChanged();
+          } else {
+            removedBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder setRemoved(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (removedBuilder_ == null) {
+            ensureRemovedIsMutable();
+            removed_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            removedBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder addRemoved(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (removedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRemovedIsMutable();
+            removed_.add(value);
+            onChanged();
+          } else {
+            removedBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder addRemoved(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          if (removedBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureRemovedIsMutable();
+            removed_.add(index, value);
+            onChanged();
+          } else {
+            removedBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder addRemoved(
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (removedBuilder_ == null) {
+            ensureRemovedIsMutable();
+            removed_.add(builderForValue.build());
+            onChanged();
+          } else {
+            removedBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder addRemoved(
+            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          if (removedBuilder_ == null) {
+            ensureRemovedIsMutable();
+            removed_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            removedBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder addAllRemoved(
+            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
+          if (removedBuilder_ == null) {
+            ensureRemovedIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, removed_);
+            onChanged();
+          } else {
+            removedBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder clearRemoved() {
+          if (removedBuilder_ == null) {
+            removed_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+          } else {
+            removedBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public Builder removeRemoved(int index) {
+          if (removedBuilder_ == null) {
+            ensureRemovedIsMutable();
+            removed_.remove(index);
+            onChanged();
+          } else {
+            removedBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getRemovedBuilder(
+            int index) {
+          return getRemovedFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
+            int index) {
+          if (removedBuilder_ == null) {
+            return removed_.get(index);  } else {
+            return removedBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+             getRemovedOrBuilderList() {
+          if (removedBuilder_ != null) {
+            return removedBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(removed_);
+          }
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder() {
+          return getRemovedFieldBuilder().addBuilder(
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder(
+            int index) {
+          return getRemovedFieldBuilder().addBuilder(
+              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
+             getRemovedBuilderList() {
+          return getRemovedFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+            getRemovedFieldBuilder() {
+          if (removedBuilder_ == null) {
+            removedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
+                    removed_,
+                    ((bitField0_ & 0x00000004) != 0),
+                    getParentForChildren(),
+                    isClean());
+            removed_ = null;
+          }
+          return removedBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.DependencyUpdate)
+      }
+
+      // @@protoc_insertion_point(class_scope:Models.CommitInfo.DependencyUpdate)
+      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate();
+      }
+
+      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DependencyUpdate>
+          PARSER = new com.google.protobuf.AbstractParser<DependencyUpdate>() {
+        @java.lang.Override
+        public DependencyUpdate parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DependencyUpdate(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DependencyUpdate> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DependencyUpdate> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int COUNTER_FIELD_NUMBER = 4;
     private long counter_;
     /**
@@ -2083,6 +4651,29 @@ public final class CommitInfoOuterClass {
       return isTypeChangeReported_;
     }
 
+    public static final int UPDATE_FIELD_NUMBER = 9;
+    private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate update_;
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     * @return Whether the update field is set.
+     */
+    public boolean hasUpdate() {
+      return update_ != null;
+    }
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     * @return The update.
+     */
+    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getUpdate() {
+      return update_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : update_;
+    }
+    /**
+     * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+     */
+    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getUpdateOrBuilder() {
+      return getUpdate();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2123,6 +4714,9 @@ public final class CommitInfoOuterClass {
       }
       if (dependenciesUpdated_ != false) {
         output.writeBool(8, dependenciesUpdated_);
+      }
+      if (update_ != null) {
+        output.writeMessage(9, getUpdate());
       }
       unknownFields.writeTo(output);
     }
@@ -2169,6 +4763,10 @@ public final class CommitInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, dependenciesUpdated_);
       }
+      if (update_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getUpdate());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2203,6 +4801,11 @@ public final class CommitInfoOuterClass {
           .equals(other.getException())) return false;
       if (getIsTypeChangeReported()
           != other.getIsTypeChangeReported()) return false;
+      if (hasUpdate() != other.hasUpdate()) return false;
+      if (hasUpdate()) {
+        if (!getUpdate()
+            .equals(other.getUpdate())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2239,6 +4842,10 @@ public final class CommitInfoOuterClass {
       hash = (37 * hash) + ISTYPECHANGEREPORTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTypeChangeReported());
+      if (hasUpdate()) {
+        hash = (37 * hash) + UPDATE_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdate().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2418,6 +5025,12 @@ public final class CommitInfoOuterClass {
 
         isTypeChangeReported_ = false;
 
+        if (updateBuilder_ == null) {
+          update_ = null;
+        } else {
+          update_ = null;
+          updateBuilder_ = null;
+        }
         return this;
       }
 
@@ -2466,6 +5079,11 @@ public final class CommitInfoOuterClass {
         result.dependenciesUpdated_ = dependenciesUpdated_;
         result.exception_ = exception_;
         result.isTypeChangeReported_ = isTypeChangeReported_;
+        if (updateBuilder_ == null) {
+          result.update_ = update_;
+        } else {
+          result.update_ = updateBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2561,6 +5179,9 @@ public final class CommitInfoOuterClass {
         }
         if (other.getIsTypeChangeReported() != false) {
           setIsTypeChangeReported(other.getIsTypeChangeReported());
+        }
+        if (other.hasUpdate()) {
+          mergeUpdate(other.getUpdate());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3315,6 +5936,125 @@ public final class CommitInfoOuterClass {
         onChanged();
         return this;
       }
+
+      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate update_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> updateBuilder_;
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       * @return Whether the update field is set.
+       */
+      public boolean hasUpdate() {
+        return updateBuilder_ != null || update_ != null;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       * @return The update.
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getUpdate() {
+        if (updateBuilder_ == null) {
+          return update_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : update_;
+        } else {
+          return updateBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public Builder setUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
+        if (updateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          update_ = value;
+          onChanged();
+        } else {
+          updateBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public Builder setUpdate(
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder builderForValue) {
+        if (updateBuilder_ == null) {
+          update_ = builderForValue.build();
+          onChanged();
+        } else {
+          updateBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public Builder mergeUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
+        if (updateBuilder_ == null) {
+          if (update_ != null) {
+            update_ =
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.newBuilder(update_).mergeFrom(value).buildPartial();
+          } else {
+            update_ = value;
+          }
+          onChanged();
+        } else {
+          updateBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public Builder clearUpdate() {
+        if (updateBuilder_ == null) {
+          update_ = null;
+          onChanged();
+        } else {
+          update_ = null;
+          updateBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder getUpdateBuilder() {
+        
+        onChanged();
+        return getUpdateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getUpdateOrBuilder() {
+        if (updateBuilder_ != null) {
+          return updateBuilder_.getMessageOrBuilder();
+        } else {
+          return update_ == null ?
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : update_;
+        }
+      }
+      /**
+       * <code>.Models.CommitInfo.DependencyUpdate update = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> 
+          getUpdateFieldBuilder() {
+        if (updateBuilder_ == null) {
+          updateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder>(
+                  getUpdate(),
+                  getParentForChildren(),
+                  isClean());
+          update_ = null;
+        }
+        return updateBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3388,6 +6128,16 @@ public final class CommitInfoOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Models_CommitInfo_JarInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Models_CommitInfo_DependencyPair_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3397,21 +6147,30 @@ public final class CommitInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020CommitInfo.proto\022\006Models\"\356\003\n\nCommitInf" +
+      "\n\020CommitInfo.proto\022\006Models\"\340\006\n\nCommitInf" +
       "o\022\017\n\007counter\030\004 \001(\003\022\013\n\003sha\030\005 \001(\t\022-\n\010fileD" +
       "iff\030\003 \001(\0132\033.Models.CommitInfo.FileDiff\022:" +
       "\n\014refactorings\030\002 \003(\0132$.Models.CommitInfo" +
       ".RefactoringsEntry\0220\n\014dependencies\030\001 \003(\013" +
       "2\032.Models.CommitInfo.JarInfo\022\033\n\023dependen" +
       "ciesUpdated\030\010 \001(\010\022\021\n\texception\030\006 \001(\t\022\034\n\024" +
-      "isTypeChangeReported\030\007 \001(\010\0323\n\021Refactorin" +
-      "gsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\032" +
-      "a\n\010FileDiff\022\025\n\rfilesModified\030\001 \001(\003\022\022\n\nfi" +
-      "lesAdded\030\002 \001(\003\022\024\n\014filesRemoved\030\003 \001(\003\022\024\n\014" +
-      "filesRenamed\030\004 \001(\003\032?\n\007JarInfo\022\022\n\nartifac" +
-      "tID\030\001 \001(\t\022\017\n\007groupID\030\003 \001(\t\022\017\n\007version\030\002 " +
-      "\001(\tB$\n\"com.t2r.common.models.refactoring" +
-      "sb\006proto3"
+      "isTypeChangeReported\030\007 \001(\010\0223\n\006update\030\t \001" +
+      "(\0132#.Models.CommitInfo.DependencyUpdate\032" +
+      "3\n\021RefactoringsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\003:\0028\001\032a\n\010FileDiff\022\025\n\rfilesModifie" +
+      "d\030\001 \001(\003\022\022\n\nfilesAdded\030\002 \001(\003\022\024\n\014filesRemo" +
+      "ved\030\003 \001(\003\022\024\n\014filesRenamed\030\004 \001(\003\032?\n\007JarIn" +
+      "fo\022\022\n\nartifactID\030\001 \001(\t\022\017\n\007groupID\030\003 \001(\t\022" +
+      "\017\n\007version\030\002 \001(\t\032g\n\016DependencyPair\022*\n\006be" +
+      "fore\030\001 \001(\0132\032.Models.CommitInfo.JarInfo\022)" +
+      "\n\005after\030\002 \001(\0132\032.Models.CommitInfo.JarInf" +
+      "o\032\321\001\n\020DependencyUpdate\0221\n\006update\030\003 \003(\0132!" +
+      ".Models.CommitInfo.DependencyPair\0222\n\007rep" +
+      "lace\030\004 \001(\0132!.Models.CommitInfo.Dependenc" +
+      "yPair\022)\n\005added\030\001 \003(\0132\032.Models.CommitInfo" +
+      ".JarInfo\022+\n\007removed\030\002 \003(\0132\032.Models.Commi" +
+      "tInfo.JarInfoB$\n\"com.t2r.common.models.r" +
+      "efactoringsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3422,7 +6181,7 @@ public final class CommitInfoOuterClass {
     internal_static_Models_CommitInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Models_CommitInfo_descriptor,
-        new java.lang.String[] { "Counter", "Sha", "FileDiff", "Refactorings", "Dependencies", "DependenciesUpdated", "Exception", "IsTypeChangeReported", });
+        new java.lang.String[] { "Counter", "Sha", "FileDiff", "Refactorings", "Dependencies", "DependenciesUpdated", "Exception", "IsTypeChangeReported", "Update", });
     internal_static_Models_CommitInfo_RefactoringsEntry_descriptor =
       internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(0);
     internal_static_Models_CommitInfo_RefactoringsEntry_fieldAccessorTable = new
@@ -3441,6 +6200,18 @@ public final class CommitInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Models_CommitInfo_JarInfo_descriptor,
         new java.lang.String[] { "ArtifactID", "GroupID", "Version", });
+    internal_static_Models_CommitInfo_DependencyPair_descriptor =
+      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(3);
+    internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Models_CommitInfo_DependencyPair_descriptor,
+        new java.lang.String[] { "Before", "After", });
+    internal_static_Models_CommitInfo_DependencyUpdate_descriptor =
+      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(4);
+    internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Models_CommitInfo_DependencyUpdate_descriptor,
+        new java.lang.String[] { "Update", "Replace", "Added", "Removed", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

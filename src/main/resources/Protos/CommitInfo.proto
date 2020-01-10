@@ -15,6 +15,7 @@ message CommitInfo{
    bool dependenciesUpdated = 8;
    string exception = 6;
    bool isTypeChangeReported = 7;
+   DependencyUpdate update = 9;
 
    message FileDiff{
        int64 filesModified = 1;
@@ -28,4 +29,19 @@ message CommitInfo{
       string groupID = 3;
       string version = 2;
    }
+
+   message DependencyPair {
+       JarInfo before = 1;
+       JarInfo after = 2;
+
+   }
+
+   message DependencyUpdate{
+        repeated DependencyPair update = 3;
+        DependencyPair replace = 4;
+        repeated JarInfo added = 1;
+        repeated JarInfo removed = 2;
+   }
+
+
 }
