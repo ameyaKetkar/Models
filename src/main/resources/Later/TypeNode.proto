@@ -40,3 +40,4 @@ message TypeNode {
 //protoc -I=/Users/ameya/RefactoringMiner/src/Protos --java_out=/Users/ameya/RefactoringMiner/src/ /Users/ameya/RefactoringMiner/src/Protos/*
 //protoc -I=/Users/ameya/TypeChangeStudy/Models/src/main/resources/Protos --java_out=/Users/ameya/TypeChangeStudy/Models/src/main/java/ /Users/ameya/TypeChangeStudy/Models/src/main/resources/Protos/*
 // protoc -I=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos --java_out=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/java/ /Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos/*
+//protoc -I=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos --python_out=/Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/ /Users/ameya/TypeChangeStudy/SimpleTypeChangeMiner/Models/src/main/resources/Protos/*
