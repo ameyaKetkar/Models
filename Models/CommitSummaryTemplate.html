@@ -94,23 +94,22 @@
                 <thead>
                 <tr>
                     <th scope="col">SHA</th>
-                    <th scope="col">Files Added</th>
-                    <th scope="col">Files Removed</th>
-                    <th scope="col">Files Renamed</th>
-                    <th scope="col">Files Modified</th>
                     <th scope="col">Number of Jars</th>
                     <th scope="col">Number of Refactorings</th>
+                    <th scope="col">Type Change reported</th>
                 </tr>
                 </thead>
                 {% for c in commits %}
                 <tr>
+                    {% if c.refactoringsLink %}
+                    <td><a href="{{c.refactoringsLink}}">{{c.sha}}</a></td>
+                    {% else %}
                     <td>{{c.sha}}</td>
-                    <td>{{c.filesAdded}}</td>
-                    <td>{{c.filesRemoved}}</td>
-                    <td>{{c.filesRenamed}}</td>
-                    <td>{{c.filesModified}}</td>
+                    {% endif %}
                     <td>{{c.noOfJars}}</td>
-                    <td><a href="{{c.refactoringsLink}}">{{c.noOfRefactoring}}</a></td>
+                    <td>{{c.noOfRefactoring}}</td>
+                    <td>{{c.typeChangeFound}}</td>
+                    <td>{{c.isException}}</td>
                 </tr>
                 {% endfor %}
             </table>
