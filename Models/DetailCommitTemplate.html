@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>TypeChanges-Projects</title>
+    <title>{{projectName}} {{sha}}</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -24,26 +24,26 @@
     ================================================== -->
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <!-- Template styles-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <!-- Responsive styles-->
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <!-- Animation -->
-    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../../css/animate.css">
     <!-- Prettyphoto -->
-    <link rel="stylesheet" href="../css/prettyPhoto.css">
+    <link rel="stylesheet" href="../../css/prettyPhoto.css">
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../../css/owl.carousel.css">
+    <link rel="stylesheet" href="../../css/owl.theme.css">
     <!-- Flexslider -->
-    <link rel="stylesheet" href="../css/flexslider.css">
+    <link rel="stylesheet" href="../../css/flexslider.css">
     <!-- Flexslider -->
-    <link rel="stylesheet" href="../css/cd-hero.css">
+    <link rel="stylesheet" href="../../css/cd-hero.css">
     <!-- Style Swicther -->
-    <link id="style-switch" href="../css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+    <link id="style-switch" href="../../css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -70,8 +70,9 @@
                 </div><!--/ Logo end -->
                 <nav class="collapse navbar-collapse clearfix" role="navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html"><p class="text-danger">Home</p></a></li>
-                        <li><a href="examples1.html"><p class="text-danger">Examples</p></a></li>
+                        <li><a href="../../index.html"><p class="text-danger">Home</p></a></li>
+                        <li><a href="../{{projectName}}.html"><p class="text-danger">{{projectName}}</p></a></li>
+                        <!--<li><a href="examples1.html"><p class="text-danger">Examples</p></a></li>-->
                     </ul>
                 </nav><!--/ Navigation end -->
             </div><!--/ Row end -->
@@ -115,6 +116,57 @@
                         <li>{{dep.name}}</li>
                         {% endfor %}
                     </ul>
+                    <table class="table table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">Dependency Action</th>
+                        </tr>
+                        </thead>
+                        {% if Added %}
+                        <tbody>
+                        <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{Addednum}}" aria-expanded="false" aria-controls="group-of-rows-1">
+                            <td>Added</td>
+                        </tr>
+                        </tbody>
+                        <tbody id="group-of-rows-{{Addednum}}" class="collapse">
+                        {% for a in Added %}
+                        <tr>
+                            <td><i>{{a.name}}</i></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        {% endif %}
+
+                        {% if Removed %}
+                        <tbody>
+                        <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{RemovedNum}}" aria-expanded="false" aria-controls="group-of-rows-1">
+                            <td>Removed</td>
+                        </tr>
+                        </tbody>
+                        <tbody id="group-of-rows-{{RemovedNum}}" class="collapse">
+                        {% for a in Removed %}
+                        <tr>
+                            <td><i>{{a.name}}</i></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        {% endif %}
+
+                        {% if Updated %}
+                        <tbody>
+                        <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{UpdatedNum}}" aria-expanded="false" aria-controls="group-of-rows-1">
+                            <td>Updated</td>
+                        </tr>
+                        </tbody>
+                        <tbody id="group-of-rows-{{UpdatedNum}}" class="collapse">
+                        {% for a in Updated %}
+                        <tr>
+                            <td><i>{{a.name}}</i></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        {% endif %}
+                    </table>
                 </div>
         </div>
     </div>
@@ -159,34 +211,34 @@
 
 
     <!-- initialize jQuery Library -->
-    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
     <!-- Bootstrap jQuery -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <!-- Style Switcher -->
-    <script type="text/javascript" src="../js/style-switcher.js"></script>
+    <script type="text/javascript" src="../../js/style-switcher.js"></script>
     <!-- Owl Carousel -->
-    <script type="text/javascript" src="../js/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../js/owl.carousel.js"></script>
     <!-- PrettyPhoto -->
-    <script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="../../js/jquery.prettyPhoto.js"></script>
     <!-- Bxslider -->
-    <script type="text/javascript" src="../js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
     <!-- CD Hero slider -->
-    <script type="text/javascript" src="../js/cd-hero.js"></script>
+    <script type="text/javascript" src="../../js/cd-hero.js"></script>
     <!-- Isotope -->
-    <script type="text/javascript" src="../js/isotope.js"></script>
-    <script type="text/javascript" src="../js/ini.isotope.js"></script>
+    <script type="text/javascript" src="../../js/isotope.js"></script>
+    <script type="text/javascript" src="../../js/ini.isotope.js"></script>
     <!-- Wow Animation -->
-    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../../js/wow.min.js"></script>
     <!-- SmoothScroll -->
-    <script type="text/javascript" src="../js/smoothscroll.js"></script>
+    <script type="text/javascript" src="../../js/smoothscroll.js"></script>
     <!-- Eeasing -->
-    <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
     <!-- Counter -->
-    <script type="text/javascript" src="../js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.counterup.min.js"></script>
     <!-- Waypoints -->
-    <script type="text/javascript" src="../js/waypoints.min.js"></script>
+    <script type="text/javascript" src="../../js/waypoints.min.js"></script>
     <!-- Template custom -->
-    <script type="text/javascript" src="../js/custom.js"></script>
+    <script type="text/javascript" src="../../js/custom.js"></script>
 </div><!-- Body inner end -->
 </body>
 </html>
