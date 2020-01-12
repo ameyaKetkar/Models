@@ -131,10 +131,21 @@
                             </tr>
                             </thead>
                             {% for r in refactorings %}
-                            <tr>
+                            <tbody>
+                            <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{r.num}}" aria-expanded="false" aria-controls="group-of-rows-1">
                                 <td>{{r.name}}</td>
                                 <td>{{r.occurence}}</td>
                             </tr>
+                            </tbody>
+                            <tbody id="group-of-rows-{{r.num}}" class="collapse">
+                            {% for x in r.descriptions %}
+                            <tr>
+                                <td><i>{{x.description}}</i></td>
+                                <td><a href = "{{x.frm}}">From</a></td>
+                                <td><a href = "{{x.to}}">To</a></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
                             {% endfor %}
                         </table>
                 </div>

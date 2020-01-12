@@ -31,7 +31,16 @@ for p in projects:
                                   isException='Yes' if (cmt.exception is not '') else 'No'))
 
         for ref in cmt.refactorings:
-            refactorings.append(dict(name=ref.name, occurence=ref.occurences))
+            descrptions = []
+            # print(type(ref.descriptionAndurl))
+            for k,v in ref.descriptionAndurl.items():
+                descrptions.append(dict(description=k, frm=v.lhs, to=v.rhs))
+            if descrptions is []:
+                refactorings.append(dict(name=ref.name, occurence=ref.occurences, num = 0))
+            else:
+                refactorings.append(dict(name=ref.name, occurence=ref.occurences, descriptions=descrptions, num=len(descrptions)))
+
+
         for dep in cmt.dependencies:
             dependencies.append(dict(name=dep.artifactID+":"+dep.groupID+":"+dep.version))
 
