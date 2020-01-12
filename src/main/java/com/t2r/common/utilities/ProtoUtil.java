@@ -8,6 +8,9 @@ import static java.nio.file.Files.readAllBytes;
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
 
+import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
+import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
+
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
@@ -30,7 +33,7 @@ public class ProtoUtil {
      */
     public static Function<Path,Path> folderName(String kind){
         switch (kind){
-            case "RMined" : return p -> p.resolve("RMined");
+//            case "RMined" : return p -> p.resolve("RMined");
             default: return p -> p;
         }
     }
@@ -43,6 +46,8 @@ public class ProtoUtil {
      */
     public static <T> CheckedFunction1<CodedInputStream,T> parser(String kind){
         switch (kind){
+            case "Project" : return p -> (T) Project.parseFrom(p);
+            case "CommitInfo" : return p -> (T) CommitInfo.parseFrom(p);
 //            case "RMined" : return c -> (T) RMined.parseFrom(c);
             default: return c -> null;
         }
@@ -118,7 +123,9 @@ public class ProtoUtil {
                                     .getOrElse(1);
                         }).sum();
 
-                System.out.println("Could not read " + notReadCounter + "messages in the file " + fileName);
+                if(notReadCounter>0)
+                    System.out.println("Could not read " + notReadCounter + " messages in the file " + fileName);
+
                 return msgs;
 
             }else{
