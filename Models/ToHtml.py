@@ -80,7 +80,7 @@ for p in projects:
                     detailedCommmitTemplate.render(sha=cmt.sha, filesAdded=cmt.fileDiff.filesAdded,
                                                    filesRemoved=cmt.fileDiff.filesRemoved,
                                                    filesRenamed=cmt.fileDiff.filesRenamed,
-                                                   filesModiefied=cmt.fileDiff.filesModified,
+                                                   filesModified=cmt.fileDiff.filesModified,
                                                    refactorings=refactorings,
                                                    dependencies=dependencies, projectName=p.name,
                                                    Added=added if added is not [] else None,
