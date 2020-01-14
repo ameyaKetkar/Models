@@ -126,11 +126,13 @@
                         <tbody>
                         <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{Addednum}}" aria-expanded="false" aria-controls="group-of-rows-1">
                             <td>Added</td>
+                            <td><i class="fa fa-plus" aria-hidden="true"></i></td>
                         </tr>
                         </tbody>
                         <tbody id="group-of-rows-{{Addednum}}" class="collapse">
                         {% for a in Added %}
                         <tr>
+                            <td></td>
                             <td><i>{{a.name}}</i></td>
                         </tr>
                         {% endfor %}
@@ -141,11 +143,13 @@
                         <tbody>
                         <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{RemovedNum}}" aria-expanded="false" aria-controls="group-of-rows-1">
                             <td>Removed</td>
+                            <td><i class="fa fa-plus" aria-hidden="true"></i></td>
                         </tr>
                         </tbody>
                         <tbody id="group-of-rows-{{RemovedNum}}" class="collapse">
                         {% for a in Removed %}
                         <tr>
+                            <td></td>
                             <td><i>{{a.name}}</i></td>
                         </tr>
                         {% endfor %}
@@ -155,12 +159,14 @@
                         {% if Updated %}
                         <tbody>
                         <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{UpdatedNum}}" aria-expanded="false" aria-controls="group-of-rows-1">
+                            <td><i class="fa fa-plus" aria-hidden="true"></i></td>
                             <td>Updated</td>
                         </tr>
                         </tbody>
                         <tbody id="group-of-rows-{{UpdatedNum}}" class="collapse">
                         {% for a in Updated %}
                         <tr>
+                            <td></td>
                             <td><i>{{a.name}}</i></td>
                         </tr>
                         {% endfor %}
@@ -178,6 +184,7 @@
                         <table class="table table-dark">
                             <thead>
                             <tr>
+                                <th scope="col"></th>
                                 <th scope="col">Refactoring Name</th>
                                 <th scope="col">Occurences</th>
                             </tr>
@@ -185,6 +192,7 @@
                             {% for r in refactorings %}
                             <tbody>
                             <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-{{r.num}}" aria-expanded="false" aria-controls="group-of-rows-1">
+                                <td><i class="fa fa-plus" aria-hidden="true"></i></td>
                                 <td>{{r.name}}</td>
                                 <td>{{r.occurence}}</td>
                             </tr>
@@ -192,6 +200,7 @@
                             <tbody id="group-of-rows-{{r.num}}" class="collapse">
                             {% for x in r.descriptions %}
                             <tr>
+                                <td></td>
                                 <td><i>{{x.description}}</i></td>
                                 <td><a href = "{{x.frm}}">From</a></td>
                                 <td><a href = "{{x.to}}">To</a></td>

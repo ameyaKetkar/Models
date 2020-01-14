@@ -6,11 +6,13 @@ import os
 
 pathToPages = os.path.join(os.path.dirname(os.path.realpath('__file__')), "../../docs/Pages")
 pathToProjectsHtml = os.path.join(pathToPages, "../../docs/Pages/projects.html")
+pathToIndexFile = os.path.join(pathToPages, "../../docs/index.html")
 
 env = Environment(loader=FileSystemLoader(os.path.dirname(os.path.realpath('__file__'))))
 template = env.get_template("ProjectTemplate.html")
 commmitTemplate = env.get_template("CommitSummaryTemplate.html")
 detailedCommmitTemplate = env.get_template("DetailCommitTemplate.html")
+indexTemplate = env.get_template("IndexTemplate.html")
 
 projects = RW.readProject('projects')
 items = []
@@ -22,7 +24,10 @@ try:
 except OSError:
     print("Could not make directory")
 
+noOfProjects, noOfCommits, noOfRefactorings, noOfTypeChanges = 0, 0, 0, 0
+
 for p in projects:
+    noOfProjects += 1
     commits = RW.readCommit('commits_' + p.name)
     l = str(len(commits))
     d = dict(name=p.name, Url=p.url, totalCommits=p.totalCommits, CommitsAnalyzed=l,
@@ -30,6 +35,7 @@ for p in projects:
     items.append(d)
     commitSummary = []
     for cmt in commits:
+        noOfCommits += 1
         r = sum(list(map(lambda r: r.occurences, cmt.refactorings)))
         refactorings = []
         dependencies = []
@@ -60,16 +66,22 @@ for p in projects:
                                   isException='Yes' if (cmt.exception is not '') else 'No'))
 
         for ref in cmt.refactorings:
+            noOfRefactorings += ref.occurences
+            if ref.name.startswith('Change Parameter Type') or ref.name.startswith('Change Variable Type') or ref.name.startswith('Change Return Type') or ref.name.startswith('Change Attribute Type'):
+                noOfTypeChanges += ref.occurences
             descrptions = []
             # print(type(ref.descriptionAndurl))
             for k, v in ref.descriptionAndurl.items():
+
                 descrptions.append(dict(description=k, frm=v.lhs, to=v.rhs))
+
             if descrptions is []:
                 refactorings.append(dict(name=ref.name, occurence=ref.occurences, num=0))
             else:
                 refactorings.append(
                     dict(name=ref.name, occurence=ref.occurences, descriptions=descrptions,
                          num=len(descrptions)))
+
 
         if len(refactorings) > 0 or depChanged:
             pathToCommitsInProject = os.path.join(pathToPages, p.name)
@@ -90,12 +102,21 @@ for p in projects:
                                                    Updated=updated if updated is not [] else None,
                                                    UpdatedNum=len(updated)))
                 fh.write('\n')
+                fh.close()
 
     pathToProjectCommits = os.path.join(pathToPages, p.name + ".html")
     with open(pathToProjectCommits, 'a') as fh:
         fh.write(commmitTemplate.render(projectName=p.name, commits=commitSummary))
         fh.write('\n')
+        fh.close()
 
 with open(pathToProjectsHtml, 'a') as fh:
     fh.write(template.render(projects=items))
     fh.write('\n')
+    fh.close()
+
+
+with open(pathToIndexFile, 'w+') as f:
+    f.write(indexTemplate.render(NumberOfProjects = noOfProjects, NumberOfCommits = noOfCommits, NoOfRefactoring=noOfRefactorings,NumberOfTypeChanges= noOfTypeChanges ))
+    f.write('\n')
+    f.close()

@@ -91,7 +91,7 @@
                     <h2 class="title classic">Commits of {{projectName}}</h2>
                 </div>
             </div><!-- Title row end -->
-            <table class="table table-dark", id = {{projectName}}>
+            <table class="table table-dark" , id = {{projectName}}>
                 <thead>
                 <tr>
                     <th scope="col">SHA</th>
@@ -126,14 +126,12 @@
     </section><!--/ Main container end -->
 
     <script src="../tablefilter/tablefilter.js"></script>
+    <!--base_path: '../tablefilter/',-->
     <script>
         var tf = new TableFilter('{{projectName}}', {
-        base_path: 'tablefilter/',
-        loader: true,
         col_types: [
             'string', 'number', 'number',
-            'number', 'number', 'number',
-            'number']
+            'string', 'string', 'string']
         });
         tf.init();
     </script>
