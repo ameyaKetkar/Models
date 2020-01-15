@@ -100,6 +100,7 @@
                     <th scope="col">Type Change reported</th>
                     <th scope="col">Dependencies Changed</th>
                     <th scope="col">Any Exception?</th>
+                    <th scope="col">Exception</th>
                 </tr>
                 </thead>
                 {% for c in commits %}
@@ -114,6 +115,7 @@
                     <td>{{c.typeChangeFound}}</td>
                     <td>{{c.dependenciesChanged}}</td>
                     <td>{{c.isException}}</td>
+                    <td>{{c.exception}}</td>
                 </tr>
                 {% endfor %}
             </table>

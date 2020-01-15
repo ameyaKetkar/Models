@@ -4,14 +4,18 @@ import os
 from google.protobuf.internal.decoder import _DecodeVarint32
 
 def readFile(filename):
-    filehandle = open(filename)
-    s = filehandle.read()
-    filehandle.close()
-    return s
+    try:
+        filehandle = open(filename)
+        s = filehandle.read()
+        filehandle.close()
+        return s
+    except:
+        print(filename,  ' Not found')
+        return ''
 
 def readProject(fileName):
     fileDir = os.path.dirname(os.path.realpath('__file__'))
-    sizes = list(map(lambda s: int(s),filter(lambda s: s is not '', readFile(os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + 'BinSize.txt')).split(" "))))
+    sizes = list(map(lambda s: int(s),filter(lambda s: s != '', readFile(os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + 'BinSize.txt')).split(" "))))
     print(sizes)
     buf = os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + '.txt')
     l = []
@@ -22,14 +26,24 @@ def readProject(fileName):
             msg_buf = buf[n:n+s]
             n += s
             prj = p.Project()
-            prj.ParseFromString(msg_buf)
-            l.append(prj)
+            try:
+                prj.ParseFromString(msg_buf)
+                if prj.name != '':
+                    l.append(prj)
+                else:
+                    print("Project with no name? ")
+            except :
+                print("Could not Read project name ")
+
+
     return l
 
 
 def readCommit(fileName):
     fileDir = os.path.dirname(os.path.realpath('__file__'))
-    sizes = list(map(lambda s: int(s),filter(lambda s: s is not '', readFile(os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + 'BinSize.txt')).split(" "))))
+    sizes = list(map(lambda s: int(s),filter(lambda s: s != '', readFile(os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + 'BinSize.txt')).split(" "))))
+    if len(sizes) == 0:
+        print(fileName, " Not found")
     buf = os.path.join(fileDir, '../../Output/ProtosOut/' + fileName + '.txt')
     l = []
     with open(buf, 'rb') as f:

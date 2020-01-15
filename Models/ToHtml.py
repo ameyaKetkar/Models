@@ -1,5 +1,5 @@
 import shutil
-
+import html
 import RW
 from jinja2 import Environment, FileSystemLoader
 import os
@@ -24,7 +24,7 @@ try:
 except OSError:
     print("Could not make directory")
 
-noOfProjects, noOfCommits, noOfRefactorings, noOfTypeChanges = 0, 0, 0, 0
+noOfProjects, noOfCommits, noOfRefactorings, noOfTypeChanges, noOfCommitsException = 0, 0, 0, 0, 0
 
 for p in projects:
     noOfProjects += 1
@@ -63,17 +63,22 @@ for p in projects:
                                   noOfRefactoring=str(r),
                                   typeChangeFound='Yes' if cmt.isTypeChangeReported else 'No',
                                   dependenciesChanged='Yes' if depChanged else 'No',
-                                  isException='Yes' if (cmt.exception is not '') else 'No'))
+                                  isException='Yes' if (cmt.exception != '') else 'No',
+                                  exception=cmt.exception if cmt.exception != '' else '-'))
+
+        if cmt.exception != '':
+            noOfCommitsException += 1
 
         for ref in cmt.refactorings:
             noOfRefactorings += ref.occurences
-            if ref.name.startswith('Change Parameter Type') or ref.name.startswith('Change Variable Type') or ref.name.startswith('Change Return Type') or ref.name.startswith('Change Attribute Type'):
+            if ref.name.startswith('Change Parameter Type') or ref.name.startswith(
+                    'Change Variable Type') or ref.name.startswith('Change Return Type') or ref.name.startswith(
+                'Change Attribute Type'):
                 noOfTypeChanges += ref.occurences
             descrptions = []
             # print(type(ref.descriptionAndurl))
             for k, v in ref.descriptionAndurl.items():
-
-                descrptions.append(dict(description=k, frm=v.lhs, to=v.rhs))
+                descrptions.append(dict(description=html.escape(k), frm=v.lhs, to=v.rhs))
 
             if descrptions is []:
                 refactorings.append(dict(name=ref.name, occurence=ref.occurences, num=0))
@@ -81,7 +86,6 @@ for p in projects:
                 refactorings.append(
                     dict(name=ref.name, occurence=ref.occurences, descriptions=descrptions,
                          num=len(descrptions)))
-
 
         if len(refactorings) > 0 or depChanged:
             pathToCommitsInProject = os.path.join(pathToPages, p.name)
@@ -115,8 +119,9 @@ with open(pathToProjectsHtml, 'a') as fh:
     fh.write('\n')
     fh.close()
 
-
 with open(pathToIndexFile, 'w+') as f:
-    f.write(indexTemplate.render(NumberOfProjects = noOfProjects, NumberOfCommits = noOfCommits, NoOfRefactoring=noOfRefactorings,NumberOfTypeChanges= noOfTypeChanges ))
+    f.write(indexTemplate.render(NumberOfProjects=noOfProjects, NumberOfCommits=noOfCommits,
+                                 NoOfRefactoring=noOfRefactorings, NumberOfTypeChanges=noOfTypeChanges,
+                                 NumberOfExceptionCommits=noOfCommitsException))
     f.write('\n')
     f.close()
