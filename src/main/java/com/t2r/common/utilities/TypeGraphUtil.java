@@ -1,11 +1,12 @@
 package com.t2r.common.utilities;
 
 
+import com.t2r.common.models.ast.TypFct;
 import com.t2r.common.models.ast.TypeGraphOuterClass.TypeGraph;
 import com.t2r.common.models.ast.TypeGraphOuterClass.TypeGraph.Builder;
 import com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode;
 import com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind;
-import gr.uom.java.xmi.TypeFactMiner.TypFct;
+
 import org.eclipse.jdt.core.dom.*;
 
 import java.util.ArrayList;
@@ -13,8 +14,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
+import static com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Primitive;
 import static com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple;
-import static gr.uom.java.xmi.TypeFactMiner.Models.TypeNodeOuterClass.TypeNode.TypeKind.*;
 import static java.util.stream.Collectors.*;
 
 public class TypeGraphUtil {
@@ -168,7 +169,7 @@ public class TypeGraphUtil {
         final List<Annotation> ann = pt.annotations();
         final List<String> annotation = ann.stream().map(a -> "@" + a.getTypeName().getFullyQualifiedName())
                 .collect(toList());
-        return of(getTypeNode(pt.getPrimitiveTypeCode().toString(), annotation, TypeKind.Primitive));
+        return of(getTypeNode(pt.getPrimitiveTypeCode().toString(), annotation, Primitive));
     }
 
     private static TypeGraph getTypeGraph(ArrayType at){
