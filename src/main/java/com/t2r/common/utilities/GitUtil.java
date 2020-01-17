@@ -1,5 +1,7 @@
 package com.t2r.common.utilities;
 
+import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
+import static com.t2r.common.utilities.FileUtils.createIfAbsent;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -48,6 +50,7 @@ public class GitUtil {
      * @return Git repository
      */
     public static Try<Git> tryToClone(String cloneLink, Path path) {
+        createFolderIfAbsent(path);
         return Try.of(() -> Git.open(path.toFile()))
                 .onFailure(e -> System.out.println("Did not find " + cloneLink + " at" + path.toString()))
                 .orElse(Try.of(() ->

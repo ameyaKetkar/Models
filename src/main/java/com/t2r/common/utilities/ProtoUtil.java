@@ -133,5 +133,9 @@ public class ProtoUtil {
                 return msgs;
             }
         }
+        public <T> Try<T> read(String fileName, String kind){
+            return Try.of(() -> ProtoUtil.<T>parser(kind)
+                    .apply(CodedInputStream.newInstance(readAllBytes(outputDir.resolve(fileName + ".txt")))));
+        }
     }
 }
