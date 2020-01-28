@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package Models;
+
+import "TypeGraph.proto";
+
+option java_package = "com.t2r.common.models.refactorings";
+
+message TypeChangeAnalysis {
+
+       repeated TypeChangeInstance typeChangeInstances= 1;
+       TypeGraph b4 = 2;
+       TypeGraph aftr = 3;
+       string nameSpaces = 4; // Internal -> External ....
+       string typeSem = 5; // Object -> Enum, Object -> Object ...
+       MigrationAnalysis migrationInfo = 13;
+       bool withinSamePackage = 6;
+       // if typeKind not like %Primitive%
+       string hierarchyRelation = 7;
+       bool b4ComposesAfter = 8;
+
+       PrimitiveAnalysis primitiveInfo = 9;
+
+       message MigrationAnalysis {
+           bool isTypeMigration = 1;
+           string typeMigrationLevel  = 2; // Project, Package, Cu, Type, Method
+           bool cannotBeMigrated = 3;
+           bool isB4Removed = 4;
+       }
+
+       message TypeChangeInstance{
+           string elementKindAffected = 1;
+           string visibility = 2;
+           string syntacticUpdate = 3;
+           string compilationUnit = 4;
+       }
+
+       message PrimitiveAnalysis {
+           bool widening = 1;
+           bool narrowing = 2;
+           bool unboxing = 3;
+           bool boxing = 4;
+       }
+}
