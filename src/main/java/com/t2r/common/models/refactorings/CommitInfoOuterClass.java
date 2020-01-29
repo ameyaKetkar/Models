@@ -15,7 +15,7 @@ public final class CommitInfoOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface CommitInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Models.CommitInfo)
+      // @@protoc_insertion_point(interface_extends:CommitInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -37,64 +37,64 @@ public final class CommitInfoOuterClass {
         getShaBytes();
 
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      * @return Whether the fileDiff field is set.
      */
     boolean hasFileDiff();
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      * @return The fileDiff.
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff();
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder();
 
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring> 
         getRefactoringsList();
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring getRefactorings(int index);
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     int getRefactoringsCount();
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder> 
         getRefactoringsOrBuilderList();
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder getRefactoringsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
         getDependenciesList();
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index);
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     int getDependenciesCount();
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
         getDependenciesOrBuilderList();
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
         int index);
@@ -118,26 +118,26 @@ public final class CommitInfoOuterClass {
     boolean getIsTypeChangeReported();
 
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      * @return Whether the dependencyUpdate field is set.
      */
     boolean hasDependencyUpdate();
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      * @return The dependencyUpdate.
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate();
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      */
     com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder();
   }
   /**
-   * Protobuf type {@code Models.CommitInfo}
+   * Protobuf type {@code CommitInfo}
    */
   public  static final class CommitInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Models.CommitInfo)
+      // @@protoc_insertion_point(message_implements:CommitInfo)
       CommitInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use CommitInfo.newBuilder() to construct.
@@ -275,19 +275,19 @@ public final class CommitInfoOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_descriptor;
+      return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_fieldAccessorTable
+      return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder.class);
     }
 
     public interface FileDiffOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.FileDiff)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.FileDiff)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -315,11 +315,11 @@ public final class CommitInfoOuterClass {
       long getFilesRenamed();
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.FileDiff}
+     * Protobuf type {@code CommitInfo.FileDiff}
      */
     public  static final class FileDiff extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.FileDiff)
+        // @@protoc_insertion_point(message_implements:CommitInfo.FileDiff)
         FileDiffOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use FileDiff.newBuilder() to construct.
@@ -400,13 +400,13 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_FileDiff_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_FileDiff_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder.class);
       }
@@ -644,21 +644,21 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.FileDiff}
+       * Protobuf type {@code CommitInfo.FileDiff}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.FileDiff)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.FileDiff)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_FileDiff_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_FileDiff_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder.class);
         }
@@ -695,7 +695,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_FileDiff_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
         }
 
         @java.lang.Override
@@ -940,10 +940,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.FileDiff)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.FileDiff)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.FileDiff)
+      // @@protoc_insertion_point(class_scope:CommitInfo.FileDiff)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff();
@@ -981,7 +981,7 @@ public final class CommitInfoOuterClass {
     }
 
     public interface JarInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.JarInfo)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.JarInfo)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -1021,11 +1021,11 @@ public final class CommitInfoOuterClass {
           getVersionBytes();
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.JarInfo}
+     * Protobuf type {@code CommitInfo.JarInfo}
      */
     public  static final class JarInfo extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.JarInfo)
+        // @@protoc_insertion_point(message_implements:CommitInfo.JarInfo)
         JarInfoOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use JarInfo.newBuilder() to construct.
@@ -1107,13 +1107,13 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_JarInfo_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_JarInfo_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder.class);
       }
@@ -1401,21 +1401,21 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.JarInfo}
+       * Protobuf type {@code CommitInfo.JarInfo}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.JarInfo)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.JarInfo)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_JarInfo_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_JarInfo_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder.class);
         }
@@ -1450,7 +1450,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_JarInfo_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
         }
 
         @java.lang.Override
@@ -1802,10 +1802,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.JarInfo)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.JarInfo)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.JarInfo)
+      // @@protoc_insertion_point(class_scope:CommitInfo.JarInfo)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo();
@@ -1843,45 +1843,45 @@ public final class CommitInfoOuterClass {
     }
 
     public interface DependencyPairOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.DependencyPair)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.DependencyPair)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        * @return Whether the before field is set.
        */
       boolean hasBefore();
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        * @return The before.
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore();
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder();
 
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        * @return Whether the after field is set.
        */
       boolean hasAfter();
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        * @return The after.
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter();
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder();
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.DependencyPair}
+     * Protobuf type {@code CommitInfo.DependencyPair}
      */
     public  static final class DependencyPair extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.DependencyPair)
+        // @@protoc_insertion_point(message_implements:CommitInfo.DependencyPair)
         DependencyPairOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use DependencyPair.newBuilder() to construct.
@@ -1968,13 +1968,13 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
       }
@@ -1982,21 +1982,21 @@ public final class CommitInfoOuterClass {
       public static final int BEFORE_FIELD_NUMBER = 1;
       private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo before_;
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        * @return Whether the before field is set.
        */
       public boolean hasBefore() {
         return before_ != null;
       }
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        * @return The before.
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
         return before_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
       }
       /**
-       * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+       * <code>.CommitInfo.JarInfo before = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
         return getBefore();
@@ -2005,21 +2005,21 @@ public final class CommitInfoOuterClass {
       public static final int AFTER_FIELD_NUMBER = 2;
       private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo after_;
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        * @return Whether the after field is set.
        */
       public boolean hasAfter() {
         return after_ != null;
       }
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        * @return The after.
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
         return after_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
       }
       /**
-       * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+       * <code>.CommitInfo.JarInfo after = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
         return getAfter();
@@ -2202,21 +2202,21 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.DependencyPair}
+       * Protobuf type {@code CommitInfo.DependencyPair}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.DependencyPair)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.DependencyPair)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
         }
@@ -2257,7 +2257,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyPair_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
         }
 
         @java.lang.Override
@@ -2374,14 +2374,14 @@ public final class CommitInfoOuterClass {
         private com.google.protobuf.SingleFieldBuilderV3<
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> beforeBuilder_;
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          * @return Whether the before field is set.
          */
         public boolean hasBefore() {
           return beforeBuilder_ != null || before_ != null;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          * @return The before.
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
@@ -2392,7 +2392,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public Builder setBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (beforeBuilder_ == null) {
@@ -2408,7 +2408,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public Builder setBefore(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -2422,7 +2422,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public Builder mergeBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (beforeBuilder_ == null) {
@@ -2440,7 +2440,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public Builder clearBefore() {
           if (beforeBuilder_ == null) {
@@ -2454,7 +2454,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getBeforeBuilder() {
           
@@ -2462,7 +2462,7 @@ public final class CommitInfoOuterClass {
           return getBeforeFieldBuilder().getBuilder();
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
           if (beforeBuilder_ != null) {
@@ -2473,7 +2473,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo before = 1;</code>
+         * <code>.CommitInfo.JarInfo before = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
@@ -2493,14 +2493,14 @@ public final class CommitInfoOuterClass {
         private com.google.protobuf.SingleFieldBuilderV3<
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> afterBuilder_;
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          * @return Whether the after field is set.
          */
         public boolean hasAfter() {
           return afterBuilder_ != null || after_ != null;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          * @return The after.
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
@@ -2511,7 +2511,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public Builder setAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (afterBuilder_ == null) {
@@ -2527,7 +2527,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public Builder setAfter(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -2541,7 +2541,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public Builder mergeAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (afterBuilder_ == null) {
@@ -2559,7 +2559,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public Builder clearAfter() {
           if (afterBuilder_ == null) {
@@ -2573,7 +2573,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAfterBuilder() {
           
@@ -2581,7 +2581,7 @@ public final class CommitInfoOuterClass {
           return getAfterFieldBuilder().getBuilder();
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
           if (afterBuilder_ != null) {
@@ -2592,7 +2592,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>.Models.CommitInfo.JarInfo after = 2;</code>
+         * <code>.CommitInfo.JarInfo after = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
@@ -2620,10 +2620,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.DependencyPair)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.DependencyPair)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.DependencyPair)
+      // @@protoc_insertion_point(class_scope:CommitInfo.DependencyPair)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair();
@@ -2661,87 +2661,87 @@ public final class CommitInfoOuterClass {
     }
 
     public interface DependencyUpdateOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.DependencyUpdate)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.DependencyUpdate)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> 
           getUpdateList();
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index);
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       int getUpdateCount();
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
           getUpdateOrBuilderList();
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
           int index);
 
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
           getAddedList();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index);
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       int getAddedCount();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
           getAddedOrBuilderList();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
           int index);
 
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
           getRemovedList();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index);
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       int getRemovedCount();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
           getRemovedOrBuilderList();
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
           int index);
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.DependencyUpdate}
+     * Protobuf type {@code CommitInfo.DependencyUpdate}
      */
     public  static final class DependencyUpdate extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.DependencyUpdate)
+        // @@protoc_insertion_point(message_implements:CommitInfo.DependencyUpdate)
         DependencyUpdateOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use DependencyUpdate.newBuilder() to construct.
@@ -2842,13 +2842,13 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
       }
@@ -2856,32 +2856,32 @@ public final class CommitInfoOuterClass {
       public static final int UPDATE_FIELD_NUMBER = 3;
       private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> update_;
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
         return update_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
           getUpdateOrBuilderList() {
         return update_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       public int getUpdateCount() {
         return update_.size();
       }
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
         return update_.get(index);
       }
       /**
-       * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
           int index) {
@@ -2891,32 +2891,32 @@ public final class CommitInfoOuterClass {
       public static final int ADDED_FIELD_NUMBER = 1;
       private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> added_;
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
         return added_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
           getAddedOrBuilderList() {
         return added_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       public int getAddedCount() {
         return added_.size();
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
         return added_.get(index);
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
           int index) {
@@ -2926,32 +2926,32 @@ public final class CommitInfoOuterClass {
       public static final int REMOVED_FIELD_NUMBER = 2;
       private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> removed_;
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
         return removed_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
           getRemovedOrBuilderList() {
         return removed_;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       public int getRemovedCount() {
         return removed_.size();
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
         return removed_.get(index);
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
           int index) {
@@ -3142,21 +3142,21 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.DependencyUpdate}
+       * Protobuf type {@code CommitInfo.DependencyUpdate}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.DependencyUpdate)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.DependencyUpdate)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
         }
@@ -3206,7 +3206,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
         }
 
         @java.lang.Override
@@ -3423,7 +3423,7 @@ public final class CommitInfoOuterClass {
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> updateBuilder_;
 
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
           if (updateBuilder_ == null) {
@@ -3433,7 +3433,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public int getUpdateCount() {
           if (updateBuilder_ == null) {
@@ -3443,7 +3443,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
           if (updateBuilder_ == null) {
@@ -3453,7 +3453,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder setUpdate(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
@@ -3470,7 +3470,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder setUpdate(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
@@ -3484,7 +3484,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder addUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
           if (updateBuilder_ == null) {
@@ -3500,7 +3500,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder addUpdate(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
@@ -3517,7 +3517,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder addUpdate(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
@@ -3531,7 +3531,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder addUpdate(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
@@ -3545,7 +3545,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder addAllUpdate(
             java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> values) {
@@ -3560,7 +3560,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder clearUpdate() {
           if (updateBuilder_ == null) {
@@ -3573,7 +3573,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public Builder removeUpdate(int index) {
           if (updateBuilder_ == null) {
@@ -3586,14 +3586,14 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder getUpdateBuilder(
             int index) {
           return getUpdateFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
             int index) {
@@ -3603,7 +3603,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
              getUpdateOrBuilderList() {
@@ -3614,14 +3614,14 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder() {
           return getUpdateFieldBuilder().addBuilder(
               com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder(
             int index) {
@@ -3629,7 +3629,7 @@ public final class CommitInfoOuterClass {
               index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.DependencyPair update = 3;</code>
+         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder> 
              getUpdateBuilderList() {
@@ -3663,7 +3663,7 @@ public final class CommitInfoOuterClass {
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> addedBuilder_;
 
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
           if (addedBuilder_ == null) {
@@ -3673,7 +3673,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public int getAddedCount() {
           if (addedBuilder_ == null) {
@@ -3683,7 +3683,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
           if (addedBuilder_ == null) {
@@ -3693,7 +3693,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder setAdded(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -3710,7 +3710,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder setAdded(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -3724,7 +3724,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder addAdded(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (addedBuilder_ == null) {
@@ -3740,7 +3740,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder addAdded(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -3757,7 +3757,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder addAdded(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -3771,7 +3771,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder addAdded(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -3785,7 +3785,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder addAllAdded(
             java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
@@ -3800,7 +3800,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder clearAdded() {
           if (addedBuilder_ == null) {
@@ -3813,7 +3813,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public Builder removeAdded(int index) {
           if (addedBuilder_ == null) {
@@ -3826,14 +3826,14 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAddedBuilder(
             int index) {
           return getAddedFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
             int index) {
@@ -3843,7 +3843,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
              getAddedOrBuilderList() {
@@ -3854,14 +3854,14 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder() {
           return getAddedFieldBuilder().addBuilder(
               com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder(
             int index) {
@@ -3869,7 +3869,7 @@ public final class CommitInfoOuterClass {
               index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo added = 1;</code>
+         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
              getAddedBuilderList() {
@@ -3903,7 +3903,7 @@ public final class CommitInfoOuterClass {
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> removedBuilder_;
 
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
           if (removedBuilder_ == null) {
@@ -3913,7 +3913,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public int getRemovedCount() {
           if (removedBuilder_ == null) {
@@ -3923,7 +3923,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
           if (removedBuilder_ == null) {
@@ -3933,7 +3933,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder setRemoved(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -3950,7 +3950,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder setRemoved(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -3964,7 +3964,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder addRemoved(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
           if (removedBuilder_ == null) {
@@ -3980,7 +3980,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder addRemoved(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -3997,7 +3997,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder addRemoved(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -4011,7 +4011,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder addRemoved(
             int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -4025,7 +4025,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder addAllRemoved(
             java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
@@ -4040,7 +4040,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder clearRemoved() {
           if (removedBuilder_ == null) {
@@ -4053,7 +4053,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public Builder removeRemoved(int index) {
           if (removedBuilder_ == null) {
@@ -4066,14 +4066,14 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getRemovedBuilder(
             int index) {
           return getRemovedFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
             int index) {
@@ -4083,7 +4083,7 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
              getRemovedOrBuilderList() {
@@ -4094,14 +4094,14 @@ public final class CommitInfoOuterClass {
           }
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder() {
           return getRemovedFieldBuilder().addBuilder(
               com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder(
             int index) {
@@ -4109,7 +4109,7 @@ public final class CommitInfoOuterClass {
               index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
         }
         /**
-         * <code>repeated .Models.CommitInfo.JarInfo removed = 2;</code>
+         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
          */
         public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
              getRemovedBuilderList() {
@@ -4142,10 +4142,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.DependencyUpdate)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.DependencyUpdate)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.DependencyUpdate)
+      // @@protoc_insertion_point(class_scope:CommitInfo.DependencyUpdate)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate();
@@ -4183,7 +4183,7 @@ public final class CommitInfoOuterClass {
     }
 
     public interface RefactoringOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.Refactoring)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.Refactoring)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -4205,11 +4205,11 @@ public final class CommitInfoOuterClass {
       long getOccurences();
 
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
       int getDescriptionAndurlCount();
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
       boolean containsDescriptionAndurl(
           java.lang.String key);
@@ -4220,30 +4220,30 @@ public final class CommitInfoOuterClass {
       java.util.Map<java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl>
       getDescriptionAndurl();
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
       java.util.Map<java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl>
       getDescriptionAndurlMap();
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrDefault(
           java.lang.String key,
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl defaultValue);
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrThrow(
           java.lang.String key);
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.Refactoring}
+     * Protobuf type {@code CommitInfo.Refactoring}
      */
     public  static final class Refactoring extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.Refactoring)
+        // @@protoc_insertion_point(message_implements:CommitInfo.Refactoring)
         RefactoringOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use Refactoring.newBuilder() to construct.
@@ -4330,7 +4330,7 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -4348,7 +4348,7 @@ public final class CommitInfoOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder.class);
       }
@@ -4405,7 +4405,7 @@ public final class CommitInfoOuterClass {
             java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl> defaultEntry =
                 com.google.protobuf.MapEntry
                 .<java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl>newDefaultInstance(
-                    com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor, 
+                    com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor, 
                     com.google.protobuf.WireFormat.FieldType.STRING,
                     "",
                     com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -4426,7 +4426,7 @@ public final class CommitInfoOuterClass {
         return internalGetDescriptionAndurl().getMap().size();
       }
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       public boolean containsDescriptionAndurl(
@@ -4442,14 +4442,14 @@ public final class CommitInfoOuterClass {
         return getDescriptionAndurlMap();
       }
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       public java.util.Map<java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl> getDescriptionAndurlMap() {
         return internalGetDescriptionAndurl().getMap();
       }
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrDefault(
@@ -4461,7 +4461,7 @@ public final class CommitInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+       * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
        */
 
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrThrow(
@@ -4664,15 +4664,15 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.Refactoring}
+       * Protobuf type {@code CommitInfo.Refactoring}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.Refactoring)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.Refactoring)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_descriptor;
         }
 
         @SuppressWarnings({"rawtypes"})
@@ -4700,7 +4700,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder.class);
         }
@@ -4734,7 +4734,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_Refactoring_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_Refactoring_descriptor;
         }
 
         @java.lang.Override
@@ -4979,7 +4979,7 @@ public final class CommitInfoOuterClass {
           return internalGetDescriptionAndurl().getMap().size();
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public boolean containsDescriptionAndurl(
@@ -4995,14 +4995,14 @@ public final class CommitInfoOuterClass {
           return getDescriptionAndurlMap();
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public java.util.Map<java.lang.String, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl> getDescriptionAndurlMap() {
           return internalGetDescriptionAndurl().getMap();
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrDefault(
@@ -5014,7 +5014,7 @@ public final class CommitInfoOuterClass {
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl getDescriptionAndurlOrThrow(
@@ -5034,7 +5034,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public Builder removeDescriptionAndurl(
@@ -5053,7 +5053,7 @@ public final class CommitInfoOuterClass {
           return internalGetMutableDescriptionAndurl().getMutableMap();
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
         public Builder putDescriptionAndurl(
             java.lang.String key,
@@ -5065,7 +5065,7 @@ public final class CommitInfoOuterClass {
           return this;
         }
         /**
-         * <code>map&lt;string, .Models.CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
+         * <code>map&lt;string, .CommitInfo.RefactoringUrl&gt; descriptionAndurl = 1;</code>
          */
 
         public Builder putAllDescriptionAndurl(
@@ -5087,10 +5087,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.Refactoring)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.Refactoring)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.Refactoring)
+      // @@protoc_insertion_point(class_scope:CommitInfo.Refactoring)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring();
@@ -5128,7 +5128,7 @@ public final class CommitInfoOuterClass {
     }
 
     public interface RefactoringUrlOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Models.CommitInfo.RefactoringUrl)
+        // @@protoc_insertion_point(interface_extends:CommitInfo.RefactoringUrl)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -5156,11 +5156,11 @@ public final class CommitInfoOuterClass {
           getRhsBytes();
     }
     /**
-     * Protobuf type {@code Models.CommitInfo.RefactoringUrl}
+     * Protobuf type {@code CommitInfo.RefactoringUrl}
      */
     public  static final class RefactoringUrl extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Models.CommitInfo.RefactoringUrl)
+        // @@protoc_insertion_point(message_implements:CommitInfo.RefactoringUrl)
         RefactoringUrlOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use RefactoringUrl.newBuilder() to construct.
@@ -5235,13 +5235,13 @@ public final class CommitInfoOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_RefactoringUrl_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_RefactoringUrl_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_RefactoringUrl_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_RefactoringUrl_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl.Builder.class);
       }
@@ -5483,21 +5483,21 @@ public final class CommitInfoOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code Models.CommitInfo.RefactoringUrl}
+       * Protobuf type {@code CommitInfo.RefactoringUrl}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Models.CommitInfo.RefactoringUrl)
+          // @@protoc_insertion_point(builder_implements:CommitInfo.RefactoringUrl)
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrlOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_RefactoringUrl_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_RefactoringUrl_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_RefactoringUrl_fieldAccessorTable
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_RefactoringUrl_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl.Builder.class);
         }
@@ -5530,7 +5530,7 @@ public final class CommitInfoOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_RefactoringUrl_descriptor;
+          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_RefactoringUrl_descriptor;
         }
 
         @java.lang.Override
@@ -5801,10 +5801,10 @@ public final class CommitInfoOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:Models.CommitInfo.RefactoringUrl)
+        // @@protoc_insertion_point(builder_scope:CommitInfo.RefactoringUrl)
       }
 
-      // @@protoc_insertion_point(class_scope:Models.CommitInfo.RefactoringUrl)
+      // @@protoc_insertion_point(class_scope:CommitInfo.RefactoringUrl)
       private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringUrl();
@@ -5890,21 +5890,21 @@ public final class CommitInfoOuterClass {
     public static final int FILEDIFF_FIELD_NUMBER = 3;
     private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff fileDiff_;
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      * @return Whether the fileDiff field is set.
      */
     public boolean hasFileDiff() {
       return fileDiff_ != null;
     }
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      * @return The fileDiff.
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff() {
       return fileDiff_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance() : fileDiff_;
     }
     /**
-     * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder() {
       return getFileDiff();
@@ -5913,32 +5913,32 @@ public final class CommitInfoOuterClass {
     public static final int REFACTORINGS_FIELD_NUMBER = 2;
     private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring> refactorings_;
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring> getRefactoringsList() {
       return refactorings_;
     }
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder> 
         getRefactoringsOrBuilderList() {
       return refactorings_;
     }
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     public int getRefactoringsCount() {
       return refactorings_.size();
     }
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring getRefactorings(int index) {
       return refactorings_.get(index);
     }
     /**
-     * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+     * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder getRefactoringsOrBuilder(
         int index) {
@@ -5948,32 +5948,32 @@ public final class CommitInfoOuterClass {
     public static final int DEPENDENCIES_FIELD_NUMBER = 1;
     private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> dependencies_;
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getDependenciesList() {
       return dependencies_;
     }
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
         getDependenciesOrBuilderList() {
       return dependencies_;
     }
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     public int getDependenciesCount() {
       return dependencies_.size();
     }
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index) {
       return dependencies_.get(index);
     }
     /**
-     * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
         int index) {
@@ -6029,21 +6029,21 @@ public final class CommitInfoOuterClass {
     public static final int DEPENDENCYUPDATE_FIELD_NUMBER = 4;
     private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate dependencyUpdate_;
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      * @return Whether the dependencyUpdate field is set.
      */
     public boolean hasDependencyUpdate() {
       return dependencyUpdate_ != null;
     }
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      * @return The dependencyUpdate.
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate() {
       return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
     }
     /**
-     * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
      */
     public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
       return getDependencyUpdate();
@@ -6296,21 +6296,21 @@ public final class CommitInfoOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code Models.CommitInfo}
+     * Protobuf type {@code CommitInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Models.CommitInfo)
+        // @@protoc_insertion_point(builder_implements:CommitInfo)
         com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_fieldAccessorTable
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder.class);
       }
@@ -6373,7 +6373,7 @@ public final class CommitInfoOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_Models_CommitInfo_descriptor;
+        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_descriptor;
       }
 
       @java.lang.Override
@@ -6686,14 +6686,14 @@ public final class CommitInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder> fileDiffBuilder_;
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        * @return Whether the fileDiff field is set.
        */
       public boolean hasFileDiff() {
         return fileDiffBuilder_ != null || fileDiff_ != null;
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        * @return The fileDiff.
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff() {
@@ -6704,7 +6704,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public Builder setFileDiff(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff value) {
         if (fileDiffBuilder_ == null) {
@@ -6720,7 +6720,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public Builder setFileDiff(
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder builderForValue) {
@@ -6734,7 +6734,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public Builder mergeFileDiff(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff value) {
         if (fileDiffBuilder_ == null) {
@@ -6752,7 +6752,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public Builder clearFileDiff() {
         if (fileDiffBuilder_ == null) {
@@ -6766,7 +6766,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder getFileDiffBuilder() {
         
@@ -6774,7 +6774,7 @@ public final class CommitInfoOuterClass {
         return getFileDiffFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder() {
         if (fileDiffBuilder_ != null) {
@@ -6785,7 +6785,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>.Models.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder> 
@@ -6814,7 +6814,7 @@ public final class CommitInfoOuterClass {
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder> refactoringsBuilder_;
 
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring> getRefactoringsList() {
         if (refactoringsBuilder_ == null) {
@@ -6824,7 +6824,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public int getRefactoringsCount() {
         if (refactoringsBuilder_ == null) {
@@ -6834,7 +6834,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring getRefactorings(int index) {
         if (refactoringsBuilder_ == null) {
@@ -6844,7 +6844,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder setRefactorings(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring value) {
@@ -6861,7 +6861,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder setRefactorings(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder builderForValue) {
@@ -6875,7 +6875,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder addRefactorings(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring value) {
         if (refactoringsBuilder_ == null) {
@@ -6891,7 +6891,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder addRefactorings(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring value) {
@@ -6908,7 +6908,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder addRefactorings(
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder builderForValue) {
@@ -6922,7 +6922,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder addRefactorings(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder builderForValue) {
@@ -6936,7 +6936,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder addAllRefactorings(
           java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring> values) {
@@ -6951,7 +6951,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder clearRefactorings() {
         if (refactoringsBuilder_ == null) {
@@ -6964,7 +6964,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public Builder removeRefactorings(int index) {
         if (refactoringsBuilder_ == null) {
@@ -6977,14 +6977,14 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder getRefactoringsBuilder(
           int index) {
         return getRefactoringsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder getRefactoringsOrBuilder(
           int index) {
@@ -6994,7 +6994,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.RefactoringOrBuilder> 
            getRefactoringsOrBuilderList() {
@@ -7005,14 +7005,14 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder addRefactoringsBuilder() {
         return getRefactoringsFieldBuilder().addBuilder(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.getDefaultInstance());
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder addRefactoringsBuilder(
           int index) {
@@ -7020,7 +7020,7 @@ public final class CommitInfoOuterClass {
             index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.getDefaultInstance());
       }
       /**
-       * <code>repeated .Models.CommitInfo.Refactoring refactorings = 2;</code>
+       * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Refactoring.Builder> 
            getRefactoringsBuilderList() {
@@ -7054,7 +7054,7 @@ public final class CommitInfoOuterClass {
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> dependenciesBuilder_;
 
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getDependenciesList() {
         if (dependenciesBuilder_ == null) {
@@ -7064,7 +7064,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public int getDependenciesCount() {
         if (dependenciesBuilder_ == null) {
@@ -7074,7 +7074,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index) {
         if (dependenciesBuilder_ == null) {
@@ -7084,7 +7084,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder setDependencies(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -7101,7 +7101,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder setDependencies(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -7115,7 +7115,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
         if (dependenciesBuilder_ == null) {
@@ -7131,7 +7131,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
@@ -7148,7 +7148,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -7162,7 +7162,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
           int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
@@ -7176,7 +7176,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder addAllDependencies(
           java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
@@ -7191,7 +7191,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder clearDependencies() {
         if (dependenciesBuilder_ == null) {
@@ -7204,7 +7204,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public Builder removeDependencies(int index) {
         if (dependenciesBuilder_ == null) {
@@ -7217,14 +7217,14 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getDependenciesBuilder(
           int index) {
         return getDependenciesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
           int index) {
@@ -7234,7 +7234,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
            getDependenciesOrBuilderList() {
@@ -7245,14 +7245,14 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addDependenciesBuilder() {
         return getDependenciesFieldBuilder().addBuilder(
             com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addDependenciesBuilder(
           int index) {
@@ -7260,7 +7260,7 @@ public final class CommitInfoOuterClass {
             index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .Models.CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
        */
       public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
            getDependenciesBuilderList() {
@@ -7391,14 +7391,14 @@ public final class CommitInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> dependencyUpdateBuilder_;
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        * @return Whether the dependencyUpdate field is set.
        */
       public boolean hasDependencyUpdate() {
         return dependencyUpdateBuilder_ != null || dependencyUpdate_ != null;
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        * @return The dependencyUpdate.
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate() {
@@ -7409,7 +7409,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder setDependencyUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
         if (dependencyUpdateBuilder_ == null) {
@@ -7425,7 +7425,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder setDependencyUpdate(
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder builderForValue) {
@@ -7439,7 +7439,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder mergeDependencyUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
         if (dependencyUpdateBuilder_ == null) {
@@ -7457,7 +7457,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder clearDependencyUpdate() {
         if (dependencyUpdateBuilder_ == null) {
@@ -7471,7 +7471,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder getDependencyUpdateBuilder() {
         
@@ -7479,7 +7479,7 @@ public final class CommitInfoOuterClass {
         return getDependencyUpdateFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
         if (dependencyUpdateBuilder_ != null) {
@@ -7490,7 +7490,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>.Models.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> 
@@ -7518,10 +7518,10 @@ public final class CommitInfoOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Models.CommitInfo)
+      // @@protoc_insertion_point(builder_scope:CommitInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:Models.CommitInfo)
+    // @@protoc_insertion_point(class_scope:CommitInfo)
     private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo();
@@ -7559,45 +7559,45 @@ public final class CommitInfoOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_descriptor;
+    internal_static_CommitInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_fieldAccessorTable;
+      internal_static_CommitInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_FileDiff_descriptor;
+    internal_static_CommitInfo_FileDiff_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_FileDiff_fieldAccessorTable;
+      internal_static_CommitInfo_FileDiff_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_JarInfo_descriptor;
+    internal_static_CommitInfo_JarInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_JarInfo_fieldAccessorTable;
+      internal_static_CommitInfo_JarInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_DependencyPair_descriptor;
+    internal_static_CommitInfo_DependencyPair_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable;
+      internal_static_CommitInfo_DependencyPair_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_DependencyUpdate_descriptor;
+    internal_static_CommitInfo_DependencyUpdate_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable;
+      internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_Refactoring_descriptor;
+    internal_static_CommitInfo_Refactoring_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_Refactoring_fieldAccessorTable;
+      internal_static_CommitInfo_Refactoring_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor;
+    internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_fieldAccessorTable;
+      internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_CommitInfo_RefactoringUrl_descriptor;
+    internal_static_CommitInfo_RefactoringUrl_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_CommitInfo_RefactoringUrl_fieldAccessorTable;
+      internal_static_CommitInfo_RefactoringUrl_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7607,85 +7607,83 @@ public final class CommitInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020CommitInfo.proto\022\006Models\"\353\007\n\nCommitInf" +
-      "o\022\017\n\007counter\030\010 \001(\003\022\013\n\003sha\030\005 \001(\t\022-\n\010fileD" +
-      "iff\030\003 \001(\0132\033.Models.CommitInfo.FileDiff\0224" +
-      "\n\014refactorings\030\002 \003(\0132\036.Models.CommitInfo" +
-      ".Refactoring\0220\n\014dependencies\030\001 \003(\0132\032.Mod" +
-      "els.CommitInfo.JarInfo\022\021\n\texception\030\006 \001(" +
-      "\t\022\034\n\024isTypeChangeReported\030\007 \001(\010\022=\n\020depen" +
-      "dencyUpdate\030\004 \001(\0132#.Models.CommitInfo.De" +
-      "pendencyUpdate\032a\n\010FileDiff\022\025\n\rfilesModif" +
-      "ied\030\001 \001(\003\022\022\n\nfilesAdded\030\002 \001(\003\022\024\n\014filesRe" +
-      "moved\030\003 \001(\003\022\024\n\014filesRenamed\030\004 \001(\003\032?\n\007Jar" +
-      "Info\022\022\n\nartifactID\030\001 \001(\t\022\017\n\007groupID\030\003 \001(" +
-      "\t\022\017\n\007version\030\002 \001(\t\032g\n\016DependencyPair\022*\n\006" +
-      "before\030\001 \001(\0132\032.Models.CommitInfo.JarInfo" +
-      "\022)\n\005after\030\002 \001(\0132\032.Models.CommitInfo.JarI" +
-      "nfo\032\235\001\n\020DependencyUpdate\0221\n\006update\030\003 \003(\013" +
-      "2!.Models.CommitInfo.DependencyPair\022)\n\005a" +
-      "dded\030\001 \003(\0132\032.Models.CommitInfo.JarInfo\022+" +
-      "\n\007removed\030\002 \003(\0132\032.Models.CommitInfo.JarI" +
-      "nfo\032\336\001\n\013Refactoring\022\014\n\004name\030\003 \001(\t\022\022\n\nocc" +
-      "urences\030\002 \001(\003\022P\n\021descriptionAndurl\030\001 \003(\013" +
-      "25.Models.CommitInfo.Refactoring.Descrip" +
-      "tionAndurlEntry\032[\n\026DescriptionAndurlEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.Models.C" +
-      "ommitInfo.RefactoringUrl:\0028\001\032*\n\016Refactor" +
-      "ingUrl\022\013\n\003lhs\030\001 \001(\t\022\013\n\003rhs\030\002 \001(\tB$\n\"com." +
-      "t2r.common.models.refactoringsb\006proto3"
+      "\n\020CommitInfo.proto\"\236\007\n\nCommitInfo\022\017\n\007cou" +
+      "nter\030\010 \001(\003\022\013\n\003sha\030\005 \001(\t\022&\n\010fileDiff\030\003 \001(" +
+      "\0132\024.CommitInfo.FileDiff\022-\n\014refactorings\030" +
+      "\002 \003(\0132\027.CommitInfo.Refactoring\022)\n\014depend" +
+      "encies\030\001 \003(\0132\023.CommitInfo.JarInfo\022\021\n\texc" +
+      "eption\030\006 \001(\t\022\034\n\024isTypeChangeReported\030\007 \001" +
+      "(\010\0226\n\020dependencyUpdate\030\004 \001(\0132\034.CommitInf" +
+      "o.DependencyUpdate\032a\n\010FileDiff\022\025\n\rfilesM" +
+      "odified\030\001 \001(\003\022\022\n\nfilesAdded\030\002 \001(\003\022\024\n\014fil" +
+      "esRemoved\030\003 \001(\003\022\024\n\014filesRenamed\030\004 \001(\003\032?\n" +
+      "\007JarInfo\022\022\n\nartifactID\030\001 \001(\t\022\017\n\007groupID\030" +
+      "\003 \001(\t\022\017\n\007version\030\002 \001(\t\032Y\n\016DependencyPair" +
+      "\022#\n\006before\030\001 \001(\0132\023.CommitInfo.JarInfo\022\"\n" +
+      "\005after\030\002 \001(\0132\023.CommitInfo.JarInfo\032\210\001\n\020De" +
+      "pendencyUpdate\022*\n\006update\030\003 \003(\0132\032.CommitI" +
+      "nfo.DependencyPair\022\"\n\005added\030\001 \003(\0132\023.Comm" +
+      "itInfo.JarInfo\022$\n\007removed\030\002 \003(\0132\023.Commit" +
+      "Info.JarInfo\032\320\001\n\013Refactoring\022\014\n\004name\030\003 \001" +
+      "(\t\022\022\n\noccurences\030\002 \001(\003\022I\n\021descriptionAnd" +
+      "url\030\001 \003(\0132..CommitInfo.Refactoring.Descr" +
+      "iptionAndurlEntry\032T\n\026DescriptionAndurlEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.Commit" +
+      "Info.RefactoringUrl:\0028\001\032*\n\016RefactoringUr" +
+      "l\022\013\n\003lhs\030\001 \001(\t\022\013\n\003rhs\030\002 \001(\tB$\n\"com.t2r.c" +
+      "ommon.models.refactoringsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_Models_CommitInfo_descriptor =
+    internal_static_CommitInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Models_CommitInfo_fieldAccessorTable = new
+    internal_static_CommitInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_descriptor,
+        internal_static_CommitInfo_descriptor,
         new java.lang.String[] { "Counter", "Sha", "FileDiff", "Refactorings", "Dependencies", "Exception", "IsTypeChangeReported", "DependencyUpdate", });
-    internal_static_Models_CommitInfo_FileDiff_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(0);
-    internal_static_Models_CommitInfo_FileDiff_fieldAccessorTable = new
+    internal_static_CommitInfo_FileDiff_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(0);
+    internal_static_CommitInfo_FileDiff_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_FileDiff_descriptor,
+        internal_static_CommitInfo_FileDiff_descriptor,
         new java.lang.String[] { "FilesModified", "FilesAdded", "FilesRemoved", "FilesRenamed", });
-    internal_static_Models_CommitInfo_JarInfo_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(1);
-    internal_static_Models_CommitInfo_JarInfo_fieldAccessorTable = new
+    internal_static_CommitInfo_JarInfo_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(1);
+    internal_static_CommitInfo_JarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_JarInfo_descriptor,
+        internal_static_CommitInfo_JarInfo_descriptor,
         new java.lang.String[] { "ArtifactID", "GroupID", "Version", });
-    internal_static_Models_CommitInfo_DependencyPair_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(2);
-    internal_static_Models_CommitInfo_DependencyPair_fieldAccessorTable = new
+    internal_static_CommitInfo_DependencyPair_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(2);
+    internal_static_CommitInfo_DependencyPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_DependencyPair_descriptor,
+        internal_static_CommitInfo_DependencyPair_descriptor,
         new java.lang.String[] { "Before", "After", });
-    internal_static_Models_CommitInfo_DependencyUpdate_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(3);
-    internal_static_Models_CommitInfo_DependencyUpdate_fieldAccessorTable = new
+    internal_static_CommitInfo_DependencyUpdate_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(3);
+    internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_DependencyUpdate_descriptor,
+        internal_static_CommitInfo_DependencyUpdate_descriptor,
         new java.lang.String[] { "Update", "Added", "Removed", });
-    internal_static_Models_CommitInfo_Refactoring_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(4);
-    internal_static_Models_CommitInfo_Refactoring_fieldAccessorTable = new
+    internal_static_CommitInfo_Refactoring_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(4);
+    internal_static_CommitInfo_Refactoring_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_Refactoring_descriptor,
+        internal_static_CommitInfo_Refactoring_descriptor,
         new java.lang.String[] { "Name", "Occurences", "DescriptionAndurl", });
-    internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor =
-      internal_static_Models_CommitInfo_Refactoring_descriptor.getNestedTypes().get(0);
-    internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_fieldAccessorTable = new
+    internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor =
+      internal_static_CommitInfo_Refactoring_descriptor.getNestedTypes().get(0);
+    internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor,
+        internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_Models_CommitInfo_RefactoringUrl_descriptor =
-      internal_static_Models_CommitInfo_descriptor.getNestedTypes().get(5);
-    internal_static_Models_CommitInfo_RefactoringUrl_fieldAccessorTable = new
+    internal_static_CommitInfo_RefactoringUrl_descriptor =
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(5);
+    internal_static_CommitInfo_RefactoringUrl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_CommitInfo_RefactoringUrl_descriptor,
+        internal_static_CommitInfo_RefactoringUrl_descriptor,
         new java.lang.String[] { "Lhs", "Rhs", });
   }
 

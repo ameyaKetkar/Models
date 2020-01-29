@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "com.t2r.common.models.refactorings";
+
+import "TypeChangeAnalysis.proto";
+import "CodeStatistics.proto";
+import "CommitInfo.proto";
+
+message TypeChangeCommit {
+
+   repeated TypeChangeAnalysis typeChanges = 1;
+   CodeStatistics codeStatistics = 2;
+   CommitInfo commit = 3;
+}

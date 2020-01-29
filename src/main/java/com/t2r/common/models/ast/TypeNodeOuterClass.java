@@ -15,90 +15,50 @@ public final class TypeNodeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface TypeNodeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Models.TypeNode)
+      // @@protoc_insertion_point(interface_extends:TypeNode)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
-     * @return Whether the name field is set.
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>repeated string annotations = 4;</code>
-     * @return A list containing the annotations.
+     * <code>.TypeNode.TypeKind kind = 2;</code>
+     * @return The enum numeric value on the wire for kind.
      */
-    java.util.List<java.lang.String>
-        getAnnotationsList();
+    int getKindValue();
     /**
-     * <code>repeated string annotations = 4;</code>
-     * @return The count of annotations.
-     */
-    int getAnnotationsCount();
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @param index The index of the element to return.
-     * @return The annotations at the given index.
-     */
-    java.lang.String getAnnotations(int index);
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the annotations at the given index.
-     */
-    com.google.protobuf.ByteString
-        getAnnotationsBytes(int index);
-
-    /**
-     * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
-     * @return Whether the kind field is set.
-     */
-    boolean hasKind();
-    /**
-     * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
+     * <code>.TypeNode.TypeKind kind = 2;</code>
      * @return The kind.
      */
     com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind getKind();
 
     /**
-     * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-     * @return Whether the namespacee field is set.
+     * <code>bool isResolved = 3;</code>
+     * @return The isResolved.
      */
-    boolean hasNamespacee();
-    /**
-     * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-     * @return The namespacee.
-     */
-    com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace getNamespacee();
+    boolean getIsResolved();
 
     /**
-     * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-     * @return Whether the typeSem field is set.
+     * <code>bool isTypeVariable = 4;</code>
+     * @return The isTypeVariable.
      */
-    boolean hasTypeSem();
-    /**
-     * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-     * @return The typeSem.
-     */
-    com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem getTypeSem();
+    boolean getIsTypeVariable();
   }
   /**
-   * Protobuf type {@code Models.TypeNode}
+   * Protobuf type {@code TypeNode}
    */
   public  static final class TypeNode extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Models.TypeNode)
+      // @@protoc_insertion_point(message_implements:TypeNode)
       TypeNodeOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use TypeNode.newBuilder() to construct.
@@ -107,10 +67,7 @@ public final class TypeNodeOuterClass {
     }
     private TypeNode() {
       name_ = "";
-      annotations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      kind_ = 1;
-      namespacee_ = 1;
-      typeSem_ = 1;
+      kind_ = 0;
     }
 
     @java.lang.Override
@@ -133,7 +90,6 @@ public final class TypeNodeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -145,54 +101,25 @@ public final class TypeNodeOuterClass {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             case 16: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind value = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(2, rawValue);
-              } else {
-                bitField0_ |= 0x00000002;
-                kind_ = rawValue;
-              }
+
+              kind_ = rawValue;
               break;
             }
             case 24: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace value = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(3, rawValue);
-              } else {
-                bitField0_ |= 0x00000004;
-                namespacee_ = rawValue;
-              }
+
+              isResolved_ = input.readBool();
               break;
             }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                annotations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              annotations_.add(bs);
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem value = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(5, rawValue);
-              } else {
-                bitField0_ |= 0x00000008;
-                typeSem_ = rawValue;
-              }
+            case 32: {
+
+              isTypeVariable_ = input.readBool();
               break;
             }
             default: {
@@ -210,35 +137,32 @@ public final class TypeNodeOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          annotations_ = annotations_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_Models_TypeNode_descriptor;
+      return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_TypeNode_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_Models_TypeNode_fieldAccessorTable
+      return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_TypeNode_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.class, com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code Models.TypeNode.TypeKind}
+     * Protobuf enum {@code TypeNode.TypeKind}
      */
     public enum TypeKind
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>Simple = 1;</code>
+       * <code>Simple = 0;</code>
        */
-      Simple(1),
+      Simple(0),
       /**
        * <code>Parameterized = 2;</code>
        */
@@ -263,12 +187,13 @@ public final class TypeNodeOuterClass {
        * <code>Array = 7;</code>
        */
       Array(7),
+      UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>Simple = 1;</code>
+       * <code>Simple = 0;</code>
        */
-      public static final int Simple_VALUE = 1;
+      public static final int Simple_VALUE = 0;
       /**
        * <code>Parameterized = 2;</code>
        */
@@ -296,6 +221,10 @@ public final class TypeNodeOuterClass {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
@@ -315,7 +244,7 @@ public final class TypeNodeOuterClass {
        */
       public static TypeKind forNumber(int value) {
         switch (value) {
-          case 1: return Simple;
+          case 0: return Simple;
           case 2: return Parameterized;
           case 3: return WildCard;
           case 4: return Union;
@@ -359,6 +288,9 @@ public final class TypeNodeOuterClass {
           throw new java.lang.IllegalArgumentException(
             "EnumValueDescriptor is not for this type.");
         }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
         return VALUES[desc.getIndex()];
       }
 
@@ -368,249 +300,13 @@ public final class TypeNodeOuterClass {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Models.TypeNode.TypeKind)
+      // @@protoc_insertion_point(enum_scope:TypeNode.TypeKind)
     }
 
-    /**
-     * Protobuf enum {@code Models.TypeNode.NameSpace}
-     */
-    public enum NameSpace
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>TypeVariable = 1;</code>
-       */
-      TypeVariable(1),
-      /**
-       * <code>Jdk = 2;</code>
-       */
-      Jdk(2),
-      /**
-       * <code>External = 3;</code>
-       */
-      External(3),
-      /**
-       * <code>Internal = 4;</code>
-       */
-      Internal(4),
-      /**
-       * <code>DontKnow = 5;</code>
-       */
-      DontKnow(5),
-      ;
-
-      /**
-       * <code>TypeVariable = 1;</code>
-       */
-      public static final int TypeVariable_VALUE = 1;
-      /**
-       * <code>Jdk = 2;</code>
-       */
-      public static final int Jdk_VALUE = 2;
-      /**
-       * <code>External = 3;</code>
-       */
-      public static final int External_VALUE = 3;
-      /**
-       * <code>Internal = 4;</code>
-       */
-      public static final int Internal_VALUE = 4;
-      /**
-       * <code>DontKnow = 5;</code>
-       */
-      public static final int DontKnow_VALUE = 5;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NameSpace valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NameSpace forNumber(int value) {
-        switch (value) {
-          case 1: return TypeVariable;
-          case 2: return Jdk;
-          case 3: return External;
-          case 4: return Internal;
-          case 5: return DontKnow;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NameSpace>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NameSpace> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NameSpace>() {
-              public NameSpace findValueByNumber(int number) {
-                return NameSpace.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final NameSpace[] VALUES = values();
-
-      public static NameSpace valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private NameSpace(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:Models.TypeNode.NameSpace)
-    }
-
-    /**
-     * Protobuf enum {@code Models.TypeNode.TypeSem}
-     */
-    public enum TypeSem
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>Object = 1;</code>
-       */
-      Object(1),
-      /**
-       * <code>Enum = 2;</code>
-       */
-      Enum(2),
-      /**
-       * <code>PrimitiveType = 3;</code>
-       */
-      PrimitiveType(3),
-      ;
-
-      /**
-       * <code>Object = 1;</code>
-       */
-      public static final int Object_VALUE = 1;
-      /**
-       * <code>Enum = 2;</code>
-       */
-      public static final int Enum_VALUE = 2;
-      /**
-       * <code>PrimitiveType = 3;</code>
-       */
-      public static final int PrimitiveType_VALUE = 3;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TypeSem valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TypeSem forNumber(int value) {
-        switch (value) {
-          case 1: return Object;
-          case 2: return Enum;
-          case 3: return PrimitiveType;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TypeSem>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TypeSem> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TypeSem>() {
-              public TypeSem findValueByNumber(int number) {
-                return TypeSem.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.getDescriptor().getEnumTypes().get(2);
-      }
-
-      private static final TypeSem[] VALUES = values();
-
-      public static TypeSem valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TypeSem(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:Models.TypeNode.TypeSem)
-    }
-
-    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
-     * @return Whether the name field is set.
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -621,14 +317,12 @@ public final class TypeNodeOuterClass {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
+        name_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -645,96 +339,43 @@ public final class TypeNodeOuterClass {
       }
     }
 
-    public static final int ANNOTATIONS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList annotations_;
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @return A list containing the annotations.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getAnnotationsList() {
-      return annotations_;
-    }
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @return The count of annotations.
-     */
-    public int getAnnotationsCount() {
-      return annotations_.size();
-    }
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @param index The index of the element to return.
-     * @return The annotations at the given index.
-     */
-    public java.lang.String getAnnotations(int index) {
-      return annotations_.get(index);
-    }
-    /**
-     * <code>repeated string annotations = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the annotations at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getAnnotationsBytes(int index) {
-      return annotations_.getByteString(index);
-    }
-
     public static final int KIND_FIELD_NUMBER = 2;
     private int kind_;
     /**
-     * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
-     * @return Whether the kind field is set.
+     * <code>.TypeNode.TypeKind kind = 2;</code>
+     * @return The enum numeric value on the wire for kind.
      */
-    public boolean hasKind() {
-      return ((bitField0_ & 0x00000002) != 0);
+    public int getKindValue() {
+      return kind_;
     }
     /**
-     * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
+     * <code>.TypeNode.TypeKind kind = 2;</code>
      * @return The kind.
      */
     public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind getKind() {
       @SuppressWarnings("deprecation")
       com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.valueOf(kind_);
-      return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple : result;
+      return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.UNRECOGNIZED : result;
     }
 
-    public static final int NAMESPACEE_FIELD_NUMBER = 3;
-    private int namespacee_;
+    public static final int ISRESOLVED_FIELD_NUMBER = 3;
+    private boolean isResolved_;
     /**
-     * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-     * @return Whether the namespacee field is set.
+     * <code>bool isResolved = 3;</code>
+     * @return The isResolved.
      */
-    public boolean hasNamespacee() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-     * @return The namespacee.
-     */
-    public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace getNamespacee() {
-      @SuppressWarnings("deprecation")
-      com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace.valueOf(namespacee_);
-      return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace.TypeVariable : result;
+    public boolean getIsResolved() {
+      return isResolved_;
     }
 
-    public static final int TYPESEM_FIELD_NUMBER = 5;
-    private int typeSem_;
+    public static final int ISTYPEVARIABLE_FIELD_NUMBER = 4;
+    private boolean isTypeVariable_;
     /**
-     * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-     * @return Whether the typeSem field is set.
+     * <code>bool isTypeVariable = 4;</code>
+     * @return The isTypeVariable.
      */
-    public boolean hasTypeSem() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-     * @return The typeSem.
-     */
-    public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem getTypeSem() {
-      @SuppressWarnings("deprecation")
-      com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem.valueOf(typeSem_);
-      return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem.Object : result;
+    public boolean getIsTypeVariable() {
+      return isTypeVariable_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -744,10 +385,6 @@ public final class TypeNodeOuterClass {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasKind()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -755,20 +392,17 @@ public final class TypeNodeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (kind_ != com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple.getNumber()) {
         output.writeEnum(2, kind_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeEnum(3, namespacee_);
+      if (isResolved_ != false) {
+        output.writeBool(3, isResolved_);
       }
-      for (int i = 0; i < annotations_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, annotations_.getRaw(i));
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeEnum(5, typeSem_);
+      if (isTypeVariable_ != false) {
+        output.writeBool(4, isTypeVariable_);
       }
       unknownFields.writeTo(output);
     }
@@ -779,28 +413,20 @@ public final class TypeNodeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (kind_ != com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, kind_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (isResolved_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, namespacee_);
+          .computeBoolSize(3, isResolved_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < annotations_.size(); i++) {
-          dataSize += computeStringSizeNoTag(annotations_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getAnnotationsList().size();
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (isTypeVariable_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, typeSem_);
+          .computeBoolSize(4, isTypeVariable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -817,25 +443,13 @@ public final class TypeNodeOuterClass {
       }
       com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode other = (com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode) obj;
 
-      if (hasName() != other.hasName()) return false;
-      if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
-      }
-      if (!getAnnotationsList()
-          .equals(other.getAnnotationsList())) return false;
-      if (hasKind() != other.hasKind()) return false;
-      if (hasKind()) {
-        if (kind_ != other.kind_) return false;
-      }
-      if (hasNamespacee() != other.hasNamespacee()) return false;
-      if (hasNamespacee()) {
-        if (namespacee_ != other.namespacee_) return false;
-      }
-      if (hasTypeSem() != other.hasTypeSem()) return false;
-      if (hasTypeSem()) {
-        if (typeSem_ != other.typeSem_) return false;
-      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (kind_ != other.kind_) return false;
+      if (getIsResolved()
+          != other.getIsResolved()) return false;
+      if (getIsTypeVariable()
+          != other.getIsTypeVariable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -847,26 +461,16 @@ public final class TypeNodeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasName()) {
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-      }
-      if (getAnnotationsCount() > 0) {
-        hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getAnnotationsList().hashCode();
-      }
-      if (hasKind()) {
-        hash = (37 * hash) + KIND_FIELD_NUMBER;
-        hash = (53 * hash) + kind_;
-      }
-      if (hasNamespacee()) {
-        hash = (37 * hash) + NAMESPACEE_FIELD_NUMBER;
-        hash = (53 * hash) + namespacee_;
-      }
-      if (hasTypeSem()) {
-        hash = (37 * hash) + TYPESEM_FIELD_NUMBER;
-        hash = (53 * hash) + typeSem_;
-      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + kind_;
+      hash = (37 * hash) + ISRESOLVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsResolved());
+      hash = (37 * hash) + ISTYPEVARIABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsTypeVariable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -963,21 +567,21 @@ public final class TypeNodeOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code Models.TypeNode}
+     * Protobuf type {@code TypeNode}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Models.TypeNode)
+        // @@protoc_insertion_point(builder_implements:TypeNode)
         com.t2r.common.models.ast.TypeNodeOuterClass.TypeNodeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_Models_TypeNode_descriptor;
+        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_TypeNode_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_Models_TypeNode_fieldAccessorTable
+        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_TypeNode_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.class, com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.Builder.class);
       }
@@ -1001,22 +605,20 @@ public final class TypeNodeOuterClass {
       public Builder clear() {
         super.clear();
         name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        annotations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        kind_ = 1;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        namespacee_ = 1;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        typeSem_ = 1;
-        bitField0_ = (bitField0_ & ~0x00000010);
+
+        kind_ = 0;
+
+        isResolved_ = false;
+
+        isTypeVariable_ = false;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_Models_TypeNode_descriptor;
+        return com.t2r.common.models.ast.TypeNodeOuterClass.internal_static_TypeNode_descriptor;
       }
 
       @java.lang.Override
@@ -1036,30 +638,10 @@ public final class TypeNodeOuterClass {
       @java.lang.Override
       public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode buildPartial() {
         com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode result = new com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
         result.name_ = name_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          annotations_ = annotations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.annotations_ = annotations_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000002;
-        }
         result.kind_ = kind_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.namespacee_ = namespacee_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.typeSem_ = typeSem_;
-        result.bitField0_ = to_bitField0_;
+        result.isResolved_ = isResolved_;
+        result.isTypeVariable_ = isTypeVariable_;
         onBuilt();
         return result;
       }
@@ -1108,29 +690,18 @@ public final class TypeNodeOuterClass {
 
       public Builder mergeFrom(com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode other) {
         if (other == com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.getDefaultInstance()) return this;
-        if (other.hasName()) {
-          bitField0_ |= 0x00000001;
+        if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.annotations_.isEmpty()) {
-          if (annotations_.isEmpty()) {
-            annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureAnnotationsIsMutable();
-            annotations_.addAll(other.annotations_);
-          }
-          onChanged();
+        if (other.kind_ != 0) {
+          setKindValue(other.getKindValue());
         }
-        if (other.hasKind()) {
-          setKind(other.getKind());
+        if (other.getIsResolved() != false) {
+          setIsResolved(other.getIsResolved());
         }
-        if (other.hasNamespacee()) {
-          setNamespacee(other.getNamespacee());
-        }
-        if (other.hasTypeSem()) {
-          setTypeSem(other.getTypeSem());
+        if (other.getIsTypeVariable() != false) {
+          setIsTypeVariable(other.getIsTypeVariable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1139,9 +710,6 @@ public final class TypeNodeOuterClass {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasKind()) {
-          return false;
-        }
         return true;
       }
 
@@ -1163,18 +731,10 @@ public final class TypeNodeOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
-       * @return Whether the name field is set.
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1183,16 +743,14 @@ public final class TypeNodeOuterClass {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            name_ = s;
-          }
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1209,7 +767,7 @@ public final class TypeNodeOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1218,23 +776,23 @@ public final class TypeNodeOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
         name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1243,140 +801,42 @@ public final class TypeNodeOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList annotations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureAnnotationsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          annotations_ = new com.google.protobuf.LazyStringArrayList(annotations_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private int kind_ = 0;
       /**
-       * <code>repeated string annotations = 4;</code>
-       * @return A list containing the annotations.
+       * <code>.TypeNode.TypeKind kind = 2;</code>
+       * @return The enum numeric value on the wire for kind.
        */
-      public com.google.protobuf.ProtocolStringList
-          getAnnotationsList() {
-        return annotations_.getUnmodifiableView();
+      public int getKindValue() {
+        return kind_;
       }
       /**
-       * <code>repeated string annotations = 4;</code>
-       * @return The count of annotations.
-       */
-      public int getAnnotationsCount() {
-        return annotations_.size();
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @param index The index of the element to return.
-       * @return The annotations at the given index.
-       */
-      public java.lang.String getAnnotations(int index) {
-        return annotations_.get(index);
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the annotations at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getAnnotationsBytes(int index) {
-        return annotations_.getByteString(index);
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The annotations to set.
+       * <code>.TypeNode.TypeKind kind = 2;</code>
+       * @param value The enum numeric value on the wire for kind to set.
        * @return This builder for chaining.
        */
-      public Builder setAnnotations(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationsIsMutable();
-        annotations_.set(index, value);
+      public Builder setKindValue(int value) {
+        kind_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string annotations = 4;</code>
-       * @param value The annotations to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAnnotations(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationsIsMutable();
-        annotations_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @param values The annotations to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllAnnotations(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, annotations_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAnnotations() {
-        annotations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string annotations = 4;</code>
-       * @param value The bytes of the annotations to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAnnotationsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationsIsMutable();
-        annotations_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private int kind_ = 1;
-      /**
-       * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
-       * @return Whether the kind field is set.
-       */
-      public boolean hasKind() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
+       * <code>.TypeNode.TypeKind kind = 2;</code>
        * @return The kind.
        */
       public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind getKind() {
         @SuppressWarnings("deprecation")
         com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.valueOf(kind_);
-        return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple : result;
+        return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.UNRECOGNIZED : result;
       }
       /**
-       * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
+       * <code>.TypeNode.TypeKind kind = 2;</code>
        * @param value The kind to set.
        * @return This builder for chaining.
        */
@@ -1384,102 +844,78 @@ public final class TypeNodeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        
         kind_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>required .Models.TypeNode.TypeKind kind = 2;</code>
+       * <code>.TypeNode.TypeKind kind = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearKind() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        kind_ = 1;
+        
+        kind_ = 0;
         onChanged();
         return this;
       }
 
-      private int namespacee_ = 1;
+      private boolean isResolved_ ;
       /**
-       * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-       * @return Whether the namespacee field is set.
+       * <code>bool isResolved = 3;</code>
+       * @return The isResolved.
        */
-      public boolean hasNamespacee() {
-        return ((bitField0_ & 0x00000008) != 0);
+      public boolean getIsResolved() {
+        return isResolved_;
       }
       /**
-       * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-       * @return The namespacee.
-       */
-      public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace getNamespacee() {
-        @SuppressWarnings("deprecation")
-        com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace.valueOf(namespacee_);
-        return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace.TypeVariable : result;
-      }
-      /**
-       * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
-       * @param value The namespacee to set.
+       * <code>bool isResolved = 3;</code>
+       * @param value The isResolved to set.
        * @return This builder for chaining.
        */
-      public Builder setNamespacee(com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.NameSpace value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000008;
-        namespacee_ = value.getNumber();
+      public Builder setIsResolved(boolean value) {
+        
+        isResolved_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .Models.TypeNode.NameSpace namespacee = 3;</code>
+       * <code>bool isResolved = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNamespacee() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        namespacee_ = 1;
+      public Builder clearIsResolved() {
+        
+        isResolved_ = false;
         onChanged();
         return this;
       }
 
-      private int typeSem_ = 1;
+      private boolean isTypeVariable_ ;
       /**
-       * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-       * @return Whether the typeSem field is set.
+       * <code>bool isTypeVariable = 4;</code>
+       * @return The isTypeVariable.
        */
-      public boolean hasTypeSem() {
-        return ((bitField0_ & 0x00000010) != 0);
+      public boolean getIsTypeVariable() {
+        return isTypeVariable_;
       }
       /**
-       * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-       * @return The typeSem.
-       */
-      public com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem getTypeSem() {
-        @SuppressWarnings("deprecation")
-        com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem result = com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem.valueOf(typeSem_);
-        return result == null ? com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem.Object : result;
-      }
-      /**
-       * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
-       * @param value The typeSem to set.
+       * <code>bool isTypeVariable = 4;</code>
+       * @param value The isTypeVariable to set.
        * @return This builder for chaining.
        */
-      public Builder setTypeSem(com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeSem value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000010;
-        typeSem_ = value.getNumber();
+      public Builder setIsTypeVariable(boolean value) {
+        
+        isTypeVariable_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .Models.TypeNode.TypeSem typeSem = 5;</code>
+       * <code>bool isTypeVariable = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTypeSem() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        typeSem_ = 1;
+      public Builder clearIsTypeVariable() {
+        
+        isTypeVariable_ = false;
         onChanged();
         return this;
       }
@@ -1496,10 +932,10 @@ public final class TypeNodeOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Models.TypeNode)
+      // @@protoc_insertion_point(builder_scope:TypeNode)
     }
 
-    // @@protoc_insertion_point(class_scope:Models.TypeNode)
+    // @@protoc_insertion_point(class_scope:TypeNode)
     private static final com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode();
@@ -1509,7 +945,7 @@ public final class TypeNodeOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<TypeNode>
+    private static final com.google.protobuf.Parser<TypeNode>
         PARSER = new com.google.protobuf.AbstractParser<TypeNode>() {
       @java.lang.Override
       public TypeNode parsePartialFrom(
@@ -1537,10 +973,10 @@ public final class TypeNodeOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Models_TypeNode_descriptor;
+    internal_static_TypeNode_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Models_TypeNode_fieldAccessorTable;
+      internal_static_TypeNode_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1550,29 +986,24 @@ public final class TypeNodeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016TypeNode.proto\022\006Models\"\247\003\n\010TypeNode\022\014\n" +
-      "\004name\030\001 \001(\t\022\023\n\013annotations\030\004 \003(\t\022\'\n\004kind" +
-      "\030\002 \002(\0162\031.Models.TypeNode.TypeKind\022.\n\nnam" +
-      "espacee\030\003 \001(\0162\032.Models.TypeNode.NameSpac" +
-      "e\022)\n\007typeSem\030\005 \001(\0162\030.Models.TypeNode.Typ" +
-      "eSem\"n\n\010TypeKind\022\n\n\006Simple\020\001\022\021\n\rParamete" +
-      "rized\020\002\022\014\n\010WildCard\020\003\022\t\n\005Union\020\004\022\r\n\tPrim" +
-      "itive\020\005\022\020\n\014Intersection\020\006\022\t\n\005Array\020\007\"P\n\t" +
-      "NameSpace\022\020\n\014TypeVariable\020\001\022\007\n\003Jdk\020\002\022\014\n\010" +
-      "External\020\003\022\014\n\010Internal\020\004\022\014\n\010DontKnow\020\005\"2" +
-      "\n\007TypeSem\022\n\n\006Object\020\001\022\010\n\004Enum\020\002\022\021\n\rPrimi" +
-      "tiveType\020\003B\033\n\031com.t2r.common.models.ast"
+      "\n\016TypeNode.proto\"\326\001\n\010TypeNode\022\014\n\004name\030\001 " +
+      "\001(\t\022 \n\004kind\030\002 \001(\0162\022.TypeNode.TypeKind\022\022\n" +
+      "\nisResolved\030\003 \001(\010\022\026\n\016isTypeVariable\030\004 \001(" +
+      "\010\"n\n\010TypeKind\022\n\n\006Simple\020\000\022\021\n\rParameteriz" +
+      "ed\020\002\022\014\n\010WildCard\020\003\022\t\n\005Union\020\004\022\r\n\tPrimiti" +
+      "ve\020\005\022\020\n\014Intersection\020\006\022\t\n\005Array\020\007B\033\n\031com" +
+      ".t2r.common.models.astb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_Models_TypeNode_descriptor =
+    internal_static_TypeNode_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Models_TypeNode_fieldAccessorTable = new
+    internal_static_TypeNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Models_TypeNode_descriptor,
-        new java.lang.String[] { "Name", "Annotations", "Kind", "Namespacee", "TypeSem", });
+        internal_static_TypeNode_descriptor,
+        new java.lang.String[] { "Name", "Kind", "IsResolved", "IsTypeVariable", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package Models;
-
 option java_package = "com.t2r.common.models.refactorings";
 
 

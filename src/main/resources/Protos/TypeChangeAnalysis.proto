@@ -1,44 +1,74 @@
 syntax = "proto3";
 
-package Models;
 
 import "TypeGraph.proto";
+import "NameSpace.proto";
+import "TypeSem.proto";
+import "ElementKind.proto";
 
 option java_package = "com.t2r.common.models.refactorings";
 
+// This is a Type Changes grouped by the real type change performed
+// TypeChange instance List<Integer> To Set<Long> will be contained in a group for List to Set and Integer to Long
 message TypeChangeAnalysis {
 
-       repeated TypeChangeInstance typeChangeInstances= 1;
-       TypeGraph b4 = 2;
-       TypeGraph aftr = 3;
-       string nameSpaces = 4; // Internal -> External ....
-       string typeSem = 5; // Object -> Enum, Object -> Object ...
-       MigrationAnalysis migrationInfo = 13;
-       bool withinSamePackage = 6;
-       // if typeKind not like %Primitive%
-       string hierarchyRelation = 7;
-       bool b4ComposesAfter = 8;
+    TypeGraph b4 = 2; // The b4 type of the group
+    TypeGraph aftr = 3; // After type of the group
 
-       PrimitiveAnalysis primitiveInfo = 9;
+    repeated TypeChangeInstance typeChangeInstances = 1;
+    NameSpace nameSpacesB4 = 4; // Internal -> External ....
+    NameSpace nameSpaceAfter = 10;
+    TypeSem typeSemb4 = 5; // Object -> Enum, Object -> Object ...
+    TypeSem typeSemAftr = 11;
+    MigrationAnalysis migrationInfo = 12;
+    bool withinSamePackage = 6;
 
-       message MigrationAnalysis {
-           bool isTypeMigration = 1;
-           string typeMigrationLevel  = 2; // Project, Package, Cu, Type, Method
-           bool cannotBeMigrated = 3;
-           bool isB4Removed = 4;
-       }
+    string hierarchyRelation = 7;
+    bool b4ComposesAfter = 8;
 
-       message TypeChangeInstance{
-           string elementKindAffected = 1;
-           string visibility = 2;
-           string syntacticUpdate = 3;
-           string compilationUnit = 4;
-       }
+    PrimitiveAnalysis primitiveInfo = 9;
 
-       message PrimitiveAnalysis {
-           bool widening = 1;
-           bool narrowing = 2;
-           bool unboxing = 3;
-           bool boxing = 4;
-       }
+
+    // Each Type Change
+    // Eg. List<String> to Set<StringBuffer>
+    // contains tree called syntacticTransformations
+    message TypeChangeInstance {
+        TypeGraph b4 = 1;
+        TypeGraph aftr = 2;
+        string nameB4 = 7;
+        string nameAfter = 8;
+        ElementKind elementKindAffected = 3;
+        string visibility = 4;
+        SyntacticTransformation syntacticUpdate = 5;
+        string compilationUnit = 6;
+        repeated CodeMapping codeMapping = 9;
+    }
+
+    // Contains the real type changes
+    message SyntacticTransformation {
+        TypeGraph b4 = 1;
+        TypeGraph aftr = 2;
+        repeated string transformation = 3;
+        repeated SyntacticTransformation subTransformations = 4;
+    }
+
+    message PrimitiveAnalysis {
+        bool widening = 1;
+        bool narrowing = 2;
+        bool unboxing = 3;
+        bool boxing = 4;
+    }
+
+    message CodeMapping {
+        bool isSame = 3;
+        string b4 = 1;
+        string after = 2;
+    }
+
+    message MigrationAnalysis {
+        bool isTypeMigration = 1;
+        string typeMigrationLevel = 2; // Project, Package, Cu, Type, Method
+        bool cannotBeMigrated = 3;
+        bool isB4Removed = 4;
+    }
 }

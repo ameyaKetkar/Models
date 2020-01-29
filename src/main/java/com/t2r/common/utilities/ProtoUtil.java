@@ -1,15 +1,12 @@
 package com.t2r.common.utilities;
 
-import static com.t2r.common.utilities.FileUtils.appendToFile;
-import static com.t2r.common.utilities.FileUtils.createIfAbsent;
-import static com.t2r.common.utilities.FileUtils.writeToFile;
-import static java.nio.file.Files.readAllBytes;
-
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
-
 import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
+import com.t2r.common.models.refactorings.ExternalDepInfoOuterClass.ExternalDepInfo;
 import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
+import io.vavr.CheckedFunction1;
+import io.vavr.control.Try;
 
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
@@ -20,8 +17,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import io.vavr.CheckedFunction1;
-import io.vavr.control.Try;
+import static com.t2r.common.utilities.FileUtils.*;
+import static java.nio.file.Files.readAllBytes;
 
 public class ProtoUtil {
 
@@ -48,6 +45,7 @@ public class ProtoUtil {
         switch (kind){
             case "Project" : return p -> (T) Project.parseFrom(p);
             case "CommitInfo" : return p -> (T) CommitInfo.parseFrom(p);
+            case "ExternalDependencyInfo" : return  p -> (T) ExternalDepInfo.parseFrom(p);
 //            case "RMined" : return c -> (T) RMined.parseFrom(c);
             default: return c -> null;
         }
@@ -135,7 +133,8 @@ public class ProtoUtil {
         }
         public <T> Try<T> read(String fileName, String kind){
             return Try.of(() -> ProtoUtil.<T>parser(kind)
-                    .apply(CodedInputStream.newInstance(readAllBytes(outputDir.resolve(fileName + ".txt")))));
+                    .apply(CodedInputStream.newInstance(readAllBytes(outputDir.resolve(fileName + ".txt")))))
+                    .onFailure(e -> System.out.println(e.toString()));
         }
     }
 }

@@ -1,11 +1,9 @@
 package com.t2r.common.utilities;
 
-import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
-import static com.t2r.common.utilities.FileUtils.createIfAbsent;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
-
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
+import io.vavr.Tuple3;
+import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -18,6 +16,7 @@ import org.eclipse.jgit.revwalk.RevSort;
 import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.revwalk.RevWalk;
 import org.eclipse.jgit.revwalk.filter.CommitTimeRevFilter;
+import org.eclipse.jgit.revwalk.filter.RevFilter;
 import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 import org.eclipse.jgit.treewalk.TreeWalk;
 
@@ -25,20 +24,11 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 
-import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.control.Try;
+import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
+import static java.util.stream.Collectors.*;
 
 public class GitUtil {
 
@@ -73,6 +63,7 @@ public class GitUtil {
             walk.markStart(walk.parseCommit(git.getRepository().resolve("HEAD")));
             walk.sort(order);
             walk.setRevFilter(CommitTimeRevFilter.after(fromDate));
+            walk.setRevFilter(RevFilter.NO_MERGES);
             return walk;
         })
                 .map(walk -> {
@@ -119,13 +110,23 @@ public class GitUtil {
 
 
     public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c){
-
         return findCommit(c, git.getRepository())
                 .map(cmt -> getDiffEntries(git, cmt).stream()
                         .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
                         .collect(groupingBy(Tuple3::_1
                                 , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList())))))
                 .orElse(new HashMap<>());
+    }
+
+    public static Map<Path, String> getFilesAddedRenamedModified(Git git, String c){
+        List<String> filePaths = filePathDiffAtCommit(git, c).entrySet().stream()
+                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.ADD) || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
+                .flatMap(x -> x.getValue().stream().map(z -> z._2()))
+                .collect(toList());
+
+        return populateFileContents(git.getRepository(), c, f -> filePaths.stream().anyMatch(fp -> f.contains(fp)));
+
+
     }
 
 
@@ -155,8 +156,28 @@ public class GitUtil {
 
 
     public static Optional<RevCommit> findCommit(String SHAId, Repository repo) {
+
+        List<RevCommit> mergeCommits = Try.of(() -> {
+            RevWalk walk = new RevWalk(repo);
+            walk.markStart(walk.parseCommit(repo.resolve("HEAD")));
+            walk.setRevFilter(RevFilter.ONLY_MERGES);
+            return walk;
+        }).map(walk -> {
+                    Iterator<RevCommit> iter = walk.iterator();
+                    List<RevCommit> l = new ArrayList<>();
+                    while (iter.hasNext()) {
+                        l.add(iter.next());
+                    }
+                    walk.dispose();
+                    return l;
+                }).getOrElse(new ArrayList<>());
+
+        if(mergeCommits.stream().anyMatch(x->x.getId().getName().equals(SHAId)))
+            return Optional.empty();
         return Try.of(() -> new RevWalk(repo))
-                .flatMap(x->Try.of(() -> x.parseCommit(ObjectId.fromString(SHAId))))
+                .flatMap(x->{
+                    return Try.of(() -> x.parseCommit(ObjectId.fromString(SHAId)));
+                })
                 .onFailure(e -> e.printStackTrace())
                 .toJavaOptional();
     }
