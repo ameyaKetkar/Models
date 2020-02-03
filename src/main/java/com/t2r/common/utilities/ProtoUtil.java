@@ -1,16 +1,21 @@
 package com.t2r.common.utilities;
 
+import static com.t2r.common.utilities.FileUtils.appendToFile;
+import static com.t2r.common.utilities.FileUtils.createIfAbsent;
+import static com.t2r.common.utilities.FileUtils.writeToFile;
+import static java.nio.file.Files.readAllBytes;
+
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
+
 import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
 import com.t2r.common.models.refactorings.ExternalDepInfoOuterClass.ExternalDepInfo;
 import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
 import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit;
-import io.vavr.CheckedFunction1;
-import io.vavr.control.Try;
 
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,8 +23,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.t2r.common.utilities.FileUtils.*;
-import static java.nio.file.Files.readAllBytes;
+import io.vavr.CheckedFunction1;
+import io.vavr.control.Try;
 
 public class ProtoUtil {
 
@@ -95,6 +100,9 @@ public class ProtoUtil {
             Path folderName = folderName(kind).apply(outputDir);
 
             List<T> msgs = new ArrayList<>();
+
+            if(!Files.exists(folderName.resolve(fileName + ".txt")))
+                return msgs;
 
             // Try to get all binary message sizes
             Try<List<Integer>> msgSizes = Try.of(() -> new String(readAllBytes(createIfAbsent(folderName.resolve(fileName + "BinSize.txt")))))
