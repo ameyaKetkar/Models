@@ -1,9 +1,11 @@
 package com.t2r.common.utilities;
 
-import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.control.Try;
+import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toMap;
+
 import org.apache.commons.io.IOUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -24,11 +26,20 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.function.Predicate;
 
-import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
-import static java.util.stream.Collectors.*;
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
+import io.vavr.Tuple3;
+import io.vavr.control.Try;
 
 public class GitUtil {
 
@@ -114,7 +125,7 @@ public class GitUtil {
                 .orElse(new HashMap<>());
     }
 
-    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Git git, RevCommit currentCommit, RevCommit parentCommit) {
+    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Git git, RevCommit currentCommit, RevCommit parentCommit) throws IOException {
 
         var afterPaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
                 .filter(x -> x.getKey().equals(DiffEntry.ChangeType.ADD)
@@ -198,7 +209,7 @@ public class GitUtil {
      * @return filePath * content
      */
     public static Map<Path, String> populateFileContents(Repository repository, String cmt,
-                                                         Predicate<String> pred) {
+                                                         Predicate<String> pred) throws IOException {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
         if (commit.isPresent()) {
@@ -209,7 +220,7 @@ public class GitUtil {
 
 
     public static Map<Path, String> populateFileContents(Repository repository, RevCommit cmt,
-                                                         Predicate<String> pred) {
+                                                         Predicate<String> pred) throws IOException {
         Map<Path, String> fileContents = new HashMap<>();
         RevTree parentTree = cmt.getTree();
         try (TreeWalk treeWalk = new TreeWalk(repository)) {
@@ -225,8 +236,6 @@ public class GitUtil {
                     fileContents.put(Paths.get(pathString), writer.toString());
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return fileContents;
     }
