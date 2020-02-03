@@ -34,9 +34,8 @@ public class GitUtil {
 
 
     /**
-     *
      * @param cloneLink Git clone Url
-     * @param path Where to clone or find
+     * @param path      Where to clone or find
      * @return Git repository
      */
     public static Try<Git> tryToClone(String cloneLink, Path path) {
@@ -51,9 +50,8 @@ public class GitUtil {
 
 
     /**
-     *
-     * @param git The Git repository
-     * @param order order for output commits
+     * @param git      The Git repository
+     * @param order    order for output commits
      * @param fromDate first commit date
      * @return list of @RevCommit
      */
@@ -89,51 +87,62 @@ public class GitUtil {
     }
 
     /**
-     *
      * @param git the Git repository
-     * @param c the commit
+     * @param c   the commit
      * @return DiffEntry for the commit
      */
-    public static List<DiffEntry> getDiffEntries(Git git, RevCommit c)  {
-        try {
-
-            List<DiffEntry> ds = git.diff().setOldTree(prepareTreeParser(c.getParent(0).getId().getName(), git.getRepository()))
-                    .setNewTree(prepareTreeParser(c.getId().getName(), git.getRepository()))
-                    .call();
-            return ds;
-        }catch (Exception e){
-            System.out.println("Could not generate git diff");
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
+    public static List<DiffEntry> getDiffEntries(Git git, RevCommit c) {
+        return Try.of(() -> git.diff().setOldTree(prepareTreeParser(c.getParent(0).getId().getName(), git.getRepository()))
+                .setNewTree(prepareTreeParser(c.getId().getName(), git.getRepository()))
+                .call())
+                .onFailure(Throwable::printStackTrace)
+                .getOrElse(new ArrayList<>());
     }
 
 
-    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c){
+    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, RevCommit cmt) {
+        return getDiffEntries(git, cmt).stream()
+                .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
+                .collect(groupingBy(Tuple3::_1
+                        , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList()))));
+    }
+
+
+    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c) {
         return findCommit(c, git.getRepository())
-                .map(cmt -> getDiffEntries(git, cmt).stream()
-                        .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
-                        .collect(groupingBy(Tuple3::_1
-                                , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList())))))
+                .map(cmt -> filePathDiffAtCommit(git, cmt))
                 .orElse(new HashMap<>());
     }
 
-    public static Map<Path, String> getFilesAddedRenamedModified(Git git, String c){
-        List<String> filePaths = filePathDiffAtCommit(git, c).entrySet().stream()
-                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.ADD) || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
-                .flatMap(x -> x.getValue().stream().map(z -> z._2()))
+    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Git git, RevCommit currentCommit, RevCommit parentCommit) {
+
+        var afterPaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
+                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.ADD)
+                        || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
+                .flatMap(x -> x.getValue().stream().map(Tuple2::_2))
                 .collect(toList());
 
-        return populateFileContents(git.getRepository(), c, f -> filePaths.stream().anyMatch(fp -> f.contains(fp)));
+        var afterPathContent = populateFileContents(git.getRepository(), currentCommit, x -> true)
+                .entrySet().stream()
+                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toAbsolutePath().toString().contains(p))
+                        , toMap(x -> x.getKey(), x -> x.getValue())));
 
+        var beforePaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
+                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.DELETE)
+                        || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
+                .flatMap(x -> x.getValue().stream().map(Tuple2::_1))
+                .collect(toList());
 
+        var beforePathContent = populateFileContents(git.getRepository(), parentCommit
+                , f -> beforePaths.stream().anyMatch(f::contains));
+
+        return Tuple.of(beforePathContent, afterPathContent.get(true), afterPathContent.get(false));
     }
 
 
     /**
-     *
      * @param git the Git repository
-     * @param c the commit
+     * @param c   the commit
      * @return is successful checkout
      */
     public static boolean checkoutCommit(Git git, RevCommit c) {
@@ -142,9 +151,9 @@ public class GitUtil {
     }
 
 
-   private static CanonicalTreeParser prepareTreeParser(String sha, Repository repository) throws
+    private static CanonicalTreeParser prepareTreeParser(String sha, Repository repository) throws
             IOException {
-        RevWalk walk = new RevWalk(repository) ;
+        RevWalk walk = new RevWalk(repository);
         RevCommit commit = walk.parseCommit(repository.resolve(sha));
         RevTree tree = walk.parseTree(commit.getTree().getId());
         CanonicalTreeParser treeParser = new CanonicalTreeParser();
@@ -163,19 +172,19 @@ public class GitUtil {
             walk.setRevFilter(RevFilter.ONLY_MERGES);
             return walk;
         }).map(walk -> {
-                    Iterator<RevCommit> iter = walk.iterator();
-                    List<RevCommit> l = new ArrayList<>();
-                    while (iter.hasNext()) {
-                        l.add(iter.next());
-                    }
-                    walk.dispose();
-                    return l;
-                }).getOrElse(new ArrayList<>());
+            Iterator<RevCommit> iter = walk.iterator();
+            List<RevCommit> l = new ArrayList<>();
+            while (iter.hasNext()) {
+                l.add(iter.next());
+            }
+            walk.dispose();
+            return l;
+        }).getOrElse(new ArrayList<>());
 
-        if(mergeCommits.stream().anyMatch(x->x.getId().getName().equals(SHAId)))
+        if (mergeCommits.stream().anyMatch(x -> x.getId().getName().equals(SHAId)))
             return Optional.empty();
         return Try.of(() -> new RevWalk(repo))
-                .flatMap(x->{
+                .flatMap(x -> {
                     return Try.of(() -> x.parseCommit(ObjectId.fromString(SHAId)));
                 })
                 .onFailure(e -> e.printStackTrace())
@@ -183,43 +192,50 @@ public class GitUtil {
     }
 
     /**
-     *
      * @param repository Git repo
-     * @param cmt the particular commit
-     * @param pred matcher for files to populate the content for
+     * @param cmt        the particular commit
+     * @param pred       matcher for files to populate the content for
      * @return filePath * content
      */
     public static Map<Path, String> populateFileContents(Repository repository, String cmt,
-                                                          Predicate<String> pred) {
+                                                         Predicate<String> pred) {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
-        if(commit.isPresent()) {
-            RevTree parentTree = commit.get().getTree();
-            try (TreeWalk treeWalk = new TreeWalk(repository)) {
-                treeWalk.addTree(parentTree);
-                treeWalk.setRecursive(true);
-                while (treeWalk.next()) {
-                    String pathString = treeWalk.getPathString();
-                    if (pred.test(pathString)) {
-                        ObjectId objectId = treeWalk.getObjectId(0);
-                        ObjectLoader loader = repository.open(objectId);
-                        StringWriter writer = new StringWriter();
-                        IOUtils.copy(loader.openStream(), writer);
-                        fileContents.put(Paths.get(pathString), writer.toString());
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        if (commit.isPresent()) {
+            populateFileContents(repository, commit.get(), pred);
         }
         return fileContents;
     }
 
 
-    public static boolean isFileAffected(Git git, String c, Predicate<String> fileMatcher){
+    public static Map<Path, String> populateFileContents(Repository repository, RevCommit cmt,
+                                                         Predicate<String> pred) {
+        Map<Path, String> fileContents = new HashMap<>();
+        RevTree parentTree = cmt.getTree();
+        try (TreeWalk treeWalk = new TreeWalk(repository)) {
+            treeWalk.addTree(parentTree);
+            treeWalk.setRecursive(true);
+            while (treeWalk.next()) {
+                String pathString = treeWalk.getPathString();
+                if (pred.test(pathString)) {
+                    ObjectId objectId = treeWalk.getObjectId(0);
+                    ObjectLoader loader = repository.open(objectId);
+                    StringWriter writer = new StringWriter();
+                    IOUtils.copy(loader.openStream(), writer);
+                    fileContents.put(Paths.get(pathString), writer.toString());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return fileContents;
+    }
+
+
+    public static boolean isFileAffected(Git git, String c, Predicate<String> fileMatcher) {
         return filePathDiffAtCommit(git, c).values().stream()
                 .flatMap(x -> x.stream())
-                .anyMatch(x -> (x._1()!= null && fileMatcher.test(x._1())) || (x._2()!= null && fileMatcher.test(x._2())));
+                .anyMatch(x -> (x._1() != null && fileMatcher.test(x._1())) || (x._2() != null && fileMatcher.test(x._2())));
     }
 
 

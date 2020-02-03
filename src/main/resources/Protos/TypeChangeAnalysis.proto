@@ -5,6 +5,7 @@ import "TypeGraph.proto";
 import "NameSpace.proto";
 import "TypeSem.proto";
 import "ElementKind.proto";
+//import "CodeStatistics.proto";
 
 option java_package = "com.t2r.common.models.refactorings";
 
@@ -20,7 +21,6 @@ message TypeChangeAnalysis {
     NameSpace nameSpaceAfter = 10;
     TypeSem typeSemb4 = 5; // Object -> Enum, Object -> Object ...
     TypeSem typeSemAftr = 11;
-    MigrationAnalysis migrationInfo = 12;
     bool withinSamePackage = 6;
 
     string hierarchyRelation = 7;
@@ -28,10 +28,9 @@ message TypeChangeAnalysis {
 
     PrimitiveAnalysis primitiveInfo = 9;
 
+    TypeChangeStatistics typeChangeStats = 14;
 
-    // Each Type Change
-    // Eg. List<String> to Set<StringBuffer>
-    // contains tree called syntacticTransformations
+
     message TypeChangeInstance {
         TypeGraph b4 = 1;
         TypeGraph aftr = 2;
@@ -42,13 +41,15 @@ message TypeChangeAnalysis {
         SyntacticTransformation syntacticUpdate = 5;
         string compilationUnit = 6;
         repeated CodeMapping codeMapping = 9;
+        string urlB4 = 10;
+        string urlAfter =11;
     }
 
     // Contains the real type changes
     message SyntacticTransformation {
         TypeGraph b4 = 1;
         TypeGraph aftr = 2;
-        repeated string transformation = 3;
+        string transformation = 3;
         repeated SyntacticTransformation subTransformations = 4;
     }
 
@@ -63,12 +64,24 @@ message TypeChangeAnalysis {
         bool isSame = 3;
         string b4 = 1;
         string after = 2;
+        repeated ReplacementInferred replcementInferred = 4;
+        string urlbB4 = 6;
+        string urlAftr = 5;
     }
 
-    message MigrationAnalysis {
-        bool isTypeMigration = 1;
-        string typeMigrationLevel = 2; // Project, Package, Cu, Type, Method
-        bool cannotBeMigrated = 3;
-        bool isB4Removed = 4;
+    message ReplacementInferred {
+        string b4 = 1;
+        string aftr = 2;
+        string replacementType =3;
     }
+
+
+    message TypeChangeStatistics{
+        map<string, double> visibilityStats = 1;
+        map<string, double> transformationStats = 2;
+        map<string, double> elementKindStats = 3;
+        map<string, double> nameSpaceStats = 4;
+    }
+
+
 }

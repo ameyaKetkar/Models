@@ -5,6 +5,7 @@ import com.google.protobuf.GeneratedMessageV3;
 import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
 import com.t2r.common.models.refactorings.ExternalDepInfoOuterClass.ExternalDepInfo;
 import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
+import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit;
 import io.vavr.CheckedFunction1;
 import io.vavr.control.Try;
 
@@ -46,6 +47,7 @@ public class ProtoUtil {
             case "Project" : return p -> (T) Project.parseFrom(p);
             case "CommitInfo" : return p -> (T) CommitInfo.parseFrom(p);
             case "ExternalDependencyInfo" : return  p -> (T) ExternalDepInfo.parseFrom(p);
+            case "TypeChangeCommit" : return p -> (T) TypeChangeCommit.parseFrom(p);
 //            case "RMined" : return c -> (T) RMined.parseFrom(c);
             default: return c -> null;
         }

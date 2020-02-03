@@ -3,22 +3,87 @@ package com.t2r.common.utilities;
 import com.t2r.common.models.ast.TypeGraphOuterClass.TypeGraph;
 import com.t2r.common.models.ast.TypeNodeOuterClass;
 import com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind;
-import com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics;
-import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
-import com.t2r.common.models.refactorings.ElementKindOuterClass.ElementKind;
-import com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace;
+import com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate;
+import com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff;
+import com.t2r.common.models.refactorings.JarInfoOuterClass;
 import com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis;
-import io.vavr.Tuple;
+import com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation;
+import com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics;
+import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit;
+import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Primitive;
 import static com.t2r.common.models.ast.TypeNodeOuterClass.TypeNode.TypeKind.Simple;
-import static java.util.stream.Collectors.*;
+import static java.util.Collections.singletonList;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 public class PrettyPrinter {
 
+
+
+
+    public static boolean looselyEqual(TypeGraph tg, TypeGraph tg2) {
+        if(!tg.getRoot().getKind().equals(tg2.getRoot().getKind()))
+            return false;
+        if (tg.getRoot().getKind().equals(Simple) || tg.getRoot().getKind().equals(Primitive)) {
+            return tg.getRoot().getName().equals(tg2.getRoot().getName()) || tg.getRoot().getName().endsWith("."+tg2.getRoot().getName())
+                    || tg2.getRoot().getName().endsWith("."+tg.getRoot().getName());
+        } else if (tg.getRoot().getKind().equals(TypeKind.Parameterized)) {
+            return looselyEqual(tg.getEdgesMap().get("of"), tg2.getEdgesMap().get("of"))
+                    && tg.getEdgesMap().entrySet().stream().filter(x -> x.getKey().contains("Param")).count() ==
+                        tg2.getEdgesMap().entrySet().stream().filter(x -> x.getKey().contains("Param")).count()
+                    && tg.getEdgesMap().entrySet().stream().filter(x -> x.getKey().contains("Param"))
+                    .allMatch(x -> looselyEqual(x.getValue(), tg2.getEdgesMap().get(x.getKey())));
+
+        } else if (tg.getRoot().getKind().equals(TypeKind.Array)) {
+            return looselyEqual(tg.getEdgesMap().get("of"), tg2.getEdgesMap().get("of"));
+        } else if (tg.getRoot().getKind().equals(TypeKind.WildCard)) {
+            if (tg.getEdgesMap().containsKey("extends") && tg2.getEdgesMap().containsKey("extends")) {
+                return looselyEqual(tg.getEdgesMap().get("extends"), tg2.getEdgesMap().get("extends"));
+            }
+            if (tg.getEdgesMap().containsKey("super") && tg2.getEdgesMap().containsKey("super")) {
+                return looselyEqual(tg.getEdgesMap().get("super"), tg2.getEdgesMap().get("super"));
+            }
+            if(tg.getEdgesCount() == 0 && tg2.getEdgesCount() == 0)
+                return true;
+        } else if (tg.getRoot().getKind().equals(TypeKind.Union))
+            return false;
+
+        return false;
+    }
+
+
+    public static List<String> prettyLIST(TypeGraph tg) {
+        if (tg.getRoot().getKind().equals(Simple) || tg.getRoot().getKind().equals(Primitive)) {
+            return singletonList(tg.getRoot().getName());
+        } else if (tg.getRoot().getKind().equals(TypeKind.Parameterized)) {
+            return Stream.concat(Stream.of(pretty(tg.getEdgesMap().get("of")))
+                    , tg.getEdgesMap().entrySet().stream().filter(x -> x.getKey().contains("Param"))
+                        .flatMap(x -> prettyLIST(x.getValue()).stream())).collect(toList());
+        } else if (tg.getRoot().getKind().equals(TypeKind.Array)) {
+            return prettyLIST(tg.getEdgesMap().get("of"));
+        } else if (tg.getRoot().getKind().equals(TypeKind.WildCard)) {
+            if (tg.getEdgesMap().containsKey("extends")) {
+                return prettyLIST(tg.getEdgesMap().get("extends"));
+            }
+            else if (tg.getEdgesMap().containsKey("super")){
+                return prettyLIST(tg.getEdgesMap().get("super"));
+            }
+            else{
+                return singletonList("?");
+            }
+        } else if (tg.getRoot().getKind().equals(TypeKind.Union))
+            return tg.getEdgesMap().entrySet().stream().filter(x -> x.getKey().contains("Union") || x.getKey().contains("Intersection"))
+                    .flatMap(x -> prettyLIST(x.getValue()).stream())
+                    .collect(Collectors.toList());
+        return new ArrayList<>();
+    }
 
     public static String pretty(TypeGraph tg) {
         if (tg.getRoot().getKind().equals(Simple) || tg.getRoot().getKind().equals(Primitive)) {
@@ -51,48 +116,58 @@ public class PrettyPrinter {
     }
 
 
-    public static String prettySyntacticUpdate(TypeChangeAnalysis.SyntacticTransformation t) {
+    public static String prettySyntacticUpdate(SyntacticTransformation t) {
         return (pretty(t.getB4()) + "   " + pretty(t.getAftr()))
                 + "\n"
-                + String.join("\t", t.getTransformationList())
+                + String.join("\t", t.getTransformation())
                 + "\n"
                 + t.getSubTransformationsList().stream().map(PrettyPrinter::prettySyntacticUpdate).collect(joining("\n"));
 
     }
 
 
-    public static String prettyCommit(CommitInfo c, List<TypeChangeAnalysis> tca, CodeStatistics cs) {
+    public static String prettyCommit(TypeChangeCommit tcc) {
 
-        return String.join("\n", "===========================" + c.getSha() + "=========================="
-                , prettyDepUpdate(c)
-                , prettyFileStats(c)
-                , tca.stream().map(x -> prettyTypeChangeAnalysis(x)).collect(joining("\n"))
-                , prettyCodeStats(cs)
-                , getStatsForAllTypeChange(tca)
+        return String.join("\n", "===========================" + tcc.getSha() + "=========================="
+                , prettyDepUpdate(tcc.getDependencyUpdate(), tcc)
+                , prettyFileStats(tcc.getFileDiff())
+                , tcc.getTypeChangesList().stream().map(x -> prettyTypeChangeAnalysis(x)).collect(joining("\n"))
+//                , prettyTypeChangeStats(tcc.getCodeStatistics())
+//                , getStatsForAllTypeChange(tcc.getTypeChangesList())
+                , tcc.getMigrationAnalysisCount() > 0 ? "Type Migration : " + tcc.getMigrationAnalysisList().stream()
+                        .map(x -> pretty(x)).collect(joining(",")) : ""
                 , "==============");
     }
 
-    public static String prettyFileStats(CommitInfo c) {
+
+    public static String pretty(MigrationAnalysis ma){
+        return ma.getType() + " " + ma.getTypeMigrationLevel();
+    }
+
+    public static String prettyFileStats(FileDiff fd) {
         return String.join("\n", "--------File Stats-------"
-                , "Added : " + c.getFileDiff().getFilesAdded()
-                , "Removed : " + c.getFileDiff().getFilesRemoved()
-                , "Renamed : " + c.getFileDiff().getFilesRenamed()
-                , "Modified : " + c.getFileDiff().getFilesModified());
+                , "Added : " + fd.getFilesAdded()
+                , "Removed : " + fd.getFilesRemoved()
+                , "Renamed : " + fd.getFilesRenamed()
+                , "Modified : " + fd.getFilesModified());
     }
 
 
-    public static String prettyJar(CommitInfo.JarInfo ji) {
+    public static String prettyJar(JarInfoOuterClass.JarInfo ji) {
         return String.join(",", ji.getArtifactID(), ji.getGroupID(), ji.getVersion());
     }
 
-    public static String prettyDepUpdate(CommitInfo c) {
-        if (!c.hasDependencyUpdate())
+    public static String prettyDepUpdate(DependencyUpdate du, TypeChangeCommit tcc) {
+        if (du == null)
             return "";
-        return String.join("\n", "----Dependencies----"
-                , c.getDependencyUpdate().getRemovedList().stream().map(x -> prettyJar(x)).collect(joining(","))
-                , c.getDependencyUpdate().getAddedList().stream().map(x -> prettyJar(x)).collect(joining(","))
-                , c.getDependencyUpdate().getUpdateList().stream().map(x -> prettyJar(x.getBefore()) + " -> " + prettyJar(x.getAfter())).collect(joining(","))
-                , "---------Dependencies-------");
+        return Stream.of( "----Dependencies----"
+                , du.getRemovedList().stream().map(x -> prettyJar(x)).collect(joining(","))
+                , du.getAddedList().stream().map(x -> prettyJar(x)).collect(joining(","))
+                , du.getUpdateList().stream().map(x -> prettyJar(x.getBefore()) + " -> " + prettyJar(x.getAfter())).collect(joining(","))
+//                , tcc.getAddedDepTypeChange() ? "Type From Added Dependency is involved " : ""
+//                , tcc.getRemovedDepTypeChange() ? "Type From Removed Dependency is involved " : ""
+                 , "---------Dependencies-------").filter(x -> !x.isEmpty()).collect(joining("\n"));
+
     }
 
     public static String prettyTypeChangeAnalysis(TypeChangeAnalysis tca) {
@@ -104,13 +179,22 @@ public class PrettyPrinter {
                 + (tca.getB4ComposesAfter() ? "Composition" : "")
                 + prettyPrimitiveInfo(tca) + "\n"
                 + "\t" + tca.getTypeChangeInstancesCount() + "\n"
-                + "\t Matched Statements : " + tca.getTypeChangeInstancesList().stream().mapToLong(x -> x.getCodeMappingCount()).sum() +  "\n"
-                + "\t Unmatched Statements : " + tca.getTypeChangeInstancesList().stream()
-                        .mapToLong(x -> x.getCodeMappingList().stream().filter(z -> z.getIsSame()).count()).sum() +  "\n"
-                + "\t \t" + tca.getTypeChangeInstancesList().stream().flatMap(x -> x.getCodeMappingList().stream())
-                                    .map(x -> x.getB4() + "\n \t \t \t " + x.getAfter()).collect(joining("\n"))
-                + "\n" + "-----";
+                + "\t Total Matched Statements : " + tca.getTypeChangeInstancesList().stream().mapToLong(x -> x.getCodeMappingCount()).sum() +  "\n"
+                + "\t Changed Matched statements : " + tca.getTypeChangeInstancesList().stream()
+                        .mapToLong(x -> x.getCodeMappingList().stream().filter(z -> !z.getIsSame()).count()).sum() +  "\n"
+                + prettyTypeChangeStats(tca.getTypeChangeStats())
+                + "-----";
 
+    }
+
+
+    public static String prettyTypeChangeStats(TypeChangeStatistics tcs){
+        return  "---- Type Change Statistics ------" + "\n"
+                + "Visibility : " + tcs.getVisibilityStatsMap().toString() + "\n"
+                + "ElementKind : " + tcs.getElementKindStatsMap().toString() + "\n"
+                + "Syntactic Update :  " + tcs.getTransformationStatsMap() + "\n"
+                + "NameSpace " + tcs.getNameSpaceStatsMap()
+                + "----------";
     }
 
 //    public static String prettyTypeChangeInstance(TypeChangeAnalysis tca) {
@@ -136,38 +220,39 @@ public class PrettyPrinter {
     }
 
 
-    public static String prettyCodeStats(CodeStatistics cs) {
-        Map<String, Long> visibilityMap = cs.getElementsList().stream().map(x -> x.getVisibility()).collect(groupingBy(x -> x, counting()));
-        Map<NameSpace, Long> namespaceMap = cs.getNamespacesList().stream().collect(groupingBy(x -> x, counting()));
-        Map<ElementKind, Long> elemKindMap = cs.getElementsList().stream().map(x -> x.getElemKind()).collect(groupingBy(x -> x, counting()));
-        Map<TypeKind, Long> typeKindMap = cs.getElementsList().stream().map(x -> x.getType().getRoot().getKind()).collect(groupingBy(x -> x, counting()));
-        return "-------Code Statistics--------" + "\n" +
-                "Visibility : " + visibilityMap.toString() + "\n" +
-                "Namespace : " + namespaceMap.toString() + "\n" +
-                "Element Kind : " + elemKindMap.toString() + "\n" +
-                "Type Kind : " + typeKindMap.toString();
-    }
+//    public static String prettyCodeStats(CodeStatistics cs) {
+//        Map<String, Long> visibilityMap = cs.getElementsList().stream().map(x -> x.getVisibility()).collect(groupingBy(x -> x, counting()));
+//        Map<NameSpace, Long> namespaceMap = cs.getNamespacesList().stream().collect(groupingBy(x -> x, counting()));
+//        Map<ElementKind, Long> elemKindMap = cs.getElementsList().stream().map(x -> x.getElemKind()).collect(groupingBy(x -> x, counting()));
+//        Map<TypeKind, Long> typeKindMap = cs.getElementsList().stream().map(x -> x.getType().getRoot().getKind()).collect(groupingBy(x -> x, counting()));
+//        return "-------Code Statistics--------" + "\n" +
+//                "Visibility : " + visibilityMap.toString() + "\n" +
+//                "Namespace : " + namespaceMap.toString() + "\n" +
+//                "Element Kind : " + elemKindMap.toString() + "\n" +
+//                "Type Kind : " + typeKindMap.toString();
+//    }
 
-    public static String getStatsForAllTypeChange(List<TypeChangeAnalysis> tcs){
+//    public static String getStatsForAllTypeChange(List<TypeChangeAnalysis> tcs){
+//
+//        Map<String, Long> visibilityMap = tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
+//                .collect(groupingBy(x -> x.getVisibility(), counting()));
+//        Map<ElementKind, Long> elemKindMap = tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
+//                .collect(groupingBy(x -> x.getElementKindAffected(), counting()));
+//        Map<TypeKind, Long> typeKindMap =  tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
+//                .collect(groupingBy(x -> x.getB4().getRoot().getKind(), counting()));
+//        Map<NameSpace, Integer> namespaceMap = tcs.stream().map(x -> Tuple.of(x.getNameSpacesB4(), x.getTypeChangeInstancesCount()))
+//                .collect(groupingBy(x -> x._1(),summingInt(x -> x._2())));
+//        return String.join("\n",
+//                "-------Type Change Statistics--------" ,
+//                "Number of Type Changes : " + tcs.size() ,
+//                "Number of Type Change Instances : " + tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream()).count() ,
+//                "Visibility : " + visibilityMap.toString() ,
+//                "Namespace : " + namespaceMap.toString() ,
+//                "Element Kind : " + elemKindMap.toString() ,
+//                "Type Kind : " + typeKindMap.toString());
+//
+//    }
 
-        Map<String, Long> visibilityMap = tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
-                .collect(groupingBy(x -> x.getVisibility(), counting()));
-        Map<ElementKind, Long> elemKindMap = tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
-                .collect(groupingBy(x -> x.getElementKindAffected(), counting()));
-        Map<TypeKind, Long> typeKindMap =  tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream())
-                .collect(groupingBy(x -> x.getB4().getRoot().getKind(), counting()));
-        Map<NameSpace, Integer> namespaceMap = tcs.stream().map(x -> Tuple.of(x.getNameSpacesB4(), x.getTypeChangeInstancesCount()))
-                .collect(groupingBy(x -> x._1(),summingInt(x -> x._2())));
-        return String.join("\n",
-                "-------Type Change Statistics--------" ,
-                "Number of Type Changes : " + tcs.size() ,
-                "Number of Type Change Instances : " + tcs.stream().flatMap(x -> x.getTypeChangeInstancesList().stream()).count() ,
-                "Visibility : " + visibilityMap.toString() ,
-                "Namespace : " + namespaceMap.toString() ,
-                "Element Kind : " + elemKindMap.toString() ,
-                "Type Kind : " + typeKindMap.toString());
-
-    }
 
 
 

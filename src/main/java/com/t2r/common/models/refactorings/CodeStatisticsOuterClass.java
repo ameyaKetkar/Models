@@ -41,69 +41,6 @@ public final class CodeStatisticsOuterClass {
      */
     com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.ElementOrBuilder getElementsOrBuilder(
         int index);
-
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-    int getMappedUMLClassesCount();
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-    boolean containsMappedUMLClasses(
-        java.lang.String key);
-    /**
-     * Use {@link #getMappedUMLClassesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getMappedUMLClasses();
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getMappedUMLClassesMap();
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    java.lang.String getMappedUMLClassesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    java.lang.String getMappedUMLClassesOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return A list containing the namespaces.
-     */
-    java.util.List<com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace> getNamespacesList();
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return The count of namespaces.
-     */
-    int getNamespacesCount();
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @param index The index of the element to return.
-     * @return The namespaces at the given index.
-     */
-    com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace getNamespaces(int index);
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return A list containing the enum numeric values on the wire for namespaces.
-     */
-    java.util.List<java.lang.Integer>
-    getNamespacesValueList();
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of namespaces at the given index.
-     */
-    int getNamespacesValue(int index);
   }
   /**
    * Protobuf type {@code CodeStatistics}
@@ -119,7 +56,6 @@ public final class CodeStatisticsOuterClass {
     }
     private CodeStatistics() {
       elements_ = java.util.Collections.emptyList();
-      namespaces_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -162,42 +98,6 @@ public final class CodeStatisticsOuterClass {
                   input.readMessage(com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element.parser(), extensionRegistry));
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                mappedUMLClasses_ = com.google.protobuf.MapField.newMapField(
-                    MappedUMLClassesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              mappedUMLClasses__ = input.readMessage(
-                  MappedUMLClassesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              mappedUMLClasses_.getMutableMap().put(
-                  mappedUMLClasses__.getKey(), mappedUMLClasses__.getValue());
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                namespaces_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              namespaces_.add(rawValue);
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  namespaces_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                namespaces_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -216,9 +116,6 @@ public final class CodeStatisticsOuterClass {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          namespaces_ = java.util.Collections.unmodifiableList(namespaces_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -228,18 +125,6 @@ public final class CodeStatisticsOuterClass {
       return com.t2r.common.models.refactorings.CodeStatisticsOuterClass.internal_static_CodeStatistics_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 2:
-          return internalGetMappedUMLClasses();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -251,18 +136,6 @@ public final class CodeStatisticsOuterClass {
     public interface ElementOrBuilder extends
         // @@protoc_insertion_point(interface_extends:CodeStatistics.Element)
         com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      java.lang.String getName();
-      /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      com.google.protobuf.ByteString
-          getNameBytes();
 
       /**
        * <code>.TypeGraph type = 2;</code>
@@ -327,7 +200,6 @@ public final class CodeStatisticsOuterClass {
         super(builder);
       }
       private Element() {
-        name_ = "";
         typeKind_ = "";
         visibility_ = "";
         elemKind_ = 0;
@@ -363,12 +235,6 @@ public final class CodeStatisticsOuterClass {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                name_ = s;
-                break;
-              }
               case 18: {
                 com.t2r.common.models.ast.TypeGraphOuterClass.TypeGraph.Builder subBuilder = null;
                 if (type_ != null) {
@@ -430,42 +296,6 @@ public final class CodeStatisticsOuterClass {
         return com.t2r.common.models.refactorings.CodeStatisticsOuterClass.internal_static_CodeStatistics_Element_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element.class, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element.Builder.class);
-      }
-
-      public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
-      /**
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
       }
 
       public static final int TYPE_FIELD_NUMBER = 2;
@@ -596,9 +426,6 @@ public final class CodeStatisticsOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-        }
         if (type_ != null) {
           output.writeMessage(2, getType());
         }
@@ -620,9 +447,6 @@ public final class CodeStatisticsOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (!getNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-        }
         if (type_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getType());
@@ -652,8 +476,6 @@ public final class CodeStatisticsOuterClass {
         }
         com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element other = (com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element) obj;
 
-        if (!getName()
-            .equals(other.getName())) return false;
         if (hasType() != other.hasType()) return false;
         if (hasType()) {
           if (!getType()
@@ -675,8 +497,6 @@ public final class CodeStatisticsOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
         if (hasType()) {
           hash = (37 * hash) + TYPE_FIELD_NUMBER;
           hash = (53 * hash) + getType().hashCode();
@@ -820,8 +640,6 @@ public final class CodeStatisticsOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          name_ = "";
-
           if (typeBuilder_ == null) {
             type_ = null;
           } else {
@@ -860,7 +678,6 @@ public final class CodeStatisticsOuterClass {
         @java.lang.Override
         public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element buildPartial() {
           com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element result = new com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element(this);
-          result.name_ = name_;
           if (typeBuilder_ == null) {
             result.type_ = type_;
           } else {
@@ -917,10 +734,6 @@ public final class CodeStatisticsOuterClass {
 
         public Builder mergeFrom(com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element other) {
           if (other == com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Element.getDefaultInstance()) return this;
-          if (!other.getName().isEmpty()) {
-            name_ = other.name_;
-            onChanged();
-          }
           if (other.hasType()) {
             mergeType(other.getType());
           }
@@ -961,82 +774,6 @@ public final class CodeStatisticsOuterClass {
               mergeFrom(parsedMessage);
             }
           }
-          return this;
-        }
-
-        private java.lang.Object name_ = "";
-        /**
-         * <code>string name = 1;</code>
-         * @return The name.
-         */
-        public java.lang.String getName() {
-          java.lang.Object ref = name_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            name_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string name = 1;</code>
-         * @return The bytes for name.
-         */
-        public com.google.protobuf.ByteString
-            getNameBytes() {
-          java.lang.Object ref = name_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            name_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string name = 1;</code>
-         * @param value The name to set.
-         * @return This builder for chaining.
-         */
-        public Builder setName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          name_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string name = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearName() {
-          
-          name_ = getDefaultInstance().getName();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string name = 1;</code>
-         * @param value The bytes for name to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          name_ = value;
-          onChanged();
           return this;
         }
 
@@ -1450,135 +1187,6 @@ public final class CodeStatisticsOuterClass {
       return elements_.get(index);
     }
 
-    public static final int MAPPEDUMLCLASSES_FIELD_NUMBER = 2;
-    private static final class MappedUMLClassesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.t2r.common.models.refactorings.CodeStatisticsOuterClass.internal_static_CodeStatistics_MappedUMLClassesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> mappedUMLClasses_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMappedUMLClasses() {
-      if (mappedUMLClasses_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MappedUMLClassesDefaultEntryHolder.defaultEntry);
-      }
-      return mappedUMLClasses_;
-    }
-
-    public int getMappedUMLClassesCount() {
-      return internalGetMappedUMLClasses().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    public boolean containsMappedUMLClasses(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetMappedUMLClasses().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getMappedUMLClassesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMappedUMLClasses() {
-      return getMappedUMLClassesMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getMappedUMLClassesMap() {
-      return internalGetMappedUMLClasses().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    public java.lang.String getMappedUMLClassesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMappedUMLClasses().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-     */
-
-    public java.lang.String getMappedUMLClassesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMappedUMLClasses().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int NAMESPACES_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Integer> namespaces_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace> namespaces_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace>() {
-              public com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace result = com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace.valueOf(from);
-                return result == null ? com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace.UNRECOGNIZED : result;
-              }
-            };
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return A list containing the namespaces.
-     */
-    public java.util.List<com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace> getNamespacesList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace>(namespaces_, namespaces_converter_);
-    }
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return The count of namespaces.
-     */
-    public int getNamespacesCount() {
-      return namespaces_.size();
-    }
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @param index The index of the element to return.
-     * @return The namespaces at the given index.
-     */
-    public com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace getNamespaces(int index) {
-      return namespaces_converter_.convert(namespaces_.get(index));
-    }
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @return A list containing the enum numeric values on the wire for namespaces.
-     */
-    public java.util.List<java.lang.Integer>
-    getNamespacesValueList() {
-      return namespaces_;
-    }
-    /**
-     * <code>repeated .NameSpace namespaces = 3;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of namespaces at the given index.
-     */
-    public int getNamespacesValue(int index) {
-      return namespaces_.get(index);
-    }
-    private int namespacesMemoizedSerializedSize;
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1593,22 +1201,8 @@ public final class CodeStatisticsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMappedUMLClasses(),
-          MappedUMLClassesDefaultEntryHolder.defaultEntry,
-          2);
-      if (getNamespacesList().size() > 0) {
-        output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(namespacesMemoizedSerializedSize);
-      }
-      for (int i = 0; i < namespaces_.size(); i++) {
-        output.writeEnumNoTag(namespaces_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1622,28 +1216,6 @@ public final class CodeStatisticsOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMappedUMLClasses().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        mappedUMLClasses__ = MappedUMLClassesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, mappedUMLClasses__);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < namespaces_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(namespaces_.get(i));
-        }
-        size += dataSize;
-        if (!getNamespacesList().isEmpty()) {  size += 1;
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dataSize);
-        }namespacesMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1662,9 +1234,6 @@ public final class CodeStatisticsOuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!internalGetMappedUMLClasses().equals(
-          other.internalGetMappedUMLClasses())) return false;
-      if (!namespaces_.equals(other.namespaces_)) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1679,14 +1248,6 @@ public final class CodeStatisticsOuterClass {
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
-      }
-      if (!internalGetMappedUMLClasses().getMap().isEmpty()) {
-        hash = (37 * hash) + MAPPEDUMLCLASSES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMappedUMLClasses().hashCode();
-      }
-      if (getNamespacesCount() > 0) {
-        hash = (37 * hash) + NAMESPACES_FIELD_NUMBER;
-        hash = (53 * hash) + namespaces_.hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1795,28 +1356,6 @@ public final class CodeStatisticsOuterClass {
         return com.t2r.common.models.refactorings.CodeStatisticsOuterClass.internal_static_CodeStatistics_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMappedUMLClasses();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMutableMappedUMLClasses();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1850,9 +1389,6 @@ public final class CodeStatisticsOuterClass {
         } else {
           elementsBuilder_.clear();
         }
-        internalGetMutableMappedUMLClasses().clear();
-        namespaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1889,13 +1425,6 @@ public final class CodeStatisticsOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        result.mappedUMLClasses_ = internalGetMappedUMLClasses();
-        result.mappedUMLClasses_.makeImmutable();
-        if (((bitField0_ & 0x00000004) != 0)) {
-          namespaces_ = java.util.Collections.unmodifiableList(namespaces_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.namespaces_ = namespaces_;
         onBuilt();
         return result;
       }
@@ -1969,18 +1498,6 @@ public final class CodeStatisticsOuterClass {
               elementsBuilder_.addAllMessages(other.elements_);
             }
           }
-        }
-        internalGetMutableMappedUMLClasses().mergeFrom(
-            other.internalGetMappedUMLClasses());
-        if (!other.namespaces_.isEmpty()) {
-          if (namespaces_.isEmpty()) {
-            namespaces_ = other.namespaces_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureNamespacesIsMutable();
-            namespaces_.addAll(other.namespaces_);
-          }
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2251,269 +1768,6 @@ public final class CodeStatisticsOuterClass {
         }
         return elementsBuilder_;
       }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> mappedUMLClasses_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMappedUMLClasses() {
-        if (mappedUMLClasses_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              MappedUMLClassesDefaultEntryHolder.defaultEntry);
-        }
-        return mappedUMLClasses_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableMappedUMLClasses() {
-        onChanged();;
-        if (mappedUMLClasses_ == null) {
-          mappedUMLClasses_ = com.google.protobuf.MapField.newMapField(
-              MappedUMLClassesDefaultEntryHolder.defaultEntry);
-        }
-        if (!mappedUMLClasses_.isMutable()) {
-          mappedUMLClasses_ = mappedUMLClasses_.copy();
-        }
-        return mappedUMLClasses_;
-      }
-
-      public int getMappedUMLClassesCount() {
-        return internalGetMappedUMLClasses().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public boolean containsMappedUMLClasses(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetMappedUMLClasses().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getMappedUMLClassesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getMappedUMLClasses() {
-        return getMappedUMLClassesMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getMappedUMLClassesMap() {
-        return internalGetMappedUMLClasses().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public java.lang.String getMappedUMLClassesOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMappedUMLClasses().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public java.lang.String getMappedUMLClassesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMappedUMLClasses().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearMappedUMLClasses() {
-        internalGetMutableMappedUMLClasses().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public Builder removeMappedUMLClasses(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMappedUMLClasses().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableMappedUMLClasses() {
-        return internalGetMutableMappedUMLClasses().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-      public Builder putMappedUMLClasses(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMappedUMLClasses().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; mappedUMLClasses = 2;</code>
-       */
-
-      public Builder putAllMappedUMLClasses(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableMappedUMLClasses().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private java.util.List<java.lang.Integer> namespaces_ =
-        java.util.Collections.emptyList();
-      private void ensureNamespacesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          namespaces_ = new java.util.ArrayList<java.lang.Integer>(namespaces_);
-          bitField0_ |= 0x00000004;
-        }
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @return A list containing the namespaces.
-       */
-      public java.util.List<com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace> getNamespacesList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace>(namespaces_, namespaces_converter_);
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @return The count of namespaces.
-       */
-      public int getNamespacesCount() {
-        return namespaces_.size();
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param index The index of the element to return.
-       * @return The namespaces at the given index.
-       */
-      public com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace getNamespaces(int index) {
-        return namespaces_converter_.convert(namespaces_.get(index));
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The namespaces to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNamespaces(
-          int index, com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureNamespacesIsMutable();
-        namespaces_.set(index, value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param value The namespaces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNamespaces(com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureNamespacesIsMutable();
-        namespaces_.add(value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param values The namespaces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNamespaces(
-          java.lang.Iterable<? extends com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace> values) {
-        ensureNamespacesIsMutable();
-        for (com.t2r.common.models.refactorings.NameSpaceOuterClass.NameSpace value : values) {
-          namespaces_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNamespaces() {
-        namespaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @return A list containing the enum numeric values on the wire for namespaces.
-       */
-      public java.util.List<java.lang.Integer>
-      getNamespacesValueList() {
-        return java.util.Collections.unmodifiableList(namespaces_);
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of namespaces at the given index.
-       */
-      public int getNamespacesValue(int index) {
-        return namespaces_.get(index);
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of namespaces at the given index.
-       * @return This builder for chaining.
-       */
-      public Builder setNamespacesValue(
-          int index, int value) {
-        ensureNamespacesIsMutable();
-        namespaces_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param value The enum numeric value on the wire for namespaces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNamespacesValue(int value) {
-        ensureNamespacesIsMutable();
-        namespaces_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .NameSpace namespaces = 3;</code>
-       * @param values The enum numeric values on the wire for namespaces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNamespacesValue(
-          java.lang.Iterable<java.lang.Integer> values) {
-        ensureNamespacesIsMutable();
-        for (int value : values) {
-          namespaces_.add(value);
-        }
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2573,11 +1827,6 @@ public final class CodeStatisticsOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CodeStatistics_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CodeStatistics_MappedUMLClassesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CodeStatistics_MappedUMLClassesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CodeStatistics_Element_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2592,23 +1841,17 @@ public final class CodeStatisticsOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024CodeStatistics.proto\032\017TypeGraph.proto\032" +
-      "\017NameSpace.proto\032\021ElementKind.proto\"\316\002\n\016" +
-      "CodeStatistics\022)\n\010elements\030\001 \003(\0132\027.CodeS" +
-      "tatistics.Element\022?\n\020mappedUMLClasses\030\002 " +
-      "\003(\0132%.CodeStatistics.MappedUMLClassesEnt" +
-      "ry\022\036\n\nnamespaces\030\003 \003(\0162\n.NameSpace\0327\n\025Ma" +
-      "ppedUMLClassesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\032w\n\007Element\022\014\n\004name\030\001 \001(\t\022\030\n\004" +
-      "type\030\002 \001(\0132\n.TypeGraph\022\020\n\010typeKind\030\007 \001(\t" +
-      "\022\022\n\nvisibility\030\003 \001(\t\022\036\n\010elemKind\030\006 \001(\0162\014" +
-      ".ElementKindB$\n\"com.t2r.common.models.re" +
-      "factoringsb\006proto3"
+      "\021ElementKind.proto\"\246\001\n\016CodeStatistics\022)\n" +
+      "\010elements\030\001 \003(\0132\027.CodeStatistics.Element" +
+      "\032i\n\007Element\022\030\n\004type\030\002 \001(\0132\n.TypeGraph\022\020\n" +
+      "\010typeKind\030\007 \001(\t\022\022\n\nvisibility\030\003 \001(\t\022\036\n\010e" +
+      "lemKind\030\006 \001(\0162\014.ElementKindB$\n\"com.t2r.c" +
+      "ommon.models.refactoringsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.t2r.common.models.ast.TypeGraphOuterClass.getDescriptor(),
-          com.t2r.common.models.refactorings.NameSpaceOuterClass.getDescriptor(),
           com.t2r.common.models.refactorings.ElementKindOuterClass.getDescriptor(),
         });
     internal_static_CodeStatistics_descriptor =
@@ -2616,21 +1859,14 @@ public final class CodeStatisticsOuterClass {
     internal_static_CodeStatistics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CodeStatistics_descriptor,
-        new java.lang.String[] { "Elements", "MappedUMLClasses", "Namespaces", });
-    internal_static_CodeStatistics_MappedUMLClassesEntry_descriptor =
-      internal_static_CodeStatistics_descriptor.getNestedTypes().get(0);
-    internal_static_CodeStatistics_MappedUMLClassesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CodeStatistics_MappedUMLClassesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "Elements", });
     internal_static_CodeStatistics_Element_descriptor =
-      internal_static_CodeStatistics_descriptor.getNestedTypes().get(1);
+      internal_static_CodeStatistics_descriptor.getNestedTypes().get(0);
     internal_static_CodeStatistics_Element_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CodeStatistics_Element_descriptor,
-        new java.lang.String[] { "Name", "Type", "TypeKind", "Visibility", "ElemKind", });
+        new java.lang.String[] { "Type", "TypeKind", "Visibility", "ElemKind", });
     com.t2r.common.models.ast.TypeGraphOuterClass.getDescriptor();
-    com.t2r.common.models.refactorings.NameSpaceOuterClass.getDescriptor();
     com.t2r.common.models.refactorings.ElementKindOuterClass.getDescriptor();
   }
 

@@ -37,19 +37,19 @@ public final class CommitInfoOuterClass {
         getShaBytes();
 
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      * @return Whether the fileDiff field is set.
      */
     boolean hasFileDiff();
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      * @return The fileDiff.
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff();
+    com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff();
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder();
+    com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder();
 
     /**
      * <code>repeated .CommitInfo.Refactoring refactorings = 2;</code>
@@ -76,27 +76,27 @@ public final class CommitInfoOuterClass {
         int index);
 
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
+    java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> 
         getDependenciesList();
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index);
+    com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo getDependencies(int index);
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
     int getDependenciesCount();
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+    java.util.List<? extends com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder> 
         getDependenciesOrBuilderList();
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
+    com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder getDependenciesOrBuilder(
         int index);
 
     /**
@@ -118,19 +118,19 @@ public final class CommitInfoOuterClass {
     boolean getIsTypeChangeReported();
 
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      * @return Whether the dependencyUpdate field is set.
      */
     boolean hasDependencyUpdate();
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      * @return The dependencyUpdate.
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate();
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder();
   }
   /**
    * Protobuf type {@code CommitInfo}
@@ -184,11 +184,11 @@ public final class CommitInfoOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dependencies_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>();
+                dependencies_ = new java.util.ArrayList<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo>();
                 mutable_bitField0_ |= 0x00000002;
               }
               dependencies_.add(
-                  input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry));
+                  input.readMessage(com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -201,11 +201,11 @@ public final class CommitInfoOuterClass {
               break;
             }
             case 26: {
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder subBuilder = null;
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder subBuilder = null;
               if (fileDiff_ != null) {
                 subBuilder = fileDiff_.toBuilder();
               }
-              fileDiff_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.parser(), extensionRegistry);
+              fileDiff_ = input.readMessage(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(fileDiff_);
                 fileDiff_ = subBuilder.buildPartial();
@@ -214,11 +214,11 @@ public final class CommitInfoOuterClass {
               break;
             }
             case 34: {
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder subBuilder = null;
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder subBuilder = null;
               if (dependencyUpdate_ != null) {
                 subBuilder = dependencyUpdate_.toBuilder();
               }
-              dependencyUpdate_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.parser(), extensionRegistry);
+              dependencyUpdate_ = input.readMessage(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(dependencyUpdate_);
                 dependencyUpdate_ = subBuilder.buildPartial();
@@ -284,3902 +284,6 @@ public final class CommitInfoOuterClass {
       return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder.class);
-    }
-
-    public interface FileDiffOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:CommitInfo.FileDiff)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>int64 filesModified = 1;</code>
-       * @return The filesModified.
-       */
-      long getFilesModified();
-
-      /**
-       * <code>int64 filesAdded = 2;</code>
-       * @return The filesAdded.
-       */
-      long getFilesAdded();
-
-      /**
-       * <code>int64 filesRemoved = 3;</code>
-       * @return The filesRemoved.
-       */
-      long getFilesRemoved();
-
-      /**
-       * <code>int64 filesRenamed = 4;</code>
-       * @return The filesRenamed.
-       */
-      long getFilesRenamed();
-    }
-    /**
-     * Protobuf type {@code CommitInfo.FileDiff}
-     */
-    public  static final class FileDiff extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:CommitInfo.FileDiff)
-        FileDiffOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use FileDiff.newBuilder() to construct.
-      private FileDiff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private FileDiff() {
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new FileDiff();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private FileDiff(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-
-                filesModified_ = input.readInt64();
-                break;
-              }
-              case 16: {
-
-                filesAdded_ = input.readInt64();
-                break;
-              }
-              case 24: {
-
-                filesRemoved_ = input.readInt64();
-                break;
-              }
-              case 32: {
-
-                filesRenamed_ = input.readInt64();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder.class);
-      }
-
-      public static final int FILESMODIFIED_FIELD_NUMBER = 1;
-      private long filesModified_;
-      /**
-       * <code>int64 filesModified = 1;</code>
-       * @return The filesModified.
-       */
-      public long getFilesModified() {
-        return filesModified_;
-      }
-
-      public static final int FILESADDED_FIELD_NUMBER = 2;
-      private long filesAdded_;
-      /**
-       * <code>int64 filesAdded = 2;</code>
-       * @return The filesAdded.
-       */
-      public long getFilesAdded() {
-        return filesAdded_;
-      }
-
-      public static final int FILESREMOVED_FIELD_NUMBER = 3;
-      private long filesRemoved_;
-      /**
-       * <code>int64 filesRemoved = 3;</code>
-       * @return The filesRemoved.
-       */
-      public long getFilesRemoved() {
-        return filesRemoved_;
-      }
-
-      public static final int FILESRENAMED_FIELD_NUMBER = 4;
-      private long filesRenamed_;
-      /**
-       * <code>int64 filesRenamed = 4;</code>
-       * @return The filesRenamed.
-       */
-      public long getFilesRenamed() {
-        return filesRenamed_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (filesModified_ != 0L) {
-          output.writeInt64(1, filesModified_);
-        }
-        if (filesAdded_ != 0L) {
-          output.writeInt64(2, filesAdded_);
-        }
-        if (filesRemoved_ != 0L) {
-          output.writeInt64(3, filesRemoved_);
-        }
-        if (filesRenamed_ != 0L) {
-          output.writeInt64(4, filesRenamed_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (filesModified_ != 0L) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(1, filesModified_);
-        }
-        if (filesAdded_ != 0L) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(2, filesAdded_);
-        }
-        if (filesRemoved_ != 0L) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(3, filesRemoved_);
-        }
-        if (filesRenamed_ != 0L) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(4, filesRenamed_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff)) {
-          return super.equals(obj);
-        }
-        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff) obj;
-
-        if (getFilesModified()
-            != other.getFilesModified()) return false;
-        if (getFilesAdded()
-            != other.getFilesAdded()) return false;
-        if (getFilesRemoved()
-            != other.getFilesRemoved()) return false;
-        if (getFilesRenamed()
-            != other.getFilesRenamed()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + FILESMODIFIED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getFilesModified());
-        hash = (37 * hash) + FILESADDED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getFilesAdded());
-        hash = (37 * hash) + FILESREMOVED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getFilesRemoved());
-        hash = (37 * hash) + FILESRENAMED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getFilesRenamed());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code CommitInfo.FileDiff}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:CommitInfo.FileDiff)
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder.class);
-        }
-
-        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          filesModified_ = 0L;
-
-          filesAdded_ = 0L;
-
-          filesRemoved_ = 0L;
-
-          filesRenamed_ = 0L;
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_FileDiff_descriptor;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getDefaultInstanceForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff build() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff buildPartial() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff(this);
-          result.filesModified_ = filesModified_;
-          result.filesAdded_ = filesAdded_;
-          result.filesRemoved_ = filesRemoved_;
-          result.filesRenamed_ = filesRenamed_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff) {
-            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff other) {
-          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance()) return this;
-          if (other.getFilesModified() != 0L) {
-            setFilesModified(other.getFilesModified());
-          }
-          if (other.getFilesAdded() != 0L) {
-            setFilesAdded(other.getFilesAdded());
-          }
-          if (other.getFilesRemoved() != 0L) {
-            setFilesRemoved(other.getFilesRemoved());
-          }
-          if (other.getFilesRenamed() != 0L) {
-            setFilesRenamed(other.getFilesRenamed());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private long filesModified_ ;
-        /**
-         * <code>int64 filesModified = 1;</code>
-         * @return The filesModified.
-         */
-        public long getFilesModified() {
-          return filesModified_;
-        }
-        /**
-         * <code>int64 filesModified = 1;</code>
-         * @param value The filesModified to set.
-         * @return This builder for chaining.
-         */
-        public Builder setFilesModified(long value) {
-          
-          filesModified_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 filesModified = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearFilesModified() {
-          
-          filesModified_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private long filesAdded_ ;
-        /**
-         * <code>int64 filesAdded = 2;</code>
-         * @return The filesAdded.
-         */
-        public long getFilesAdded() {
-          return filesAdded_;
-        }
-        /**
-         * <code>int64 filesAdded = 2;</code>
-         * @param value The filesAdded to set.
-         * @return This builder for chaining.
-         */
-        public Builder setFilesAdded(long value) {
-          
-          filesAdded_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 filesAdded = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearFilesAdded() {
-          
-          filesAdded_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private long filesRemoved_ ;
-        /**
-         * <code>int64 filesRemoved = 3;</code>
-         * @return The filesRemoved.
-         */
-        public long getFilesRemoved() {
-          return filesRemoved_;
-        }
-        /**
-         * <code>int64 filesRemoved = 3;</code>
-         * @param value The filesRemoved to set.
-         * @return This builder for chaining.
-         */
-        public Builder setFilesRemoved(long value) {
-          
-          filesRemoved_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 filesRemoved = 3;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearFilesRemoved() {
-          
-          filesRemoved_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private long filesRenamed_ ;
-        /**
-         * <code>int64 filesRenamed = 4;</code>
-         * @return The filesRenamed.
-         */
-        public long getFilesRenamed() {
-          return filesRenamed_;
-        }
-        /**
-         * <code>int64 filesRenamed = 4;</code>
-         * @param value The filesRenamed to set.
-         * @return This builder for chaining.
-         */
-        public Builder setFilesRenamed(long value) {
-          
-          filesRenamed_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 filesRenamed = 4;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearFilesRenamed() {
-          
-          filesRenamed_ = 0L;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:CommitInfo.FileDiff)
-      }
-
-      // @@protoc_insertion_point(class_scope:CommitInfo.FileDiff)
-      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff();
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<FileDiff>
-          PARSER = new com.google.protobuf.AbstractParser<FileDiff>() {
-        @java.lang.Override
-        public FileDiff parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FileDiff(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<FileDiff> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<FileDiff> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface JarInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:CommitInfo.JarInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string artifactID = 1;</code>
-       * @return The artifactID.
-       */
-      java.lang.String getArtifactID();
-      /**
-       * <code>string artifactID = 1;</code>
-       * @return The bytes for artifactID.
-       */
-      com.google.protobuf.ByteString
-          getArtifactIDBytes();
-
-      /**
-       * <code>string groupID = 3;</code>
-       * @return The groupID.
-       */
-      java.lang.String getGroupID();
-      /**
-       * <code>string groupID = 3;</code>
-       * @return The bytes for groupID.
-       */
-      com.google.protobuf.ByteString
-          getGroupIDBytes();
-
-      /**
-       * <code>string version = 2;</code>
-       * @return The version.
-       */
-      java.lang.String getVersion();
-      /**
-       * <code>string version = 2;</code>
-       * @return The bytes for version.
-       */
-      com.google.protobuf.ByteString
-          getVersionBytes();
-    }
-    /**
-     * Protobuf type {@code CommitInfo.JarInfo}
-     */
-    public  static final class JarInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:CommitInfo.JarInfo)
-        JarInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use JarInfo.newBuilder() to construct.
-      private JarInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private JarInfo() {
-        artifactID_ = "";
-        groupID_ = "";
-        version_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new JarInfo();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private JarInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                artifactID_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                version_ = s;
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                groupID_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder.class);
-      }
-
-      public static final int ARTIFACTID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object artifactID_;
-      /**
-       * <code>string artifactID = 1;</code>
-       * @return The artifactID.
-       */
-      public java.lang.String getArtifactID() {
-        java.lang.Object ref = artifactID_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          artifactID_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string artifactID = 1;</code>
-       * @return The bytes for artifactID.
-       */
-      public com.google.protobuf.ByteString
-          getArtifactIDBytes() {
-        java.lang.Object ref = artifactID_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          artifactID_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int GROUPID_FIELD_NUMBER = 3;
-      private volatile java.lang.Object groupID_;
-      /**
-       * <code>string groupID = 3;</code>
-       * @return The groupID.
-       */
-      public java.lang.String getGroupID() {
-        java.lang.Object ref = groupID_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          groupID_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string groupID = 3;</code>
-       * @return The bytes for groupID.
-       */
-      public com.google.protobuf.ByteString
-          getGroupIDBytes() {
-        java.lang.Object ref = groupID_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          groupID_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int VERSION_FIELD_NUMBER = 2;
-      private volatile java.lang.Object version_;
-      /**
-       * <code>string version = 2;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string version = 2;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getArtifactIDBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, artifactID_);
-        }
-        if (!getVersionBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
-        }
-        if (!getGroupIDBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupID_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getArtifactIDBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, artifactID_);
-        }
-        if (!getVersionBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
-        }
-        if (!getGroupIDBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupID_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo)) {
-          return super.equals(obj);
-        }
-        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo) obj;
-
-        if (!getArtifactID()
-            .equals(other.getArtifactID())) return false;
-        if (!getGroupID()
-            .equals(other.getGroupID())) return false;
-        if (!getVersion()
-            .equals(other.getVersion())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + ARTIFACTID_FIELD_NUMBER;
-        hash = (53 * hash) + getArtifactID().hashCode();
-        hash = (37 * hash) + GROUPID_FIELD_NUMBER;
-        hash = (53 * hash) + getGroupID().hashCode();
-        hash = (37 * hash) + VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getVersion().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code CommitInfo.JarInfo}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:CommitInfo.JarInfo)
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder.class);
-        }
-
-        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          artifactID_ = "";
-
-          groupID_ = "";
-
-          version_ = "";
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_JarInfo_descriptor;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDefaultInstanceForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo build() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo buildPartial() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo(this);
-          result.artifactID_ = artifactID_;
-          result.groupID_ = groupID_;
-          result.version_ = version_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo) {
-            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo other) {
-          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance()) return this;
-          if (!other.getArtifactID().isEmpty()) {
-            artifactID_ = other.artifactID_;
-            onChanged();
-          }
-          if (!other.getGroupID().isEmpty()) {
-            groupID_ = other.groupID_;
-            onChanged();
-          }
-          if (!other.getVersion().isEmpty()) {
-            version_ = other.version_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object artifactID_ = "";
-        /**
-         * <code>string artifactID = 1;</code>
-         * @return The artifactID.
-         */
-        public java.lang.String getArtifactID() {
-          java.lang.Object ref = artifactID_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            artifactID_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string artifactID = 1;</code>
-         * @return The bytes for artifactID.
-         */
-        public com.google.protobuf.ByteString
-            getArtifactIDBytes() {
-          java.lang.Object ref = artifactID_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            artifactID_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string artifactID = 1;</code>
-         * @param value The artifactID to set.
-         * @return This builder for chaining.
-         */
-        public Builder setArtifactID(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          artifactID_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string artifactID = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearArtifactID() {
-          
-          artifactID_ = getDefaultInstance().getArtifactID();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string artifactID = 1;</code>
-         * @param value The bytes for artifactID to set.
-         * @return This builder for chaining.
-         */
-        public Builder setArtifactIDBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          artifactID_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object groupID_ = "";
-        /**
-         * <code>string groupID = 3;</code>
-         * @return The groupID.
-         */
-        public java.lang.String getGroupID() {
-          java.lang.Object ref = groupID_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            groupID_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string groupID = 3;</code>
-         * @return The bytes for groupID.
-         */
-        public com.google.protobuf.ByteString
-            getGroupIDBytes() {
-          java.lang.Object ref = groupID_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            groupID_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string groupID = 3;</code>
-         * @param value The groupID to set.
-         * @return This builder for chaining.
-         */
-        public Builder setGroupID(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          groupID_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string groupID = 3;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearGroupID() {
-          
-          groupID_ = getDefaultInstance().getGroupID();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string groupID = 3;</code>
-         * @param value The bytes for groupID to set.
-         * @return This builder for chaining.
-         */
-        public Builder setGroupIDBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          groupID_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object version_ = "";
-        /**
-         * <code>string version = 2;</code>
-         * @return The version.
-         */
-        public java.lang.String getVersion() {
-          java.lang.Object ref = version_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            version_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string version = 2;</code>
-         * @return The bytes for version.
-         */
-        public com.google.protobuf.ByteString
-            getVersionBytes() {
-          java.lang.Object ref = version_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            version_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string version = 2;</code>
-         * @param value The version to set.
-         * @return This builder for chaining.
-         */
-        public Builder setVersion(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          version_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string version = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearVersion() {
-          
-          version_ = getDefaultInstance().getVersion();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string version = 2;</code>
-         * @param value The bytes for version to set.
-         * @return This builder for chaining.
-         */
-        public Builder setVersionBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          version_ = value;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:CommitInfo.JarInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:CommitInfo.JarInfo)
-      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo();
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<JarInfo>
-          PARSER = new com.google.protobuf.AbstractParser<JarInfo>() {
-        @java.lang.Override
-        public JarInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new JarInfo(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<JarInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<JarInfo> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface DependencyPairOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:CommitInfo.DependencyPair)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       * @return Whether the before field is set.
-       */
-      boolean hasBefore();
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       * @return The before.
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore();
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder();
-
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       * @return Whether the after field is set.
-       */
-      boolean hasAfter();
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       * @return The after.
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter();
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder();
-    }
-    /**
-     * Protobuf type {@code CommitInfo.DependencyPair}
-     */
-    public  static final class DependencyPair extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:CommitInfo.DependencyPair)
-        DependencyPairOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use DependencyPair.newBuilder() to construct.
-      private DependencyPair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private DependencyPair() {
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new DependencyPair();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private DependencyPair(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder subBuilder = null;
-                if (before_ != null) {
-                  subBuilder = before_.toBuilder();
-                }
-                before_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(before_);
-                  before_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 18: {
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder subBuilder = null;
-                if (after_ != null) {
-                  subBuilder = after_.toBuilder();
-                }
-                after_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(after_);
-                  after_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
-      }
-
-      public static final int BEFORE_FIELD_NUMBER = 1;
-      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo before_;
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       * @return Whether the before field is set.
-       */
-      public boolean hasBefore() {
-        return before_ != null;
-      }
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       * @return The before.
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
-        return before_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
-      }
-      /**
-       * <code>.CommitInfo.JarInfo before = 1;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
-        return getBefore();
-      }
-
-      public static final int AFTER_FIELD_NUMBER = 2;
-      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo after_;
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       * @return Whether the after field is set.
-       */
-      public boolean hasAfter() {
-        return after_ != null;
-      }
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       * @return The after.
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
-        return after_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
-      }
-      /**
-       * <code>.CommitInfo.JarInfo after = 2;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
-        return getAfter();
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (before_ != null) {
-          output.writeMessage(1, getBefore());
-        }
-        if (after_ != null) {
-          output.writeMessage(2, getAfter());
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (before_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, getBefore());
-        }
-        if (after_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getAfter());
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair)) {
-          return super.equals(obj);
-        }
-        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) obj;
-
-        if (hasBefore() != other.hasBefore()) return false;
-        if (hasBefore()) {
-          if (!getBefore()
-              .equals(other.getBefore())) return false;
-        }
-        if (hasAfter() != other.hasAfter()) return false;
-        if (hasAfter()) {
-          if (!getAfter()
-              .equals(other.getAfter())) return false;
-        }
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasBefore()) {
-          hash = (37 * hash) + BEFORE_FIELD_NUMBER;
-          hash = (53 * hash) + getBefore().hashCode();
-        }
-        if (hasAfter()) {
-          hash = (37 * hash) + AFTER_FIELD_NUMBER;
-          hash = (53 * hash) + getAfter().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code CommitInfo.DependencyPair}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:CommitInfo.DependencyPair)
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder.class);
-        }
-
-        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          if (beforeBuilder_ == null) {
-            before_ = null;
-          } else {
-            before_ = null;
-            beforeBuilder_ = null;
-          }
-          if (afterBuilder_ == null) {
-            after_ = null;
-          } else {
-            after_ = null;
-            afterBuilder_ = null;
-          }
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyPair_descriptor;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstanceForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair build() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair buildPartial() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair(this);
-          if (beforeBuilder_ == null) {
-            result.before_ = before_;
-          } else {
-            result.before_ = beforeBuilder_.build();
-          }
-          if (afterBuilder_ == null) {
-            result.after_ = after_;
-          } else {
-            result.after_ = afterBuilder_.build();
-          }
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) {
-            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair other) {
-          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance()) return this;
-          if (other.hasBefore()) {
-            mergeBefore(other.getBefore());
-          }
-          if (other.hasAfter()) {
-            mergeAfter(other.getAfter());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo before_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> beforeBuilder_;
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         * @return Whether the before field is set.
-         */
-        public boolean hasBefore() {
-          return beforeBuilder_ != null || before_ != null;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         * @return The before.
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getBefore() {
-          if (beforeBuilder_ == null) {
-            return before_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
-          } else {
-            return beforeBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public Builder setBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (beforeBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            before_ = value;
-            onChanged();
-          } else {
-            beforeBuilder_.setMessage(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public Builder setBefore(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (beforeBuilder_ == null) {
-            before_ = builderForValue.build();
-            onChanged();
-          } else {
-            beforeBuilder_.setMessage(builderForValue.build());
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public Builder mergeBefore(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (beforeBuilder_ == null) {
-            if (before_ != null) {
-              before_ =
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.newBuilder(before_).mergeFrom(value).buildPartial();
-            } else {
-              before_ = value;
-            }
-            onChanged();
-          } else {
-            beforeBuilder_.mergeFrom(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public Builder clearBefore() {
-          if (beforeBuilder_ == null) {
-            before_ = null;
-            onChanged();
-          } else {
-            before_ = null;
-            beforeBuilder_ = null;
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getBeforeBuilder() {
-          
-          onChanged();
-          return getBeforeFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getBeforeOrBuilder() {
-          if (beforeBuilder_ != null) {
-            return beforeBuilder_.getMessageOrBuilder();
-          } else {
-            return before_ == null ?
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : before_;
-          }
-        }
-        /**
-         * <code>.CommitInfo.JarInfo before = 1;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-            getBeforeFieldBuilder() {
-          if (beforeBuilder_ == null) {
-            beforeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
-                    getBefore(),
-                    getParentForChildren(),
-                    isClean());
-            before_ = null;
-          }
-          return beforeBuilder_;
-        }
-
-        private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo after_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> afterBuilder_;
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         * @return Whether the after field is set.
-         */
-        public boolean hasAfter() {
-          return afterBuilder_ != null || after_ != null;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         * @return The after.
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAfter() {
-          if (afterBuilder_ == null) {
-            return after_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
-          } else {
-            return afterBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public Builder setAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (afterBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            after_ = value;
-            onChanged();
-          } else {
-            afterBuilder_.setMessage(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public Builder setAfter(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (afterBuilder_ == null) {
-            after_ = builderForValue.build();
-            onChanged();
-          } else {
-            afterBuilder_.setMessage(builderForValue.build());
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public Builder mergeAfter(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (afterBuilder_ == null) {
-            if (after_ != null) {
-              after_ =
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.newBuilder(after_).mergeFrom(value).buildPartial();
-            } else {
-              after_ = value;
-            }
-            onChanged();
-          } else {
-            afterBuilder_.mergeFrom(value);
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public Builder clearAfter() {
-          if (afterBuilder_ == null) {
-            after_ = null;
-            onChanged();
-          } else {
-            after_ = null;
-            afterBuilder_ = null;
-          }
-
-          return this;
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAfterBuilder() {
-          
-          onChanged();
-          return getAfterFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAfterOrBuilder() {
-          if (afterBuilder_ != null) {
-            return afterBuilder_.getMessageOrBuilder();
-          } else {
-            return after_ == null ?
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance() : after_;
-          }
-        }
-        /**
-         * <code>.CommitInfo.JarInfo after = 2;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-            getAfterFieldBuilder() {
-          if (afterBuilder_ == null) {
-            afterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
-                    getAfter(),
-                    getParentForChildren(),
-                    isClean());
-            after_ = null;
-          }
-          return afterBuilder_;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:CommitInfo.DependencyPair)
-      }
-
-      // @@protoc_insertion_point(class_scope:CommitInfo.DependencyPair)
-      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair();
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<DependencyPair>
-          PARSER = new com.google.protobuf.AbstractParser<DependencyPair>() {
-        @java.lang.Override
-        public DependencyPair parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DependencyPair(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<DependencyPair> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<DependencyPair> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface DependencyUpdateOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:CommitInfo.DependencyUpdate)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> 
-          getUpdateList();
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index);
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      int getUpdateCount();
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
-          getUpdateOrBuilderList();
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
-          int index);
-
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
-          getAddedList();
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index);
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      int getAddedCount();
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-          getAddedOrBuilderList();
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
-          int index);
-
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> 
-          getRemovedList();
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index);
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      int getRemovedCount();
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-          getRemovedOrBuilderList();
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
-          int index);
-    }
-    /**
-     * Protobuf type {@code CommitInfo.DependencyUpdate}
-     */
-    public  static final class DependencyUpdate extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:CommitInfo.DependencyUpdate)
-        DependencyUpdateOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use DependencyUpdate.newBuilder() to construct.
-      private DependencyUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private DependencyUpdate() {
-        update_ = java.util.Collections.emptyList();
-        added_ = java.util.Collections.emptyList();
-        removed_ = java.util.Collections.emptyList();
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new DependencyUpdate();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private DependencyUpdate(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  added_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                added_.add(
-                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry));
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  removed_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                removed_.add(
-                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.parser(), extensionRegistry));
-                break;
-              }
-              case 26: {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  update_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                update_.add(
-                    input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            added_ = java.util.Collections.unmodifiableList(added_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) != 0)) {
-            removed_ = java.util.Collections.unmodifiableList(removed_);
-          }
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            update_ = java.util.Collections.unmodifiableList(update_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
-      }
-
-      public static final int UPDATE_FIELD_NUMBER = 3;
-      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> update_;
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
-        return update_;
-      }
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
-          getUpdateOrBuilderList() {
-        return update_;
-      }
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      public int getUpdateCount() {
-        return update_.size();
-      }
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
-        return update_.get(index);
-      }
-      /**
-       * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
-          int index) {
-        return update_.get(index);
-      }
-
-      public static final int ADDED_FIELD_NUMBER = 1;
-      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> added_;
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
-        return added_;
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-          getAddedOrBuilderList() {
-        return added_;
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      public int getAddedCount() {
-        return added_.size();
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
-        return added_.get(index);
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
-          int index) {
-        return added_.get(index);
-      }
-
-      public static final int REMOVED_FIELD_NUMBER = 2;
-      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> removed_;
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
-        return removed_;
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-          getRemovedOrBuilderList() {
-        return removed_;
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      public int getRemovedCount() {
-        return removed_.size();
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
-        return removed_.get(index);
-      }
-      /**
-       * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-       */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
-          int index) {
-        return removed_.get(index);
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        for (int i = 0; i < added_.size(); i++) {
-          output.writeMessage(1, added_.get(i));
-        }
-        for (int i = 0; i < removed_.size(); i++) {
-          output.writeMessage(2, removed_.get(i));
-        }
-        for (int i = 0; i < update_.size(); i++) {
-          output.writeMessage(3, update_.get(i));
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        for (int i = 0; i < added_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, added_.get(i));
-        }
-        for (int i = 0; i < removed_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, removed_.get(i));
-        }
-        for (int i = 0; i < update_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, update_.get(i));
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate)) {
-          return super.equals(obj);
-        }
-        com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate other = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) obj;
-
-        if (!getUpdateList()
-            .equals(other.getUpdateList())) return false;
-        if (!getAddedList()
-            .equals(other.getAddedList())) return false;
-        if (!getRemovedList()
-            .equals(other.getRemovedList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (getUpdateCount() > 0) {
-          hash = (37 * hash) + UPDATE_FIELD_NUMBER;
-          hash = (53 * hash) + getUpdateList().hashCode();
-        }
-        if (getAddedCount() > 0) {
-          hash = (37 * hash) + ADDED_FIELD_NUMBER;
-          hash = (53 * hash) + getAddedList().hashCode();
-        }
-        if (getRemovedCount() > 0) {
-          hash = (37 * hash) + REMOVED_FIELD_NUMBER;
-          hash = (53 * hash) + getRemovedList().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code CommitInfo.DependencyUpdate}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:CommitInfo.DependencyUpdate)
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.class, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder.class);
-        }
-
-        // Construct using com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getUpdateFieldBuilder();
-            getAddedFieldBuilder();
-            getRemovedFieldBuilder();
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          if (updateBuilder_ == null) {
-            update_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            updateBuilder_.clear();
-          }
-          if (addedBuilder_ == null) {
-            added_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            addedBuilder_.clear();
-          }
-          if (removedBuilder_ == null) {
-            removed_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            removedBuilder_.clear();
-          }
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.internal_static_CommitInfo_DependencyUpdate_descriptor;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstanceForType() {
-          return com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate build() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate buildPartial() {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate result = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate(this);
-          int from_bitField0_ = bitField0_;
-          if (updateBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) != 0)) {
-              update_ = java.util.Collections.unmodifiableList(update_);
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.update_ = update_;
-          } else {
-            result.update_ = updateBuilder_.build();
-          }
-          if (addedBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
-              added_ = java.util.Collections.unmodifiableList(added_);
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.added_ = added_;
-          } else {
-            result.added_ = addedBuilder_.build();
-          }
-          if (removedBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) != 0)) {
-              removed_ = java.util.Collections.unmodifiableList(removed_);
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.removed_ = removed_;
-          } else {
-            result.removed_ = removedBuilder_.build();
-          }
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) {
-            return mergeFrom((com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate other) {
-          if (other == com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance()) return this;
-          if (updateBuilder_ == null) {
-            if (!other.update_.isEmpty()) {
-              if (update_.isEmpty()) {
-                update_ = other.update_;
-                bitField0_ = (bitField0_ & ~0x00000001);
-              } else {
-                ensureUpdateIsMutable();
-                update_.addAll(other.update_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.update_.isEmpty()) {
-              if (updateBuilder_.isEmpty()) {
-                updateBuilder_.dispose();
-                updateBuilder_ = null;
-                update_ = other.update_;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                updateBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getUpdateFieldBuilder() : null;
-              } else {
-                updateBuilder_.addAllMessages(other.update_);
-              }
-            }
-          }
-          if (addedBuilder_ == null) {
-            if (!other.added_.isEmpty()) {
-              if (added_.isEmpty()) {
-                added_ = other.added_;
-                bitField0_ = (bitField0_ & ~0x00000002);
-              } else {
-                ensureAddedIsMutable();
-                added_.addAll(other.added_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.added_.isEmpty()) {
-              if (addedBuilder_.isEmpty()) {
-                addedBuilder_.dispose();
-                addedBuilder_ = null;
-                added_ = other.added_;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                addedBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getAddedFieldBuilder() : null;
-              } else {
-                addedBuilder_.addAllMessages(other.added_);
-              }
-            }
-          }
-          if (removedBuilder_ == null) {
-            if (!other.removed_.isEmpty()) {
-              if (removed_.isEmpty()) {
-                removed_ = other.removed_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-              } else {
-                ensureRemovedIsMutable();
-                removed_.addAll(other.removed_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.removed_.isEmpty()) {
-              if (removedBuilder_.isEmpty()) {
-                removedBuilder_.dispose();
-                removedBuilder_ = null;
-                removed_ = other.removed_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                removedBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getRemovedFieldBuilder() : null;
-              } else {
-                removedBuilder_.addAllMessages(other.removed_);
-              }
-            }
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> update_ =
-          java.util.Collections.emptyList();
-        private void ensureUpdateIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
-            update_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair>(update_);
-            bitField0_ |= 0x00000001;
-           }
-        }
-
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> updateBuilder_;
-
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> getUpdateList() {
-          if (updateBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(update_);
-          } else {
-            return updateBuilder_.getMessageList();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public int getUpdateCount() {
-          if (updateBuilder_ == null) {
-            return update_.size();
-          } else {
-            return updateBuilder_.getCount();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair getUpdate(int index) {
-          if (updateBuilder_ == null) {
-            return update_.get(index);
-          } else {
-            return updateBuilder_.getMessage(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder setUpdate(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
-          if (updateBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureUpdateIsMutable();
-            update_.set(index, value);
-            onChanged();
-          } else {
-            updateBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder setUpdate(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
-          if (updateBuilder_ == null) {
-            ensureUpdateIsMutable();
-            update_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            updateBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder addUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
-          if (updateBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureUpdateIsMutable();
-            update_.add(value);
-            onChanged();
-          } else {
-            updateBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder addUpdate(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair value) {
-          if (updateBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureUpdateIsMutable();
-            update_.add(index, value);
-            onChanged();
-          } else {
-            updateBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder addUpdate(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
-          if (updateBuilder_ == null) {
-            ensureUpdateIsMutable();
-            update_.add(builderForValue.build());
-            onChanged();
-          } else {
-            updateBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder addUpdate(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder builderForValue) {
-          if (updateBuilder_ == null) {
-            ensureUpdateIsMutable();
-            update_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            updateBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder addAllUpdate(
-            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair> values) {
-          if (updateBuilder_ == null) {
-            ensureUpdateIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, update_);
-            onChanged();
-          } else {
-            updateBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder clearUpdate() {
-          if (updateBuilder_ == null) {
-            update_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
-            onChanged();
-          } else {
-            updateBuilder_.clear();
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public Builder removeUpdate(int index) {
-          if (updateBuilder_ == null) {
-            ensureUpdateIsMutable();
-            update_.remove(index);
-            onChanged();
-          } else {
-            updateBuilder_.remove(index);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder getUpdateBuilder(
-            int index) {
-          return getUpdateFieldBuilder().getBuilder(index);
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder getUpdateOrBuilder(
-            int index) {
-          if (updateBuilder_ == null) {
-            return update_.get(index);  } else {
-            return updateBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
-             getUpdateOrBuilderList() {
-          if (updateBuilder_ != null) {
-            return updateBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(update_);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder() {
-          return getUpdateFieldBuilder().addBuilder(
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder addUpdateBuilder(
-            int index) {
-          return getUpdateFieldBuilder().addBuilder(
-              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.DependencyPair update = 3;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder> 
-             getUpdateBuilderList() {
-          return getUpdateFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder> 
-            getUpdateFieldBuilder() {
-          if (updateBuilder_ == null) {
-            updateBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPair.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyPairOrBuilder>(
-                    update_,
-                    ((bitField0_ & 0x00000001) != 0),
-                    getParentForChildren(),
-                    isClean());
-            update_ = null;
-          }
-          return updateBuilder_;
-        }
-
-        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> added_ =
-          java.util.Collections.emptyList();
-        private void ensureAddedIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
-            added_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>(added_);
-            bitField0_ |= 0x00000002;
-           }
-        }
-
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> addedBuilder_;
-
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getAddedList() {
-          if (addedBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(added_);
-          } else {
-            return addedBuilder_.getMessageList();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public int getAddedCount() {
-          if (addedBuilder_ == null) {
-            return added_.size();
-          } else {
-            return addedBuilder_.getCount();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getAdded(int index) {
-          if (addedBuilder_ == null) {
-            return added_.get(index);
-          } else {
-            return addedBuilder_.getMessage(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder setAdded(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (addedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureAddedIsMutable();
-            added_.set(index, value);
-            onChanged();
-          } else {
-            addedBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder setAdded(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (addedBuilder_ == null) {
-            ensureAddedIsMutable();
-            added_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            addedBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder addAdded(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (addedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureAddedIsMutable();
-            added_.add(value);
-            onChanged();
-          } else {
-            addedBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder addAdded(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (addedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureAddedIsMutable();
-            added_.add(index, value);
-            onChanged();
-          } else {
-            addedBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder addAdded(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (addedBuilder_ == null) {
-            ensureAddedIsMutable();
-            added_.add(builderForValue.build());
-            onChanged();
-          } else {
-            addedBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder addAdded(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (addedBuilder_ == null) {
-            ensureAddedIsMutable();
-            added_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            addedBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder addAllAdded(
-            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
-          if (addedBuilder_ == null) {
-            ensureAddedIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, added_);
-            onChanged();
-          } else {
-            addedBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder clearAdded() {
-          if (addedBuilder_ == null) {
-            added_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
-            onChanged();
-          } else {
-            addedBuilder_.clear();
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public Builder removeAdded(int index) {
-          if (addedBuilder_ == null) {
-            ensureAddedIsMutable();
-            added_.remove(index);
-            onChanged();
-          } else {
-            addedBuilder_.remove(index);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getAddedBuilder(
-            int index) {
-          return getAddedFieldBuilder().getBuilder(index);
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getAddedOrBuilder(
-            int index) {
-          if (addedBuilder_ == null) {
-            return added_.get(index);  } else {
-            return addedBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-             getAddedOrBuilderList() {
-          if (addedBuilder_ != null) {
-            return addedBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(added_);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder() {
-          return getAddedFieldBuilder().addBuilder(
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addAddedBuilder(
-            int index) {
-          return getAddedFieldBuilder().addBuilder(
-              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo added = 1;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
-             getAddedBuilderList() {
-          return getAddedFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-            getAddedFieldBuilder() {
-          if (addedBuilder_ == null) {
-            addedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
-                    added_,
-                    ((bitField0_ & 0x00000002) != 0),
-                    getParentForChildren(),
-                    isClean());
-            added_ = null;
-          }
-          return addedBuilder_;
-        }
-
-        private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> removed_ =
-          java.util.Collections.emptyList();
-        private void ensureRemovedIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
-            removed_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>(removed_);
-            bitField0_ |= 0x00000004;
-           }
-        }
-
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> removedBuilder_;
-
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getRemovedList() {
-          if (removedBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(removed_);
-          } else {
-            return removedBuilder_.getMessageList();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public int getRemovedCount() {
-          if (removedBuilder_ == null) {
-            return removed_.size();
-          } else {
-            return removedBuilder_.getCount();
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getRemoved(int index) {
-          if (removedBuilder_ == null) {
-            return removed_.get(index);
-          } else {
-            return removedBuilder_.getMessage(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder setRemoved(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (removedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureRemovedIsMutable();
-            removed_.set(index, value);
-            onChanged();
-          } else {
-            removedBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder setRemoved(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (removedBuilder_ == null) {
-            ensureRemovedIsMutable();
-            removed_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            removedBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder addRemoved(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (removedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureRemovedIsMutable();
-            removed_.add(value);
-            onChanged();
-          } else {
-            removedBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder addRemoved(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
-          if (removedBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureRemovedIsMutable();
-            removed_.add(index, value);
-            onChanged();
-          } else {
-            removedBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder addRemoved(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (removedBuilder_ == null) {
-            ensureRemovedIsMutable();
-            removed_.add(builderForValue.build());
-            onChanged();
-          } else {
-            removedBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder addRemoved(
-            int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
-          if (removedBuilder_ == null) {
-            ensureRemovedIsMutable();
-            removed_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            removedBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder addAllRemoved(
-            java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
-          if (removedBuilder_ == null) {
-            ensureRemovedIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, removed_);
-            onChanged();
-          } else {
-            removedBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder clearRemoved() {
-          if (removedBuilder_ == null) {
-            removed_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-            onChanged();
-          } else {
-            removedBuilder_.clear();
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public Builder removeRemoved(int index) {
-          if (removedBuilder_ == null) {
-            ensureRemovedIsMutable();
-            removed_.remove(index);
-            onChanged();
-          } else {
-            removedBuilder_.remove(index);
-          }
-          return this;
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getRemovedBuilder(
-            int index) {
-          return getRemovedFieldBuilder().getBuilder(index);
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getRemovedOrBuilder(
-            int index) {
-          if (removedBuilder_ == null) {
-            return removed_.get(index);  } else {
-            return removedBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-             getRemovedOrBuilderList() {
-          if (removedBuilder_ != null) {
-            return removedBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(removed_);
-          }
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder() {
-          return getRemovedFieldBuilder().addBuilder(
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addRemovedBuilder(
-            int index) {
-          return getRemovedFieldBuilder().addBuilder(
-              index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
-        }
-        /**
-         * <code>repeated .CommitInfo.JarInfo removed = 2;</code>
-         */
-        public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
-             getRemovedBuilderList() {
-          return getRemovedFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
-            getRemovedFieldBuilder() {
-          if (removedBuilder_ == null) {
-            removedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
-                    removed_,
-                    ((bitField0_ & 0x00000004) != 0),
-                    getParentForChildren(),
-                    isClean());
-            removed_ = null;
-          }
-          return removedBuilder_;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:CommitInfo.DependencyUpdate)
-      }
-
-      // @@protoc_insertion_point(class_scope:CommitInfo.DependencyUpdate)
-      private static final com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate();
-      }
-
-      public static com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<DependencyUpdate>
-          PARSER = new com.google.protobuf.AbstractParser<DependencyUpdate>() {
-        @java.lang.Override
-        public DependencyUpdate parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DependencyUpdate(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<DependencyUpdate> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<DependencyUpdate> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface RefactoringOrBuilder extends
@@ -5888,25 +1992,25 @@ public final class CommitInfoOuterClass {
     }
 
     public static final int FILEDIFF_FIELD_NUMBER = 3;
-    private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff fileDiff_;
+    private com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff fileDiff_;
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      * @return Whether the fileDiff field is set.
      */
     public boolean hasFileDiff() {
       return fileDiff_ != null;
     }
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      * @return The fileDiff.
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff() {
-      return fileDiff_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance() : fileDiff_;
+    public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff() {
+      return fileDiff_ == null ? com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
     }
     /**
-     * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+     * <code>.FileDiff fileDiff = 3;</code>
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder() {
+    public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder() {
       return getFileDiff();
     }
 
@@ -5946,36 +2050,36 @@ public final class CommitInfoOuterClass {
     }
 
     public static final int DEPENDENCIES_FIELD_NUMBER = 1;
-    private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> dependencies_;
+    private java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> dependencies_;
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getDependenciesList() {
+    public java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> getDependenciesList() {
       return dependencies_;
     }
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+    public java.util.List<? extends com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder> 
         getDependenciesOrBuilderList() {
       return dependencies_;
     }
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
     public int getDependenciesCount() {
       return dependencies_.size();
     }
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index) {
+    public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo getDependencies(int index) {
       return dependencies_.get(index);
     }
     /**
-     * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+     * <code>repeated .JarInfo dependencies = 1;</code>
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
+    public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder getDependenciesOrBuilder(
         int index) {
       return dependencies_.get(index);
     }
@@ -6027,25 +2131,25 @@ public final class CommitInfoOuterClass {
     }
 
     public static final int DEPENDENCYUPDATE_FIELD_NUMBER = 4;
-    private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate dependencyUpdate_;
+    private com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate dependencyUpdate_;
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      * @return Whether the dependencyUpdate field is set.
      */
     public boolean hasDependencyUpdate() {
       return dependencyUpdate_ != null;
     }
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      * @return The dependencyUpdate.
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate() {
-      return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
+    public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate() {
+      return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
     }
     /**
-     * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
+    public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
       return getDependencyUpdate();
     }
 
@@ -6682,31 +2786,31 @@ public final class CommitInfoOuterClass {
         return this;
       }
 
-      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff fileDiff_;
+      private com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff fileDiff_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder> fileDiffBuilder_;
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder> fileDiffBuilder_;
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        * @return Whether the fileDiff field is set.
        */
       public boolean hasFileDiff() {
         return fileDiffBuilder_ != null || fileDiff_ != null;
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        * @return The fileDiff.
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff getFileDiff() {
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff() {
         if (fileDiffBuilder_ == null) {
-          return fileDiff_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance() : fileDiff_;
+          return fileDiff_ == null ? com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
         } else {
           return fileDiffBuilder_.getMessage();
         }
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
-      public Builder setFileDiff(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff value) {
+      public Builder setFileDiff(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff value) {
         if (fileDiffBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6720,10 +2824,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
       public Builder setFileDiff(
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder builderForValue) {
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder builderForValue) {
         if (fileDiffBuilder_ == null) {
           fileDiff_ = builderForValue.build();
           onChanged();
@@ -6734,13 +2838,13 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
-      public Builder mergeFileDiff(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff value) {
+      public Builder mergeFileDiff(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff value) {
         if (fileDiffBuilder_ == null) {
           if (fileDiff_ != null) {
             fileDiff_ =
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.newBuilder(fileDiff_).mergeFrom(value).buildPartial();
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.newBuilder(fileDiff_).mergeFrom(value).buildPartial();
           } else {
             fileDiff_ = value;
           }
@@ -6752,7 +2856,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
       public Builder clearFileDiff() {
         if (fileDiffBuilder_ == null) {
@@ -6766,33 +2870,33 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder getFileDiffBuilder() {
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder getFileDiffBuilder() {
         
         onChanged();
         return getFileDiffFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder getFileDiffOrBuilder() {
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder() {
         if (fileDiffBuilder_ != null) {
           return fileDiffBuilder_.getMessageOrBuilder();
         } else {
           return fileDiff_ == null ?
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.getDefaultInstance() : fileDiff_;
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
         }
       }
       /**
-       * <code>.CommitInfo.FileDiff fileDiff = 3;</code>
+       * <code>.FileDiff fileDiff = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder> 
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder> 
           getFileDiffFieldBuilder() {
         if (fileDiffBuilder_ == null) {
           fileDiffBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiff.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.FileDiffOrBuilder>(
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder>(
                   getFileDiff(),
                   getParentForChildren(),
                   isClean());
@@ -7041,22 +3145,22 @@ public final class CommitInfoOuterClass {
         return refactoringsBuilder_;
       }
 
-      private java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> dependencies_ =
+      private java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> dependencies_ =
         java.util.Collections.emptyList();
       private void ensureDependenciesIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          dependencies_ = new java.util.ArrayList<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo>(dependencies_);
+          dependencies_ = new java.util.ArrayList<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo>(dependencies_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> dependenciesBuilder_;
+          com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder> dependenciesBuilder_;
 
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> getDependenciesList() {
+      public java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> getDependenciesList() {
         if (dependenciesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(dependencies_);
         } else {
@@ -7064,7 +3168,7 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public int getDependenciesCount() {
         if (dependenciesBuilder_ == null) {
@@ -7074,9 +3178,9 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo getDependencies(int index) {
+      public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo getDependencies(int index) {
         if (dependenciesBuilder_ == null) {
           return dependencies_.get(index);
         } else {
@@ -7084,10 +3188,10 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder setDependencies(
-          int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          int index, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo value) {
         if (dependenciesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7101,10 +3205,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder setDependencies(
-          int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          int index, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder builderForValue) {
         if (dependenciesBuilder_ == null) {
           ensureDependenciesIsMutable();
           dependencies_.set(index, builderForValue.build());
@@ -7115,9 +3219,9 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public Builder addDependencies(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+      public Builder addDependencies(com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo value) {
         if (dependenciesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7131,10 +3235,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
-          int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo value) {
+          int index, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo value) {
         if (dependenciesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7148,10 +3252,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder builderForValue) {
         if (dependenciesBuilder_ == null) {
           ensureDependenciesIsMutable();
           dependencies_.add(builderForValue.build());
@@ -7162,10 +3266,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder addDependencies(
-          int index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder builderForValue) {
+          int index, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder builderForValue) {
         if (dependenciesBuilder_ == null) {
           ensureDependenciesIsMutable();
           dependencies_.add(index, builderForValue.build());
@@ -7176,10 +3280,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder addAllDependencies(
-          java.lang.Iterable<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo> values) {
+          java.lang.Iterable<? extends com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo> values) {
         if (dependenciesBuilder_ == null) {
           ensureDependenciesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7191,7 +3295,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder clearDependencies() {
         if (dependenciesBuilder_ == null) {
@@ -7204,7 +3308,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
       public Builder removeDependencies(int index) {
         if (dependenciesBuilder_ == null) {
@@ -7217,16 +3321,16 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder getDependenciesBuilder(
+      public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder getDependenciesBuilder(
           int index) {
         return getDependenciesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder getDependenciesOrBuilder(
+      public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder getDependenciesOrBuilder(
           int index) {
         if (dependenciesBuilder_ == null) {
           return dependencies_.get(index);  } else {
@@ -7234,9 +3338,9 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public java.util.List<? extends com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+      public java.util.List<? extends com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder> 
            getDependenciesOrBuilderList() {
         if (dependenciesBuilder_ != null) {
           return dependenciesBuilder_.getMessageOrBuilderList();
@@ -7245,33 +3349,33 @@ public final class CommitInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addDependenciesBuilder() {
+      public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder addDependenciesBuilder() {
         return getDependenciesFieldBuilder().addBuilder(
-            com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+            com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder addDependenciesBuilder(
+      public com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder addDependenciesBuilder(
           int index) {
         return getDependenciesFieldBuilder().addBuilder(
-            index, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.getDefaultInstance());
+            index, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .CommitInfo.JarInfo dependencies = 1;</code>
+       * <code>repeated .JarInfo dependencies = 1;</code>
        */
-      public java.util.List<com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder> 
+      public java.util.List<com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder> 
            getDependenciesBuilderList() {
         return getDependenciesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder> 
+          com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder> 
           getDependenciesFieldBuilder() {
         if (dependenciesBuilder_ == null) {
           dependenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.JarInfoOrBuilder>(
+              com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfo.Builder, com.t2r.common.models.refactorings.JarInfoOuterClass.JarInfoOrBuilder>(
                   dependencies_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -7387,31 +3491,31 @@ public final class CommitInfoOuterClass {
         return this;
       }
 
-      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate dependencyUpdate_;
+      private com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate dependencyUpdate_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> dependencyUpdateBuilder_;
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder> dependencyUpdateBuilder_;
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        * @return Whether the dependencyUpdate field is set.
        */
       public boolean hasDependencyUpdate() {
         return dependencyUpdateBuilder_ != null || dependencyUpdate_ != null;
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        * @return The dependencyUpdate.
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate getDependencyUpdate() {
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate() {
         if (dependencyUpdateBuilder_ == null) {
-          return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
+          return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
         } else {
           return dependencyUpdateBuilder_.getMessage();
         }
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public Builder setDependencyUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
+      public Builder setDependencyUpdate(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate value) {
         if (dependencyUpdateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7425,10 +3529,10 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder setDependencyUpdate(
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder builderForValue) {
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder builderForValue) {
         if (dependencyUpdateBuilder_ == null) {
           dependencyUpdate_ = builderForValue.build();
           onChanged();
@@ -7439,13 +3543,13 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public Builder mergeDependencyUpdate(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate value) {
+      public Builder mergeDependencyUpdate(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate value) {
         if (dependencyUpdateBuilder_ == null) {
           if (dependencyUpdate_ != null) {
             dependencyUpdate_ =
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.newBuilder(dependencyUpdate_).mergeFrom(value).buildPartial();
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.newBuilder(dependencyUpdate_).mergeFrom(value).buildPartial();
           } else {
             dependencyUpdate_ = value;
           }
@@ -7457,7 +3561,7 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
       public Builder clearDependencyUpdate() {
         if (dependencyUpdateBuilder_ == null) {
@@ -7471,33 +3575,33 @@ public final class CommitInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder getDependencyUpdateBuilder() {
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder getDependencyUpdateBuilder() {
         
         onChanged();
         return getDependencyUpdateFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
         if (dependencyUpdateBuilder_ != null) {
           return dependencyUpdateBuilder_.getMessageOrBuilder();
         } else {
           return dependencyUpdate_ == null ?
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
         }
       }
       /**
-       * <code>.CommitInfo.DependencyUpdate dependencyUpdate = 4;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder> 
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder> 
           getDependencyUpdateFieldBuilder() {
         if (dependencyUpdateBuilder_ == null) {
           dependencyUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdate.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.DependencyUpdateOrBuilder>(
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder>(
                   getDependencyUpdate(),
                   getParentForChildren(),
                   isClean());
@@ -7564,26 +3668,6 @@ public final class CommitInfoOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CommitInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CommitInfo_FileDiff_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CommitInfo_FileDiff_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CommitInfo_JarInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CommitInfo_JarInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CommitInfo_DependencyPair_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CommitInfo_DependencyPair_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CommitInfo_DependencyUpdate_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CommitInfo_Refactoring_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7607,35 +3691,29 @@ public final class CommitInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020CommitInfo.proto\"\236\007\n\nCommitInfo\022\017\n\007cou" +
-      "nter\030\010 \001(\003\022\013\n\003sha\030\005 \001(\t\022&\n\010fileDiff\030\003 \001(" +
-      "\0132\024.CommitInfo.FileDiff\022-\n\014refactorings\030" +
-      "\002 \003(\0132\027.CommitInfo.Refactoring\022)\n\014depend" +
-      "encies\030\001 \003(\0132\023.CommitInfo.JarInfo\022\021\n\texc" +
-      "eption\030\006 \001(\t\022\034\n\024isTypeChangeReported\030\007 \001" +
-      "(\010\0226\n\020dependencyUpdate\030\004 \001(\0132\034.CommitInf" +
-      "o.DependencyUpdate\032a\n\010FileDiff\022\025\n\rfilesM" +
-      "odified\030\001 \001(\003\022\022\n\nfilesAdded\030\002 \001(\003\022\024\n\014fil" +
-      "esRemoved\030\003 \001(\003\022\024\n\014filesRenamed\030\004 \001(\003\032?\n" +
-      "\007JarInfo\022\022\n\nartifactID\030\001 \001(\t\022\017\n\007groupID\030" +
-      "\003 \001(\t\022\017\n\007version\030\002 \001(\t\032Y\n\016DependencyPair" +
-      "\022#\n\006before\030\001 \001(\0132\023.CommitInfo.JarInfo\022\"\n" +
-      "\005after\030\002 \001(\0132\023.CommitInfo.JarInfo\032\210\001\n\020De" +
-      "pendencyUpdate\022*\n\006update\030\003 \003(\0132\032.CommitI" +
-      "nfo.DependencyPair\022\"\n\005added\030\001 \003(\0132\023.Comm" +
-      "itInfo.JarInfo\022$\n\007removed\030\002 \003(\0132\023.Commit" +
-      "Info.JarInfo\032\320\001\n\013Refactoring\022\014\n\004name\030\003 \001" +
-      "(\t\022\022\n\noccurences\030\002 \001(\003\022I\n\021descriptionAnd" +
-      "url\030\001 \003(\0132..CommitInfo.Refactoring.Descr" +
-      "iptionAndurlEntry\032T\n\026DescriptionAndurlEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.Commit" +
-      "Info.RefactoringUrl:\0028\001\032*\n\016RefactoringUr" +
-      "l\022\013\n\003lhs\030\001 \001(\t\022\013\n\003rhs\030\002 \001(\tB$\n\"com.t2r.c" +
-      "ommon.models.refactoringsb\006proto3"
+      "\n\020CommitInfo.proto\032\rJarInfo.proto\032\026Depen" +
+      "dencyUpdate.proto\032\016FileDiff.proto\"\363\003\n\nCo" +
+      "mmitInfo\022\017\n\007counter\030\010 \001(\003\022\013\n\003sha\030\005 \001(\t\022\033" +
+      "\n\010fileDiff\030\003 \001(\0132\t.FileDiff\022-\n\014refactori" +
+      "ngs\030\002 \003(\0132\027.CommitInfo.Refactoring\022\036\n\014de" +
+      "pendencies\030\001 \003(\0132\010.JarInfo\022\021\n\texception\030" +
+      "\006 \001(\t\022\034\n\024isTypeChangeReported\030\007 \001(\010\022+\n\020d" +
+      "ependencyUpdate\030\004 \001(\0132\021.DependencyUpdate" +
+      "\032\320\001\n\013Refactoring\022\014\n\004name\030\003 \001(\t\022\022\n\noccure" +
+      "nces\030\002 \001(\003\022I\n\021descriptionAndurl\030\001 \003(\0132.." +
+      "CommitInfo.Refactoring.DescriptionAndurl" +
+      "Entry\032T\n\026DescriptionAndurlEntry\022\013\n\003key\030\001" +
+      " \001(\t\022)\n\005value\030\002 \001(\0132\032.CommitInfo.Refacto" +
+      "ringUrl:\0028\001\032*\n\016RefactoringUrl\022\013\n\003lhs\030\001 \001" +
+      "(\t\022\013\n\003rhs\030\002 \001(\tB$\n\"com.t2r.common.models" +
+      ".refactoringsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.t2r.common.models.refactorings.JarInfoOuterClass.getDescriptor(),
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.getDescriptor(),
+          com.t2r.common.models.refactorings.FileDiffOuterClass.getDescriptor(),
         });
     internal_static_CommitInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -7643,32 +3721,8 @@ public final class CommitInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommitInfo_descriptor,
         new java.lang.String[] { "Counter", "Sha", "FileDiff", "Refactorings", "Dependencies", "Exception", "IsTypeChangeReported", "DependencyUpdate", });
-    internal_static_CommitInfo_FileDiff_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(0);
-    internal_static_CommitInfo_FileDiff_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CommitInfo_FileDiff_descriptor,
-        new java.lang.String[] { "FilesModified", "FilesAdded", "FilesRemoved", "FilesRenamed", });
-    internal_static_CommitInfo_JarInfo_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(1);
-    internal_static_CommitInfo_JarInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CommitInfo_JarInfo_descriptor,
-        new java.lang.String[] { "ArtifactID", "GroupID", "Version", });
-    internal_static_CommitInfo_DependencyPair_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(2);
-    internal_static_CommitInfo_DependencyPair_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CommitInfo_DependencyPair_descriptor,
-        new java.lang.String[] { "Before", "After", });
-    internal_static_CommitInfo_DependencyUpdate_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(3);
-    internal_static_CommitInfo_DependencyUpdate_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CommitInfo_DependencyUpdate_descriptor,
-        new java.lang.String[] { "Update", "Added", "Removed", });
     internal_static_CommitInfo_Refactoring_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(4);
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(0);
     internal_static_CommitInfo_Refactoring_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommitInfo_Refactoring_descriptor,
@@ -7680,11 +3734,14 @@ public final class CommitInfoOuterClass {
         internal_static_CommitInfo_Refactoring_DescriptionAndurlEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_CommitInfo_RefactoringUrl_descriptor =
-      internal_static_CommitInfo_descriptor.getNestedTypes().get(5);
+      internal_static_CommitInfo_descriptor.getNestedTypes().get(1);
     internal_static_CommitInfo_RefactoringUrl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommitInfo_RefactoringUrl_descriptor,
         new java.lang.String[] { "Lhs", "Rhs", });
+    com.t2r.common.models.refactorings.JarInfoOuterClass.getDescriptor();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.getDescriptor();
+    com.t2r.common.models.refactorings.FileDiffOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -157,21 +157,6 @@ public final class TypeChangeAnalysisOuterClass {
     com.t2r.common.models.refactorings.TypeSemOuterClass.TypeSem getTypeSemAftr();
 
     /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     * @return Whether the migrationInfo field is set.
-     */
-    boolean hasMigrationInfo();
-    /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     * @return The migrationInfo.
-     */
-    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getMigrationInfo();
-    /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     */
-    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder getMigrationInfoOrBuilder();
-
-    /**
      * <code>bool withinSamePackage = 6;</code>
      * @return The withinSamePackage.
      */
@@ -209,6 +194,21 @@ public final class TypeChangeAnalysisOuterClass {
      * <code>.TypeChangeAnalysis.PrimitiveAnalysis primitiveInfo = 9;</code>
      */
     com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.PrimitiveAnalysisOrBuilder getPrimitiveInfoOrBuilder();
+
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     * @return Whether the typeChangeStats field is set.
+     */
+    boolean hasTypeChangeStats();
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     * @return The typeChangeStats.
+     */
+    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getTypeChangeStats();
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     */
+    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder getTypeChangeStatsOrBuilder();
   }
   /**
    * <pre>
@@ -355,15 +355,15 @@ public final class TypeChangeAnalysisOuterClass {
               typeSemAftr_ = rawValue;
               break;
             }
-            case 98: {
-              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder subBuilder = null;
-              if (migrationInfo_ != null) {
-                subBuilder = migrationInfo_.toBuilder();
+            case 114: {
+              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder subBuilder = null;
+              if (typeChangeStats_ != null) {
+                subBuilder = typeChangeStats_.toBuilder();
               }
-              migrationInfo_ = input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.parser(), extensionRegistry);
+              typeChangeStats_ = input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(migrationInfo_);
-                migrationInfo_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(typeChangeStats_);
+                typeChangeStats_ = subBuilder.buildPartial();
               }
 
               break;
@@ -534,14 +534,32 @@ public final class TypeChangeAnalysisOuterClass {
        */
       com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.CodeMappingOrBuilder getCodeMappingOrBuilder(
           int index);
+
+      /**
+       * <code>string urlB4 = 10;</code>
+       * @return The urlB4.
+       */
+      java.lang.String getUrlB4();
+      /**
+       * <code>string urlB4 = 10;</code>
+       * @return The bytes for urlB4.
+       */
+      com.google.protobuf.ByteString
+          getUrlB4Bytes();
+
+      /**
+       * <code>string urlAfter = 11;</code>
+       * @return The urlAfter.
+       */
+      java.lang.String getUrlAfter();
+      /**
+       * <code>string urlAfter = 11;</code>
+       * @return The bytes for urlAfter.
+       */
+      com.google.protobuf.ByteString
+          getUrlAfterBytes();
     }
     /**
-     * <pre>
-     * Each Type Change
-     * Eg. List&lt;String&gt; to Set&lt;StringBuffer&gt;
-     * contains tree called syntacticTransformations
-     * </pre>
-     *
      * Protobuf type {@code TypeChangeAnalysis.TypeChangeInstance}
      */
     public  static final class TypeChangeInstance extends
@@ -560,6 +578,8 @@ public final class TypeChangeAnalysisOuterClass {
         visibility_ = "";
         compilationUnit_ = "";
         codeMapping_ = java.util.Collections.emptyList();
+        urlB4_ = "";
+        urlAfter_ = "";
       }
 
       @java.lang.Override
@@ -669,6 +689,18 @@ public final class TypeChangeAnalysisOuterClass {
                 }
                 codeMapping_.add(
                     input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.CodeMapping.parser(), extensionRegistry));
+                break;
+              }
+              case 82: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                urlB4_ = s;
+                break;
+              }
+              case 90: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                urlAfter_ = s;
                 break;
               }
               default: {
@@ -973,6 +1005,78 @@ public final class TypeChangeAnalysisOuterClass {
         return codeMapping_.get(index);
       }
 
+      public static final int URLB4_FIELD_NUMBER = 10;
+      private volatile java.lang.Object urlB4_;
+      /**
+       * <code>string urlB4 = 10;</code>
+       * @return The urlB4.
+       */
+      public java.lang.String getUrlB4() {
+        java.lang.Object ref = urlB4_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          urlB4_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string urlB4 = 10;</code>
+       * @return The bytes for urlB4.
+       */
+      public com.google.protobuf.ByteString
+          getUrlB4Bytes() {
+        java.lang.Object ref = urlB4_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          urlB4_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int URLAFTER_FIELD_NUMBER = 11;
+      private volatile java.lang.Object urlAfter_;
+      /**
+       * <code>string urlAfter = 11;</code>
+       * @return The urlAfter.
+       */
+      public java.lang.String getUrlAfter() {
+        java.lang.Object ref = urlAfter_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          urlAfter_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string urlAfter = 11;</code>
+       * @return The bytes for urlAfter.
+       */
+      public com.google.protobuf.ByteString
+          getUrlAfterBytes() {
+        java.lang.Object ref = urlAfter_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          urlAfter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -1013,6 +1117,12 @@ public final class TypeChangeAnalysisOuterClass {
         }
         for (int i = 0; i < codeMapping_.size(); i++) {
           output.writeMessage(9, codeMapping_.get(i));
+        }
+        if (!getUrlB4Bytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 10, urlB4_);
+        }
+        if (!getUrlAfterBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 11, urlAfter_);
         }
         unknownFields.writeTo(output);
       }
@@ -1055,6 +1165,12 @@ public final class TypeChangeAnalysisOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(9, codeMapping_.get(i));
         }
+        if (!getUrlB4Bytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, urlB4_);
+        }
+        if (!getUrlAfterBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, urlAfter_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1096,6 +1212,10 @@ public final class TypeChangeAnalysisOuterClass {
             .equals(other.getCompilationUnit())) return false;
         if (!getCodeMappingList()
             .equals(other.getCodeMappingList())) return false;
+        if (!getUrlB4()
+            .equals(other.getUrlB4())) return false;
+        if (!getUrlAfter()
+            .equals(other.getUrlAfter())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1133,6 +1253,10 @@ public final class TypeChangeAnalysisOuterClass {
           hash = (37 * hash) + CODEMAPPING_FIELD_NUMBER;
           hash = (53 * hash) + getCodeMappingList().hashCode();
         }
+        hash = (37 * hash) + URLB4_FIELD_NUMBER;
+        hash = (53 * hash) + getUrlB4().hashCode();
+        hash = (37 * hash) + URLAFTER_FIELD_NUMBER;
+        hash = (53 * hash) + getUrlAfter().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1229,12 +1353,6 @@ public final class TypeChangeAnalysisOuterClass {
         return builder;
       }
       /**
-       * <pre>
-       * Each Type Change
-       * Eg. List&lt;String&gt; to Set&lt;StringBuffer&gt;
-       * contains tree called syntacticTransformations
-       * </pre>
-       *
        * Protobuf type {@code TypeChangeAnalysis.TypeChangeInstance}
        */
       public static final class Builder extends
@@ -1307,6 +1425,10 @@ public final class TypeChangeAnalysisOuterClass {
           } else {
             codeMappingBuilder_.clear();
           }
+          urlB4_ = "";
+
+          urlAfter_ = "";
+
           return this;
         }
 
@@ -1363,6 +1485,8 @@ public final class TypeChangeAnalysisOuterClass {
           } else {
             result.codeMapping_ = codeMappingBuilder_.build();
           }
+          result.urlB4_ = urlB4_;
+          result.urlAfter_ = urlAfter_;
           onBuilt();
           return result;
         }
@@ -1464,6 +1588,14 @@ public final class TypeChangeAnalysisOuterClass {
                 codeMappingBuilder_.addAllMessages(other.codeMapping_);
               }
             }
+          }
+          if (!other.getUrlB4().isEmpty()) {
+            urlB4_ = other.urlB4_;
+            onChanged();
+          }
+          if (!other.getUrlAfter().isEmpty()) {
+            urlAfter_ = other.urlAfter_;
+            onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -2447,6 +2579,158 @@ public final class TypeChangeAnalysisOuterClass {
           }
           return codeMappingBuilder_;
         }
+
+        private java.lang.Object urlB4_ = "";
+        /**
+         * <code>string urlB4 = 10;</code>
+         * @return The urlB4.
+         */
+        public java.lang.String getUrlB4() {
+          java.lang.Object ref = urlB4_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            urlB4_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string urlB4 = 10;</code>
+         * @return The bytes for urlB4.
+         */
+        public com.google.protobuf.ByteString
+            getUrlB4Bytes() {
+          java.lang.Object ref = urlB4_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            urlB4_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string urlB4 = 10;</code>
+         * @param value The urlB4 to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlB4(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          urlB4_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlB4 = 10;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUrlB4() {
+          
+          urlB4_ = getDefaultInstance().getUrlB4();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlB4 = 10;</code>
+         * @param value The bytes for urlB4 to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlB4Bytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          urlB4_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object urlAfter_ = "";
+        /**
+         * <code>string urlAfter = 11;</code>
+         * @return The urlAfter.
+         */
+        public java.lang.String getUrlAfter() {
+          java.lang.Object ref = urlAfter_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            urlAfter_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string urlAfter = 11;</code>
+         * @return The bytes for urlAfter.
+         */
+        public com.google.protobuf.ByteString
+            getUrlAfterBytes() {
+          java.lang.Object ref = urlAfter_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            urlAfter_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string urlAfter = 11;</code>
+         * @param value The urlAfter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlAfter(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          urlAfter_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlAfter = 11;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUrlAfter() {
+          
+          urlAfter_ = getDefaultInstance().getUrlAfter();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlAfter = 11;</code>
+         * @param value The bytes for urlAfter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlAfterBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          urlAfter_ = value;
+          onChanged();
+          return this;
+        }
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2535,29 +2819,16 @@ public final class TypeChangeAnalysisOuterClass {
       com.t2r.common.models.ast.TypeGraphOuterClass.TypeGraphOrBuilder getAftrOrBuilder();
 
       /**
-       * <code>repeated string transformation = 3;</code>
-       * @return A list containing the transformation.
+       * <code>string transformation = 3;</code>
+       * @return The transformation.
        */
-      java.util.List<java.lang.String>
-          getTransformationList();
+      java.lang.String getTransformation();
       /**
-       * <code>repeated string transformation = 3;</code>
-       * @return The count of transformation.
-       */
-      int getTransformationCount();
-      /**
-       * <code>repeated string transformation = 3;</code>
-       * @param index The index of the element to return.
-       * @return The transformation at the given index.
-       */
-      java.lang.String getTransformation(int index);
-      /**
-       * <code>repeated string transformation = 3;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the transformation at the given index.
+       * <code>string transformation = 3;</code>
+       * @return The bytes for transformation.
        */
       com.google.protobuf.ByteString
-          getTransformationBytes(int index);
+          getTransformationBytes();
 
       /**
        * <code>repeated .TypeChangeAnalysis.SyntacticTransformation subTransformations = 4;</code>
@@ -2600,7 +2871,7 @@ public final class TypeChangeAnalysisOuterClass {
         super(builder);
       }
       private SyntacticTransformation() {
-        transformation_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        transformation_ = "";
         subTransformations_ = java.util.Collections.emptyList();
       }
 
@@ -2663,17 +2934,14 @@ public final class TypeChangeAnalysisOuterClass {
               }
               case 26: {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  transformation_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                transformation_.add(s);
+
+                transformation_ = s;
                 break;
               }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   subTransformations_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 subTransformations_.add(
                     input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation.parser(), extensionRegistry));
@@ -2695,9 +2963,6 @@ public final class TypeChangeAnalysisOuterClass {
               e).setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            transformation_ = transformation_.getUnmodifiableView();
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             subTransformations_ = java.util.Collections.unmodifiableList(subTransformations_);
           }
           this.unknownFields = unknownFields.build();
@@ -2764,38 +3029,39 @@ public final class TypeChangeAnalysisOuterClass {
       }
 
       public static final int TRANSFORMATION_FIELD_NUMBER = 3;
-      private com.google.protobuf.LazyStringList transformation_;
+      private volatile java.lang.Object transformation_;
       /**
-       * <code>repeated string transformation = 3;</code>
-       * @return A list containing the transformation.
+       * <code>string transformation = 3;</code>
+       * @return The transformation.
        */
-      public com.google.protobuf.ProtocolStringList
-          getTransformationList() {
-        return transformation_;
+      public java.lang.String getTransformation() {
+        java.lang.Object ref = transformation_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          transformation_ = s;
+          return s;
+        }
       }
       /**
-       * <code>repeated string transformation = 3;</code>
-       * @return The count of transformation.
-       */
-      public int getTransformationCount() {
-        return transformation_.size();
-      }
-      /**
-       * <code>repeated string transformation = 3;</code>
-       * @param index The index of the element to return.
-       * @return The transformation at the given index.
-       */
-      public java.lang.String getTransformation(int index) {
-        return transformation_.get(index);
-      }
-      /**
-       * <code>repeated string transformation = 3;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the transformation at the given index.
+       * <code>string transformation = 3;</code>
+       * @return The bytes for transformation.
        */
       public com.google.protobuf.ByteString
-          getTransformationBytes(int index) {
-        return transformation_.getByteString(index);
+          getTransformationBytes() {
+        java.lang.Object ref = transformation_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          transformation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       public static final int SUBTRANSFORMATIONS_FIELD_NUMBER = 4;
@@ -2853,8 +3119,8 @@ public final class TypeChangeAnalysisOuterClass {
         if (aftr_ != null) {
           output.writeMessage(2, getAftr());
         }
-        for (int i = 0; i < transformation_.size(); i++) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transformation_.getRaw(i));
+        if (!getTransformationBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transformation_);
         }
         for (int i = 0; i < subTransformations_.size(); i++) {
           output.writeMessage(4, subTransformations_.get(i));
@@ -2876,13 +3142,8 @@ public final class TypeChangeAnalysisOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getAftr());
         }
-        {
-          int dataSize = 0;
-          for (int i = 0; i < transformation_.size(); i++) {
-            dataSize += computeStringSizeNoTag(transformation_.getRaw(i));
-          }
-          size += dataSize;
-          size += 1 * getTransformationList().size();
+        if (!getTransformationBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, transformation_);
         }
         for (int i = 0; i < subTransformations_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
@@ -2913,8 +3174,8 @@ public final class TypeChangeAnalysisOuterClass {
           if (!getAftr()
               .equals(other.getAftr())) return false;
         }
-        if (!getTransformationList()
-            .equals(other.getTransformationList())) return false;
+        if (!getTransformation()
+            .equals(other.getTransformation())) return false;
         if (!getSubTransformationsList()
             .equals(other.getSubTransformationsList())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2936,10 +3197,8 @@ public final class TypeChangeAnalysisOuterClass {
           hash = (37 * hash) + AFTR_FIELD_NUMBER;
           hash = (53 * hash) + getAftr().hashCode();
         }
-        if (getTransformationCount() > 0) {
-          hash = (37 * hash) + TRANSFORMATION_FIELD_NUMBER;
-          hash = (53 * hash) + getTransformationList().hashCode();
-        }
+        hash = (37 * hash) + TRANSFORMATION_FIELD_NUMBER;
+        hash = (53 * hash) + getTransformation().hashCode();
         if (getSubTransformationsCount() > 0) {
           hash = (37 * hash) + SUBTRANSFORMATIONS_FIELD_NUMBER;
           hash = (53 * hash) + getSubTransformationsList().hashCode();
@@ -3094,11 +3353,11 @@ public final class TypeChangeAnalysisOuterClass {
             aftr_ = null;
             aftrBuilder_ = null;
           }
-          transformation_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          transformation_ = "";
+
           if (subTransformationsBuilder_ == null) {
             subTransformations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             subTransformationsBuilder_.clear();
           }
@@ -3139,15 +3398,11 @@ public final class TypeChangeAnalysisOuterClass {
           } else {
             result.aftr_ = aftrBuilder_.build();
           }
-          if (((bitField0_ & 0x00000001) != 0)) {
-            transformation_ = transformation_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.transformation_ = transformation_;
           if (subTransformationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               subTransformations_ = java.util.Collections.unmodifiableList(subTransformations_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.subTransformations_ = subTransformations_;
           } else {
@@ -3207,21 +3462,15 @@ public final class TypeChangeAnalysisOuterClass {
           if (other.hasAftr()) {
             mergeAftr(other.getAftr());
           }
-          if (!other.transformation_.isEmpty()) {
-            if (transformation_.isEmpty()) {
-              transformation_ = other.transformation_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureTransformationIsMutable();
-              transformation_.addAll(other.transformation_);
-            }
+          if (!other.getTransformation().isEmpty()) {
+            transformation_ = other.transformation_;
             onChanged();
           }
           if (subTransformationsBuilder_ == null) {
             if (!other.subTransformations_.isEmpty()) {
               if (subTransformations_.isEmpty()) {
                 subTransformations_ = other.subTransformations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureSubTransformationsIsMutable();
                 subTransformations_.addAll(other.subTransformations_);
@@ -3234,7 +3483,7 @@ public final class TypeChangeAnalysisOuterClass {
                 subTransformationsBuilder_.dispose();
                 subTransformationsBuilder_ = null;
                 subTransformations_ = other.subTransformations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 subTransformationsBuilder_ = 
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                      getSubTransformationsFieldBuilder() : null;
@@ -3511,112 +3760,78 @@ public final class TypeChangeAnalysisOuterClass {
           return aftrBuilder_;
         }
 
-        private com.google.protobuf.LazyStringList transformation_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        private void ensureTransformationIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
-            transformation_ = new com.google.protobuf.LazyStringArrayList(transformation_);
-            bitField0_ |= 0x00000001;
-           }
-        }
+        private java.lang.Object transformation_ = "";
         /**
-         * <code>repeated string transformation = 3;</code>
-         * @return A list containing the transformation.
+         * <code>string transformation = 3;</code>
+         * @return The transformation.
          */
-        public com.google.protobuf.ProtocolStringList
-            getTransformationList() {
-          return transformation_.getUnmodifiableView();
+        public java.lang.String getTransformation() {
+          java.lang.Object ref = transformation_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            transformation_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>repeated string transformation = 3;</code>
-         * @return The count of transformation.
-         */
-        public int getTransformationCount() {
-          return transformation_.size();
-        }
-        /**
-         * <code>repeated string transformation = 3;</code>
-         * @param index The index of the element to return.
-         * @return The transformation at the given index.
-         */
-        public java.lang.String getTransformation(int index) {
-          return transformation_.get(index);
-        }
-        /**
-         * <code>repeated string transformation = 3;</code>
-         * @param index The index of the value to return.
-         * @return The bytes of the transformation at the given index.
+         * <code>string transformation = 3;</code>
+         * @return The bytes for transformation.
          */
         public com.google.protobuf.ByteString
-            getTransformationBytes(int index) {
-          return transformation_.getByteString(index);
+            getTransformationBytes() {
+          java.lang.Object ref = transformation_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            transformation_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
         }
         /**
-         * <code>repeated string transformation = 3;</code>
-         * @param index The index to set the value at.
+         * <code>string transformation = 3;</code>
          * @param value The transformation to set.
          * @return This builder for chaining.
          */
         public Builder setTransformation(
-            int index, java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTransformationIsMutable();
-          transformation_.set(index, value);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated string transformation = 3;</code>
-         * @param value The transformation to add.
-         * @return This builder for chaining.
-         */
-        public Builder addTransformation(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  ensureTransformationIsMutable();
-          transformation_.add(value);
+  
+          transformation_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string transformation = 3;</code>
-         * @param values The transformation to add.
-         * @return This builder for chaining.
-         */
-        public Builder addAllTransformation(
-            java.lang.Iterable<java.lang.String> values) {
-          ensureTransformationIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, transformation_);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated string transformation = 3;</code>
+         * <code>string transformation = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearTransformation() {
-          transformation_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          
+          transformation_ = getDefaultInstance().getTransformation();
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string transformation = 3;</code>
-         * @param value The bytes of the transformation to add.
+         * <code>string transformation = 3;</code>
+         * @param value The bytes for transformation to set.
          * @return This builder for chaining.
          */
-        public Builder addTransformationBytes(
+        public Builder setTransformationBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-          ensureTransformationIsMutable();
-          transformation_.add(value);
+          
+          transformation_ = value;
           onChanged();
           return this;
         }
@@ -3624,9 +3839,9 @@ public final class TypeChangeAnalysisOuterClass {
         private java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation> subTransformations_ =
           java.util.Collections.emptyList();
         private void ensureSubTransformationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             subTransformations_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation>(subTransformations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
            }
         }
 
@@ -3776,7 +3991,7 @@ public final class TypeChangeAnalysisOuterClass {
         public Builder clearSubTransformations() {
           if (subTransformationsBuilder_ == null) {
             subTransformations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             subTransformationsBuilder_.clear();
@@ -3853,7 +4068,7 @@ public final class TypeChangeAnalysisOuterClass {
             subTransformationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformation.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.SyntacticTransformationOrBuilder>(
                     subTransformations_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             subTransformations_ = null;
@@ -4640,6 +4855,54 @@ public final class TypeChangeAnalysisOuterClass {
        */
       com.google.protobuf.ByteString
           getAfterBytes();
+
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> 
+          getReplcementInferredList();
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getReplcementInferred(int index);
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      int getReplcementInferredCount();
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder> 
+          getReplcementInferredOrBuilderList();
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder getReplcementInferredOrBuilder(
+          int index);
+
+      /**
+       * <code>string urlbB4 = 6;</code>
+       * @return The urlbB4.
+       */
+      java.lang.String getUrlbB4();
+      /**
+       * <code>string urlbB4 = 6;</code>
+       * @return The bytes for urlbB4.
+       */
+      com.google.protobuf.ByteString
+          getUrlbB4Bytes();
+
+      /**
+       * <code>string urlAftr = 5;</code>
+       * @return The urlAftr.
+       */
+      java.lang.String getUrlAftr();
+      /**
+       * <code>string urlAftr = 5;</code>
+       * @return The bytes for urlAftr.
+       */
+      com.google.protobuf.ByteString
+          getUrlAftrBytes();
     }
     /**
      * Protobuf type {@code TypeChangeAnalysis.CodeMapping}
@@ -4656,6 +4919,9 @@ public final class TypeChangeAnalysisOuterClass {
       private CodeMapping() {
         b4_ = "";
         after_ = "";
+        replcementInferred_ = java.util.Collections.emptyList();
+        urlbB4_ = "";
+        urlAftr_ = "";
       }
 
       @java.lang.Override
@@ -4678,6 +4944,7 @@ public final class TypeChangeAnalysisOuterClass {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4705,6 +4972,27 @@ public final class TypeChangeAnalysisOuterClass {
                 isSame_ = input.readBool();
                 break;
               }
+              case 34: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  replcementInferred_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                replcementInferred_.add(
+                    input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.parser(), extensionRegistry));
+                break;
+              }
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                urlAftr_ = s;
+                break;
+              }
+              case 50: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                urlbB4_ = s;
+                break;
+              }
               default: {
                 if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -4720,6 +5008,9 @@ public final class TypeChangeAnalysisOuterClass {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            replcementInferred_ = java.util.Collections.unmodifiableList(replcementInferred_);
+          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
@@ -4819,6 +5110,113 @@ public final class TypeChangeAnalysisOuterClass {
         }
       }
 
+      public static final int REPLCEMENTINFERRED_FIELD_NUMBER = 4;
+      private java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> replcementInferred_;
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> getReplcementInferredList() {
+        return replcementInferred_;
+      }
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder> 
+          getReplcementInferredOrBuilderList() {
+        return replcementInferred_;
+      }
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      public int getReplcementInferredCount() {
+        return replcementInferred_.size();
+      }
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getReplcementInferred(int index) {
+        return replcementInferred_.get(index);
+      }
+      /**
+       * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder getReplcementInferredOrBuilder(
+          int index) {
+        return replcementInferred_.get(index);
+      }
+
+      public static final int URLBB4_FIELD_NUMBER = 6;
+      private volatile java.lang.Object urlbB4_;
+      /**
+       * <code>string urlbB4 = 6;</code>
+       * @return The urlbB4.
+       */
+      public java.lang.String getUrlbB4() {
+        java.lang.Object ref = urlbB4_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          urlbB4_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string urlbB4 = 6;</code>
+       * @return The bytes for urlbB4.
+       */
+      public com.google.protobuf.ByteString
+          getUrlbB4Bytes() {
+        java.lang.Object ref = urlbB4_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          urlbB4_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int URLAFTR_FIELD_NUMBER = 5;
+      private volatile java.lang.Object urlAftr_;
+      /**
+       * <code>string urlAftr = 5;</code>
+       * @return The urlAftr.
+       */
+      public java.lang.String getUrlAftr() {
+        java.lang.Object ref = urlAftr_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          urlAftr_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string urlAftr = 5;</code>
+       * @return The bytes for urlAftr.
+       */
+      public com.google.protobuf.ByteString
+          getUrlAftrBytes() {
+        java.lang.Object ref = urlAftr_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          urlAftr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -4842,6 +5240,15 @@ public final class TypeChangeAnalysisOuterClass {
         if (isSame_ != false) {
           output.writeBool(3, isSame_);
         }
+        for (int i = 0; i < replcementInferred_.size(); i++) {
+          output.writeMessage(4, replcementInferred_.get(i));
+        }
+        if (!getUrlAftrBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, urlAftr_);
+        }
+        if (!getUrlbB4Bytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, urlbB4_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -4860,6 +5267,16 @@ public final class TypeChangeAnalysisOuterClass {
         if (isSame_ != false) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(3, isSame_);
+        }
+        for (int i = 0; i < replcementInferred_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, replcementInferred_.get(i));
+        }
+        if (!getUrlAftrBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, urlAftr_);
+        }
+        if (!getUrlbB4Bytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, urlbB4_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4882,6 +5299,12 @@ public final class TypeChangeAnalysisOuterClass {
             .equals(other.getB4())) return false;
         if (!getAfter()
             .equals(other.getAfter())) return false;
+        if (!getReplcementInferredList()
+            .equals(other.getReplcementInferredList())) return false;
+        if (!getUrlbB4()
+            .equals(other.getUrlbB4())) return false;
+        if (!getUrlAftr()
+            .equals(other.getUrlAftr())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -4900,6 +5323,14 @@ public final class TypeChangeAnalysisOuterClass {
         hash = (53 * hash) + getB4().hashCode();
         hash = (37 * hash) + AFTER_FIELD_NUMBER;
         hash = (53 * hash) + getAfter().hashCode();
+        if (getReplcementInferredCount() > 0) {
+          hash = (37 * hash) + REPLCEMENTINFERRED_FIELD_NUMBER;
+          hash = (53 * hash) + getReplcementInferredList().hashCode();
+        }
+        hash = (37 * hash) + URLBB4_FIELD_NUMBER;
+        hash = (53 * hash) + getUrlbB4().hashCode();
+        hash = (37 * hash) + URLAFTR_FIELD_NUMBER;
+        hash = (53 * hash) + getUrlAftr().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -5028,6 +5459,7 @@ public final class TypeChangeAnalysisOuterClass {
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
+            getReplcementInferredFieldBuilder();
           }
         }
         @java.lang.Override
@@ -5038,6 +5470,16 @@ public final class TypeChangeAnalysisOuterClass {
           b4_ = "";
 
           after_ = "";
+
+          if (replcementInferredBuilder_ == null) {
+            replcementInferred_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            replcementInferredBuilder_.clear();
+          }
+          urlbB4_ = "";
+
+          urlAftr_ = "";
 
           return this;
         }
@@ -5065,9 +5507,21 @@ public final class TypeChangeAnalysisOuterClass {
         @java.lang.Override
         public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.CodeMapping buildPartial() {
           com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.CodeMapping result = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.CodeMapping(this);
+          int from_bitField0_ = bitField0_;
           result.isSame_ = isSame_;
           result.b4_ = b4_;
           result.after_ = after_;
+          if (replcementInferredBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              replcementInferred_ = java.util.Collections.unmodifiableList(replcementInferred_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.replcementInferred_ = replcementInferred_;
+          } else {
+            result.replcementInferred_ = replcementInferredBuilder_.build();
+          }
+          result.urlbB4_ = urlbB4_;
+          result.urlAftr_ = urlAftr_;
           onBuilt();
           return result;
         }
@@ -5127,6 +5581,40 @@ public final class TypeChangeAnalysisOuterClass {
             after_ = other.after_;
             onChanged();
           }
+          if (replcementInferredBuilder_ == null) {
+            if (!other.replcementInferred_.isEmpty()) {
+              if (replcementInferred_.isEmpty()) {
+                replcementInferred_ = other.replcementInferred_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureReplcementInferredIsMutable();
+                replcementInferred_.addAll(other.replcementInferred_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.replcementInferred_.isEmpty()) {
+              if (replcementInferredBuilder_.isEmpty()) {
+                replcementInferredBuilder_.dispose();
+                replcementInferredBuilder_ = null;
+                replcementInferred_ = other.replcementInferred_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                replcementInferredBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getReplcementInferredFieldBuilder() : null;
+              } else {
+                replcementInferredBuilder_.addAllMessages(other.replcementInferred_);
+              }
+            }
+          }
+          if (!other.getUrlbB4().isEmpty()) {
+            urlbB4_ = other.urlbB4_;
+            onChanged();
+          }
+          if (!other.getUrlAftr().isEmpty()) {
+            urlAftr_ = other.urlAftr_;
+            onChanged();
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -5155,6 +5643,7 @@ public final class TypeChangeAnalysisOuterClass {
           }
           return this;
         }
+        private int bitField0_;
 
         private boolean isSame_ ;
         /**
@@ -5337,6 +5826,398 @@ public final class TypeChangeAnalysisOuterClass {
           onChanged();
           return this;
         }
+
+        private java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> replcementInferred_ =
+          java.util.Collections.emptyList();
+        private void ensureReplcementInferredIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            replcementInferred_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred>(replcementInferred_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder> replcementInferredBuilder_;
+
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> getReplcementInferredList() {
+          if (replcementInferredBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(replcementInferred_);
+          } else {
+            return replcementInferredBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public int getReplcementInferredCount() {
+          if (replcementInferredBuilder_ == null) {
+            return replcementInferred_.size();
+          } else {
+            return replcementInferredBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getReplcementInferred(int index) {
+          if (replcementInferredBuilder_ == null) {
+            return replcementInferred_.get(index);
+          } else {
+            return replcementInferredBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder setReplcementInferred(
+            int index, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred value) {
+          if (replcementInferredBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.set(index, value);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder setReplcementInferred(
+            int index, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder builderForValue) {
+          if (replcementInferredBuilder_ == null) {
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            replcementInferredBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder addReplcementInferred(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred value) {
+          if (replcementInferredBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.add(value);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder addReplcementInferred(
+            int index, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred value) {
+          if (replcementInferredBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.add(index, value);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder addReplcementInferred(
+            com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder builderForValue) {
+          if (replcementInferredBuilder_ == null) {
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.add(builderForValue.build());
+            onChanged();
+          } else {
+            replcementInferredBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder addReplcementInferred(
+            int index, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder builderForValue) {
+          if (replcementInferredBuilder_ == null) {
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            replcementInferredBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder addAllReplcementInferred(
+            java.lang.Iterable<? extends com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred> values) {
+          if (replcementInferredBuilder_ == null) {
+            ensureReplcementInferredIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, replcementInferred_);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder clearReplcementInferred() {
+          if (replcementInferredBuilder_ == null) {
+            replcementInferred_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public Builder removeReplcementInferred(int index) {
+          if (replcementInferredBuilder_ == null) {
+            ensureReplcementInferredIsMutable();
+            replcementInferred_.remove(index);
+            onChanged();
+          } else {
+            replcementInferredBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder getReplcementInferredBuilder(
+            int index) {
+          return getReplcementInferredFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder getReplcementInferredOrBuilder(
+            int index) {
+          if (replcementInferredBuilder_ == null) {
+            return replcementInferred_.get(index);  } else {
+            return replcementInferredBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder> 
+             getReplcementInferredOrBuilderList() {
+          if (replcementInferredBuilder_ != null) {
+            return replcementInferredBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(replcementInferred_);
+          }
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder addReplcementInferredBuilder() {
+          return getReplcementInferredFieldBuilder().addBuilder(
+              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder addReplcementInferredBuilder(
+            int index) {
+          return getReplcementInferredFieldBuilder().addBuilder(
+              index, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .TypeChangeAnalysis.ReplacementInferred replcementInferred = 4;</code>
+         */
+        public java.util.List<com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder> 
+             getReplcementInferredBuilderList() {
+          return getReplcementInferredFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder> 
+            getReplcementInferredFieldBuilder() {
+          if (replcementInferredBuilder_ == null) {
+            replcementInferredBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder>(
+                    replcementInferred_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            replcementInferred_ = null;
+          }
+          return replcementInferredBuilder_;
+        }
+
+        private java.lang.Object urlbB4_ = "";
+        /**
+         * <code>string urlbB4 = 6;</code>
+         * @return The urlbB4.
+         */
+        public java.lang.String getUrlbB4() {
+          java.lang.Object ref = urlbB4_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            urlbB4_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string urlbB4 = 6;</code>
+         * @return The bytes for urlbB4.
+         */
+        public com.google.protobuf.ByteString
+            getUrlbB4Bytes() {
+          java.lang.Object ref = urlbB4_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            urlbB4_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string urlbB4 = 6;</code>
+         * @param value The urlbB4 to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlbB4(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          urlbB4_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlbB4 = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUrlbB4() {
+          
+          urlbB4_ = getDefaultInstance().getUrlbB4();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlbB4 = 6;</code>
+         * @param value The bytes for urlbB4 to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlbB4Bytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          urlbB4_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object urlAftr_ = "";
+        /**
+         * <code>string urlAftr = 5;</code>
+         * @return The urlAftr.
+         */
+        public java.lang.String getUrlAftr() {
+          java.lang.Object ref = urlAftr_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            urlAftr_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string urlAftr = 5;</code>
+         * @return The bytes for urlAftr.
+         */
+        public com.google.protobuf.ByteString
+            getUrlAftrBytes() {
+          java.lang.Object ref = urlAftr_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            urlAftr_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string urlAftr = 5;</code>
+         * @param value The urlAftr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlAftr(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          urlAftr_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlAftr = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearUrlAftr() {
+          
+          urlAftr_ = getDefaultInstance().getUrlAftr();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string urlAftr = 5;</code>
+         * @param value The bytes for urlAftr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlAftrBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          urlAftr_ = value;
+          onChanged();
+          return this;
+        }
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5390,69 +6271,69 @@ public final class TypeChangeAnalysisOuterClass {
 
     }
 
-    public interface MigrationAnalysisOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:TypeChangeAnalysis.MigrationAnalysis)
+    public interface ReplacementInferredOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:TypeChangeAnalysis.ReplacementInferred)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>bool isTypeMigration = 1;</code>
-       * @return The isTypeMigration.
+       * <code>string b4 = 1;</code>
+       * @return The b4.
        */
-      boolean getIsTypeMigration();
-
+      java.lang.String getB4();
       /**
-       * <pre>
-       * Project, Package, Cu, Type, Method
-       * </pre>
-       *
-       * <code>string typeMigrationLevel = 2;</code>
-       * @return The typeMigrationLevel.
-       */
-      java.lang.String getTypeMigrationLevel();
-      /**
-       * <pre>
-       * Project, Package, Cu, Type, Method
-       * </pre>
-       *
-       * <code>string typeMigrationLevel = 2;</code>
-       * @return The bytes for typeMigrationLevel.
+       * <code>string b4 = 1;</code>
+       * @return The bytes for b4.
        */
       com.google.protobuf.ByteString
-          getTypeMigrationLevelBytes();
+          getB4Bytes();
 
       /**
-       * <code>bool cannotBeMigrated = 3;</code>
-       * @return The cannotBeMigrated.
+       * <code>string aftr = 2;</code>
+       * @return The aftr.
        */
-      boolean getCannotBeMigrated();
+      java.lang.String getAftr();
+      /**
+       * <code>string aftr = 2;</code>
+       * @return The bytes for aftr.
+       */
+      com.google.protobuf.ByteString
+          getAftrBytes();
 
       /**
-       * <code>bool isB4Removed = 4;</code>
-       * @return The isB4Removed.
+       * <code>string replacementType = 3;</code>
+       * @return The replacementType.
        */
-      boolean getIsB4Removed();
+      java.lang.String getReplacementType();
+      /**
+       * <code>string replacementType = 3;</code>
+       * @return The bytes for replacementType.
+       */
+      com.google.protobuf.ByteString
+          getReplacementTypeBytes();
     }
     /**
-     * Protobuf type {@code TypeChangeAnalysis.MigrationAnalysis}
+     * Protobuf type {@code TypeChangeAnalysis.ReplacementInferred}
      */
-    public  static final class MigrationAnalysis extends
+    public  static final class ReplacementInferred extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:TypeChangeAnalysis.MigrationAnalysis)
-        MigrationAnalysisOrBuilder {
+        // @@protoc_insertion_point(message_implements:TypeChangeAnalysis.ReplacementInferred)
+        ReplacementInferredOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use MigrationAnalysis.newBuilder() to construct.
-      private MigrationAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use ReplacementInferred.newBuilder() to construct.
+      private ReplacementInferred(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private MigrationAnalysis() {
-        typeMigrationLevel_ = "";
+      private ReplacementInferred() {
+        b4_ = "";
+        aftr_ = "";
+        replacementType_ = "";
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(
           UnusedPrivateParameter unused) {
-        return new MigrationAnalysis();
+        return new ReplacementInferred();
       }
 
       @java.lang.Override
@@ -5460,7 +6341,7 @@ public final class TypeChangeAnalysisOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private MigrationAnalysis(
+      private ReplacementInferred(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5478,25 +6359,22 @@ public final class TypeChangeAnalysisOuterClass {
               case 0:
                 done = true;
                 break;
-              case 8: {
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
 
-                isTypeMigration_ = input.readBool();
+                b4_ = s;
                 break;
               }
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
 
-                typeMigrationLevel_ = s;
+                aftr_ = s;
                 break;
               }
-              case 24: {
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
 
-                cannotBeMigrated_ = input.readBool();
-                break;
-              }
-              case 32: {
-
-                isB4Removed_ = input.readBool();
+                replacementType_ = s;
                 break;
               }
               default: {
@@ -5520,89 +6398,123 @@ public final class TypeChangeAnalysisOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor;
+        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_MigrationAnalysis_fieldAccessorTable
+        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_ReplacementInferred_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder.class);
+                com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder.class);
       }
 
-      public static final int ISTYPEMIGRATION_FIELD_NUMBER = 1;
-      private boolean isTypeMigration_;
+      public static final int B4_FIELD_NUMBER = 1;
+      private volatile java.lang.Object b4_;
       /**
-       * <code>bool isTypeMigration = 1;</code>
-       * @return The isTypeMigration.
+       * <code>string b4 = 1;</code>
+       * @return The b4.
        */
-      public boolean getIsTypeMigration() {
-        return isTypeMigration_;
-      }
-
-      public static final int TYPEMIGRATIONLEVEL_FIELD_NUMBER = 2;
-      private volatile java.lang.Object typeMigrationLevel_;
-      /**
-       * <pre>
-       * Project, Package, Cu, Type, Method
-       * </pre>
-       *
-       * <code>string typeMigrationLevel = 2;</code>
-       * @return The typeMigrationLevel.
-       */
-      public java.lang.String getTypeMigrationLevel() {
-        java.lang.Object ref = typeMigrationLevel_;
+      public java.lang.String getB4() {
+        java.lang.Object ref = b4_;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          typeMigrationLevel_ = s;
+          b4_ = s;
           return s;
         }
       }
       /**
-       * <pre>
-       * Project, Package, Cu, Type, Method
-       * </pre>
-       *
-       * <code>string typeMigrationLevel = 2;</code>
-       * @return The bytes for typeMigrationLevel.
+       * <code>string b4 = 1;</code>
+       * @return The bytes for b4.
        */
       public com.google.protobuf.ByteString
-          getTypeMigrationLevelBytes() {
-        java.lang.Object ref = typeMigrationLevel_;
+          getB4Bytes() {
+        java.lang.Object ref = b4_;
         if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          typeMigrationLevel_ = b;
+          b4_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int CANNOTBEMIGRATED_FIELD_NUMBER = 3;
-      private boolean cannotBeMigrated_;
+      public static final int AFTR_FIELD_NUMBER = 2;
+      private volatile java.lang.Object aftr_;
       /**
-       * <code>bool cannotBeMigrated = 3;</code>
-       * @return The cannotBeMigrated.
+       * <code>string aftr = 2;</code>
+       * @return The aftr.
        */
-      public boolean getCannotBeMigrated() {
-        return cannotBeMigrated_;
+      public java.lang.String getAftr() {
+        java.lang.Object ref = aftr_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          aftr_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string aftr = 2;</code>
+       * @return The bytes for aftr.
+       */
+      public com.google.protobuf.ByteString
+          getAftrBytes() {
+        java.lang.Object ref = aftr_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          aftr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
-      public static final int ISB4REMOVED_FIELD_NUMBER = 4;
-      private boolean isB4Removed_;
+      public static final int REPLACEMENTTYPE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object replacementType_;
       /**
-       * <code>bool isB4Removed = 4;</code>
-       * @return The isB4Removed.
+       * <code>string replacementType = 3;</code>
+       * @return The replacementType.
        */
-      public boolean getIsB4Removed() {
-        return isB4Removed_;
+      public java.lang.String getReplacementType() {
+        java.lang.Object ref = replacementType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          replacementType_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string replacementType = 3;</code>
+       * @return The bytes for replacementType.
+       */
+      public com.google.protobuf.ByteString
+          getReplacementTypeBytes() {
+        java.lang.Object ref = replacementType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          replacementType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
 
       private byte memoizedIsInitialized = -1;
@@ -5619,17 +6531,14 @@ public final class TypeChangeAnalysisOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (isTypeMigration_ != false) {
-          output.writeBool(1, isTypeMigration_);
+        if (!getB4Bytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, b4_);
         }
-        if (!getTypeMigrationLevelBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, typeMigrationLevel_);
+        if (!getAftrBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, aftr_);
         }
-        if (cannotBeMigrated_ != false) {
-          output.writeBool(3, cannotBeMigrated_);
-        }
-        if (isB4Removed_ != false) {
-          output.writeBool(4, isB4Removed_);
+        if (!getReplacementTypeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, replacementType_);
         }
         unknownFields.writeTo(output);
       }
@@ -5640,20 +6549,14 @@ public final class TypeChangeAnalysisOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (isTypeMigration_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(1, isTypeMigration_);
+        if (!getB4Bytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, b4_);
         }
-        if (!getTypeMigrationLevelBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, typeMigrationLevel_);
+        if (!getAftrBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, aftr_);
         }
-        if (cannotBeMigrated_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(3, cannotBeMigrated_);
-        }
-        if (isB4Removed_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(4, isB4Removed_);
+        if (!getReplacementTypeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, replacementType_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -5665,19 +6568,17 @@ public final class TypeChangeAnalysisOuterClass {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis)) {
+        if (!(obj instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred)) {
           return super.equals(obj);
         }
-        com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis other = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis) obj;
+        com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred other = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred) obj;
 
-        if (getIsTypeMigration()
-            != other.getIsTypeMigration()) return false;
-        if (!getTypeMigrationLevel()
-            .equals(other.getTypeMigrationLevel())) return false;
-        if (getCannotBeMigrated()
-            != other.getCannotBeMigrated()) return false;
-        if (getIsB4Removed()
-            != other.getIsB4Removed()) return false;
+        if (!getB4()
+            .equals(other.getB4())) return false;
+        if (!getAftr()
+            .equals(other.getAftr())) return false;
+        if (!getReplacementType()
+            .equals(other.getReplacementType())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -5689,85 +6590,80 @@ public final class TypeChangeAnalysisOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + ISTYPEMIGRATION_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsTypeMigration());
-        hash = (37 * hash) + TYPEMIGRATIONLEVEL_FIELD_NUMBER;
-        hash = (53 * hash) + getTypeMigrationLevel().hashCode();
-        hash = (37 * hash) + CANNOTBEMIGRATED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getCannotBeMigrated());
-        hash = (37 * hash) + ISB4REMOVED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsB4Removed());
+        hash = (37 * hash) + B4_FIELD_NUMBER;
+        hash = (53 * hash) + getB4().hashCode();
+        hash = (37 * hash) + AFTR_FIELD_NUMBER;
+        hash = (53 * hash) + getAftr().hashCode();
+        hash = (37 * hash) + REPLACEMENTTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getReplacementType().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(byte[] data)
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(java.io.InputStream input)
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseDelimitedFrom(java.io.InputStream input)
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseDelimitedFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parseFrom(
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -5780,7 +6676,7 @@ public final class TypeChangeAnalysisOuterClass {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis prototype) {
+      public static Builder newBuilder(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -5796,26 +6692,26 @@ public final class TypeChangeAnalysisOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code TypeChangeAnalysis.MigrationAnalysis}
+       * Protobuf type {@code TypeChangeAnalysis.ReplacementInferred}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:TypeChangeAnalysis.MigrationAnalysis)
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder {
+          // @@protoc_insertion_point(builder_implements:TypeChangeAnalysis.ReplacementInferred)
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferredOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor;
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_MigrationAnalysis_fieldAccessorTable
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_ReplacementInferred_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder.class);
+                  com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.Builder.class);
         }
 
-        // Construct using com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.newBuilder()
+        // Construct using com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -5833,13 +6729,11 @@ public final class TypeChangeAnalysisOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          isTypeMigration_ = false;
+          b4_ = "";
 
-          typeMigrationLevel_ = "";
+          aftr_ = "";
 
-          cannotBeMigrated_ = false;
-
-          isB4Removed_ = false;
+          replacementType_ = "";
 
           return this;
         }
@@ -5847,17 +6741,17 @@ public final class TypeChangeAnalysisOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor;
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor;
         }
 
         @java.lang.Override
-        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getDefaultInstanceForType() {
-          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.getDefaultInstance();
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis build() {
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis result = buildPartial();
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred build() {
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -5865,12 +6759,11 @@ public final class TypeChangeAnalysisOuterClass {
         }
 
         @java.lang.Override
-        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis buildPartial() {
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis result = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis(this);
-          result.isTypeMigration_ = isTypeMigration_;
-          result.typeMigrationLevel_ = typeMigrationLevel_;
-          result.cannotBeMigrated_ = cannotBeMigrated_;
-          result.isB4Removed_ = isB4Removed_;
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred buildPartial() {
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred result = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred(this);
+          result.b4_ = b4_;
+          result.aftr_ = aftr_;
+          result.replacementType_ = replacementType_;
           onBuilt();
           return result;
         }
@@ -5909,28 +6802,27 @@ public final class TypeChangeAnalysisOuterClass {
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis) {
-            return mergeFrom((com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis)other);
+          if (other instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred) {
+            return mergeFrom((com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis other) {
-          if (other == com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.getDefaultInstance()) return this;
-          if (other.getIsTypeMigration() != false) {
-            setIsTypeMigration(other.getIsTypeMigration());
-          }
-          if (!other.getTypeMigrationLevel().isEmpty()) {
-            typeMigrationLevel_ = other.typeMigrationLevel_;
+        public Builder mergeFrom(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred other) {
+          if (other == com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred.getDefaultInstance()) return this;
+          if (!other.getB4().isEmpty()) {
+            b4_ = other.b4_;
             onChanged();
           }
-          if (other.getCannotBeMigrated() != false) {
-            setCannotBeMigrated(other.getCannotBeMigrated());
+          if (!other.getAftr().isEmpty()) {
+            aftr_ = other.aftr_;
+            onChanged();
           }
-          if (other.getIsB4Removed() != false) {
-            setIsB4Removed(other.getIsB4Removed());
+          if (!other.getReplacementType().isEmpty()) {
+            replacementType_ = other.replacementType_;
+            onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -5947,11 +6839,11 @@ public final class TypeChangeAnalysisOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis parsedMessage = null;
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis) e.getUnfinishedMessage();
+            parsedMessage = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -5961,188 +6853,230 @@ public final class TypeChangeAnalysisOuterClass {
           return this;
         }
 
-        private boolean isTypeMigration_ ;
+        private java.lang.Object b4_ = "";
         /**
-         * <code>bool isTypeMigration = 1;</code>
-         * @return The isTypeMigration.
+         * <code>string b4 = 1;</code>
+         * @return The b4.
          */
-        public boolean getIsTypeMigration() {
-          return isTypeMigration_;
-        }
-        /**
-         * <code>bool isTypeMigration = 1;</code>
-         * @param value The isTypeMigration to set.
-         * @return This builder for chaining.
-         */
-        public Builder setIsTypeMigration(boolean value) {
-          
-          isTypeMigration_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bool isTypeMigration = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearIsTypeMigration() {
-          
-          isTypeMigration_ = false;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object typeMigrationLevel_ = "";
-        /**
-         * <pre>
-         * Project, Package, Cu, Type, Method
-         * </pre>
-         *
-         * <code>string typeMigrationLevel = 2;</code>
-         * @return The typeMigrationLevel.
-         */
-        public java.lang.String getTypeMigrationLevel() {
-          java.lang.Object ref = typeMigrationLevel_;
+        public java.lang.String getB4() {
+          java.lang.Object ref = b4_;
           if (!(ref instanceof java.lang.String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            typeMigrationLevel_ = s;
+            b4_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
           }
         }
         /**
-         * <pre>
-         * Project, Package, Cu, Type, Method
-         * </pre>
-         *
-         * <code>string typeMigrationLevel = 2;</code>
-         * @return The bytes for typeMigrationLevel.
+         * <code>string b4 = 1;</code>
+         * @return The bytes for b4.
          */
         public com.google.protobuf.ByteString
-            getTypeMigrationLevelBytes() {
-          java.lang.Object ref = typeMigrationLevel_;
+            getB4Bytes() {
+          java.lang.Object ref = b4_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
-            typeMigrationLevel_ = b;
+            b4_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <pre>
-         * Project, Package, Cu, Type, Method
-         * </pre>
-         *
-         * <code>string typeMigrationLevel = 2;</code>
-         * @param value The typeMigrationLevel to set.
+         * <code>string b4 = 1;</code>
+         * @param value The b4 to set.
          * @return This builder for chaining.
          */
-        public Builder setTypeMigrationLevel(
+        public Builder setB4(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          typeMigrationLevel_ = value;
+          b4_ = value;
           onChanged();
           return this;
         }
         /**
-         * <pre>
-         * Project, Package, Cu, Type, Method
-         * </pre>
-         *
-         * <code>string typeMigrationLevel = 2;</code>
+         * <code>string b4 = 1;</code>
          * @return This builder for chaining.
          */
-        public Builder clearTypeMigrationLevel() {
+        public Builder clearB4() {
           
-          typeMigrationLevel_ = getDefaultInstance().getTypeMigrationLevel();
+          b4_ = getDefaultInstance().getB4();
           onChanged();
           return this;
         }
         /**
-         * <pre>
-         * Project, Package, Cu, Type, Method
-         * </pre>
-         *
-         * <code>string typeMigrationLevel = 2;</code>
-         * @param value The bytes for typeMigrationLevel to set.
+         * <code>string b4 = 1;</code>
+         * @param value The bytes for b4 to set.
          * @return This builder for chaining.
          */
-        public Builder setTypeMigrationLevelBytes(
+        public Builder setB4Bytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          typeMigrationLevel_ = value;
+          b4_ = value;
           onChanged();
           return this;
         }
 
-        private boolean cannotBeMigrated_ ;
+        private java.lang.Object aftr_ = "";
         /**
-         * <code>bool cannotBeMigrated = 3;</code>
-         * @return The cannotBeMigrated.
+         * <code>string aftr = 2;</code>
+         * @return The aftr.
          */
-        public boolean getCannotBeMigrated() {
-          return cannotBeMigrated_;
+        public java.lang.String getAftr() {
+          java.lang.Object ref = aftr_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            aftr_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>bool cannotBeMigrated = 3;</code>
-         * @param value The cannotBeMigrated to set.
+         * <code>string aftr = 2;</code>
+         * @return The bytes for aftr.
+         */
+        public com.google.protobuf.ByteString
+            getAftrBytes() {
+          java.lang.Object ref = aftr_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            aftr_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string aftr = 2;</code>
+         * @param value The aftr to set.
          * @return This builder for chaining.
          */
-        public Builder setCannotBeMigrated(boolean value) {
-          
-          cannotBeMigrated_ = value;
+        public Builder setAftr(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          aftr_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>bool cannotBeMigrated = 3;</code>
+         * <code>string aftr = 2;</code>
          * @return This builder for chaining.
          */
-        public Builder clearCannotBeMigrated() {
+        public Builder clearAftr() {
           
-          cannotBeMigrated_ = false;
+          aftr_ = getDefaultInstance().getAftr();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string aftr = 2;</code>
+         * @param value The bytes for aftr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAftrBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          aftr_ = value;
           onChanged();
           return this;
         }
 
-        private boolean isB4Removed_ ;
+        private java.lang.Object replacementType_ = "";
         /**
-         * <code>bool isB4Removed = 4;</code>
-         * @return The isB4Removed.
+         * <code>string replacementType = 3;</code>
+         * @return The replacementType.
          */
-        public boolean getIsB4Removed() {
-          return isB4Removed_;
+        public java.lang.String getReplacementType() {
+          java.lang.Object ref = replacementType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            replacementType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
         }
         /**
-         * <code>bool isB4Removed = 4;</code>
-         * @param value The isB4Removed to set.
+         * <code>string replacementType = 3;</code>
+         * @return The bytes for replacementType.
+         */
+        public com.google.protobuf.ByteString
+            getReplacementTypeBytes() {
+          java.lang.Object ref = replacementType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            replacementType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string replacementType = 3;</code>
+         * @param value The replacementType to set.
          * @return This builder for chaining.
          */
-        public Builder setIsB4Removed(boolean value) {
-          
-          isB4Removed_ = value;
+        public Builder setReplacementType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          replacementType_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>bool isB4Removed = 4;</code>
+         * <code>string replacementType = 3;</code>
          * @return This builder for chaining.
          */
-        public Builder clearIsB4Removed() {
+        public Builder clearReplacementType() {
           
-          isB4Removed_ = false;
+          replacementType_ = getDefaultInstance().getReplacementType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string replacementType = 3;</code>
+         * @param value The bytes for replacementType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReplacementTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          replacementType_ = value;
           onChanged();
           return this;
         }
@@ -6159,41 +7093,1606 @@ public final class TypeChangeAnalysisOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:TypeChangeAnalysis.MigrationAnalysis)
+        // @@protoc_insertion_point(builder_scope:TypeChangeAnalysis.ReplacementInferred)
       }
 
-      // @@protoc_insertion_point(class_scope:TypeChangeAnalysis.MigrationAnalysis)
-      private static final com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:TypeChangeAnalysis.ReplacementInferred)
+      private static final com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis();
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred();
       }
 
-      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getDefaultInstance() {
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<MigrationAnalysis>
-          PARSER = new com.google.protobuf.AbstractParser<MigrationAnalysis>() {
+      private static final com.google.protobuf.Parser<ReplacementInferred>
+          PARSER = new com.google.protobuf.AbstractParser<ReplacementInferred>() {
         @java.lang.Override
-        public MigrationAnalysis parsePartialFrom(
+        public ReplacementInferred parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigrationAnalysis(input, extensionRegistry);
+          return new ReplacementInferred(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<MigrationAnalysis> parser() {
+      public static com.google.protobuf.Parser<ReplacementInferred> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<MigrationAnalysis> getParserForType() {
+      public com.google.protobuf.Parser<ReplacementInferred> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getDefaultInstanceForType() {
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.ReplacementInferred getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface TypeChangeStatisticsOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:TypeChangeAnalysis.TypeChangeStatistics)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+      int getVisibilityStatsCount();
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+      boolean containsVisibilityStats(
+          java.lang.String key);
+      /**
+       * Use {@link #getVisibilityStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.Double>
+      getVisibilityStats();
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.Double>
+      getVisibilityStatsMap();
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      double getVisibilityStatsOrDefault(
+          java.lang.String key,
+          double defaultValue);
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      double getVisibilityStatsOrThrow(
+          java.lang.String key);
+
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+      int getTransformationStatsCount();
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+      boolean containsTransformationStats(
+          java.lang.String key);
+      /**
+       * Use {@link #getTransformationStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.Double>
+      getTransformationStats();
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.Double>
+      getTransformationStatsMap();
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      double getTransformationStatsOrDefault(
+          java.lang.String key,
+          double defaultValue);
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      double getTransformationStatsOrThrow(
+          java.lang.String key);
+
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+      int getElementKindStatsCount();
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+      boolean containsElementKindStats(
+          java.lang.String key);
+      /**
+       * Use {@link #getElementKindStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.Double>
+      getElementKindStats();
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.Double>
+      getElementKindStatsMap();
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      double getElementKindStatsOrDefault(
+          java.lang.String key,
+          double defaultValue);
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      double getElementKindStatsOrThrow(
+          java.lang.String key);
+
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+      int getNameSpaceStatsCount();
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+      boolean containsNameSpaceStats(
+          java.lang.String key);
+      /**
+       * Use {@link #getNameSpaceStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.Double>
+      getNameSpaceStats();
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.Double>
+      getNameSpaceStatsMap();
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      double getNameSpaceStatsOrDefault(
+          java.lang.String key,
+          double defaultValue);
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      double getNameSpaceStatsOrThrow(
+          java.lang.String key);
+    }
+    /**
+     * Protobuf type {@code TypeChangeAnalysis.TypeChangeStatistics}
+     */
+    public  static final class TypeChangeStatistics extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:TypeChangeAnalysis.TypeChangeStatistics)
+        TypeChangeStatisticsOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TypeChangeStatistics.newBuilder() to construct.
+      private TypeChangeStatistics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TypeChangeStatistics() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new TypeChangeStatistics();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TypeChangeStatistics(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  visibilityStats_ = com.google.protobuf.MapField.newMapField(
+                      VisibilityStatsDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+                visibilityStats__ = input.readMessage(
+                    VisibilityStatsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                visibilityStats_.getMutableMap().put(
+                    visibilityStats__.getKey(), visibilityStats__.getValue());
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  transformationStats_ = com.google.protobuf.MapField.newMapField(
+                      TransformationStatsDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+                transformationStats__ = input.readMessage(
+                    TransformationStatsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                transformationStats_.getMutableMap().put(
+                    transformationStats__.getKey(), transformationStats__.getValue());
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  elementKindStats_ = com.google.protobuf.MapField.newMapField(
+                      ElementKindStatsDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+                elementKindStats__ = input.readMessage(
+                    ElementKindStatsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                elementKindStats_.getMutableMap().put(
+                    elementKindStats__.getKey(), elementKindStats__.getValue());
+                break;
+              }
+              case 34: {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  nameSpaceStats_ = com.google.protobuf.MapField.newMapField(
+                      NameSpaceStatsDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+                nameSpaceStats__ = input.readMessage(
+                    NameSpaceStatsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                nameSpaceStats_.getMutableMap().put(
+                    nameSpaceStats__.getKey(), nameSpaceStats__.getValue());
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetVisibilityStats();
+          case 2:
+            return internalGetTransformationStats();
+          case 3:
+            return internalGetElementKindStats();
+          case 4:
+            return internalGetNameSpaceStats();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder.class);
+      }
+
+      public static final int VISIBILITYSTATS_FIELD_NUMBER = 1;
+      private static final class VisibilityStatsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.Double> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.Double>newDefaultInstance(
+                    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                    0D);
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> visibilityStats_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetVisibilityStats() {
+        if (visibilityStats_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              VisibilityStatsDefaultEntryHolder.defaultEntry);
+        }
+        return visibilityStats_;
+      }
+
+      public int getVisibilityStatsCount() {
+        return internalGetVisibilityStats().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      public boolean containsVisibilityStats(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetVisibilityStats().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getVisibilityStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getVisibilityStats() {
+        return getVisibilityStatsMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Double> getVisibilityStatsMap() {
+        return internalGetVisibilityStats().getMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      public double getVisibilityStatsOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetVisibilityStats().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+       */
+
+      public double getVisibilityStatsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetVisibilityStats().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int TRANSFORMATIONSTATS_FIELD_NUMBER = 2;
+      private static final class TransformationStatsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.Double> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.Double>newDefaultInstance(
+                    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                    0D);
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> transformationStats_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetTransformationStats() {
+        if (transformationStats_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              TransformationStatsDefaultEntryHolder.defaultEntry);
+        }
+        return transformationStats_;
+      }
+
+      public int getTransformationStatsCount() {
+        return internalGetTransformationStats().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      public boolean containsTransformationStats(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetTransformationStats().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getTransformationStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getTransformationStats() {
+        return getTransformationStatsMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Double> getTransformationStatsMap() {
+        return internalGetTransformationStats().getMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      public double getTransformationStatsOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetTransformationStats().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+       */
+
+      public double getTransformationStatsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetTransformationStats().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int ELEMENTKINDSTATS_FIELD_NUMBER = 3;
+      private static final class ElementKindStatsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.Double> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.Double>newDefaultInstance(
+                    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                    0D);
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> elementKindStats_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetElementKindStats() {
+        if (elementKindStats_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ElementKindStatsDefaultEntryHolder.defaultEntry);
+        }
+        return elementKindStats_;
+      }
+
+      public int getElementKindStatsCount() {
+        return internalGetElementKindStats().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      public boolean containsElementKindStats(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetElementKindStats().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getElementKindStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getElementKindStats() {
+        return getElementKindStatsMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Double> getElementKindStatsMap() {
+        return internalGetElementKindStats().getMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      public double getElementKindStatsOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetElementKindStats().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+       */
+
+      public double getElementKindStatsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetElementKindStats().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int NAMESPACESTATS_FIELD_NUMBER = 4;
+      private static final class NameSpaceStatsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.Double> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.Double>newDefaultInstance(
+                    com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.DOUBLE,
+                    0D);
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Double> nameSpaceStats_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+      internalGetNameSpaceStats() {
+        if (nameSpaceStats_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              NameSpaceStatsDefaultEntryHolder.defaultEntry);
+        }
+        return nameSpaceStats_;
+      }
+
+      public int getNameSpaceStatsCount() {
+        return internalGetNameSpaceStats().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      public boolean containsNameSpaceStats(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetNameSpaceStats().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getNameSpaceStatsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Double> getNameSpaceStats() {
+        return getNameSpaceStatsMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Double> getNameSpaceStatsMap() {
+        return internalGetNameSpaceStats().getMap();
+      }
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      public double getNameSpaceStatsOrDefault(
+          java.lang.String key,
+          double defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetNameSpaceStats().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+       */
+
+      public double getNameSpaceStatsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Double> map =
+            internalGetNameSpaceStats().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetVisibilityStats(),
+            VisibilityStatsDefaultEntryHolder.defaultEntry,
+            1);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetTransformationStats(),
+            TransformationStatsDefaultEntryHolder.defaultEntry,
+            2);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetElementKindStats(),
+            ElementKindStatsDefaultEntryHolder.defaultEntry,
+            3);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetNameSpaceStats(),
+            NameSpaceStatsDefaultEntryHolder.defaultEntry,
+            4);
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+             : internalGetVisibilityStats().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+          visibilityStats__ = VisibilityStatsDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(1, visibilityStats__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+             : internalGetTransformationStats().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+          transformationStats__ = TransformationStatsDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, transformationStats__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+             : internalGetElementKindStats().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+          elementKindStats__ = ElementKindStatsDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(3, elementKindStats__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry
+             : internalGetNameSpaceStats().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.Double>
+          nameSpaceStats__ = NameSpaceStatsDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(4, nameSpaceStats__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics)) {
+          return super.equals(obj);
+        }
+        com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics other = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics) obj;
+
+        if (!internalGetVisibilityStats().equals(
+            other.internalGetVisibilityStats())) return false;
+        if (!internalGetTransformationStats().equals(
+            other.internalGetTransformationStats())) return false;
+        if (!internalGetElementKindStats().equals(
+            other.internalGetElementKindStats())) return false;
+        if (!internalGetNameSpaceStats().equals(
+            other.internalGetNameSpaceStats())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (!internalGetVisibilityStats().getMap().isEmpty()) {
+          hash = (37 * hash) + VISIBILITYSTATS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetVisibilityStats().hashCode();
+        }
+        if (!internalGetTransformationStats().getMap().isEmpty()) {
+          hash = (37 * hash) + TRANSFORMATIONSTATS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetTransformationStats().hashCode();
+        }
+        if (!internalGetElementKindStats().getMap().isEmpty()) {
+          hash = (37 * hash) + ELEMENTKINDSTATS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetElementKindStats().hashCode();
+        }
+        if (!internalGetNameSpaceStats().getMap().isEmpty()) {
+          hash = (37 * hash) + NAMESPACESTATS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetNameSpaceStats().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code TypeChangeAnalysis.TypeChangeStatistics}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:TypeChangeAnalysis.TypeChangeStatistics)
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetVisibilityStats();
+            case 2:
+              return internalGetTransformationStats();
+            case 3:
+              return internalGetElementKindStats();
+            case 4:
+              return internalGetNameSpaceStats();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetMutableVisibilityStats();
+            case 2:
+              return internalGetMutableTransformationStats();
+            case 3:
+              return internalGetMutableElementKindStats();
+            case 4:
+              return internalGetMutableNameSpaceStats();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.class, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder.class);
+        }
+
+        // Construct using com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          internalGetMutableVisibilityStats().clear();
+          internalGetMutableTransformationStats().clear();
+          internalGetMutableElementKindStats().clear();
+          internalGetMutableNameSpaceStats().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics build() {
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics buildPartial() {
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics result = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics(this);
+          int from_bitField0_ = bitField0_;
+          result.visibilityStats_ = internalGetVisibilityStats();
+          result.visibilityStats_.makeImmutable();
+          result.transformationStats_ = internalGetTransformationStats();
+          result.transformationStats_.makeImmutable();
+          result.elementKindStats_ = internalGetElementKindStats();
+          result.elementKindStats_.makeImmutable();
+          result.nameSpaceStats_ = internalGetNameSpaceStats();
+          result.nameSpaceStats_.makeImmutable();
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics) {
+            return mergeFrom((com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics other) {
+          if (other == com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.getDefaultInstance()) return this;
+          internalGetMutableVisibilityStats().mergeFrom(
+              other.internalGetVisibilityStats());
+          internalGetMutableTransformationStats().mergeFrom(
+              other.internalGetTransformationStats());
+          internalGetMutableElementKindStats().mergeFrom(
+              other.internalGetElementKindStats());
+          internalGetMutableNameSpaceStats().mergeFrom(
+              other.internalGetNameSpaceStats());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.Double> visibilityStats_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetVisibilityStats() {
+          if (visibilityStats_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                VisibilityStatsDefaultEntryHolder.defaultEntry);
+          }
+          return visibilityStats_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableVisibilityStats() {
+          onChanged();;
+          if (visibilityStats_ == null) {
+            visibilityStats_ = com.google.protobuf.MapField.newMapField(
+                VisibilityStatsDefaultEntryHolder.defaultEntry);
+          }
+          if (!visibilityStats_.isMutable()) {
+            visibilityStats_ = visibilityStats_.copy();
+          }
+          return visibilityStats_;
+        }
+
+        public int getVisibilityStatsCount() {
+          return internalGetVisibilityStats().getMap().size();
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public boolean containsVisibilityStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetVisibilityStats().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getVisibilityStatsMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double> getVisibilityStats() {
+          return getVisibilityStatsMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public java.util.Map<java.lang.String, java.lang.Double> getVisibilityStatsMap() {
+          return internalGetVisibilityStats().getMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public double getVisibilityStatsOrDefault(
+            java.lang.String key,
+            double defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetVisibilityStats().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public double getVisibilityStatsOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetVisibilityStats().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearVisibilityStats() {
+          internalGetMutableVisibilityStats().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public Builder removeVisibilityStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableVisibilityStats().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double>
+        getMutableVisibilityStats() {
+          return internalGetMutableVisibilityStats().getMutableMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+        public Builder putVisibilityStats(
+            java.lang.String key,
+            double value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          
+          internalGetMutableVisibilityStats().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; visibilityStats = 1;</code>
+         */
+
+        public Builder putAllVisibilityStats(
+            java.util.Map<java.lang.String, java.lang.Double> values) {
+          internalGetMutableVisibilityStats().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.Double> transformationStats_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetTransformationStats() {
+          if (transformationStats_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                TransformationStatsDefaultEntryHolder.defaultEntry);
+          }
+          return transformationStats_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableTransformationStats() {
+          onChanged();;
+          if (transformationStats_ == null) {
+            transformationStats_ = com.google.protobuf.MapField.newMapField(
+                TransformationStatsDefaultEntryHolder.defaultEntry);
+          }
+          if (!transformationStats_.isMutable()) {
+            transformationStats_ = transformationStats_.copy();
+          }
+          return transformationStats_;
+        }
+
+        public int getTransformationStatsCount() {
+          return internalGetTransformationStats().getMap().size();
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public boolean containsTransformationStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetTransformationStats().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getTransformationStatsMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double> getTransformationStats() {
+          return getTransformationStatsMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public java.util.Map<java.lang.String, java.lang.Double> getTransformationStatsMap() {
+          return internalGetTransformationStats().getMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public double getTransformationStatsOrDefault(
+            java.lang.String key,
+            double defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetTransformationStats().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public double getTransformationStatsOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetTransformationStats().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearTransformationStats() {
+          internalGetMutableTransformationStats().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public Builder removeTransformationStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableTransformationStats().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double>
+        getMutableTransformationStats() {
+          return internalGetMutableTransformationStats().getMutableMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+        public Builder putTransformationStats(
+            java.lang.String key,
+            double value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          
+          internalGetMutableTransformationStats().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; transformationStats = 2;</code>
+         */
+
+        public Builder putAllTransformationStats(
+            java.util.Map<java.lang.String, java.lang.Double> values) {
+          internalGetMutableTransformationStats().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.Double> elementKindStats_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetElementKindStats() {
+          if (elementKindStats_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ElementKindStatsDefaultEntryHolder.defaultEntry);
+          }
+          return elementKindStats_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableElementKindStats() {
+          onChanged();;
+          if (elementKindStats_ == null) {
+            elementKindStats_ = com.google.protobuf.MapField.newMapField(
+                ElementKindStatsDefaultEntryHolder.defaultEntry);
+          }
+          if (!elementKindStats_.isMutable()) {
+            elementKindStats_ = elementKindStats_.copy();
+          }
+          return elementKindStats_;
+        }
+
+        public int getElementKindStatsCount() {
+          return internalGetElementKindStats().getMap().size();
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public boolean containsElementKindStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetElementKindStats().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getElementKindStatsMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double> getElementKindStats() {
+          return getElementKindStatsMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public java.util.Map<java.lang.String, java.lang.Double> getElementKindStatsMap() {
+          return internalGetElementKindStats().getMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public double getElementKindStatsOrDefault(
+            java.lang.String key,
+            double defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetElementKindStats().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public double getElementKindStatsOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetElementKindStats().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearElementKindStats() {
+          internalGetMutableElementKindStats().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public Builder removeElementKindStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableElementKindStats().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double>
+        getMutableElementKindStats() {
+          return internalGetMutableElementKindStats().getMutableMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+        public Builder putElementKindStats(
+            java.lang.String key,
+            double value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          
+          internalGetMutableElementKindStats().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; elementKindStats = 3;</code>
+         */
+
+        public Builder putAllElementKindStats(
+            java.util.Map<java.lang.String, java.lang.Double> values) {
+          internalGetMutableElementKindStats().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.Double> nameSpaceStats_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetNameSpaceStats() {
+          if (nameSpaceStats_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                NameSpaceStatsDefaultEntryHolder.defaultEntry);
+          }
+          return nameSpaceStats_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableNameSpaceStats() {
+          onChanged();;
+          if (nameSpaceStats_ == null) {
+            nameSpaceStats_ = com.google.protobuf.MapField.newMapField(
+                NameSpaceStatsDefaultEntryHolder.defaultEntry);
+          }
+          if (!nameSpaceStats_.isMutable()) {
+            nameSpaceStats_ = nameSpaceStats_.copy();
+          }
+          return nameSpaceStats_;
+        }
+
+        public int getNameSpaceStatsCount() {
+          return internalGetNameSpaceStats().getMap().size();
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public boolean containsNameSpaceStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetNameSpaceStats().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getNameSpaceStatsMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double> getNameSpaceStats() {
+          return getNameSpaceStatsMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public java.util.Map<java.lang.String, java.lang.Double> getNameSpaceStatsMap() {
+          return internalGetNameSpaceStats().getMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public double getNameSpaceStatsOrDefault(
+            java.lang.String key,
+            double defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetNameSpaceStats().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public double getNameSpaceStatsOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, java.lang.Double> map =
+              internalGetNameSpaceStats().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearNameSpaceStats() {
+          internalGetMutableNameSpaceStats().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public Builder removeNameSpaceStats(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableNameSpaceStats().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.Double>
+        getMutableNameSpaceStats() {
+          return internalGetMutableNameSpaceStats().getMutableMap();
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+        public Builder putNameSpaceStats(
+            java.lang.String key,
+            double value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          
+          internalGetMutableNameSpaceStats().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <code>map&lt;string, double&gt; nameSpaceStats = 4;</code>
+         */
+
+        public Builder putAllNameSpaceStats(
+            java.util.Map<java.lang.String, java.lang.Double> values) {
+          internalGetMutableNameSpaceStats().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:TypeChangeAnalysis.TypeChangeStatistics)
+      }
+
+      // @@protoc_insertion_point(class_scope:TypeChangeAnalysis.TypeChangeStatistics)
+      private static final com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics();
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TypeChangeStatistics>
+          PARSER = new com.google.protobuf.AbstractParser<TypeChangeStatistics>() {
+        @java.lang.Override
+        public TypeChangeStatistics parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TypeChangeStatistics(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TypeChangeStatistics> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TypeChangeStatistics> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -6396,29 +8895,6 @@ public final class TypeChangeAnalysisOuterClass {
       return result == null ? com.t2r.common.models.refactorings.TypeSemOuterClass.TypeSem.UNRECOGNIZED : result;
     }
 
-    public static final int MIGRATIONINFO_FIELD_NUMBER = 12;
-    private com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis migrationInfo_;
-    /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     * @return Whether the migrationInfo field is set.
-     */
-    public boolean hasMigrationInfo() {
-      return migrationInfo_ != null;
-    }
-    /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     * @return The migrationInfo.
-     */
-    public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getMigrationInfo() {
-      return migrationInfo_ == null ? com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.getDefaultInstance() : migrationInfo_;
-    }
-    /**
-     * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-     */
-    public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder getMigrationInfoOrBuilder() {
-      return getMigrationInfo();
-    }
-
     public static final int WITHINSAMEPACKAGE_FIELD_NUMBER = 6;
     private boolean withinSamePackage_;
     /**
@@ -6498,6 +8974,29 @@ public final class TypeChangeAnalysisOuterClass {
       return getPrimitiveInfo();
     }
 
+    public static final int TYPECHANGESTATS_FIELD_NUMBER = 14;
+    private com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats_;
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     * @return Whether the typeChangeStats field is set.
+     */
+    public boolean hasTypeChangeStats() {
+      return typeChangeStats_ != null;
+    }
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     * @return The typeChangeStats.
+     */
+    public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getTypeChangeStats() {
+      return typeChangeStats_ == null ? com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.getDefaultInstance() : typeChangeStats_;
+    }
+    /**
+     * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+     */
+    public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder getTypeChangeStatsOrBuilder() {
+      return getTypeChangeStats();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6545,8 +9044,8 @@ public final class TypeChangeAnalysisOuterClass {
       if (typeSemAftr_ != com.t2r.common.models.refactorings.TypeSemOuterClass.TypeSem.Object.getNumber()) {
         output.writeEnum(11, typeSemAftr_);
       }
-      if (migrationInfo_ != null) {
-        output.writeMessage(12, getMigrationInfo());
+      if (typeChangeStats_ != null) {
+        output.writeMessage(14, getTypeChangeStats());
       }
       unknownFields.writeTo(output);
     }
@@ -6600,9 +9099,9 @@ public final class TypeChangeAnalysisOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, typeSemAftr_);
       }
-      if (migrationInfo_ != null) {
+      if (typeChangeStats_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getMigrationInfo());
+          .computeMessageSize(14, getTypeChangeStats());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6635,11 +9134,6 @@ public final class TypeChangeAnalysisOuterClass {
       if (nameSpaceAfter_ != other.nameSpaceAfter_) return false;
       if (typeSemb4_ != other.typeSemb4_) return false;
       if (typeSemAftr_ != other.typeSemAftr_) return false;
-      if (hasMigrationInfo() != other.hasMigrationInfo()) return false;
-      if (hasMigrationInfo()) {
-        if (!getMigrationInfo()
-            .equals(other.getMigrationInfo())) return false;
-      }
       if (getWithinSamePackage()
           != other.getWithinSamePackage()) return false;
       if (!getHierarchyRelation()
@@ -6650,6 +9144,11 @@ public final class TypeChangeAnalysisOuterClass {
       if (hasPrimitiveInfo()) {
         if (!getPrimitiveInfo()
             .equals(other.getPrimitiveInfo())) return false;
+      }
+      if (hasTypeChangeStats() != other.hasTypeChangeStats()) return false;
+      if (hasTypeChangeStats()) {
+        if (!getTypeChangeStats()
+            .equals(other.getTypeChangeStats())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -6682,10 +9181,6 @@ public final class TypeChangeAnalysisOuterClass {
       hash = (53 * hash) + typeSemb4_;
       hash = (37 * hash) + TYPESEMAFTR_FIELD_NUMBER;
       hash = (53 * hash) + typeSemAftr_;
-      if (hasMigrationInfo()) {
-        hash = (37 * hash) + MIGRATIONINFO_FIELD_NUMBER;
-        hash = (53 * hash) + getMigrationInfo().hashCode();
-      }
       hash = (37 * hash) + WITHINSAMEPACKAGE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWithinSamePackage());
@@ -6697,6 +9192,10 @@ public final class TypeChangeAnalysisOuterClass {
       if (hasPrimitiveInfo()) {
         hash = (37 * hash) + PRIMITIVEINFO_FIELD_NUMBER;
         hash = (53 * hash) + getPrimitiveInfo().hashCode();
+      }
+      if (hasTypeChangeStats()) {
+        hash = (37 * hash) + TYPECHANGESTATS_FIELD_NUMBER;
+        hash = (53 * hash) + getTypeChangeStats().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6863,12 +9362,6 @@ public final class TypeChangeAnalysisOuterClass {
 
         typeSemAftr_ = 0;
 
-        if (migrationInfoBuilder_ == null) {
-          migrationInfo_ = null;
-        } else {
-          migrationInfo_ = null;
-          migrationInfoBuilder_ = null;
-        }
         withinSamePackage_ = false;
 
         hierarchyRelation_ = "";
@@ -6880,6 +9373,12 @@ public final class TypeChangeAnalysisOuterClass {
         } else {
           primitiveInfo_ = null;
           primitiveInfoBuilder_ = null;
+        }
+        if (typeChangeStatsBuilder_ == null) {
+          typeChangeStats_ = null;
+        } else {
+          typeChangeStats_ = null;
+          typeChangeStatsBuilder_ = null;
         }
         return this;
       }
@@ -6931,11 +9430,6 @@ public final class TypeChangeAnalysisOuterClass {
         result.nameSpaceAfter_ = nameSpaceAfter_;
         result.typeSemb4_ = typeSemb4_;
         result.typeSemAftr_ = typeSemAftr_;
-        if (migrationInfoBuilder_ == null) {
-          result.migrationInfo_ = migrationInfo_;
-        } else {
-          result.migrationInfo_ = migrationInfoBuilder_.build();
-        }
         result.withinSamePackage_ = withinSamePackage_;
         result.hierarchyRelation_ = hierarchyRelation_;
         result.b4ComposesAfter_ = b4ComposesAfter_;
@@ -6943,6 +9437,11 @@ public final class TypeChangeAnalysisOuterClass {
           result.primitiveInfo_ = primitiveInfo_;
         } else {
           result.primitiveInfo_ = primitiveInfoBuilder_.build();
+        }
+        if (typeChangeStatsBuilder_ == null) {
+          result.typeChangeStats_ = typeChangeStats_;
+        } else {
+          result.typeChangeStats_ = typeChangeStatsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7036,9 +9535,6 @@ public final class TypeChangeAnalysisOuterClass {
         if (other.typeSemAftr_ != 0) {
           setTypeSemAftrValue(other.getTypeSemAftrValue());
         }
-        if (other.hasMigrationInfo()) {
-          mergeMigrationInfo(other.getMigrationInfo());
-        }
         if (other.getWithinSamePackage() != false) {
           setWithinSamePackage(other.getWithinSamePackage());
         }
@@ -7051,6 +9547,9 @@ public final class TypeChangeAnalysisOuterClass {
         }
         if (other.hasPrimitiveInfo()) {
           mergePrimitiveInfo(other.getPrimitiveInfo());
+        }
+        if (other.hasTypeChangeStats()) {
+          mergeTypeChangeStats(other.getTypeChangeStats());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7880,125 +10379,6 @@ public final class TypeChangeAnalysisOuterClass {
         return this;
       }
 
-      private com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis migrationInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder> migrationInfoBuilder_;
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       * @return Whether the migrationInfo field is set.
-       */
-      public boolean hasMigrationInfo() {
-        return migrationInfoBuilder_ != null || migrationInfo_ != null;
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       * @return The migrationInfo.
-       */
-      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis getMigrationInfo() {
-        if (migrationInfoBuilder_ == null) {
-          return migrationInfo_ == null ? com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.getDefaultInstance() : migrationInfo_;
-        } else {
-          return migrationInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public Builder setMigrationInfo(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis value) {
-        if (migrationInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          migrationInfo_ = value;
-          onChanged();
-        } else {
-          migrationInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public Builder setMigrationInfo(
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder builderForValue) {
-        if (migrationInfoBuilder_ == null) {
-          migrationInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          migrationInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public Builder mergeMigrationInfo(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis value) {
-        if (migrationInfoBuilder_ == null) {
-          if (migrationInfo_ != null) {
-            migrationInfo_ =
-              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.newBuilder(migrationInfo_).mergeFrom(value).buildPartial();
-          } else {
-            migrationInfo_ = value;
-          }
-          onChanged();
-        } else {
-          migrationInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public Builder clearMigrationInfo() {
-        if (migrationInfoBuilder_ == null) {
-          migrationInfo_ = null;
-          onChanged();
-        } else {
-          migrationInfo_ = null;
-          migrationInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder getMigrationInfoBuilder() {
-        
-        onChanged();
-        return getMigrationInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder getMigrationInfoOrBuilder() {
-        if (migrationInfoBuilder_ != null) {
-          return migrationInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return migrationInfo_ == null ?
-              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.getDefaultInstance() : migrationInfo_;
-        }
-      }
-      /**
-       * <code>.TypeChangeAnalysis.MigrationAnalysis migrationInfo = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder> 
-          getMigrationInfoFieldBuilder() {
-        if (migrationInfoBuilder_ == null) {
-          migrationInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.MigrationAnalysisOrBuilder>(
-                  getMigrationInfo(),
-                  getParentForChildren(),
-                  isClean());
-          migrationInfo_ = null;
-        }
-        return migrationInfoBuilder_;
-      }
-
       private boolean withinSamePackage_ ;
       /**
        * <code>bool withinSamePackage = 6;</code>
@@ -8253,6 +10633,125 @@ public final class TypeChangeAnalysisOuterClass {
         }
         return primitiveInfoBuilder_;
       }
+
+      private com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder> typeChangeStatsBuilder_;
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       * @return Whether the typeChangeStats field is set.
+       */
+      public boolean hasTypeChangeStats() {
+        return typeChangeStatsBuilder_ != null || typeChangeStats_ != null;
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       * @return The typeChangeStats.
+       */
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics getTypeChangeStats() {
+        if (typeChangeStatsBuilder_ == null) {
+          return typeChangeStats_ == null ? com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.getDefaultInstance() : typeChangeStats_;
+        } else {
+          return typeChangeStatsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public Builder setTypeChangeStats(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics value) {
+        if (typeChangeStatsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          typeChangeStats_ = value;
+          onChanged();
+        } else {
+          typeChangeStatsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public Builder setTypeChangeStats(
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder builderForValue) {
+        if (typeChangeStatsBuilder_ == null) {
+          typeChangeStats_ = builderForValue.build();
+          onChanged();
+        } else {
+          typeChangeStatsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public Builder mergeTypeChangeStats(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics value) {
+        if (typeChangeStatsBuilder_ == null) {
+          if (typeChangeStats_ != null) {
+            typeChangeStats_ =
+              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.newBuilder(typeChangeStats_).mergeFrom(value).buildPartial();
+          } else {
+            typeChangeStats_ = value;
+          }
+          onChanged();
+        } else {
+          typeChangeStatsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public Builder clearTypeChangeStats() {
+        if (typeChangeStatsBuilder_ == null) {
+          typeChangeStats_ = null;
+          onChanged();
+        } else {
+          typeChangeStats_ = null;
+          typeChangeStatsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder getTypeChangeStatsBuilder() {
+        
+        onChanged();
+        return getTypeChangeStatsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder getTypeChangeStatsOrBuilder() {
+        if (typeChangeStatsBuilder_ != null) {
+          return typeChangeStatsBuilder_.getMessageOrBuilder();
+        } else {
+          return typeChangeStats_ == null ?
+              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.getDefaultInstance() : typeChangeStats_;
+        }
+      }
+      /**
+       * <code>.TypeChangeAnalysis.TypeChangeStatistics typeChangeStats = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder> 
+          getTypeChangeStatsFieldBuilder() {
+        if (typeChangeStatsBuilder_ == null) {
+          typeChangeStatsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatistics.Builder, com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.TypeChangeStatisticsOrBuilder>(
+                  getTypeChangeStats(),
+                  getParentForChildren(),
+                  isClean());
+          typeChangeStats_ = null;
+        }
+        return typeChangeStatsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8332,10 +10831,35 @@ public final class TypeChangeAnalysisOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TypeChangeAnalysis_CodeMapping_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor;
+    internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TypeChangeAnalysis_MigrationAnalysis_fieldAccessorTable;
+      internal_static_TypeChangeAnalysis_ReplacementInferred_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8347,39 +10871,57 @@ public final class TypeChangeAnalysisOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030TypeChangeAnalysis.proto\032\017TypeGraph.pr" +
       "oto\032\017NameSpace.proto\032\rTypeSem.proto\032\021Ele" +
-      "mentKind.proto\"\326\t\n\022TypeChangeAnalysis\022\026\n" +
+      "mentKind.proto\"\231\017\n\022TypeChangeAnalysis\022\026\n" +
       "\002b4\030\002 \001(\0132\n.TypeGraph\022\030\n\004aftr\030\003 \001(\0132\n.Ty" +
       "peGraph\022C\n\023typeChangeInstances\030\001 \003(\0132&.T" +
       "ypeChangeAnalysis.TypeChangeInstance\022 \n\014" +
       "nameSpacesB4\030\004 \001(\0162\n.NameSpace\022\"\n\016nameSp" +
       "aceAfter\030\n \001(\0162\n.NameSpace\022\033\n\ttypeSemb4\030" +
       "\005 \001(\0162\010.TypeSem\022\035\n\013typeSemAftr\030\013 \001(\0162\010.T" +
-      "ypeSem\022<\n\rmigrationInfo\030\014 \001(\0132%.TypeChan" +
-      "geAnalysis.MigrationAnalysis\022\031\n\021withinSa" +
-      "mePackage\030\006 \001(\010\022\031\n\021hierarchyRelation\030\007 \001" +
-      "(\t\022\027\n\017b4ComposesAfter\030\010 \001(\010\022<\n\rprimitive" +
-      "Info\030\t \001(\0132%.TypeChangeAnalysis.Primitiv" +
-      "eAnalysis\032\275\002\n\022TypeChangeInstance\022\026\n\002b4\030\001" +
-      " \001(\0132\n.TypeGraph\022\030\n\004aftr\030\002 \001(\0132\n.TypeGra" +
-      "ph\022\016\n\006nameB4\030\007 \001(\t\022\021\n\tnameAfter\030\010 \001(\t\022)\n" +
-      "\023elementKindAffected\030\003 \001(\0162\014.ElementKind" +
-      "\022\022\n\nvisibility\030\004 \001(\t\022D\n\017syntacticUpdate\030" +
-      "\005 \001(\0132+.TypeChangeAnalysis.SyntacticTran" +
-      "sformation\022\027\n\017compilationUnit\030\006 \001(\t\0224\n\013c" +
-      "odeMapping\030\t \003(\0132\037.TypeChangeAnalysis.Co" +
-      "deMapping\032\254\001\n\027SyntacticTransformation\022\026\n" +
+      "ypeSem\022\031\n\021withinSamePackage\030\006 \001(\010\022\031\n\021hie" +
+      "rarchyRelation\030\007 \001(\t\022\027\n\017b4ComposesAfter\030" +
+      "\010 \001(\010\022<\n\rprimitiveInfo\030\t \001(\0132%.TypeChang" +
+      "eAnalysis.PrimitiveAnalysis\022A\n\017typeChang" +
+      "eStats\030\016 \001(\0132(.TypeChangeAnalysis.TypeCh" +
+      "angeStatistics\032\336\002\n\022TypeChangeInstance\022\026\n" +
       "\002b4\030\001 \001(\0132\n.TypeGraph\022\030\n\004aftr\030\002 \001(\0132\n.Ty" +
-      "peGraph\022\026\n\016transformation\030\003 \003(\t\022G\n\022subTr" +
-      "ansformations\030\004 \003(\0132+.TypeChangeAnalysis" +
-      ".SyntacticTransformation\032Z\n\021PrimitiveAna" +
-      "lysis\022\020\n\010widening\030\001 \001(\010\022\021\n\tnarrowing\030\002 \001" +
-      "(\010\022\020\n\010unboxing\030\003 \001(\010\022\016\n\006boxing\030\004 \001(\010\0328\n\013" +
-      "CodeMapping\022\016\n\006isSame\030\003 \001(\010\022\n\n\002b4\030\001 \001(\t\022" +
-      "\r\n\005after\030\002 \001(\t\032w\n\021MigrationAnalysis\022\027\n\017i" +
-      "sTypeMigration\030\001 \001(\010\022\032\n\022typeMigrationLev" +
-      "el\030\002 \001(\t\022\030\n\020cannotBeMigrated\030\003 \001(\010\022\023\n\013is" +
-      "B4Removed\030\004 \001(\010B$\n\"com.t2r.common.models" +
-      ".refactoringsb\006proto3"
+      "peGraph\022\016\n\006nameB4\030\007 \001(\t\022\021\n\tnameAfter\030\010 \001" +
+      "(\t\022)\n\023elementKindAffected\030\003 \001(\0162\014.Elemen" +
+      "tKind\022\022\n\nvisibility\030\004 \001(\t\022D\n\017syntacticUp" +
+      "date\030\005 \001(\0132+.TypeChangeAnalysis.Syntacti" +
+      "cTransformation\022\027\n\017compilationUnit\030\006 \001(\t" +
+      "\0224\n\013codeMapping\030\t \003(\0132\037.TypeChangeAnalys" +
+      "is.CodeMapping\022\r\n\005urlB4\030\n \001(\t\022\020\n\010urlAfte" +
+      "r\030\013 \001(\t\032\254\001\n\027SyntacticTransformation\022\026\n\002b" +
+      "4\030\001 \001(\0132\n.TypeGraph\022\030\n\004aftr\030\002 \001(\0132\n.Type" +
+      "Graph\022\026\n\016transformation\030\003 \001(\t\022G\n\022subTran" +
+      "sformations\030\004 \003(\0132+.TypeChangeAnalysis.S" +
+      "yntacticTransformation\032Z\n\021PrimitiveAnaly" +
+      "sis\022\020\n\010widening\030\001 \001(\010\022\021\n\tnarrowing\030\002 \001(\010" +
+      "\022\020\n\010unboxing\030\003 \001(\010\022\016\n\006boxing\030\004 \001(\010\032\236\001\n\013C" +
+      "odeMapping\022\016\n\006isSame\030\003 \001(\010\022\n\n\002b4\030\001 \001(\t\022\r" +
+      "\n\005after\030\002 \001(\t\022C\n\022replcementInferred\030\004 \003(" +
+      "\0132\'.TypeChangeAnalysis.ReplacementInferr" +
+      "ed\022\016\n\006urlbB4\030\006 \001(\t\022\017\n\007urlAftr\030\005 \001(\t\032H\n\023R" +
+      "eplacementInferred\022\n\n\002b4\030\001 \001(\t\022\014\n\004aftr\030\002" +
+      " \001(\t\022\027\n\017replacementType\030\003 \001(\t\032\342\004\n\024TypeCh" +
+      "angeStatistics\022V\n\017visibilityStats\030\001 \003(\0132" +
+      "=.TypeChangeAnalysis.TypeChangeStatistic" +
+      "s.VisibilityStatsEntry\022^\n\023transformation" +
+      "Stats\030\002 \003(\0132A.TypeChangeAnalysis.TypeCha" +
+      "ngeStatistics.TransformationStatsEntry\022X" +
+      "\n\020elementKindStats\030\003 \003(\0132>.TypeChangeAna" +
+      "lysis.TypeChangeStatistics.ElementKindSt" +
+      "atsEntry\022T\n\016nameSpaceStats\030\004 \003(\0132<.TypeC" +
+      "hangeAnalysis.TypeChangeStatistics.NameS" +
+      "paceStatsEntry\0326\n\024VisibilityStatsEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\032:\n\030Transf" +
+      "ormationStatsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\001:\0028\001\0327\n\025ElementKindStatsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\0325\n\023NameSpace" +
+      "StatsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\002" +
+      "8\001B$\n\"com.t2r.common.models.refactorings" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8394,13 +10936,13 @@ public final class TypeChangeAnalysisOuterClass {
     internal_static_TypeChangeAnalysis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TypeChangeAnalysis_descriptor,
-        new java.lang.String[] { "B4", "Aftr", "TypeChangeInstances", "NameSpacesB4", "NameSpaceAfter", "TypeSemb4", "TypeSemAftr", "MigrationInfo", "WithinSamePackage", "HierarchyRelation", "B4ComposesAfter", "PrimitiveInfo", });
+        new java.lang.String[] { "B4", "Aftr", "TypeChangeInstances", "NameSpacesB4", "NameSpaceAfter", "TypeSemb4", "TypeSemAftr", "WithinSamePackage", "HierarchyRelation", "B4ComposesAfter", "PrimitiveInfo", "TypeChangeStats", });
     internal_static_TypeChangeAnalysis_TypeChangeInstance_descriptor =
       internal_static_TypeChangeAnalysis_descriptor.getNestedTypes().get(0);
     internal_static_TypeChangeAnalysis_TypeChangeInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TypeChangeAnalysis_TypeChangeInstance_descriptor,
-        new java.lang.String[] { "B4", "Aftr", "NameB4", "NameAfter", "ElementKindAffected", "Visibility", "SyntacticUpdate", "CompilationUnit", "CodeMapping", });
+        new java.lang.String[] { "B4", "Aftr", "NameB4", "NameAfter", "ElementKindAffected", "Visibility", "SyntacticUpdate", "CompilationUnit", "CodeMapping", "UrlB4", "UrlAfter", });
     internal_static_TypeChangeAnalysis_SyntacticTransformation_descriptor =
       internal_static_TypeChangeAnalysis_descriptor.getNestedTypes().get(1);
     internal_static_TypeChangeAnalysis_SyntacticTransformation_fieldAccessorTable = new
@@ -8418,13 +10960,43 @@ public final class TypeChangeAnalysisOuterClass {
     internal_static_TypeChangeAnalysis_CodeMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TypeChangeAnalysis_CodeMapping_descriptor,
-        new java.lang.String[] { "IsSame", "B4", "After", });
-    internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor =
+        new java.lang.String[] { "IsSame", "B4", "After", "ReplcementInferred", "UrlbB4", "UrlAftr", });
+    internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor =
       internal_static_TypeChangeAnalysis_descriptor.getNestedTypes().get(4);
-    internal_static_TypeChangeAnalysis_MigrationAnalysis_fieldAccessorTable = new
+    internal_static_TypeChangeAnalysis_ReplacementInferred_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TypeChangeAnalysis_MigrationAnalysis_descriptor,
-        new java.lang.String[] { "IsTypeMigration", "TypeMigrationLevel", "CannotBeMigrated", "IsB4Removed", });
+        internal_static_TypeChangeAnalysis_ReplacementInferred_descriptor,
+        new java.lang.String[] { "B4", "Aftr", "ReplacementType", });
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor =
+      internal_static_TypeChangeAnalysis_descriptor.getNestedTypes().get(5);
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor,
+        new java.lang.String[] { "VisibilityStats", "TransformationStats", "ElementKindStats", "NameSpaceStats", });
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_descriptor =
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor.getNestedTypes().get(0);
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeAnalysis_TypeChangeStatistics_VisibilityStatsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_descriptor =
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor.getNestedTypes().get(1);
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeAnalysis_TypeChangeStatistics_TransformationStatsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_descriptor =
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor.getNestedTypes().get(2);
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeAnalysis_TypeChangeStatistics_ElementKindStatsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_descriptor =
+      internal_static_TypeChangeAnalysis_TypeChangeStatistics_descriptor.getNestedTypes().get(3);
+    internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeAnalysis_TypeChangeStatistics_NameSpaceStatsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.t2r.common.models.ast.TypeGraphOuterClass.getDescriptor();
     com.t2r.common.models.refactorings.NameSpaceOuterClass.getDescriptor();
     com.t2r.common.models.refactorings.TypeSemOuterClass.getDescriptor();

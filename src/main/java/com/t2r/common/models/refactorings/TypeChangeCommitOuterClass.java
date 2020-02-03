@@ -43,34 +43,136 @@ public final class TypeChangeCommitOuterClass {
         int index);
 
     /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     * @return Whether the codeStatistics field is set.
+     * <pre>
+     *   CodeStatistics codeStatistics = 2;
+     * </pre>
+     *
+     * <code>string sha = 3;</code>
+     * @return The sha.
      */
-    boolean hasCodeStatistics();
+    java.lang.String getSha();
     /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     * @return The codeStatistics.
+     * <pre>
+     *   CodeStatistics codeStatistics = 2;
+     * </pre>
+     *
+     * <code>string sha = 3;</code>
+     * @return The bytes for sha.
      */
-    com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics getCodeStatistics();
-    /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     */
-    com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder getCodeStatisticsOrBuilder();
+    com.google.protobuf.ByteString
+        getShaBytes();
 
     /**
-     * <code>.CommitInfo commit = 3;</code>
-     * @return Whether the commit field is set.
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+     * @return Whether the dependencyUpdate field is set.
      */
-    boolean hasCommit();
+    boolean hasDependencyUpdate();
     /**
-     * <code>.CommitInfo commit = 3;</code>
-     * @return The commit.
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+     * @return The dependencyUpdate.
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo getCommit();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate();
     /**
-     * <code>.CommitInfo commit = 3;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      */
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder getCommitOrBuilder();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder();
+
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+    int getRefactoringsCount();
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+    boolean containsRefactorings(
+        java.lang.String key);
+    /**
+     * Use {@link #getRefactoringsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Long>
+    getRefactorings();
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Long>
+    getRefactoringsMap();
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    long getRefactoringsOrDefault(
+        java.lang.String key,
+        long defaultValue);
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    long getRefactoringsOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     * @return Whether the fileDiff field is set.
+     */
+    boolean hasFileDiff();
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     * @return The fileDiff.
+     */
+    com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff();
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     */
+    com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder();
+
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> 
+        getDependencyUpdateImpactList();
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDependencyUpdateImpact(int index);
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    int getDependencyUpdateImpactCount();
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder> 
+        getDependencyUpdateImpactOrBuilderList();
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder getDependencyUpdateImpactOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> 
+        getMigrationAnalysisList();
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getMigrationAnalysis(int index);
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    int getMigrationAnalysisCount();
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder> 
+        getMigrationAnalysisOrBuilderList();
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder getMigrationAnalysisOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code TypeChangeCommit}
@@ -86,6 +188,9 @@ public final class TypeChangeCommitOuterClass {
     }
     private TypeChangeCommit() {
       typeChanges_ = java.util.Collections.emptyList();
+      sha_ = "";
+      dependencyUpdateImpact_ = java.util.Collections.emptyList();
+      migrationAnalysis_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -128,30 +233,67 @@ public final class TypeChangeCommitOuterClass {
                   input.readMessage(com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.TypeChangeAnalysis.parser(), extensionRegistry));
               break;
             }
-            case 18: {
-              com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder subBuilder = null;
-              if (codeStatistics_ != null) {
-                subBuilder = codeStatistics_.toBuilder();
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sha_ = s;
+              break;
+            }
+            case 34: {
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder subBuilder = null;
+              if (dependencyUpdate_ != null) {
+                subBuilder = dependencyUpdate_.toBuilder();
               }
-              codeStatistics_ = input.readMessage(com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.parser(), extensionRegistry);
+              dependencyUpdate_ = input.readMessage(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(codeStatistics_);
-                codeStatistics_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dependencyUpdate_);
+                dependencyUpdate_ = subBuilder.buildPartial();
               }
 
               break;
             }
-            case 26: {
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder subBuilder = null;
-              if (commit_ != null) {
-                subBuilder = commit_.toBuilder();
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                refactorings_ = com.google.protobuf.MapField.newMapField(
+                    RefactoringsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
               }
-              commit_ = input.readMessage(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.parser(), extensionRegistry);
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+              refactorings__ = input.readMessage(
+                  RefactoringsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              refactorings_.getMutableMap().put(
+                  refactorings__.getKey(), refactorings__.getValue());
+              break;
+            }
+            case 50: {
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder subBuilder = null;
+              if (fileDiff_ != null) {
+                subBuilder = fileDiff_.toBuilder();
+              }
+              fileDiff_ = input.readMessage(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(commit_);
-                commit_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(fileDiff_);
+                fileDiff_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                dependencyUpdateImpact_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              dependencyUpdateImpact_.add(
+                  input.readMessage(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                migrationAnalysis_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              migrationAnalysis_.add(
+                  input.readMessage(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -172,6 +314,12 @@ public final class TypeChangeCommitOuterClass {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           typeChanges_ = java.util.Collections.unmodifiableList(typeChanges_);
         }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          dependencyUpdateImpact_ = java.util.Collections.unmodifiableList(dependencyUpdateImpact_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          migrationAnalysis_ = java.util.Collections.unmodifiableList(migrationAnalysis_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -181,12 +329,1629 @@ public final class TypeChangeCommitOuterClass {
       return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetRefactorings();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.class, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.Builder.class);
+    }
+
+    public interface MigrationAnalysisOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:TypeChangeCommit.MigrationAnalysis)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string type = 1;</code>
+       * @return The type.
+       */
+      java.lang.String getType();
+      /**
+       * <code>string type = 1;</code>
+       * @return The bytes for type.
+       */
+      com.google.protobuf.ByteString
+          getTypeBytes();
+
+      /**
+       * <pre>
+       * Project, Package, Compilation unit
+       * </pre>
+       *
+       * <code>string typeMigrationLevel = 2;</code>
+       * @return The typeMigrationLevel.
+       */
+      java.lang.String getTypeMigrationLevel();
+      /**
+       * <pre>
+       * Project, Package, Compilation unit
+       * </pre>
+       *
+       * <code>string typeMigrationLevel = 2;</code>
+       * @return The bytes for typeMigrationLevel.
+       */
+      com.google.protobuf.ByteString
+          getTypeMigrationLevelBytes();
+
+      /**
+       * <code>bool isB4Removed = 4;</code>
+       * @return The isB4Removed.
+       */
+      boolean getIsB4Removed();
+    }
+    /**
+     * Protobuf type {@code TypeChangeCommit.MigrationAnalysis}
+     */
+    public  static final class MigrationAnalysis extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:TypeChangeCommit.MigrationAnalysis)
+        MigrationAnalysisOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use MigrationAnalysis.newBuilder() to construct.
+      private MigrationAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MigrationAnalysis() {
+        type_ = "";
+        typeMigrationLevel_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new MigrationAnalysis();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MigrationAnalysis(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                type_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                typeMigrationLevel_ = s;
+                break;
+              }
+              case 32: {
+
+                isB4Removed_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_MigrationAnalysis_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_MigrationAnalysis_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.class, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder.class);
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private volatile java.lang.Object type_;
+      /**
+       * <code>string type = 1;</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string type = 1;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TYPEMIGRATIONLEVEL_FIELD_NUMBER = 2;
+      private volatile java.lang.Object typeMigrationLevel_;
+      /**
+       * <pre>
+       * Project, Package, Compilation unit
+       * </pre>
+       *
+       * <code>string typeMigrationLevel = 2;</code>
+       * @return The typeMigrationLevel.
+       */
+      public java.lang.String getTypeMigrationLevel() {
+        java.lang.Object ref = typeMigrationLevel_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          typeMigrationLevel_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Project, Package, Compilation unit
+       * </pre>
+       *
+       * <code>string typeMigrationLevel = 2;</code>
+       * @return The bytes for typeMigrationLevel.
+       */
+      public com.google.protobuf.ByteString
+          getTypeMigrationLevelBytes() {
+        java.lang.Object ref = typeMigrationLevel_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          typeMigrationLevel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ISB4REMOVED_FIELD_NUMBER = 4;
+      private boolean isB4Removed_;
+      /**
+       * <code>bool isB4Removed = 4;</code>
+       * @return The isB4Removed.
+       */
+      public boolean getIsB4Removed() {
+        return isB4Removed_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getTypeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+        }
+        if (!getTypeMigrationLevelBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, typeMigrationLevel_);
+        }
+        if (isB4Removed_ != false) {
+          output.writeBool(4, isB4Removed_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getTypeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+        }
+        if (!getTypeMigrationLevelBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, typeMigrationLevel_);
+        }
+        if (isB4Removed_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(4, isB4Removed_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis)) {
+          return super.equals(obj);
+        }
+        com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis other = (com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis) obj;
+
+        if (!getType()
+            .equals(other.getType())) return false;
+        if (!getTypeMigrationLevel()
+            .equals(other.getTypeMigrationLevel())) return false;
+        if (getIsB4Removed()
+            != other.getIsB4Removed()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
+        hash = (37 * hash) + TYPEMIGRATIONLEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + getTypeMigrationLevel().hashCode();
+        hash = (37 * hash) + ISB4REMOVED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsB4Removed());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code TypeChangeCommit.MigrationAnalysis}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:TypeChangeCommit.MigrationAnalysis)
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_MigrationAnalysis_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_MigrationAnalysis_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.class, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder.class);
+        }
+
+        // Construct using com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          type_ = "";
+
+          typeMigrationLevel_ = "";
+
+          isB4Removed_ = false;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_MigrationAnalysis_descriptor;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis build() {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis buildPartial() {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis result = new com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis(this);
+          result.type_ = type_;
+          result.typeMigrationLevel_ = typeMigrationLevel_;
+          result.isB4Removed_ = isB4Removed_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis) {
+            return mergeFrom((com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis other) {
+          if (other == com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.getDefaultInstance()) return this;
+          if (!other.getType().isEmpty()) {
+            type_ = other.type_;
+            onChanged();
+          }
+          if (!other.getTypeMigrationLevel().isEmpty()) {
+            typeMigrationLevel_ = other.typeMigrationLevel_;
+            onChanged();
+          }
+          if (other.getIsB4Removed() != false) {
+            setIsB4Removed(other.getIsB4Removed());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object type_ = "";
+        /**
+         * <code>string type = 1;</code>
+         * @return The type.
+         */
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string type = 1;</code>
+         * @return The bytes for type.
+         */
+        public com.google.protobuf.ByteString
+            getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string type = 1;</code>
+         * @param value The type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string type = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearType() {
+          
+          type_ = getDefaultInstance().getType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string type = 1;</code>
+         * @param value The bytes for type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          type_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object typeMigrationLevel_ = "";
+        /**
+         * <pre>
+         * Project, Package, Compilation unit
+         * </pre>
+         *
+         * <code>string typeMigrationLevel = 2;</code>
+         * @return The typeMigrationLevel.
+         */
+        public java.lang.String getTypeMigrationLevel() {
+          java.lang.Object ref = typeMigrationLevel_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            typeMigrationLevel_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Project, Package, Compilation unit
+         * </pre>
+         *
+         * <code>string typeMigrationLevel = 2;</code>
+         * @return The bytes for typeMigrationLevel.
+         */
+        public com.google.protobuf.ByteString
+            getTypeMigrationLevelBytes() {
+          java.lang.Object ref = typeMigrationLevel_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            typeMigrationLevel_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Project, Package, Compilation unit
+         * </pre>
+         *
+         * <code>string typeMigrationLevel = 2;</code>
+         * @param value The typeMigrationLevel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeMigrationLevel(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          typeMigrationLevel_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Project, Package, Compilation unit
+         * </pre>
+         *
+         * <code>string typeMigrationLevel = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearTypeMigrationLevel() {
+          
+          typeMigrationLevel_ = getDefaultInstance().getTypeMigrationLevel();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Project, Package, Compilation unit
+         * </pre>
+         *
+         * <code>string typeMigrationLevel = 2;</code>
+         * @param value The bytes for typeMigrationLevel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeMigrationLevelBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          typeMigrationLevel_ = value;
+          onChanged();
+          return this;
+        }
+
+        private boolean isB4Removed_ ;
+        /**
+         * <code>bool isB4Removed = 4;</code>
+         * @return The isB4Removed.
+         */
+        public boolean getIsB4Removed() {
+          return isB4Removed_;
+        }
+        /**
+         * <code>bool isB4Removed = 4;</code>
+         * @param value The isB4Removed to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsB4Removed(boolean value) {
+          
+          isB4Removed_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool isB4Removed = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIsB4Removed() {
+          
+          isB4Removed_ = false;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:TypeChangeCommit.MigrationAnalysis)
+      }
+
+      // @@protoc_insertion_point(class_scope:TypeChangeCommit.MigrationAnalysis)
+      private static final com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis();
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MigrationAnalysis>
+          PARSER = new com.google.protobuf.AbstractParser<MigrationAnalysis>() {
+        @java.lang.Override
+        public MigrationAnalysis parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MigrationAnalysis(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MigrationAnalysis> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MigrationAnalysis> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface DependencyUpdateImpactOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:TypeChangeCommit.DependencyUpdateImpact)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string kind = 1;</code>
+       * @return The kind.
+       */
+      java.lang.String getKind();
+      /**
+       * <code>string kind = 1;</code>
+       * @return The bytes for kind.
+       */
+      com.google.protobuf.ByteString
+          getKindBytes();
+
+      /**
+       * <code>repeated string types = 2;</code>
+       * @return A list containing the types.
+       */
+      java.util.List<java.lang.String>
+          getTypesList();
+      /**
+       * <code>repeated string types = 2;</code>
+       * @return The count of types.
+       */
+      int getTypesCount();
+      /**
+       * <code>repeated string types = 2;</code>
+       * @param index The index of the element to return.
+       * @return The types at the given index.
+       */
+      java.lang.String getTypes(int index);
+      /**
+       * <code>repeated string types = 2;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the types at the given index.
+       */
+      com.google.protobuf.ByteString
+          getTypesBytes(int index);
+    }
+    /**
+     * Protobuf type {@code TypeChangeCommit.DependencyUpdateImpact}
+     */
+    public  static final class DependencyUpdateImpact extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:TypeChangeCommit.DependencyUpdateImpact)
+        DependencyUpdateImpactOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DependencyUpdateImpact.newBuilder() to construct.
+      private DependencyUpdateImpact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DependencyUpdateImpact() {
+        kind_ = "";
+        types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new DependencyUpdateImpact();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DependencyUpdateImpact(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                kind_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  types_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                types_.add(s);
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            types_ = types_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_DependencyUpdateImpact_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.class, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder.class);
+      }
+
+      public static final int KIND_FIELD_NUMBER = 1;
+      private volatile java.lang.Object kind_;
+      /**
+       * <code>string kind = 1;</code>
+       * @return The kind.
+       */
+      public java.lang.String getKind() {
+        java.lang.Object ref = kind_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kind_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string kind = 1;</code>
+       * @return The bytes for kind.
+       */
+      public com.google.protobuf.ByteString
+          getKindBytes() {
+        java.lang.Object ref = kind_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kind_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TYPES_FIELD_NUMBER = 2;
+      private com.google.protobuf.LazyStringList types_;
+      /**
+       * <code>repeated string types = 2;</code>
+       * @return A list containing the types.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTypesList() {
+        return types_;
+      }
+      /**
+       * <code>repeated string types = 2;</code>
+       * @return The count of types.
+       */
+      public int getTypesCount() {
+        return types_.size();
+      }
+      /**
+       * <code>repeated string types = 2;</code>
+       * @param index The index of the element to return.
+       * @return The types at the given index.
+       */
+      public java.lang.String getTypes(int index) {
+        return types_.get(index);
+      }
+      /**
+       * <code>repeated string types = 2;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the types at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTypesBytes(int index) {
+        return types_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getKindBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
+        }
+        for (int i = 0; i < types_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, types_.getRaw(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getKindBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < types_.size(); i++) {
+            dataSize += computeStringSizeNoTag(types_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getTypesList().size();
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact)) {
+          return super.equals(obj);
+        }
+        com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact other = (com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact) obj;
+
+        if (!getKind()
+            .equals(other.getKind())) return false;
+        if (!getTypesList()
+            .equals(other.getTypesList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + KIND_FIELD_NUMBER;
+        hash = (53 * hash) + getKind().hashCode();
+        if (getTypesCount() > 0) {
+          hash = (37 * hash) + TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getTypesList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code TypeChangeCommit.DependencyUpdateImpact}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:TypeChangeCommit.DependencyUpdateImpact)
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_DependencyUpdateImpact_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.class, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder.class);
+        }
+
+        // Construct using com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          kind_ = "";
+
+          types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDefaultInstanceForType() {
+          return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact build() {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact buildPartial() {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact result = new com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact(this);
+          int from_bitField0_ = bitField0_;
+          result.kind_ = kind_;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            types_ = types_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.types_ = types_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact) {
+            return mergeFrom((com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact other) {
+          if (other == com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.getDefaultInstance()) return this;
+          if (!other.getKind().isEmpty()) {
+            kind_ = other.kind_;
+            onChanged();
+          }
+          if (!other.types_.isEmpty()) {
+            if (types_.isEmpty()) {
+              types_ = other.types_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTypesIsMutable();
+              types_.addAll(other.types_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object kind_ = "";
+        /**
+         * <code>string kind = 1;</code>
+         * @return The kind.
+         */
+        public java.lang.String getKind() {
+          java.lang.Object ref = kind_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            kind_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string kind = 1;</code>
+         * @return The bytes for kind.
+         */
+        public com.google.protobuf.ByteString
+            getKindBytes() {
+          java.lang.Object ref = kind_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            kind_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string kind = 1;</code>
+         * @param value The kind to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKind(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          kind_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string kind = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearKind() {
+          
+          kind_ = getDefaultInstance().getKind();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string kind = 1;</code>
+         * @param value The bytes for kind to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKindBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          kind_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringList types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureTypesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            types_ = new com.google.protobuf.LazyStringArrayList(types_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @return A list containing the types.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getTypesList() {
+          return types_.getUnmodifiableView();
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @return The count of types.
+         */
+        public int getTypesCount() {
+          return types_.size();
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param index The index of the element to return.
+         * @return The types at the given index.
+         */
+        public java.lang.String getTypes(int index) {
+          return types_.get(index);
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the types at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getTypesBytes(int index) {
+          return types_.getByteString(index);
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param index The index to set the value at.
+         * @param value The types to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypes(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTypesIsMutable();
+          types_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param value The types to add.
+         * @return This builder for chaining.
+         */
+        public Builder addTypes(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTypesIsMutable();
+          types_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param values The types to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllTypes(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, types_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearTypes() {
+          types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string types = 2;</code>
+         * @param value The bytes of the types to add.
+         * @return This builder for chaining.
+         */
+        public Builder addTypesBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          ensureTypesIsMutable();
+          types_.add(value);
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:TypeChangeCommit.DependencyUpdateImpact)
+      }
+
+      // @@protoc_insertion_point(class_scope:TypeChangeCommit.DependencyUpdateImpact)
+      private static final com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact();
+      }
+
+      public static com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DependencyUpdateImpact>
+          PARSER = new com.google.protobuf.AbstractParser<DependencyUpdateImpact>() {
+        @java.lang.Override
+        public DependencyUpdateImpact parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DependencyUpdateImpact(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DependencyUpdateImpact> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DependencyUpdateImpact> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int TYPECHANGES_FIELD_NUMBER = 1;
@@ -224,50 +1989,240 @@ public final class TypeChangeCommitOuterClass {
       return typeChanges_.get(index);
     }
 
-    public static final int CODESTATISTICS_FIELD_NUMBER = 2;
-    private com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics codeStatistics_;
+    public static final int SHA_FIELD_NUMBER = 3;
+    private volatile java.lang.Object sha_;
     /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     * @return Whether the codeStatistics field is set.
+     * <pre>
+     *   CodeStatistics codeStatistics = 2;
+     * </pre>
+     *
+     * <code>string sha = 3;</code>
+     * @return The sha.
      */
-    public boolean hasCodeStatistics() {
-      return codeStatistics_ != null;
+    public java.lang.String getSha() {
+      java.lang.Object ref = sha_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sha_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     * @return The codeStatistics.
+     * <pre>
+     *   CodeStatistics codeStatistics = 2;
+     * </pre>
+     *
+     * <code>string sha = 3;</code>
+     * @return The bytes for sha.
      */
-    public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics getCodeStatistics() {
-      return codeStatistics_ == null ? com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.getDefaultInstance() : codeStatistics_;
-    }
-    /**
-     * <code>.CodeStatistics codeStatistics = 2;</code>
-     */
-    public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder getCodeStatisticsOrBuilder() {
-      return getCodeStatistics();
+    public com.google.protobuf.ByteString
+        getShaBytes() {
+      java.lang.Object ref = sha_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sha_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int COMMIT_FIELD_NUMBER = 3;
-    private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo commit_;
+    public static final int DEPENDENCYUPDATE_FIELD_NUMBER = 4;
+    private com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate dependencyUpdate_;
     /**
-     * <code>.CommitInfo commit = 3;</code>
-     * @return Whether the commit field is set.
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+     * @return Whether the dependencyUpdate field is set.
      */
-    public boolean hasCommit() {
-      return commit_ != null;
+    public boolean hasDependencyUpdate() {
+      return dependencyUpdate_ != null;
     }
     /**
-     * <code>.CommitInfo commit = 3;</code>
-     * @return The commit.
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+     * @return The dependencyUpdate.
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo getCommit() {
-      return commit_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.getDefaultInstance() : commit_;
+    public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate() {
+      return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
     }
     /**
-     * <code>.CommitInfo commit = 3;</code>
+     * <code>.DependencyUpdate dependencyUpdate = 4;</code>
      */
-    public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder getCommitOrBuilder() {
-      return getCommit();
+    public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
+      return getDependencyUpdate();
+    }
+
+    public static final int REFACTORINGS_FIELD_NUMBER = 5;
+    private static final class RefactoringsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Long>newDefaultInstance(
+                  com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_RefactoringsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Long> refactorings_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetRefactorings() {
+      if (refactorings_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RefactoringsDefaultEntryHolder.defaultEntry);
+      }
+      return refactorings_;
+    }
+
+    public int getRefactoringsCount() {
+      return internalGetRefactorings().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    public boolean containsRefactorings(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetRefactorings().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRefactoringsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getRefactorings() {
+      return getRefactoringsMap();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.Long> getRefactoringsMap() {
+      return internalGetRefactorings().getMap();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    public long getRefactoringsOrDefault(
+        java.lang.String key,
+        long defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetRefactorings().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+     */
+
+    public long getRefactoringsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetRefactorings().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int FILEDIFF_FIELD_NUMBER = 6;
+    private com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff fileDiff_;
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     * @return Whether the fileDiff field is set.
+     */
+    public boolean hasFileDiff() {
+      return fileDiff_ != null;
+    }
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     * @return The fileDiff.
+     */
+    public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff() {
+      return fileDiff_ == null ? com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
+    }
+    /**
+     * <code>.FileDiff fileDiff = 6;</code>
+     */
+    public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder() {
+      return getFileDiff();
+    }
+
+    public static final int DEPENDENCYUPDATEIMPACT_FIELD_NUMBER = 8;
+    private java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> dependencyUpdateImpact_;
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> getDependencyUpdateImpactList() {
+      return dependencyUpdateImpact_;
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder> 
+        getDependencyUpdateImpactOrBuilderList() {
+      return dependencyUpdateImpact_;
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    public int getDependencyUpdateImpactCount() {
+      return dependencyUpdateImpact_.size();
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDependencyUpdateImpact(int index) {
+      return dependencyUpdateImpact_.get(index);
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+     */
+    public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder getDependencyUpdateImpactOrBuilder(
+        int index) {
+      return dependencyUpdateImpact_.get(index);
+    }
+
+    public static final int MIGRATIONANALYSIS_FIELD_NUMBER = 9;
+    private java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> migrationAnalysis_;
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> getMigrationAnalysisList() {
+      return migrationAnalysis_;
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder> 
+        getMigrationAnalysisOrBuilderList() {
+      return migrationAnalysis_;
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    public int getMigrationAnalysisCount() {
+      return migrationAnalysis_.size();
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getMigrationAnalysis(int index) {
+      return migrationAnalysis_.get(index);
+    }
+    /**
+     * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+     */
+    public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder getMigrationAnalysisOrBuilder(
+        int index) {
+      return migrationAnalysis_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -287,11 +2242,26 @@ public final class TypeChangeCommitOuterClass {
       for (int i = 0; i < typeChanges_.size(); i++) {
         output.writeMessage(1, typeChanges_.get(i));
       }
-      if (codeStatistics_ != null) {
-        output.writeMessage(2, getCodeStatistics());
+      if (!getShaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sha_);
       }
-      if (commit_ != null) {
-        output.writeMessage(3, getCommit());
+      if (dependencyUpdate_ != null) {
+        output.writeMessage(4, getDependencyUpdate());
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetRefactorings(),
+          RefactoringsDefaultEntryHolder.defaultEntry,
+          5);
+      if (fileDiff_ != null) {
+        output.writeMessage(6, getFileDiff());
+      }
+      for (int i = 0; i < dependencyUpdateImpact_.size(); i++) {
+        output.writeMessage(8, dependencyUpdateImpact_.get(i));
+      }
+      for (int i = 0; i < migrationAnalysis_.size(); i++) {
+        output.writeMessage(9, migrationAnalysis_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -306,13 +2276,34 @@ public final class TypeChangeCommitOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, typeChanges_.get(i));
       }
-      if (codeStatistics_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCodeStatistics());
+      if (!getShaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sha_);
       }
-      if (commit_ != null) {
+      if (dependencyUpdate_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCommit());
+          .computeMessageSize(4, getDependencyUpdate());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+           : internalGetRefactorings().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+        refactorings__ = RefactoringsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, refactorings__);
+      }
+      if (fileDiff_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getFileDiff());
+      }
+      for (int i = 0; i < dependencyUpdateImpact_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, dependencyUpdateImpact_.get(i));
+      }
+      for (int i = 0; i < migrationAnalysis_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, migrationAnalysis_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,16 +2322,24 @@ public final class TypeChangeCommitOuterClass {
 
       if (!getTypeChangesList()
           .equals(other.getTypeChangesList())) return false;
-      if (hasCodeStatistics() != other.hasCodeStatistics()) return false;
-      if (hasCodeStatistics()) {
-        if (!getCodeStatistics()
-            .equals(other.getCodeStatistics())) return false;
+      if (!getSha()
+          .equals(other.getSha())) return false;
+      if (hasDependencyUpdate() != other.hasDependencyUpdate()) return false;
+      if (hasDependencyUpdate()) {
+        if (!getDependencyUpdate()
+            .equals(other.getDependencyUpdate())) return false;
       }
-      if (hasCommit() != other.hasCommit()) return false;
-      if (hasCommit()) {
-        if (!getCommit()
-            .equals(other.getCommit())) return false;
+      if (!internalGetRefactorings().equals(
+          other.internalGetRefactorings())) return false;
+      if (hasFileDiff() != other.hasFileDiff()) return false;
+      if (hasFileDiff()) {
+        if (!getFileDiff()
+            .equals(other.getFileDiff())) return false;
       }
+      if (!getDependencyUpdateImpactList()
+          .equals(other.getDependencyUpdateImpactList())) return false;
+      if (!getMigrationAnalysisList()
+          .equals(other.getMigrationAnalysisList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -356,13 +2355,27 @@ public final class TypeChangeCommitOuterClass {
         hash = (37 * hash) + TYPECHANGES_FIELD_NUMBER;
         hash = (53 * hash) + getTypeChangesList().hashCode();
       }
-      if (hasCodeStatistics()) {
-        hash = (37 * hash) + CODESTATISTICS_FIELD_NUMBER;
-        hash = (53 * hash) + getCodeStatistics().hashCode();
+      hash = (37 * hash) + SHA_FIELD_NUMBER;
+      hash = (53 * hash) + getSha().hashCode();
+      if (hasDependencyUpdate()) {
+        hash = (37 * hash) + DEPENDENCYUPDATE_FIELD_NUMBER;
+        hash = (53 * hash) + getDependencyUpdate().hashCode();
       }
-      if (hasCommit()) {
-        hash = (37 * hash) + COMMIT_FIELD_NUMBER;
-        hash = (53 * hash) + getCommit().hashCode();
+      if (!internalGetRefactorings().getMap().isEmpty()) {
+        hash = (37 * hash) + REFACTORINGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetRefactorings().hashCode();
+      }
+      if (hasFileDiff()) {
+        hash = (37 * hash) + FILEDIFF_FIELD_NUMBER;
+        hash = (53 * hash) + getFileDiff().hashCode();
+      }
+      if (getDependencyUpdateImpactCount() > 0) {
+        hash = (37 * hash) + DEPENDENCYUPDATEIMPACT_FIELD_NUMBER;
+        hash = (53 * hash) + getDependencyUpdateImpactList().hashCode();
+      }
+      if (getMigrationAnalysisCount() > 0) {
+        hash = (37 * hash) + MIGRATIONANALYSIS_FIELD_NUMBER;
+        hash = (53 * hash) + getMigrationAnalysisList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -471,6 +2484,28 @@ public final class TypeChangeCommitOuterClass {
         return com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.internal_static_TypeChangeCommit_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetRefactorings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableRefactorings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -493,6 +2528,8 @@ public final class TypeChangeCommitOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTypeChangesFieldBuilder();
+          getDependencyUpdateImpactFieldBuilder();
+          getMigrationAnalysisFieldBuilder();
         }
       }
       @java.lang.Override
@@ -504,17 +2541,32 @@ public final class TypeChangeCommitOuterClass {
         } else {
           typeChangesBuilder_.clear();
         }
-        if (codeStatisticsBuilder_ == null) {
-          codeStatistics_ = null;
+        sha_ = "";
+
+        if (dependencyUpdateBuilder_ == null) {
+          dependencyUpdate_ = null;
         } else {
-          codeStatistics_ = null;
-          codeStatisticsBuilder_ = null;
+          dependencyUpdate_ = null;
+          dependencyUpdateBuilder_ = null;
         }
-        if (commitBuilder_ == null) {
-          commit_ = null;
+        internalGetMutableRefactorings().clear();
+        if (fileDiffBuilder_ == null) {
+          fileDiff_ = null;
         } else {
-          commit_ = null;
-          commitBuilder_ = null;
+          fileDiff_ = null;
+          fileDiffBuilder_ = null;
+        }
+        if (dependencyUpdateImpactBuilder_ == null) {
+          dependencyUpdateImpact_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          dependencyUpdateImpactBuilder_.clear();
+        }
+        if (migrationAnalysisBuilder_ == null) {
+          migrationAnalysis_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          migrationAnalysisBuilder_.clear();
         }
         return this;
       }
@@ -552,15 +2604,36 @@ public final class TypeChangeCommitOuterClass {
         } else {
           result.typeChanges_ = typeChangesBuilder_.build();
         }
-        if (codeStatisticsBuilder_ == null) {
-          result.codeStatistics_ = codeStatistics_;
+        result.sha_ = sha_;
+        if (dependencyUpdateBuilder_ == null) {
+          result.dependencyUpdate_ = dependencyUpdate_;
         } else {
-          result.codeStatistics_ = codeStatisticsBuilder_.build();
+          result.dependencyUpdate_ = dependencyUpdateBuilder_.build();
         }
-        if (commitBuilder_ == null) {
-          result.commit_ = commit_;
+        result.refactorings_ = internalGetRefactorings();
+        result.refactorings_.makeImmutable();
+        if (fileDiffBuilder_ == null) {
+          result.fileDiff_ = fileDiff_;
         } else {
-          result.commit_ = commitBuilder_.build();
+          result.fileDiff_ = fileDiffBuilder_.build();
+        }
+        if (dependencyUpdateImpactBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            dependencyUpdateImpact_ = java.util.Collections.unmodifiableList(dependencyUpdateImpact_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.dependencyUpdateImpact_ = dependencyUpdateImpact_;
+        } else {
+          result.dependencyUpdateImpact_ = dependencyUpdateImpactBuilder_.build();
+        }
+        if (migrationAnalysisBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            migrationAnalysis_ = java.util.Collections.unmodifiableList(migrationAnalysis_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.migrationAnalysis_ = migrationAnalysis_;
+        } else {
+          result.migrationAnalysis_ = migrationAnalysisBuilder_.build();
         }
         onBuilt();
         return result;
@@ -636,11 +2709,69 @@ public final class TypeChangeCommitOuterClass {
             }
           }
         }
-        if (other.hasCodeStatistics()) {
-          mergeCodeStatistics(other.getCodeStatistics());
+        if (!other.getSha().isEmpty()) {
+          sha_ = other.sha_;
+          onChanged();
         }
-        if (other.hasCommit()) {
-          mergeCommit(other.getCommit());
+        if (other.hasDependencyUpdate()) {
+          mergeDependencyUpdate(other.getDependencyUpdate());
+        }
+        internalGetMutableRefactorings().mergeFrom(
+            other.internalGetRefactorings());
+        if (other.hasFileDiff()) {
+          mergeFileDiff(other.getFileDiff());
+        }
+        if (dependencyUpdateImpactBuilder_ == null) {
+          if (!other.dependencyUpdateImpact_.isEmpty()) {
+            if (dependencyUpdateImpact_.isEmpty()) {
+              dependencyUpdateImpact_ = other.dependencyUpdateImpact_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureDependencyUpdateImpactIsMutable();
+              dependencyUpdateImpact_.addAll(other.dependencyUpdateImpact_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dependencyUpdateImpact_.isEmpty()) {
+            if (dependencyUpdateImpactBuilder_.isEmpty()) {
+              dependencyUpdateImpactBuilder_.dispose();
+              dependencyUpdateImpactBuilder_ = null;
+              dependencyUpdateImpact_ = other.dependencyUpdateImpact_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              dependencyUpdateImpactBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDependencyUpdateImpactFieldBuilder() : null;
+            } else {
+              dependencyUpdateImpactBuilder_.addAllMessages(other.dependencyUpdateImpact_);
+            }
+          }
+        }
+        if (migrationAnalysisBuilder_ == null) {
+          if (!other.migrationAnalysis_.isEmpty()) {
+            if (migrationAnalysis_.isEmpty()) {
+              migrationAnalysis_ = other.migrationAnalysis_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureMigrationAnalysisIsMutable();
+              migrationAnalysis_.addAll(other.migrationAnalysis_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.migrationAnalysis_.isEmpty()) {
+            if (migrationAnalysisBuilder_.isEmpty()) {
+              migrationAnalysisBuilder_.dispose();
+              migrationAnalysisBuilder_ = null;
+              migrationAnalysis_ = other.migrationAnalysis_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              migrationAnalysisBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMigrationAnalysisFieldBuilder() : null;
+            } else {
+              migrationAnalysisBuilder_.addAllMessages(other.migrationAnalysis_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -912,242 +3043,941 @@ public final class TypeChangeCommitOuterClass {
         return typeChangesBuilder_;
       }
 
-      private com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics codeStatistics_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder> codeStatisticsBuilder_;
+      private java.lang.Object sha_ = "";
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
-       * @return Whether the codeStatistics field is set.
+       * <pre>
+       *   CodeStatistics codeStatistics = 2;
+       * </pre>
+       *
+       * <code>string sha = 3;</code>
+       * @return The sha.
        */
-      public boolean hasCodeStatistics() {
-        return codeStatisticsBuilder_ != null || codeStatistics_ != null;
-      }
-      /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
-       * @return The codeStatistics.
-       */
-      public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics getCodeStatistics() {
-        if (codeStatisticsBuilder_ == null) {
-          return codeStatistics_ == null ? com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.getDefaultInstance() : codeStatistics_;
+      public java.lang.String getSha() {
+        java.lang.Object ref = sha_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sha_ = s;
+          return s;
         } else {
-          return codeStatisticsBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <pre>
+       *   CodeStatistics codeStatistics = 2;
+       * </pre>
+       *
+       * <code>string sha = 3;</code>
+       * @return The bytes for sha.
        */
-      public Builder setCodeStatistics(com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics value) {
-        if (codeStatisticsBuilder_ == null) {
+      public com.google.protobuf.ByteString
+          getShaBytes() {
+        java.lang.Object ref = sha_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sha_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *   CodeStatistics codeStatistics = 2;
+       * </pre>
+       *
+       * <code>string sha = 3;</code>
+       * @param value The sha to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSha(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sha_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *   CodeStatistics codeStatistics = 2;
+       * </pre>
+       *
+       * <code>string sha = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSha() {
+        
+        sha_ = getDefaultInstance().getSha();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *   CodeStatistics codeStatistics = 2;
+       * </pre>
+       *
+       * <code>string sha = 3;</code>
+       * @param value The bytes for sha to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sha_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate dependencyUpdate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder> dependencyUpdateBuilder_;
+      /**
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+       * @return Whether the dependencyUpdate field is set.
+       */
+      public boolean hasDependencyUpdate() {
+        return dependencyUpdateBuilder_ != null || dependencyUpdate_ != null;
+      }
+      /**
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+       * @return The dependencyUpdate.
+       */
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate getDependencyUpdate() {
+        if (dependencyUpdateBuilder_ == null) {
+          return dependencyUpdate_ == null ? com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
+        } else {
+          return dependencyUpdateBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
+       */
+      public Builder setDependencyUpdate(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate value) {
+        if (dependencyUpdateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          codeStatistics_ = value;
+          dependencyUpdate_ = value;
           onChanged();
         } else {
-          codeStatisticsBuilder_.setMessage(value);
+          dependencyUpdateBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public Builder setCodeStatistics(
-          com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder builderForValue) {
-        if (codeStatisticsBuilder_ == null) {
-          codeStatistics_ = builderForValue.build();
+      public Builder setDependencyUpdate(
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder builderForValue) {
+        if (dependencyUpdateBuilder_ == null) {
+          dependencyUpdate_ = builderForValue.build();
           onChanged();
         } else {
-          codeStatisticsBuilder_.setMessage(builderForValue.build());
+          dependencyUpdateBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public Builder mergeCodeStatistics(com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics value) {
-        if (codeStatisticsBuilder_ == null) {
-          if (codeStatistics_ != null) {
-            codeStatistics_ =
-              com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.newBuilder(codeStatistics_).mergeFrom(value).buildPartial();
+      public Builder mergeDependencyUpdate(com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate value) {
+        if (dependencyUpdateBuilder_ == null) {
+          if (dependencyUpdate_ != null) {
+            dependencyUpdate_ =
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.newBuilder(dependencyUpdate_).mergeFrom(value).buildPartial();
           } else {
-            codeStatistics_ = value;
+            dependencyUpdate_ = value;
           }
           onChanged();
         } else {
-          codeStatisticsBuilder_.mergeFrom(value);
+          dependencyUpdateBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public Builder clearCodeStatistics() {
-        if (codeStatisticsBuilder_ == null) {
-          codeStatistics_ = null;
+      public Builder clearDependencyUpdate() {
+        if (dependencyUpdateBuilder_ == null) {
+          dependencyUpdate_ = null;
           onChanged();
         } else {
-          codeStatistics_ = null;
-          codeStatisticsBuilder_ = null;
+          dependencyUpdate_ = null;
+          dependencyUpdateBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder getCodeStatisticsBuilder() {
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder getDependencyUpdateBuilder() {
         
         onChanged();
-        return getCodeStatisticsFieldBuilder().getBuilder();
+        return getDependencyUpdateFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
-      public com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder getCodeStatisticsOrBuilder() {
-        if (codeStatisticsBuilder_ != null) {
-          return codeStatisticsBuilder_.getMessageOrBuilder();
+      public com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder getDependencyUpdateOrBuilder() {
+        if (dependencyUpdateBuilder_ != null) {
+          return dependencyUpdateBuilder_.getMessageOrBuilder();
         } else {
-          return codeStatistics_ == null ?
-              com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.getDefaultInstance() : codeStatistics_;
+          return dependencyUpdate_ == null ?
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.getDefaultInstance() : dependencyUpdate_;
         }
       }
       /**
-       * <code>.CodeStatistics codeStatistics = 2;</code>
+       * <code>.DependencyUpdate dependencyUpdate = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder> 
-          getCodeStatisticsFieldBuilder() {
-        if (codeStatisticsBuilder_ == null) {
-          codeStatisticsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatistics.Builder, com.t2r.common.models.refactorings.CodeStatisticsOuterClass.CodeStatisticsOrBuilder>(
-                  getCodeStatistics(),
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder> 
+          getDependencyUpdateFieldBuilder() {
+        if (dependencyUpdateBuilder_ == null) {
+          dependencyUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdate.Builder, com.t2r.common.models.refactorings.DependencyUpdateOuterClass.DependencyUpdateOrBuilder>(
+                  getDependencyUpdate(),
                   getParentForChildren(),
                   isClean());
-          codeStatistics_ = null;
+          dependencyUpdate_ = null;
         }
-        return codeStatisticsBuilder_;
+        return dependencyUpdateBuilder_;
       }
 
-      private com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo commit_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder> commitBuilder_;
-      /**
-       * <code>.CommitInfo commit = 3;</code>
-       * @return Whether the commit field is set.
-       */
-      public boolean hasCommit() {
-        return commitBuilder_ != null || commit_ != null;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Long> refactorings_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetRefactorings() {
+        if (refactorings_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RefactoringsDefaultEntryHolder.defaultEntry);
+        }
+        return refactorings_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetMutableRefactorings() {
+        onChanged();;
+        if (refactorings_ == null) {
+          refactorings_ = com.google.protobuf.MapField.newMapField(
+              RefactoringsDefaultEntryHolder.defaultEntry);
+        }
+        if (!refactorings_.isMutable()) {
+          refactorings_ = refactorings_.copy();
+        }
+        return refactorings_;
+      }
+
+      public int getRefactoringsCount() {
+        return internalGetRefactorings().getMap().size();
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
-       * @return The commit.
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo getCommit() {
-        if (commitBuilder_ == null) {
-          return commit_ == null ? com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.getDefaultInstance() : commit_;
+
+      public boolean containsRefactorings(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetRefactorings().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRefactoringsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long> getRefactorings() {
+        return getRefactoringsMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Long> getRefactoringsMap() {
+        return internalGetRefactorings().getMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+
+      public long getRefactoringsOrDefault(
+          java.lang.String key,
+          long defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetRefactorings().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+
+      public long getRefactoringsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetRefactorings().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearRefactorings() {
+        internalGetMutableRefactorings().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+
+      public Builder removeRefactorings(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableRefactorings().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long>
+      getMutableRefactorings() {
+        return internalGetMutableRefactorings().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+      public Builder putRefactorings(
+          java.lang.String key,
+          long value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableRefactorings().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; refactorings = 5;</code>
+       */
+
+      public Builder putAllRefactorings(
+          java.util.Map<java.lang.String, java.lang.Long> values) {
+        internalGetMutableRefactorings().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff fileDiff_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder> fileDiffBuilder_;
+      /**
+       * <code>.FileDiff fileDiff = 6;</code>
+       * @return Whether the fileDiff field is set.
+       */
+      public boolean hasFileDiff() {
+        return fileDiffBuilder_ != null || fileDiff_ != null;
+      }
+      /**
+       * <code>.FileDiff fileDiff = 6;</code>
+       * @return The fileDiff.
+       */
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff getFileDiff() {
+        if (fileDiffBuilder_ == null) {
+          return fileDiff_ == null ? com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
         } else {
-          return commitBuilder_.getMessage();
+          return fileDiffBuilder_.getMessage();
         }
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public Builder setCommit(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo value) {
-        if (commitBuilder_ == null) {
+      public Builder setFileDiff(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff value) {
+        if (fileDiffBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          commit_ = value;
+          fileDiff_ = value;
           onChanged();
         } else {
-          commitBuilder_.setMessage(value);
+          fileDiffBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public Builder setCommit(
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder builderForValue) {
-        if (commitBuilder_ == null) {
-          commit_ = builderForValue.build();
+      public Builder setFileDiff(
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder builderForValue) {
+        if (fileDiffBuilder_ == null) {
+          fileDiff_ = builderForValue.build();
           onChanged();
         } else {
-          commitBuilder_.setMessage(builderForValue.build());
+          fileDiffBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public Builder mergeCommit(com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo value) {
-        if (commitBuilder_ == null) {
-          if (commit_ != null) {
-            commit_ =
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.newBuilder(commit_).mergeFrom(value).buildPartial();
+      public Builder mergeFileDiff(com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff value) {
+        if (fileDiffBuilder_ == null) {
+          if (fileDiff_ != null) {
+            fileDiff_ =
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.newBuilder(fileDiff_).mergeFrom(value).buildPartial();
           } else {
-            commit_ = value;
+            fileDiff_ = value;
           }
           onChanged();
         } else {
-          commitBuilder_.mergeFrom(value);
+          fileDiffBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public Builder clearCommit() {
-        if (commitBuilder_ == null) {
-          commit_ = null;
+      public Builder clearFileDiff() {
+        if (fileDiffBuilder_ == null) {
+          fileDiff_ = null;
           onChanged();
         } else {
-          commit_ = null;
-          commitBuilder_ = null;
+          fileDiff_ = null;
+          fileDiffBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder getCommitBuilder() {
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder getFileDiffBuilder() {
         
         onChanged();
-        return getCommitFieldBuilder().getBuilder();
+        return getFileDiffFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
-      public com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder getCommitOrBuilder() {
-        if (commitBuilder_ != null) {
-          return commitBuilder_.getMessageOrBuilder();
+      public com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder getFileDiffOrBuilder() {
+        if (fileDiffBuilder_ != null) {
+          return fileDiffBuilder_.getMessageOrBuilder();
         } else {
-          return commit_ == null ?
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.getDefaultInstance() : commit_;
+          return fileDiff_ == null ?
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.getDefaultInstance() : fileDiff_;
         }
       }
       /**
-       * <code>.CommitInfo commit = 3;</code>
+       * <code>.FileDiff fileDiff = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder> 
-          getCommitFieldBuilder() {
-        if (commitBuilder_ == null) {
-          commitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo.Builder, com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfoOrBuilder>(
-                  getCommit(),
+          com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder> 
+          getFileDiffFieldBuilder() {
+        if (fileDiffBuilder_ == null) {
+          fileDiffBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiff.Builder, com.t2r.common.models.refactorings.FileDiffOuterClass.FileDiffOrBuilder>(
+                  getFileDiff(),
                   getParentForChildren(),
                   isClean());
-          commit_ = null;
+          fileDiff_ = null;
         }
-        return commitBuilder_;
+        return fileDiffBuilder_;
+      }
+
+      private java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> dependencyUpdateImpact_ =
+        java.util.Collections.emptyList();
+      private void ensureDependencyUpdateImpactIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          dependencyUpdateImpact_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact>(dependencyUpdateImpact_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder> dependencyUpdateImpactBuilder_;
+
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> getDependencyUpdateImpactList() {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dependencyUpdateImpact_);
+        } else {
+          return dependencyUpdateImpactBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public int getDependencyUpdateImpactCount() {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          return dependencyUpdateImpact_.size();
+        } else {
+          return dependencyUpdateImpactBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact getDependencyUpdateImpact(int index) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          return dependencyUpdateImpact_.get(index);
+        } else {
+          return dependencyUpdateImpactBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder setDependencyUpdateImpact(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact value) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.set(index, value);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder setDependencyUpdateImpact(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder builderForValue) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder addDependencyUpdateImpact(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact value) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.add(value);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder addDependencyUpdateImpact(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact value) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.add(index, value);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder addDependencyUpdateImpact(
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder builderForValue) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder addDependencyUpdateImpact(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder builderForValue) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder addAllDependencyUpdateImpact(
+          java.lang.Iterable<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact> values) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          ensureDependencyUpdateImpactIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dependencyUpdateImpact_);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder clearDependencyUpdateImpact() {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          dependencyUpdateImpact_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public Builder removeDependencyUpdateImpact(int index) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          ensureDependencyUpdateImpactIsMutable();
+          dependencyUpdateImpact_.remove(index);
+          onChanged();
+        } else {
+          dependencyUpdateImpactBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder getDependencyUpdateImpactBuilder(
+          int index) {
+        return getDependencyUpdateImpactFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder getDependencyUpdateImpactOrBuilder(
+          int index) {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          return dependencyUpdateImpact_.get(index);  } else {
+          return dependencyUpdateImpactBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder> 
+           getDependencyUpdateImpactOrBuilderList() {
+        if (dependencyUpdateImpactBuilder_ != null) {
+          return dependencyUpdateImpactBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dependencyUpdateImpact_);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder addDependencyUpdateImpactBuilder() {
+        return getDependencyUpdateImpactFieldBuilder().addBuilder(
+            com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder addDependencyUpdateImpactBuilder(
+          int index) {
+        return getDependencyUpdateImpactFieldBuilder().addBuilder(
+            index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.DependencyUpdateImpact dependencyUpdateImpact = 8;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder> 
+           getDependencyUpdateImpactBuilderList() {
+        return getDependencyUpdateImpactFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder> 
+          getDependencyUpdateImpactFieldBuilder() {
+        if (dependencyUpdateImpactBuilder_ == null) {
+          dependencyUpdateImpactBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpact.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.DependencyUpdateImpactOrBuilder>(
+                  dependencyUpdateImpact_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dependencyUpdateImpact_ = null;
+        }
+        return dependencyUpdateImpactBuilder_;
+      }
+
+      private java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> migrationAnalysis_ =
+        java.util.Collections.emptyList();
+      private void ensureMigrationAnalysisIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          migrationAnalysis_ = new java.util.ArrayList<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis>(migrationAnalysis_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder> migrationAnalysisBuilder_;
+
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> getMigrationAnalysisList() {
+        if (migrationAnalysisBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(migrationAnalysis_);
+        } else {
+          return migrationAnalysisBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public int getMigrationAnalysisCount() {
+        if (migrationAnalysisBuilder_ == null) {
+          return migrationAnalysis_.size();
+        } else {
+          return migrationAnalysisBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis getMigrationAnalysis(int index) {
+        if (migrationAnalysisBuilder_ == null) {
+          return migrationAnalysis_.get(index);
+        } else {
+          return migrationAnalysisBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder setMigrationAnalysis(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis value) {
+        if (migrationAnalysisBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.set(index, value);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder setMigrationAnalysis(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder builderForValue) {
+        if (migrationAnalysisBuilder_ == null) {
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder addMigrationAnalysis(com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis value) {
+        if (migrationAnalysisBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.add(value);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder addMigrationAnalysis(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis value) {
+        if (migrationAnalysisBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.add(index, value);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder addMigrationAnalysis(
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder builderForValue) {
+        if (migrationAnalysisBuilder_ == null) {
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.add(builderForValue.build());
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder addMigrationAnalysis(
+          int index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder builderForValue) {
+        if (migrationAnalysisBuilder_ == null) {
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder addAllMigrationAnalysis(
+          java.lang.Iterable<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis> values) {
+        if (migrationAnalysisBuilder_ == null) {
+          ensureMigrationAnalysisIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, migrationAnalysis_);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder clearMigrationAnalysis() {
+        if (migrationAnalysisBuilder_ == null) {
+          migrationAnalysis_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public Builder removeMigrationAnalysis(int index) {
+        if (migrationAnalysisBuilder_ == null) {
+          ensureMigrationAnalysisIsMutable();
+          migrationAnalysis_.remove(index);
+          onChanged();
+        } else {
+          migrationAnalysisBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder getMigrationAnalysisBuilder(
+          int index) {
+        return getMigrationAnalysisFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder getMigrationAnalysisOrBuilder(
+          int index) {
+        if (migrationAnalysisBuilder_ == null) {
+          return migrationAnalysis_.get(index);  } else {
+          return migrationAnalysisBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public java.util.List<? extends com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder> 
+           getMigrationAnalysisOrBuilderList() {
+        if (migrationAnalysisBuilder_ != null) {
+          return migrationAnalysisBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(migrationAnalysis_);
+        }
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder addMigrationAnalysisBuilder() {
+        return getMigrationAnalysisFieldBuilder().addBuilder(
+            com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder addMigrationAnalysisBuilder(
+          int index) {
+        return getMigrationAnalysisFieldBuilder().addBuilder(
+            index, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TypeChangeCommit.MigrationAnalysis migrationAnalysis = 9;</code>
+       */
+      public java.util.List<com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder> 
+           getMigrationAnalysisBuilderList() {
+        return getMigrationAnalysisFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder> 
+          getMigrationAnalysisFieldBuilder() {
+        if (migrationAnalysisBuilder_ == null) {
+          migrationAnalysisBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysis.Builder, com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit.MigrationAnalysisOrBuilder>(
+                  migrationAnalysis_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          migrationAnalysis_ = null;
+        }
+        return migrationAnalysisBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1207,6 +4037,21 @@ public final class TypeChangeCommitOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TypeChangeCommit_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeCommit_RefactoringsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeCommit_RefactoringsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeCommit_MigrationAnalysis_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeCommit_MigrationAnalysis_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TypeChangeCommit_DependencyUpdateImpact_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1217,29 +4062,57 @@ public final class TypeChangeCommitOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026TypeChangeCommit.proto\032\030TypeChangeAnal" +
-      "ysis.proto\032\024CodeStatistics.proto\032\020Commit" +
-      "Info.proto\"\202\001\n\020TypeChangeCommit\022(\n\013typeC" +
-      "hanges\030\001 \003(\0132\023.TypeChangeAnalysis\022\'\n\016cod" +
-      "eStatistics\030\002 \001(\0132\017.CodeStatistics\022\033\n\006co" +
-      "mmit\030\003 \001(\0132\013.CommitInfoB$\n\"com.t2r.commo" +
-      "n.models.refactoringsb\006proto3"
+      "ysis.proto\032\026DependencyUpdate.proto\032\016File" +
+      "Diff.proto\"\230\004\n\020TypeChangeCommit\022(\n\013typeC" +
+      "hanges\030\001 \003(\0132\023.TypeChangeAnalysis\022\013\n\003sha" +
+      "\030\003 \001(\t\022+\n\020dependencyUpdate\030\004 \001(\0132\021.Depen" +
+      "dencyUpdate\0229\n\014refactorings\030\005 \003(\0132#.Type" +
+      "ChangeCommit.RefactoringsEntry\022\033\n\010fileDi" +
+      "ff\030\006 \001(\0132\t.FileDiff\022H\n\026dependencyUpdateI" +
+      "mpact\030\010 \003(\0132(.TypeChangeCommit.Dependenc" +
+      "yUpdateImpact\022>\n\021migrationAnalysis\030\t \003(\013" +
+      "2#.TypeChangeCommit.MigrationAnalysis\0323\n" +
+      "\021RefactoringsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\003:\0028\001\032R\n\021MigrationAnalysis\022\014\n\004type\030" +
+      "\001 \001(\t\022\032\n\022typeMigrationLevel\030\002 \001(\t\022\023\n\013isB" +
+      "4Removed\030\004 \001(\010\0325\n\026DependencyUpdateImpact" +
+      "\022\014\n\004kind\030\001 \001(\t\022\r\n\005types\030\002 \003(\tB$\n\"com.t2r" +
+      ".common.models.refactoringsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.getDescriptor(),
-          com.t2r.common.models.refactorings.CodeStatisticsOuterClass.getDescriptor(),
-          com.t2r.common.models.refactorings.CommitInfoOuterClass.getDescriptor(),
+          com.t2r.common.models.refactorings.DependencyUpdateOuterClass.getDescriptor(),
+          com.t2r.common.models.refactorings.FileDiffOuterClass.getDescriptor(),
         });
     internal_static_TypeChangeCommit_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_TypeChangeCommit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TypeChangeCommit_descriptor,
-        new java.lang.String[] { "TypeChanges", "CodeStatistics", "Commit", });
+        new java.lang.String[] { "TypeChanges", "Sha", "DependencyUpdate", "Refactorings", "FileDiff", "DependencyUpdateImpact", "MigrationAnalysis", });
+    internal_static_TypeChangeCommit_RefactoringsEntry_descriptor =
+      internal_static_TypeChangeCommit_descriptor.getNestedTypes().get(0);
+    internal_static_TypeChangeCommit_RefactoringsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeCommit_RefactoringsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_TypeChangeCommit_MigrationAnalysis_descriptor =
+      internal_static_TypeChangeCommit_descriptor.getNestedTypes().get(1);
+    internal_static_TypeChangeCommit_MigrationAnalysis_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeCommit_MigrationAnalysis_descriptor,
+        new java.lang.String[] { "Type", "TypeMigrationLevel", "IsB4Removed", });
+    internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor =
+      internal_static_TypeChangeCommit_descriptor.getNestedTypes().get(2);
+    internal_static_TypeChangeCommit_DependencyUpdateImpact_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TypeChangeCommit_DependencyUpdateImpact_descriptor,
+        new java.lang.String[] { "Kind", "Types", });
     com.t2r.common.models.refactorings.TypeChangeAnalysisOuterClass.getDescriptor();
-    com.t2r.common.models.refactorings.CodeStatisticsOuterClass.getDescriptor();
-    com.t2r.common.models.refactorings.CommitInfoOuterClass.getDescriptor();
+    com.t2r.common.models.refactorings.DependencyUpdateOuterClass.getDescriptor();
+    com.t2r.common.models.refactorings.FileDiffOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
