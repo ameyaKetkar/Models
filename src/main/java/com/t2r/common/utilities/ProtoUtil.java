@@ -1,17 +1,13 @@
 package com.t2r.common.utilities;
 
-import static com.t2r.common.utilities.FileUtils.appendToFile;
-import static com.t2r.common.utilities.FileUtils.createIfAbsent;
-import static com.t2r.common.utilities.FileUtils.writeToFile;
-import static java.nio.file.Files.readAllBytes;
-
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
-
 import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
 import com.t2r.common.models.refactorings.ExternalDepInfoOuterClass.ExternalDepInfo;
 import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
 import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit;
+import io.vavr.CheckedFunction1;
+import io.vavr.control.Try;
 
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
@@ -23,8 +19,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import io.vavr.CheckedFunction1;
-import io.vavr.control.Try;
+import static com.t2r.common.utilities.FileUtils.*;
+import static java.nio.file.Files.readAllBytes;
 
 public class ProtoUtil {
 

@@ -1,14 +1,13 @@
 package com.t2r.common.utilities;
 
-import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
-
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
+import io.vavr.Tuple3;
+import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
+import org.eclipse.jgit.diff.DiffEntry.ChangeType;
 import org.eclipse.jgit.lib.ObjectId;
 import org.eclipse.jgit.lib.ObjectLoader;
 import org.eclipse.jgit.lib.ObjectReader;
@@ -26,20 +25,11 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 
-import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.control.Try;
+import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
+import static java.util.stream.Collectors.*;
 
 public class GitUtil {
 
@@ -72,7 +62,7 @@ public class GitUtil {
             walk.markStart(walk.parseCommit(git.getRepository().resolve("HEAD")));
             walk.sort(order);
             walk.setRevFilter(CommitTimeRevFilter.after(fromDate));
-            walk.setRevFilter(RevFilter.NO_MERGES);
+//            walk.setRevFilter(RevFilter.NO_MERGES);
             return walk;
         })
                 .map(walk -> {
@@ -109,46 +99,98 @@ public class GitUtil {
                 .onFailure(Throwable::printStackTrace)
                 .getOrElse(new ArrayList<>());
     }
+//
+//    public static List<DiffEntry> getDiffEntries(Git git, RevCommit old, RevCommit c2) {
+//        return Try.of(() -> git.diff().setOldTree(prepareTreeParser(old.getId().getName(), git.getRepository()))
+//                .setNewTree(prepareTreeParser(c2.getId().getName(), git.getRepository()))
+//                .call())
+//                .onFailure(Throwable::printStackTrace)
+//                .getOrElse(new ArrayList<>());
+//    }
 
 
-    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, RevCommit cmt) {
+    public static Map<ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, RevCommit cmt) {
         return getDiffEntries(git, cmt).stream()
                 .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
                 .collect(groupingBy(Tuple3::_1
                         , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList()))));
     }
 
+//    public static Map<ChangeType, List<Tuple2<String, String>>> filePathDiffForCommit(Git git, RevCommit old, RevCommit c2) {
+//        return getDiffEntries(git, old, c2).stream()
+//                .map(x -> Tuple.of(x.getChangeType(), x.getOldPath(), x.getNewPath()))
+//                .collect(groupingBy(Tuple3::_1
+//                        , collectingAndThen(toList(), l -> l.stream().map(x -> Tuple.of(x._2(), x._3())).collect(toList()))));
+//    }
 
-    public static Map<DiffEntry.ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c) {
+
+    public static Map<ChangeType, List<Tuple2<String, String>>> filePathDiffAtCommit(Git git, String c) {
         return findCommit(c, git.getRepository())
                 .map(cmt -> filePathDiffAtCommit(git, cmt))
                 .orElse(new HashMap<>());
     }
 
-    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Git git, RevCommit currentCommit, RevCommit parentCommit) throws IOException {
+    public static Tuple2<Map<Path, String>, Map<Path, String>> getBeforeAfter(Repository repo, RevCommit currentCommit, RevCommit parent) throws IOException {
+//        Repository repo = git.getRepository();
 
-        var afterPaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
-                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.ADD)
-                        || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
+        var afterPathContent = populateFileContents(repo, currentCommit, x -> x.endsWith(".java"));
+        var beforePathContent = findCommit(parent.getId().getName(), repo).map(c ->
+                populateFileContents(repo,c, x -> x.endsWith(".java"))).orElse(new HashMap<>());
+        System.out.println(beforePathContent.isEmpty());
+        return Tuple.of(beforePathContent,  afterPathContent);
+    }
+
+    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Repository repo, RevCommit currentCommit,Map<ChangeType, List<Tuple2<String, String>>> changeTypeListMap ) throws IOException {
+
+        var afterPaths = changeTypeListMap.entrySet().stream()
+                .filter(x -> x.getKey().equals(ChangeType.ADD)
+                        || x.getKey().equals(ChangeType.MODIFY) || x.getKey().equals(ChangeType.RENAME))
                 .flatMap(x -> x.getValue().stream().map(Tuple2::_2))
                 .collect(toList());
 
-        var afterPathContent = populateFileContents(git.getRepository(), currentCommit, x -> true)
+
+        var afterPathContent = populateFileContents(repo, currentCommit, x -> x.endsWith(".java"))
                 .entrySet().stream()
-                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toAbsolutePath().toString().contains(p))
+                .filter(x -> x.getKey().toString().endsWith(".java"))
+                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toString().contains(p))
                         , toMap(x -> x.getKey(), x -> x.getValue())));
 
-        var beforePaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
-                .filter(x -> x.getKey().equals(DiffEntry.ChangeType.DELETE)
-                        || x.getKey().equals(DiffEntry.ChangeType.MODIFY) || x.getKey().equals(DiffEntry.ChangeType.RENAME))
+        var beforePaths = changeTypeListMap.entrySet().stream()
+                .filter(x -> x.getKey().equals(ChangeType.DELETE)
+                        || x.getKey().equals(ChangeType.MODIFY) || x.getKey().equals(ChangeType.RENAME))
                 .flatMap(x -> x.getValue().stream().map(Tuple2::_1))
                 .collect(toList());
 
-        var beforePathContent = populateFileContents(git.getRepository(), parentCommit
+        var beforePathContent = populateFileContents(repo, currentCommit.getParent(0)
                 , f -> beforePaths.stream().anyMatch(f::contains));
-
+        System.out.println(beforePathContent.isEmpty());
         return Tuple.of(beforePathContent, afterPathContent.get(true), afterPathContent.get(false));
     }
+
+//    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified1(Git git, RevCommit currentCommit, RevCommit parentCommit) throws IOException {
+//
+//        var afterPaths = filePathDiffForCommit(git, parentCommit,currentCommit).entrySet().stream()
+//                .filter(x -> x.getKey().equals(ChangeType.ADD)
+//                        || x.getKey().equals(ChangeType.MODIFY) || x.getKey().equals(ChangeType.RENAME))
+//                .flatMap(x -> x.getValue().stream().map(Tuple2::_2))
+//                .collect(toList());
+//
+//        var afterPathContent = populateFileContents(git.getRepository(), currentCommit, x -> x.endsWith(".java"))
+//                .entrySet().stream()
+//                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toAbsolutePath().toString().contains(p))
+//                        , toMap(x -> x.getKey(), x -> x.getValue())));
+//
+//        var beforePaths = filePathDiffAtCommit(git, currentCommit).entrySet().stream()
+//                .filter(x -> x.getKey().equals(ChangeType.DELETE)
+//                        || x.getKey().equals(ChangeType.MODIFY) || x.getKey().equals(ChangeType.RENAME))
+//                .flatMap(x -> x.getValue().stream().map(Tuple2::_1))
+//                .collect(toList());
+//
+//        var beforePathContent = populateFileContents(git.getRepository(), parentCommit
+//                , f -> beforePaths.stream().anyMatch(f::contains));
+//
+//        return Tuple.of(beforePathContent, afterPathContent.get(true), afterPathContent.get(false));
+//    }
 
 
     /**
@@ -189,6 +231,7 @@ public class GitUtil {
                 l.add(iter.next());
             }
             walk.dispose();
+            walk.close();
             return l;
         }).getOrElse(new ArrayList<>());
 
@@ -209,7 +252,7 @@ public class GitUtil {
      * @return filePath * content
      */
     public static Map<Path, String> populateFileContents(Repository repository, String cmt,
-                                                         Predicate<String> pred) throws IOException {
+                                                         Predicate<String> pred)  {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
         if (commit.isPresent()) {
@@ -220,21 +263,25 @@ public class GitUtil {
 
 
     public static Map<Path, String> populateFileContents(Repository repository, RevCommit cmt,
-                                                         Predicate<String> pred) throws IOException {
+                                                         Predicate<String> pred) {
         Map<Path, String> fileContents = new HashMap<>();
         RevTree parentTree = cmt.getTree();
-        try (TreeWalk treeWalk = new TreeWalk(repository)) {
-            treeWalk.addTree(parentTree);
-            treeWalk.setRecursive(true);
-            while (treeWalk.next()) {
-                String pathString = treeWalk.getPathString();
-                if (pred.test(pathString)) {
-                    ObjectId objectId = treeWalk.getObjectId(0);
-                    ObjectLoader loader = repository.open(objectId);
-                    StringWriter writer = new StringWriter();
-                    IOUtils.copy(loader.openStream(), writer);
-                    fileContents.put(Paths.get(pathString), writer.toString());
+        if(parentTree!=null) {
+            try (TreeWalk treeWalk = new TreeWalk(repository)) {
+                treeWalk.addTree(parentTree);
+                treeWalk.setRecursive(true);
+                while (treeWalk.next()) {
+                    String pathString = treeWalk.getPathString();
+                    if (pred.test(pathString) && pathString.endsWith(".java")) {
+                        ObjectId objectId = treeWalk.getObjectId(0);
+                        ObjectLoader loader = repository.open(objectId);
+                        StringWriter writer = new StringWriter();
+                        IOUtils.copy(loader.openStream(), writer);
+                        fileContents.put(Paths.get(pathString), writer.toString());
+                    }
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         return fileContents;
