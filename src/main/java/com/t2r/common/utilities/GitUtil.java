@@ -1,10 +1,12 @@
 package com.t2r.common.utilities;
 
+import ca.concordia.jaranalyzer.Util;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
 import io.vavr.Tuple3;
 import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
+import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffEntry.ChangeType;
@@ -48,7 +50,6 @@ public class GitUtil {
                 .onFailure(e -> System.out.println("Could not clone " + cloneLink));
 
     }
-
 
     /**
      * @param git      The Git repository
@@ -256,9 +257,16 @@ public class GitUtil {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
         if (commit.isPresent()) {
-            populateFileContents(repository, commit.get(), pred);
+            return populateFileContents(repository, commit.get(), pred);
         }
         return fileContents;
+    }
+
+    public static Set<CompilationUnit> populateCu(Repository repository, String cmt,
+                                                         Predicate<CompilationUnit> pred)  {
+        return findCommit(cmt, repository)
+                .map(revCommit -> populateCu(repository, revCommit, pred))
+                .orElseGet(HashSet::new);
     }
 
 
@@ -287,11 +295,53 @@ public class GitUtil {
         return fileContents;
     }
 
+    public static Set<CompilationUnit> populateCu(Repository repository, RevCommit cmt,
+                                                         Predicate<CompilationUnit> pred) {
+        Set<CompilationUnit> cus = new HashSet<>();
+        RevTree parentTree = cmt.getTree();
+        if(parentTree!=null) {
+            try (TreeWalk treeWalk = new TreeWalk(repository)) {
+                treeWalk.addTree(parentTree);
+                treeWalk.setRecursive(true);
+                while (treeWalk.next()) {
+                    String pathString = treeWalk.getPathString();
+                    if (pathString.endsWith(".java")) {
+                        ObjectId objectId = treeWalk.getObjectId(0);
+                        ObjectLoader loader = repository.open(objectId);
+                        StringWriter writer = new StringWriter();
+                        IOUtils.copy(loader.openStream(), writer);
+                        String content = writer.toString();
+                        CompilationUnit cu = Util.getCuFor(content);
+                        if(pred.test(cu))
+                            cus.add(cu);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return cus;
+    }
+
+
 
     public static boolean isFileAffected(Git git, String c, Predicate<String> fileMatcher) {
         return filePathDiffAtCommit(git, c).values().stream()
                 .flatMap(x -> x.stream())
                 .anyMatch(x -> (x._1() != null && fileMatcher.test(x._1())) || (x._2() != null && fileMatcher.test(x._2())));
+    }
+
+
+    public static String getLastCommitFrom(Repository r, List<String> commits){
+
+        List<Tuple2<String, Integer>> z = commits.stream()
+                .flatMap(x -> findCommit(x, r).stream())
+                .map(x -> Tuple.of(x.getId().name(), x.getCommitTime()))
+                .sorted(Comparator.comparingInt(x -> x._2()))
+                .collect(toList());
+
+        return z.get(z.size() - 1)._1();
+
     }
 
 

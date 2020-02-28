@@ -4,6 +4,7 @@ import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.GeneratedMessageV3;
 import com.t2r.common.models.refactorings.CommitInfoOuterClass.CommitInfo;
 import com.t2r.common.models.refactorings.ExternalDepInfoOuterClass.ExternalDepInfo;
+import com.t2r.common.models.refactorings.ProcessedCodeMappingsOuterClass.ProcessedCodeMappings;
 import com.t2r.common.models.refactorings.ProjectOuterClass.Project;
 import com.t2r.common.models.refactorings.TheWorldOuterClass.TheWorld;
 import com.t2r.common.models.refactorings.TypeChangeCommitOuterClass.TypeChangeCommit;
@@ -51,6 +52,7 @@ public class ProtoUtil {
             case "ExternalDependencyInfo" : return  p -> (T) ExternalDepInfo.parseFrom(p);
             case "TypeChangeCommit" : return p -> (T) TypeChangeCommit.parseFrom(p);
             case "TheWorld" : return p -> (T) TheWorld.parseFrom(p);
+            case "CodeMapping" : return p -> (T) ProcessedCodeMappings.parseFrom(p);
 //            case "RMined" : return c -> (T) RMined.parseFrom(c);
             default: return c -> null;
         }
