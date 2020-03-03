@@ -25,9 +25,6 @@ import static java.util.stream.Collectors.toList;
 
 public class PrettyPrinter {
 
-
-
-
     public static boolean looselyEqual(TypeGraph tg, TypeGraph tg2) {
         if(!tg.getRoot().getKind().equals(tg2.getRoot().getKind()))
             return false;

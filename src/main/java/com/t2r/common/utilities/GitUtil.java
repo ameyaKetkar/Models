@@ -7,6 +7,7 @@ import io.vavr.Tuple3;
 import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jgit.api.CheckoutCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffEntry.ChangeType;
@@ -342,6 +343,36 @@ public class GitUtil {
 
         return z.get(z.size() - 1)._1();
 
+    }
+
+
+    public static void checkout(Repository repository, String commitId) throws Exception {
+        System.out.println("Checking out ..." + repository.getDirectory().getParent().toString() + "    " + commitId);
+
+        try (Git git = new Git(repository)) {
+            CheckoutCommand checkout = git.checkout().setName(commitId);
+            checkout.call();
+        } catch (Exception e) {
+            try (Git git = new Git(repository)) {
+                CheckoutCommand checkout = git.checkout().setAllPaths(true).setName(commitId);
+                checkout.call();
+            } catch (Exception e1) {
+                checkoutMaster(repository);
+                try (Git git = new Git(repository)) {
+                    CheckoutCommand checkout = git.checkout().setName(commitId);
+                    checkout.call();
+                }
+            }
+//		File workingDir = repository.getDirectory().getParentFile();
+//		ExternalProcess.execute(workingDir, "git", "checkout", commitId);
+        }
+    }
+
+    public static void checkoutMaster(Repository repository) throws Exception {
+        System.out.println("Checking out ..." +  repository.getDirectory().getParent().toString() + "   " +"master");
+        Git git = new Git(repository);
+        CheckoutCommand checkout = git.checkout().setAllPaths(true).setName("master");
+        checkout.call();
     }
 
 
