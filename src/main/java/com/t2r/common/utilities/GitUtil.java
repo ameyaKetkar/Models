@@ -1,11 +1,13 @@
 package com.t2r.common.utilities;
 
-import ca.concordia.jaranalyzer.Util;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
 import io.vavr.Tuple3;
 import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jgit.api.CheckoutCommand;
 import org.eclipse.jgit.api.Git;
@@ -312,7 +314,7 @@ public class GitUtil {
                         StringWriter writer = new StringWriter();
                         IOUtils.copy(loader.openStream(), writer);
                         String content = writer.toString();
-                        CompilationUnit cu = Util.getCuFor(content);
+                        CompilationUnit cu = getCuFor(content);
                         if(pred.test(cu))
                             cus.add(cu);
                     }
@@ -324,6 +326,20 @@ public class GitUtil {
         return cus;
     }
 
+
+    public static CompilationUnit getCuFor(String content){
+        ASTParser parser = ASTParser.newParser(AST.JLS11);
+        Map<String, String> options = JavaCore.getOptions();
+        options.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+        options.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
+        options.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+        parser.setCompilerOptions(options);
+        parser.setResolveBindings(false);
+        parser.setKind(ASTParser.K_COMPILATION_UNIT);
+        parser.setStatementsRecovery(true);
+        parser.setSource(content.toCharArray());
+        return  (CompilationUnit)parser.createAST(null);
+    }
 
 
     public static boolean isFileAffected(Git git, String c, Predicate<String> fileMatcher) {
