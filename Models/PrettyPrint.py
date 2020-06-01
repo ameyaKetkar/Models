@@ -1,6 +1,6 @@
-from NameSpace_pb2 import NameSpace
-from TypeGraph_pb2 import TypeGraph
-from TypeNode_pb2 import TypeNode
+
+from Models.Models.TypeGraph_pb2 import TypeGraph
+
 
 
 def pretty(t: TypeGraph) -> str:
@@ -46,6 +46,7 @@ def prettyNameSpace(n: int) -> str:
     if n == 5:
         return "DontKnow"
 
+
 def prettyNameSpace1(n: int) -> str:
     if n == 0:
         return "TypeVariable"
@@ -85,3 +86,30 @@ def prettyTypeKind(n: int) -> str:
         return "Intersection"
     if n == 7:
         return "Array"
+
+
+cleanMappingNames = {
+    "\\percentModifyReveiver": "Modified Receiver",
+    "\\percentAddRemoveMthdInvc": "Add or Remove Method invocation",
+    "\\percentMthdRename": "Rename Method invocation",
+    "\\percentIntroduceLiteral": "Introduce Literal",
+    "\\percentClsInCrToMthdInvc": "Convert Class instance creation to method invocation",
+    "\\percentUpdateAnonymCls": "Update Anonymous class",
+    "\\percentMthdInvcArgsUpdate": "Update argument list (Method invocation)",
+    "\\percentCascadingTypeDifferent": "Cascading Type Change (Different)",
+    "\\percentCast": "Cast",
+    "\\percentWrap": "Wrap or Un-wrap",
+    "\\percentClsInstCr": "Update Class Instacne Creation",
+    "Update Num Literal": "Update Number Literal",
+    "Update String Literal": "Update String Literal",
+    "\\percentClsInsCrArgsUpdate": "Update argument list (Class Instance Creation)",
+    "\\percentCascadingType": "Cascading Type Change (Similar)",
+    "\\percentVarRename": "Rename Variable",
+    "\\Other": "Other"
+}
+
+
+def getCleanMappingNames(s: str) -> str:
+    if s in cleanMappingNames:
+        return cleanMappingNames[s]
+    return s

@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import JarInfo_pb2 as JarInfo__pb2
+import Models.Models.JarInfo_pb2 as JarInfo__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
