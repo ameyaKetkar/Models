@@ -17,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -105,8 +106,16 @@ public class ProtoUtil {
                 return msgs;
 
             // Try to get all binary message sizes
-            Try<List<Integer>> msgSizes = Try.of(() -> new String(readAllBytes(createIfAbsent(folderName.resolve(fileName + "BinSize.txt")))))
-                    .map(x -> x.split(" "))
+            Try<String> of = Try.of(() -> new String(readAllBytes(createIfAbsent(folderName.resolve(fileName + "BinSize.txt")))));
+
+            if(of.isSuccess()){
+                if(!of.get().contains(" ")){
+                    return Collections.singletonList((T) read(fileName, kind));
+                }
+            }
+
+            Try<List<Integer>> msgSizes = of
+                    .map(x -> x.contains(" ") ? x.split(" ") : new String[]{x})
                     .map(x -> Arrays.asList(x).stream().map(String::trim).map(Integer::parseInt).collect(Collectors.toList()))
                     .onFailure(e -> System.out.println("Could not read the sizes of the messages for " + fileName + "   " + e.toString()));
 
@@ -141,6 +150,7 @@ public class ProtoUtil {
                 return msgs;
             }
         }
+
         public <T> Try<T> read(String fileName, String kind){
             return Try.of(() -> ProtoUtil.<T>parser(kind)
                     .apply(CodedInputStream.newInstance(readAllBytes(outputDir.resolve(fileName + ".txt")))))
