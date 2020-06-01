@@ -11,8 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import TypeGraph_pb2 as TypeGraph__pb2
-import NameSpace_pb2 as NameSpace__pb2
+import Models.Models.TypeGraph_pb2 as TypeGraph__pb2
+import Models.Models.NameSpace_pb2 as NameSpace__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

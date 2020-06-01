@@ -1,6 +1,6 @@
-from NameSpace_pb2 import NameSpace
-from TypeGraph_pb2 import TypeGraph
-from TypeNode_pb2 import TypeNode
+
+from Models.Models.TypeGraph_pb2 import TypeGraph
+
 
 
 def pretty(t: TypeGraph) -> str:
