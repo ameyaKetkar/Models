@@ -156,7 +156,9 @@ public class GitUtil {
         var afterPathContent = populateFileContents(repo, currentCommit, x -> x.endsWith(".java"))
                 .entrySet().stream()
                 .filter(x -> x.getKey().toString().endsWith(".java"))
-                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toString().contains(p))
+                .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toString().contains(p)
+                                || x.getKey().toString().contains(p.replace("/","\\")))
+
                         , toMap(x -> x.getKey(), x -> x.getValue())));
 
         var beforePaths = changeTypeListMap.entrySet().stream()
