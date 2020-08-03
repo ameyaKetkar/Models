@@ -262,7 +262,7 @@ public class GitUtil {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
         if (commit.isPresent()) {
-            return populateFileContents(repository, commit.get(), pred);
+            return populateFileContent(repository, commit.get(), pred);
         }
         return fileContents;
     }
@@ -286,6 +286,31 @@ public class GitUtil {
                 while (treeWalk.next()) {
                     String pathString = treeWalk.getPathString();
                     if (pred.test(pathString) && pathString.endsWith(".java")) {
+                        ObjectId objectId = treeWalk.getObjectId(0);
+                        ObjectLoader loader = repository.open(objectId);
+                        StringWriter writer = new StringWriter();
+                        IOUtils.copy(loader.openStream(), writer);
+                        fileContents.put(Paths.get(pathString), writer.toString());
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return fileContents;
+    }
+
+    public static Map<Path, String> populateFileContent(Repository repository, RevCommit cmt,
+                                                         Predicate<String> pred) {
+        Map<Path, String> fileContents = new HashMap<>();
+        RevTree parentTree = cmt.getTree();
+        if(parentTree!=null) {
+            try (TreeWalk treeWalk = new TreeWalk(repository)) {
+                treeWalk.addTree(parentTree);
+                treeWalk.setRecursive(true);
+                while (treeWalk.next()) {
+                    String pathString = treeWalk.getPathString();
+                    if (pred.test(pathString)) {
                         ObjectId objectId = treeWalk.getObjectId(0);
                         ObjectLoader loader = repository.open(objectId);
                         StringWriter writer = new StringWriter();
