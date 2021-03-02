@@ -3,6 +3,7 @@ package com.t2r.common.utilities;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
 import io.vavr.Tuple3;
+import io.vavr.Tuple4;
 import io.vavr.control.Try;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.jdt.core.JavaCore;
@@ -34,6 +35,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 import static com.t2r.common.utilities.FileUtils.createFolderIfAbsent;
+import static java.util.Map.*;
 import static java.util.stream.Collectors.*;
 
 public class GitUtil {
@@ -144,7 +146,7 @@ public class GitUtil {
         return Tuple.of(beforePathContent,  afterPathContent);
     }
 
-    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Repository repo, RevCommit currentCommit,Map<ChangeType, List<Tuple2<String, String>>> changeTypeListMap ) throws IOException {
+    public static Tuple4<Map<Path, String>, Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified(Repository repo, RevCommit currentCommit, Map<ChangeType, List<Tuple2<String, String>>> changeTypeListMap ) throws IOException {
 
         var afterPaths = changeTypeListMap.entrySet().stream()
                 .filter(x -> x.getKey().equals(ChangeType.ADD)
@@ -158,8 +160,7 @@ public class GitUtil {
                 .filter(x -> x.getKey().toString().endsWith(".java"))
                 .collect(groupingBy(x -> afterPaths.stream().anyMatch(p -> x.getKey().toString().contains(p)
                                 || x.getKey().toString().contains(p.replace("/","\\")))
-
-                        , toMap(x -> x.getKey(), x -> x.getValue())));
+                        , toMap(Entry::getKey, Entry::getValue)));
 
         var beforePaths = changeTypeListMap.entrySet().stream()
                 .filter(x -> x.getKey().equals(ChangeType.DELETE)
@@ -167,10 +168,19 @@ public class GitUtil {
                 .flatMap(x -> x.getValue().stream().map(Tuple2::_1))
                 .collect(toList());
 
-        var beforePathContent = populateFileContents(repo, currentCommit.getParent(0)
-                , f -> beforePaths.stream().anyMatch(f::contains));
+        var beforePathContent = populateFileContentsParentCommit(repo, currentCommit.getId().getName(), x -> x.endsWith(".java"))
+                .entrySet().stream()
+                .filter(x -> x.getKey().toString().endsWith(".java"))
+                .collect(groupingBy(x -> beforePaths.stream().anyMatch(p -> x.getKey().toString().contains(p)
+                                || x.getKey().toString().contains(p.replace("/","\\")))
+                        , toMap(Entry::getKey, Entry::getValue)));
+
+
+//        var beforePathContent = populateFileContentsParentCommit(repo, currentCommit.getId().getName()
+//                , f -> beforePaths.stream().anyMatch(f::contains));
         System.out.println(beforePathContent.isEmpty());
-        return Tuple.of(beforePathContent, afterPathContent.get(true), afterPathContent.get(false));
+        return Tuple.of(beforePathContent.get(true), beforePathContent.get(false),
+                afterPathContent.get(true), afterPathContent.get(false));
     }
 
 //    public static Tuple3<Map<Path, String>, Map<Path, String>, Map<Path, String>> getFilesAddedRemovedRenamedModified1(Git git, RevCommit currentCommit, RevCommit parentCommit) throws IOException {
@@ -241,8 +251,8 @@ public class GitUtil {
             return l;
         }).getOrElse(new ArrayList<>());
 
-        if (mergeCommits.stream().anyMatch(x -> x.getId().getName().equals(SHAId)))
-            return Optional.empty();
+//        if (mergeCommits.stream().anyMatch(x -> x.getId().getName().equals(SHAId)))
+//            return Optional.empty();
         return Try.of(() -> new RevWalk(repo))
                 .flatMap(x -> {
                     return Try.of(() -> x.parseCommit(ObjectId.fromString(SHAId)));
@@ -262,7 +272,29 @@ public class GitUtil {
         Map<Path, String> fileContents = new HashMap<>();
         Optional<RevCommit> commit = findCommit(cmt, repository);
         if (commit.isPresent()) {
-            return populateFileContent(repository, commit.get(), pred);
+            return populateFileContent(repository, commit.get(), pred, 0);
+        }
+        return fileContents;
+    }
+
+    /**
+     * @param repository Git repo
+     * @param cmt        the particular commit
+     * @param pred       matcher for files to populate the content for
+     * @return filePath * content
+     */
+    public static Map<Path, String> populateFileContentsParentCommit(Repository repository, String cmt,
+                                                         Predicate<String> pred)  {
+        Map<Path, String> fileContents = new HashMap<>();
+        Optional<RevCommit> commit = findCommit(cmt, repository);
+
+        if (commit.isPresent()) {
+
+            String parent = commit.get().getParent(0).getId().getName();
+            Optional<RevCommit> commit1 = findCommit(parent, repository);
+            if(commit1.isPresent()){
+            return populateFileContent(repository,commit1.get(), pred,1);
+            }
         }
         return fileContents;
     }
@@ -301,7 +333,7 @@ public class GitUtil {
     }
 
     public static Map<Path, String> populateFileContent(Repository repository, RevCommit cmt,
-                                                         Predicate<String> pred) {
+                                                         Predicate<String> pred, int oId) {
         Map<Path, String> fileContents = new HashMap<>();
         RevTree parentTree = cmt.getTree();
         if(parentTree!=null) {
