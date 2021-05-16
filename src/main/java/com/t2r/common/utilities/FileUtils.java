@@ -1,6 +1,7 @@
 package com.t2r.common.utilities;
 
-import static java.util.stream.Collectors.toList;
+import io.vavr.CheckedConsumer;
+import io.vavr.control.Try;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,8 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import io.vavr.CheckedConsumer;
-import io.vavr.control.Try;
+import static java.util.stream.Collectors.toList;
 
 public class FileUtils {
 
@@ -41,6 +41,7 @@ public class FileUtils {
 
     public static Path materializeFile(Path p, String content){
         createFolderIfAbsent(p.getParent().toAbsolutePath());
+        if (Files.exists(p)) return p;
         return Try.of(() -> Files.write(p.toAbsolutePath(), content.getBytes(), StandardOpenOption.CREATE))
                 .onFailure(e -> e.printStackTrace())
                 .getOrElse(p);
@@ -97,6 +98,21 @@ public class FileUtils {
         }
 
     }
+
+//
+//    public static void req() throws UnsupportedEncodingException {
+//        CloseableHttpClient client = HttpClients.createDefault();
+//        HttpPost httpPost = new HttpPost("http://www.example.com");
+//
+//        String json = "{\"id\":1,\"name\":\"John\"}";
+//        StringEntity entity = new StringEntity(json);
+//        httpPost.setEntity(entity);
+//        httpPost.setHeader("Accept", "application/json");
+//        httpPost.setHeader("Content-type", "application/json");
+//
+//        CloseableHttpResponse response = client.execute(httpPost);
+//        client.close();
+//    }
 
 
 
